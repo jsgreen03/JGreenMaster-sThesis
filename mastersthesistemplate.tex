@@ -284,11 +284,13 @@ Over the course of this chapter, we will develop the theory and utility of repre
 
 \begin{definition}
 	A \textbf{representation} of degree n is a group homomorphism that maps a group into $GL_n(\mathbb{C})$
+	$$\phi:G\rightarrow GL_n(\mathbb{C})$$
+	If $\phi$ is an injective homomorphism, we say that the representation is \textbf{faithful}. Otherwise, the representation is called \textbf{degenerate}.
 \end{definition}
 
-To illustrate to idea of a representation, we will consider the group of all roots of unity ($G$). We can construct multiple homomorphisms from $G$ to showcase different kinds of representations. 
+To illustrate to concept of representations, we will consider the group of all roots of unity, $G$, for the following examples. We can construct multiple homomorphisms from $G$ to showcase different kinds of representations. 
 
-\noindent Note: we will be treating $GL_1(\mathbb{C})$ as $\mathbb{C}$ since they are isomorphic.
+\noindent Note: Since $GL_1(\mathbb{C})$ as $\mathbb{C}$ are isomorphic, we identify each $1x1$ matrix with its corresponding entry with its element in $\mathbb{C}$.
 
 \begin{example}
 	(Trivial Representation)\\\\
@@ -342,16 +344,39 @@ To illustrate to idea of a representation, we will consider the group of all roo
 		                                                                                    &= \phi(e^{2\pi i\frac{x}{y}})*\phi(e^{2\pi i\frac{a}{b}})
 		\end{aligned}
 	\end{equation}
-	Since, $\phi$ has been shown to be a homomorphism, we can conclude that $\phi$ is also a degree $2$ representation of $G$.
+	Since, $\phi$ has been shown to be a homomorphism, we can conclude that $\phi$ is also a degree $2$ representation of $G$.\\
+
+	\noindent Is $\phi$ faithful or degenrate?A faithful representation would have a trivial kernel. Suppose $\phi(e^{2\pi i\frac{x}{y}}) = I_2$ ($I_n$ is the Identity Matrix of dimension $n\times n$). 
+	\begin{equation}
+		%\begin{aligned}
+			\begin{bmatrix}
+				\cos(2\pi\frac{x}{y}) & \sin(2\pi\frac{x}{y}) \\
+				-\sin(2\pi\frac{x}{y}) & \cos(2\pi\frac{x}{y})
+			\end{bmatrix}\\
+			= \begin{bmatrix}
+				1 & 0 \\
+				0 & 1 \\
+			\end{bmatrix}\\
+		%\end{aligned}
+	\end{equation}
+	\noindent Comparing entrywise, we see that $\cos(2\pi\frac{x}{y}) = 1$ and $\pm\sin(2\pi\frac{x}{y}) = 0$. Using any of these equations, we see that $\frac{x}{y}= n$ for some $n\in\mathbb{Z}$. Therefore, $ker(\phi)=\mathbb{Z}$ and this representation is degenerate.
+
+
 \end{example}
 
-As illustrated in the previous example, the process of confirming a map is a representation is relatively standard. However, there does not seem to be any intuitive way to come up with a new representation. The rest of this chapter will be devoted the process of comparing and characterizing every representation of a given group.
+Identify $\phi$ with operators on a vector space.
+i.e. show representation matrices act on vector space and that linear transformations induce matrix reps.\\\\
+
+
+
+%As illustrated in the previous example, the process of confirming a map is a representation is relatively standard. However, there does not seem to be any intuitive way to come up with a new representation. The rest of this chapter will be devoted the process of comparing and characterizing every representation of a given group.
 
 %Making new ones, comparing two, characterize all? 
 
-\begin{definition}
-	Two representations, $\phi$ and $\psi$, are said to be \textbf{equivalent representations} if there exists some invertible group homomorphism, $\mu$, such that $$\phi = \mu \psi \mu^{-1}$$
-\end{definition}
+%\begin{definition}
+%	Two representations, $\phi$ and $\psi$, are said to be \textbf{equivalent representations} if there exists some invertible group homomorphism, $\mu$, such that $$\phi = \mu \psi \mu^{-1}$$
+%\end{definition}
+
 
 
 

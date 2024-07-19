@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  2 JUL 2024 15:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  19 JUL 2024 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,37 +884,22 @@ l.279 \chapter
               {Representation Theory} <./meme.jpg>]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--300
+Underfull \hbox (badness 10000) in paragraph at lines 296--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--300
+Underfull \hbox (badness 10000) in paragraph at lines 296--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--311
+Underfull \hbox (badness 10000) in paragraph at lines 306--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--311
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--323
+Underfull \hbox (badness 10000) in paragraph at lines 306--313
 
  []
 
@@ -927,8 +912,28 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 [4
 
 ]
-Overfull \hbox (57.39734pt too wide) detected at line 344
+Underfull \hbox (badness 10000) in paragraph at lines 316--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--325
+
+ []
+
+
+Overfull \hbox (57.39734pt too wide) detected at line 346
 [][][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--348
+
  []
 
 
@@ -938,12 +943,28 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [5]
+Underfull \hbox (badness 10000) in paragraph at lines 367--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--369
+
+ []
+
+
 
 
 Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
-[6
+[6]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[7
 
 
 ]
@@ -954,7 +975,7 @@ Appendix A.
 Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
-[7
+[8
 
 ] (./mastersthesistemplate.aux)
  ***********
@@ -965,13 +986,13 @@ Package rerunfilecheck Info: File `mastersthesistemplate.out' has not changed.
 (rerunfilecheck)             Checksum: F9F2DB83E9DC682A3F80E1D1D34B8681;1901.
  ) 
 Here is how much of TeX's memory you used:
- 18770 strings out of 475517
- 292455 string characters out of 5777237
- 1945908 words of memory out of 5000000
+ 18771 strings out of 475517
+ 292461 string characters out of 5777237
+ 1949908 words of memory out of 5000000
  41058 multiletter control sequences out of 15000+600000
  562471 words of font info for 53 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 94i,14n,93p,2360b,619s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,14n,93p,2360b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2024/texmf-dis
@@ -988,10 +1009,10 @@ c/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:
 /texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on mastersthesistemplate.pdf (14 pages, 279079 bytes).
+Output written on mastersthesistemplate.pdf (15 pages, 281969 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
+ 252 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
  102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
