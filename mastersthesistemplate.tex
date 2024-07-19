@@ -1,0 +1,430 @@
+\documentclass[10pt]{ucthesis}
+
+%\newif\ifpdf
+%\ifx\pdfoutput\undefined
+%    \pdffalse % we are not running PDFLaTeX
+%\else
+%\pdfoutput=1 % we are running PDFLaTeX
+%\pdftrue \fi
+
+\usepackage{url}
+%\ifpdf
+
+    \usepackage[pdftex]{graphicx}
+    % Update title and author below...
+    \usepackage[pdftex,plainpages=false,breaklinks=true,colorlinks=true,urlcolor=black,citecolor=black,%
+                                       linkcolor=black,bookmarks=true,bookmarksopen=true,%
+                                       bookmarksopenlevel=3,pdfstartview=FitV,
+                                       pdfauthor={YOUR NAME},
+                                       pdftitle={YOUR THESIS TITLE},
+                                       pdfkeywords={thesis, masters, cal poly}
+                                       ]{hyperref}
+    %Options with pdfstartview are FitV, FitB and FitH
+    \pdfcompresslevel=1
+
+%\else
+%    \usepackage{graphicx}
+%\fi
+
+\usepackage{booktabs} % To thicken table lines
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[letterpaper]{geometry}	
+\usepackage[overload]{textcase}
+\usepackage{amsthm}
+\usepackage{algpseudocode}
+\usepackage{array}
+%\hypersetup{draft}
+%\usepackage[draft]{hyperref}
+%\usepackage{nohyperref}  % This makes hyperref commands do nothing without errors
+%\usepackage{url}  % This makes \url work
+%\usepackage[morefloats=125]{morefloats}
+%\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[letterpaper]{geometry}
+\usepackage[overload]{textcase}
+\usepackage{color}
+\usepackage[nonumberlist,toc]{glossaries}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{morefloats}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{makecell}
+\usepackage{appendix}
+\usepackage[]{algorithm2e}
+\usepackage{titlesec}
+%\usepackage[breaklinks=true,hidelinks,pdfusetitle]{hyperref}
+% \usepackage{cleveref}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Added to avoid windows and orphans
+\usepackage[all]{nowidow}
+% Added to fix spacing between footnote entries
+\usepackage{setspace}
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{example}[definition]{Example}
+\newtheorem{algo}[definition]{Algorithm}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{assumption}[definition]{Assumption}
+
+
+%\bibliographystyle{abbrv}
+
+\setlength{\parindent}{0.25in} \setlength{\parskip}{6pt}
+
+\geometry{verbose,nohead,tmargin=1in,bmargin=1in,lmargin=1.5in,rmargin=1.5in}
+
+\setcounter{tocdepth}{2}
+
+
+% Different font in captions (single-spaced, bold) ------------
+\newcommand{\captionfonts}{\small\bf\ssp}
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+% ---------------------------------------
+
+   
+\titleformat{\chapter}[hang]
+{\normalfont%
+    % \huge% %change this size to your needs for the first line
+    \bfseries}{\chaptertitlename\ \thechapter}{10pt}{%
+    % \huge %change this size to your needs for the second line
+    }
+    
+\titleformat{\section}[hang]
+{\normalfont%
+    % \huge% %change this size to your needs for the first line
+    \bfseries}{ \thesection}{10pt}{%
+    % \huge %change this size to your needs for the second line
+    }
+
+% \renewcommand*{\chapterheadendvskip}{%
+%   \vspace{0.725\baselineskip plus 0.115\baselineskip minus 0.192\baselineskip}%
+% }
+
+\titleformat{\chapter}[display]
+        {\normalfont\normalsize\centering%\bfseries
+        }
+        {\ifthenelse{\equal{\thechapter}{A}}{APPENDICES\\[4.3ex]}{}\chaptertitlename\ \thechapter}
+        {0pt}{\normalsize\uppercase}
+\titlespacing*{\chapter}{0pt}{-10pt}{4.3ex plus .2ex}
+
+
+\titleformat*{\section}{\normalsize%\bfseries
+}
+\titleformat*{\subsection}{\small%\bfseries
+}
+\titleformat*{\subsubsection}{\small%\bfseries
+}
+\titleformat*{\paragraph}{\small%\bfseries
+}
+\titleformat*{\subparagraph}{\small%\bfseries}
+}
+
+% \hypersetup{nolinks=true}
+\begin{document}
+\hypersetup{nolinks=true}
+
+
+% Declarations for Front Matter
+
+% Update fields below!
+\title{Representation Theory in Braid Groups}
+\author{Jaxon Green}
+\degreeyear{2024}
+\degreesemester{June}
+\degree{Master of Science}
+\chair{Professor Ben Richert\\  Professor of Mathematics} 
+\othermembers{Professor Sean Gasiorek}
+%\othermemberA{OTHER MEMBER HERE \\ & Professor of Mathematics}
+%\othermemberB{OTHER MEMBER HERE\\ & Professor of Mathematics} 
+\prevdegrees{None}
+\numberofmembers{1}
+\field{Mathematics} 
+\campus{San Luis Obispo}
+%\copyrightyears{seven}
+
+
+
+\maketitle
+
+\begin{frontmatter}
+
+\copyrightpage
+
+
+\begin{abstract}
+
+Write an abstract here.
+
+\vspace*{-10pt}
+\end{abstract}
+
+\begin{acknowledgements}
+
+Any acknowledgements?
+
+\end{acknowledgements}
+
+\tableofcontents
+
+
+\listoftables
+
+\listoffigures
+
+% Add CHAPTER into table of contents.
+
+%\addtocontents{toc}{%
+   %\noindent Representation Theory\\
+   %\noindent Representations of Groups in Physics
+%}
+
+\end{frontmatter}
+
+\pagestyle{plain}
+
+
+
+
+\renewcommand{\baselinestretch}{1.66}
+
+
+% \chapter{CHAPTER}
+% ------------- Main chapters here --------------------
+\chapter{Sample Chapter 1}
+\label{intro}
+
+ \section{First Section of Introduction}
+ \label{intro1}
+ This is an equation:
+ \begin{equation}
+ c^2=a^2+b^2.
+ \end{equation}
+
+
+
+
+
+
+
+
+
+
+\chapter{Sample Chapter 2}
+
+\section{MY FIRST SECTION}
+There are lots of great resources on the internet to help you learn \LaTeX.  
+Perhaps start with examples like the ones at 
+\begin{verbatim}http://en.wikibooks.org/wiki/LaTeX/Sample_LaTeX_documents.\end{verbatim} 
+
+It is important to cite references.
+%\cite{Blum}  \cite{Gill} \cite{Ped2}
+\cite{Blum, Gill, Ped2}
+
+Organize the paper into sections and subsections.  
+
+\subsection{Interesting subsection title}
+
+You get the idea.  Hey, this one has some displayed math, 
+\[
+   \frac{2}{x} = \sin(\epsilon), 
+\]
+not that it makes any sense whatsoever.  And here is how you 
+do a numbered equation, 
+\begin{equation}
+   \int_{0}^{y^2} f(x) \, dx = \sqrt{z+y}.  
+\end{equation}
+Don't forget to punctuate your equations as part of the sentence.  
+You can do inline math, too, as in $f(x) = \lim_{n\to \infty} n f(x)/n$, which is trivial. 
+
+\subsection{Another interesting subsection title}
+
+Okay, not really.  
+
+
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=4in]{meme.jpg} 
+   \caption{This is a sample figure.  It is not interesting. Note that 
+   figures will ``float'' to wherever \LaTeX \ wants to put them.  }
+   \label{fig:example}
+\end{figure}
+
+
+\chapter{Representation Theory}
+
+\section{Introduction to Representations}
+
+Over the course of this chapter, we will develop the theory and utility of representations. At a glance, representations give us the ability to dial back the complexity of a mysterious group by viewing its elements as matrices. Thanks to the rigorous development and study of linear algebra, groups of matrices are well-understood structures. Representations allow us to unravel the mystery of an unknown group structure and reveal a group's fundamental properties as results of linear algebra techniques. 
+
+\begin{definition}
+	A \textbf{representation} of degree n is a group homomorphism that maps a group into $GL_n(\mathbb{C})$
+\end{definition}
+
+To illustrate to idea of a representation, we will consider the group of all roots of unity ($G$). We can construct multiple homomorphisms from $G$ to showcase different kinds of representations. 
+
+\noindent Note: we will be treating $GL_1(\mathbb{C})$ as $\mathbb{C}$ since they are isomorphic.
+
+\begin{example}
+	(Trivial Representation)\\\\
+	\renewcommand{\arraystretch}{0.7}
+	Let   \begin{tabular}{l}$\phi:G\rightarrow GL_1(\mathbb{C})$\\
+		$\hspace{6mm}g\mapsto 1$
+		\end{tabular} \\\\
+	This map is the trivial homomorphism from $G$ to $GL_1(\mathbb{C})$ and therefore it easily satisfies the requirement of a degree $1$ representation of $G$. We say that $\phi$ is the \textbf{trivial representation} of $G$.
+\end{example}
+	
+
+\begin{example}
+	(Nontrivial Degree 1 Representation) \\
+	By construction of $G$, if $g\in G$, then $g = e^{\frac{2\pi im }{n}}$ where $m,n\in \mathbb{Z}$	
+	\renewcommand{\arraystretch}{0.7}\\\\
+	Let   \begin{tabular}{l}$\phi:G\rightarrow GL_1(\mathbb{C})$\\
+		$\hspace{6mm}g\mapsto g$
+		\end{tabular} \\\\
+	where we view $G$ as a multiplicative subgroup of $\mathbb{C}$. This observation trivializes the argument that $\phi$ is a homomorphism. Therefore, $\phi$ is a degree $1$ representation of $G$.		
+\end{example}
+
+\begin{example}
+	(Degree 2 Representation) \\\\
+	\renewcommand{\arraystretch}{1}
+	Let   \begin{tabular}{l}$\phi:G\rightarrow GL_2(\mathbb{C})$\\
+		$\hspace{0mm}e^{2\pi i\frac{m}{n}}\mapsto \begin{bmatrix}
+							\cos(\frac{2\pi m}{n}) & \sin(\frac{2\pi m}{n}) \\
+							-\sin(\frac{2\pi m}{n}) & \cos(\frac{2\pi m}{n})
+						      \end{bmatrix}$
+		\end{tabular} \\\\
+	To show this map is a homomorphism, we will take two elements of $G$, say $e^{2\pi i\frac{x}{y}}$ and $e^{2\pi i\frac{a }{b}}$ and track the image of their product under $\phi$. \\
+	\begin{equation}
+		\begin{aligned}
+			\phi(e^{2\pi i\frac{x}{y}} * e^{2\pi i\frac{a}{b}} ) &= \phi(e^{2\pi i(\frac{x}{y}+\frac{a}{b})})\\ 
+												    &= \begin{bmatrix}
+														\cos(2\pi(\frac{x}{y}+\frac{a}{b})) & \sin(2\pi(\frac{x}{y}+\frac{a}{b})) \\
+														-\sin(2\pi(\frac{x}{y}+\frac{a}{b})) & \cos(2\pi(\frac{x}{y}+\frac{a}{b}))
+													  \end{bmatrix}\\
+												    &= \begin{bmatrix}
+														\cos(2\pi\frac{x}{y})\cos(2\pi\frac{a}{b}) - \sin(2\pi\frac{x}{y})\sin(2\pi\frac{a}{b})   &\sin(2\pi\frac{x}{y})\cos(2\pi\frac{a}{b}) + \cos(2\pi\frac{x}{y})\sin(2\pi\frac{a}{b})\\
+														-\sin(2\pi\frac{x}{y})\cos(2\pi\frac{a}{b}) - \cos(2\pi\frac{x}{y})\sin(2\pi\frac{a}{b}) & \cos(2\pi\frac{x}{y})\cos(2\pi\frac{a}{b}) - \sin(2\pi\frac{x}{y})\sin(2\pi\frac{a}{b})
+													  \end{bmatrix}\\ 
+												    &= \begin{bmatrix}
+														\cos(2\pi\frac{x}{y}) & \sin(2\pi\frac{x}{y}) \\
+														-\sin(2\pi\frac{x}{y}) & \cos(2\pi\frac{x}{y})
+												          \end{bmatrix}
+											  		  \begin{bmatrix}
+														\cos(2\pi\frac{a}{b}) & \sin(2\pi\frac{a}{b}) \\
+														-\sin(2\pi\frac{a}{b}) & \cos(2\pi\frac{a}{b})
+													  \end{bmatrix} \\
+		                                                                                    &= \phi(e^{2\pi i\frac{x}{y}})*\phi(e^{2\pi i\frac{a}{b}})
+		\end{aligned}
+	\end{equation}
+	Since, $\phi$ has been shown to be a homomorphism, we can conclude that $\phi$ is also a degree $2$ representation of $G$.
+\end{example}
+
+As illustrated in the previous example, the process of confirming a map is a representation is relatively standard. However, there does not seem to be any intuitive way to come up with a new representation. The rest of this chapter will be devoted the process of comparing and characterizing every representation of a given group.
+
+%Making new ones, comparing two, characterize all? 
+
+\begin{definition}
+	Two representations, $\phi$ and $\psi$, are said to be \textbf{equivalent representations} if there exists some invertible group homomorphism, $\mu$, such that $$\phi = \mu \psi \mu^{-1}$$
+\end{definition}
+
+
+
+
+
+
+% ------------- End main chapters ----------------------
+
+
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% the following two commands set up the bibliography and references 
+%% automatically throughout the document.  The file my_special_bibliography.bib 
+%% is one you create with all the info about all your references.  The alpha.bst file 
+%% is included in your LaTeX distribution, but you can modify it if you want.  (But 
+%% you don't want.)  
+%\bibliography{my_special_ibliography}
+%\bibliographystyle{alpha}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{9}
+\bibliographystyle{IEEEtran}
+
+\bibitem{Blum}
+A.~F. Blumberg and G.~L. Mellor.
+\newblock A description of a three-dimensional coastal circulation model.
+\newblock In N.~Heaps, editor, {\em Three Dimensional Coastal Ocean Models},
+  pages 1--16. Amer. Geophys. Union, 1987.
+
+\bibitem{Gill}
+A.~Gill.
+\newblock {\em Atmosphere - {O}cean {D}ynamics}.
+\newblock Academic Press, 1982.
+
+\bibitem{Chob}
+P.~F. Choboter, R.~M. Samelson, and J.~S. Allen.
+\newblock A {N}ew {S}olution of a {N}onlinear {M}odel of {U}pwelling.
+\newblock {\em J. Phys Oceanogr.}, 35:532--544, 2005.
+
+\bibitem{Lentz}
+S.~J. Lentz and D.~C. Chapman.
+\newblock The importance of non-linear cross-shelf momentum flux during
+  wind-driven coastal upwelling.
+\newblock {\em J. Phys. Oceanogr.}, 34:2444--2457, 2004.
+
+\bibitem{Ped2}
+J.~Pedlosky.
+\newblock A {N}onlinear {M}odel of the {O}nset of {U}pwelling.
+\newblock {\em J. Phys Oceanogr.}, 8:178--187, 1978.
+
+\end{thebibliography}
+
+
+% Indents Appendix in Table of Contents
+\makeatletter
+\addtocontents{toc}{\let\protect\l@chapter\protect\l@section}
+\makeatother
+
+% Hack to make Appendices to appear in Table of Contents
+\addtocontents{toc}{%
+   \noindent APPENDICES
+}
+
+\begin{appendices}
+\chapter{Appendix A Title} \label{Appendix A}
+
+Blah blah
+
+\end{appendices}
+
+
+%\addcontentsline{toc}{chapter}{Bibliography}
+
+\end{document}
