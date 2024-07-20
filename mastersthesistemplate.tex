@@ -58,6 +58,7 @@
 \usepackage{appendix}
 \usepackage[]{algorithm2e}
 \usepackage{titlesec}
+
 %\usepackage[breaklinks=true,hidelinks,pdfusetitle]{hyperref}
 % \usepackage{cleveref}
 
@@ -79,6 +80,7 @@
 \newtheorem{algo}[definition]{Algorithm}
 \newtheorem{lemma}[definition]{Lemma}
 \newtheorem{assumption}[definition]{Assumption}
+\newtheorem{remark}[definition]{Remark}
 
 
 %\bibliographystyle{abbrv}
@@ -283,9 +285,9 @@ Okay, not really.
 Over the course of this chapter, we will develop the theory and utility of representations. At a glance, representations give us the ability to dial back the complexity of a mysterious group by viewing its elements as matrices. Thanks to the rigorous development and study of linear algebra, groups of matrices are well-understood structures. Representations allow us to unravel the mystery of an unknown group structure and reveal a group's fundamental properties as results of linear algebra techniques. 
 
 \begin{definition}
-	A \textbf{representation} of degree n is a group homomorphism that maps a group into $GL_n(\mathbb{C})$
+	(First Definition) A \textbf{representation} of degree n is a group homomorphism that maps a group into $GL_n(\mathbb{C})$
 	$$\phi:G\rightarrow GL_n(\mathbb{C})$$
-	If $\phi$ is an injective homomorphism, we say that the representation is \textbf{faithful}. Otherwise, the representation is called \textbf{degenerate}.
+	We say that $\phi$ is a representation of $G$. If $\phi$ is an injective homomorphism, we say that the representation is \textbf{faithful}. Otherwise, the representation is called \textbf{degenerate}.
 \end{definition}
 
 To illustrate to concept of representations, we will consider the group of all roots of unity, $G$, for the following examples. We can construct multiple homomorphisms from $G$ to showcase different kinds of representations. 
@@ -346,7 +348,7 @@ To illustrate to concept of representations, we will consider the group of all r
 	\end{equation}
 	Since, $\phi$ has been shown to be a homomorphism, we can conclude that $\phi$ is also a degree $2$ representation of $G$.\\
 
-	\noindent Is $\phi$ faithful or degenrate?A faithful representation would have a trivial kernel. Suppose $\phi(e^{2\pi i\frac{x}{y}}) = I_2$ ($I_n$ is the Identity Matrix of dimension $n\times n$). 
+	\noindent Is $\phi$ faithful or degenerate?A faithful representation would have a trivial kernel. Suppose $\phi(e^{2\pi i\frac{x}{y}}) = I_2$ ($I_n$ is the Identity Matrix of dimension $n\times n$). 
 	\begin{equation}
 		%\begin{aligned}
 			\begin{bmatrix}
@@ -360,12 +362,50 @@ To illustrate to concept of representations, we will consider the group of all r
 		%\end{aligned}
 	\end{equation}
 	\noindent Comparing entrywise, we see that $\cos(2\pi\frac{x}{y}) = 1$ and $\pm\sin(2\pi\frac{x}{y}) = 0$. Using any of these equations, we see that $\frac{x}{y}= n$ for some $n\in\mathbb{Z}$. Therefore, $ker(\phi)=\mathbb{Z}$ and this representation is degenerate.
-
-
 \end{example}
 
-Identify $\phi$ with operators on a vector space.
-i.e. show representation matrices act on vector space and that linear transformations induce matrix reps.\\\\
+Alternatively, we can formulate the definition of a representation in a different context, illuminating a useful interpretation that will be used extensively throughout this paper.
+
+\begin{definition}
+	(Second Definition) Let $G$ be a group, let $V$ be a linear vector space, and let $\mathcal{L}(V)$ be the group of linear operators on V together with the operation of composition. A \textbf{representation} of $G$ is a group homomorphism that maps $G$ into $\mathcal{L}(V)$.
+	$$\phi : G \rightarrow \mathcal{L}(V)$$
+The degree of the representation is the dimension of $V$.
+\end{definition}
+
+\begin{remark}
+	In the case where we have a finite dimensional vector space, we can make an interesting observation. Suppose $V$ is finite dimensional and $G$ is a group. It is easy to identify both definitions of representations with one another. Let $\{e_i\}_{i=1}^n$ be a basis for $V$. Let $\phi : G \rightarrow \mathcal{L}(V)$ be a representation of $G$. Then $\forall g \in G$, $U_g\coloneq\phi(g)$ is a linear operator on $V$. $U_g$ has a corresponding matrix, $M(U_g)$, with coefficients defined by the image of our basis vectors of $V$.
+$$M(U_g) = \begin{array}{c c}
+			U_g(e_1) \hspace{2mm} U_g(e_2) \hspace{2mm} \hdots \hspace{2mm}  U_g(e_n) & \\
+			\begin{bmatrix}
+				m_{11} & m_{12} & \hdots & m_{1n}\\
+				m_{21} & m_{22} & \hdots & m_{2n} \\
+				\vdots & \vdots & \ddots & \vdots\\
+				m_{n1} & m_{n2} & \hdots & m_{nn}\\
+			\end{bmatrix}
+			&
+		        %\def\arraystretch{0.75}
+			\begin{array}{c}
+				e_1\\
+				e_2\\
+				\vdots\\
+				e_n\\
+			\end{array}
+		\end{array}$$
+$$U_g(e_j) = \sum_{i=1}^n m_{ij}e_i$$
+\renewcommand{\arraystretch}{0.5}
+Does the map \begin{tabular}{l}
+			$\psi:G\rightarrow GL_n(\mathbb{C})$\\
+			\hspace{6mm}$g\mapsto M(U_g)$
+       		 \end{tabular}
+satisfy the criteria to be considered a representation (by the first definition)? If $g,h \in G$, then
+
+	$$\psi(gh) = M(U_{gh}) = M(U_g\circ U_h) = M(U_g)*M(U_h) = \psi(g)\psi(h)$$
+
+Where the homomorphism property of $\phi$ is used in succession with link between composition and multiplication of operators and their corresponding matrices. Therefore, we have established a very special link between th
+\end{remark}
+
+%Identify $\phi$ with operators on a vector space.
+%i.e. show representation matrices act on vector space and that linear transformations induce matrix reps.\\\\
 
 
 
