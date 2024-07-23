@@ -219,17 +219,15 @@ Any acknowledgements?
 
 % \chapter{CHAPTER}
 % ------------- Main chapters here --------------------
-\chapter{Sample Chapter 1}
-\label{intro}
+%\chapter{Sample Chapter 1}
+%\label{intro}
 
- \section{First Section of Introduction}
- \label{intro1}
- This is an equation:
- \begin{equation}
- c^2=a^2+b^2.
- \end{equation}
-
-
+ %\section{First Section of Introduction}
+ %\label{intro1}
+ %This is an equation:
+ %\begin{equation}
+ %c^2=a^2+b^2.
+ %\end{equation}
 
 
 
@@ -238,46 +236,48 @@ Any acknowledgements?
 
 
 
-\chapter{Sample Chapter 2}
 
-\section{MY FIRST SECTION}
-There are lots of great resources on the internet to help you learn \LaTeX.  
-Perhaps start with examples like the ones at 
-\begin{verbatim}http://en.wikibooks.org/wiki/LaTeX/Sample_LaTeX_documents.\end{verbatim} 
 
-It is important to cite references.
+%\chapter{Sample Chapter 2}
+
+%\section{MY FIRST SECTION}
+%There are lots of great resources on the internet to help you learn \LaTeX.  
+%Perhaps start with examples like the ones at 
+%\begin{verbatim}http://en.wikibooks.org/wiki/LaTeX/Sample_LaTeX_documents.\end{verbatim} 
+
+%It is important to cite references.
 %\cite{Blum}  \cite{Gill} \cite{Ped2}
-\cite{Blum, Gill, Ped2}
+%\cite{Blum, Gill, Ped2}
 
-Organize the paper into sections and subsections.  
+%Organize the paper into sections and subsections.  
 
-\subsection{Interesting subsection title}
+%\subsection{Interesting subsection title}
 
-You get the idea.  Hey, this one has some displayed math, 
-\[
-   \frac{2}{x} = \sin(\epsilon), 
-\]
-not that it makes any sense whatsoever.  And here is how you 
-do a numbered equation, 
-\begin{equation}
-   \int_{0}^{y^2} f(x) \, dx = \sqrt{z+y}.  
-\end{equation}
-Don't forget to punctuate your equations as part of the sentence.  
-You can do inline math, too, as in $f(x) = \lim_{n\to \infty} n f(x)/n$, which is trivial. 
+%You get the idea.  Hey, this one has some displayed math, 
+%\[
+   %\frac{2}{x} = \sin(\epsilon), 
+%\]
+%not that it makes any sense whatsoever.  And here is how you 
+%do a numbered equation, 
+%\begin{equation}
+  % \int_{0}^{y^2} f(x) \, dx = \sqrt{z+y}.  
+%\end{equation}
+%Don't forget to punctuate your equations as part of the sentence.  
+%You can do inline math, too, as in $f(x) = \lim_{n\to \infty} n f(x)/n$, which is trivial. 
 
-\subsection{Another interesting subsection title}
+%\subsection{Another interesting subsection title}
 
-Okay, not really.  
+%Okay, not really.  
 
 
 
-\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
-   \centering
-   \includegraphics[width=4in]{meme.jpg} 
-   \caption{This is a sample figure.  It is not interesting. Note that 
-   figures will ``float'' to wherever \LaTeX \ wants to put them.  }
-   \label{fig:example}
-\end{figure}
+%\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   %\centering
+   %\includegraphics[width=4in]{meme.jpg} 
+   %\caption{This is a sample figure.  It is not interesting. Note that 
+   %figures will ``float'' to wherever \LaTeX \ wants to put them.  }
+   %\label{fig:example}
+%\end{figure}
 
 
 \chapter{Representation Theory}
@@ -459,7 +459,7 @@ This representation will be revisited later in greater detail as multiplication 
 
 For the rest of the paper, we shall almost exclusively be considering finite dimensional vector spaces and therefore will interchangeably use both definitions of representations as needed.
 
-\section{Properties of Representations}
+\section{Decomposing and Characterizing Representations}
 
 While we have shown it is relatively straightforward to argue whether a given map is a representation, it is not yet clear how we can come up with our own, compare different ones, or what kinds of properties a representation has. This section will explore the properties of representations and how we can use them to deepen our understanding of representations.
 
@@ -746,15 +746,33 @@ If $ker(M)$ is the whole space or $im(M) = \{0\}$, then clearly, $M=0$. However,
 $$(M-\lambda I)\phi(g) = \phi(g) (M-\lambda I)$$
 Therefore, it must be the case that $M-\lambda I = 0$ \qedsymbol
 
+While irreducible representations are of great importance to us, we can also deepend our understanding of a representation when our underlying vector space has an inner-product structure. In this case, we can further characterize our representations. 
 
+\begin{definition}
+	Let $V$ be an inner-product space. Let $U \in \mathcal{L}(V)$. $U$ is said to be \textbf{unitary} if $U$ is surjective and $\forall x,y \in V$, $\langle x , y \rangle = \langle U(x) , U(y) \rangle$.
+\end{definition}
 
+\begin{definition}
+	A representation, $\phi$, of a group, $G$, is said to be a \textbf{unitary representation} if $\forall g\in G$, $\phi(g)$ is unitary.
+\end{definition}
 
-%Assume Reducible
-%Show Non-Trivial Invarint Subspace => decomp of matrices into block of invariant and block of other stuff
-% => each block can be written as direct sum
-% => together it is all one direct sum
+\begin{theorem}
+	Every representation of a finite group on an inner-product space is equivalent to a unitary representation
+\end{theorem}
 
+\noindent (Pf.) Let $\phi$ be a non-unitary representation of a finite group $G$ defined on an inner-product space. Let $\phi_g$ denote $\phi(g)$, and let $S$ be defined such that $\langle S(x) , S(y) \rangle = \sum_{g \in G} \langle \phi_g (x) , \phi_g (y) \rangle$. We will show that the operator $\forall g \in G$, $U_g \coloneq S\phi_gS^{-1}$ is unitary. Fixing $g\in G$,
+\begin{equation}
+	\begin{aligned}
+		\langle U_g(x) , U_g(y) \rangle &= \langle S\phi_gS^{-1}(x) , S\phi_gS^{-1}(y)\rangle \\
+									&= \sum_{h \in G} \langle \phi_h(\phi_gS^{-1}(x)) , \phi_h(\phi_gS^{-1}(y))\rangle \\
+									&= \sum_{h\in G} \langle \phi_{hg}(S^{-1}(x)) , \phi_{hg}S^{-1}(y))\rangle \\
+									&= \sum_{l\in G} \langle \phi_{l}(S^{-1}(x)) , \phi_{l}S^{-1}(y))\rangle \\
+									&= \langle S(S^{-1}(x)) , S(S^{-1}(y))\rangle \\
+									&= \langle x , y \rangle 
+	\end{aligned}
+\end{equation}
 
+Therefore, $U_g$ is unitary $\forall g \in G$. \qedsymbol
 
 
 
