@@ -74,6 +74,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{example}[definition]{Example}
@@ -81,6 +82,7 @@
 \newtheorem{lemma}[definition]{Lemma}
 \newtheorem{assumption}[definition]{Assumption}
 \newtheorem{remark}[definition]{Remark}
+\newtheorem{corrolary}[definition]{Corrolary}
 
 
 %\bibliographystyle{abbrv}
@@ -292,16 +294,17 @@ Over the course of this chapter, we will develop the theory and utility of repre
 
 To illustrate to concept of representations, we will consider the group of all roots of unity, $G$, for the following examples. We can construct multiple homomorphisms from $G$ to showcase different kinds of representations. 
 
-\noindent Note: Since $GL_1(\mathbb{C})$ as $\mathbb{C}$ are isomorphic, we identify each $1x1$ matrix with its corresponding entry with its element in $\mathbb{C}$.
+\noindent Note: Since $GL_1(\mathbb{C})$ as $\mathbb{C}$ are isomorphic, we identify 3each $1x1$ matrix with its corresponding entry with its element in $\mathbb{C}$.
 
 \begin{example}
 	(Trivial Representation)\\\\
 	\renewcommand{\arraystretch}{0.7}
 	Let   \begin{tabular}{l}$\phi:G\rightarrow GL_1(\mathbb{C})$\\
 		$\hspace{6mm}g\mapsto 1$
-		\end{tabular} \\\\
-	This map is the trivial homomorphism from $G$ to $GL_1(\mathbb{C})$ and therefore it easily satisfies the requirement of a degree $1$ representation of $G$. We say that $\phi$ is the \textbf{trivial representation} of $G$.
+		\end{tabular}
 \end{example}
+\noindent This map is the trivial homomorphism from $G$ to $GL_1(\mathbb{C})$ and therefore it easily satisfies the requirement of a degree $1$ representation of $G$. We say that $\phi$ is the \textbf{trivial representation} of $G$.
+
 	
 
 \begin{example}
@@ -310,9 +313,10 @@ To illustrate to concept of representations, we will consider the group of all r
 	\renewcommand{\arraystretch}{0.7}\\\\
 	Let   \begin{tabular}{l}$\phi:G\rightarrow GL_1(\mathbb{C})$\\
 		$\hspace{6mm}g\mapsto g$
-		\end{tabular} \\\\
-	where we view $G$ as a multiplicative subgroup of $\mathbb{C}$. This observation trivializes the argument that $\phi$ is a homomorphism. Therefore, $\phi$ is a degree $1$ representation of $G$.		
+		\end{tabular}
 \end{example}
+\noindent where we view $G$ as a multiplicative subgroup of $\mathbb{C}$. This observation trivializes the argument that $\phi$ is a homomorphism. Therefore, $\phi$ is a degree $1$ representation of $G$.		
+
 
 \begin{example}
 	(Degree 2 Representation) \\\\
@@ -322,8 +326,9 @@ To illustrate to concept of representations, we will consider the group of all r
 							\cos(\frac{2\pi m}{n}) & \sin(\frac{2\pi m}{n}) \\
 							-\sin(\frac{2\pi m}{n}) & \cos(\frac{2\pi m}{n})
 						      \end{bmatrix}$
-		\end{tabular} \\\\
-	To show this map is a homomorphism, we will take two elements of $G$, say $e^{2\pi i\frac{x}{y}}$ and $e^{2\pi i\frac{a }{b}}$ and track the image of their product under $\phi$. \\
+		\end{tabular}
+\end{example}
+\noindent To show this map is a homomorphism, we will take two elements of $G$, say $e^{2\pi i\frac{x}{y}}$ and $e^{2\pi i\frac{a }{b}}$ and track the image of their product under $\phi$. \\
 	\begin{equation}
 		\begin{aligned}
 			\phi(e^{2\pi i\frac{x}{y}} * e^{2\pi i\frac{a}{b}} ) &= \phi(e^{2\pi i(\frac{x}{y}+\frac{a}{b})})\\ 
@@ -361,8 +366,8 @@ To illustrate to concept of representations, we will consider the group of all r
 			\end{bmatrix}\\
 		%\end{aligned}
 	\end{equation}
-	\noindent Comparing entrywise, we see that $\cos(2\pi\frac{x}{y}) = 1$ and $\pm\sin(2\pi\frac{x}{y}) = 0$. Using any of these equations, we see that $\frac{x}{y}= n$ for some $n\in\mathbb{Z}$. Therefore, $ker(\phi)=\mathbb{Z}$ and this representation is degenerate.
-\end{example}
+	\noindent Comparing entrywise, we see that $\cos(2\pi\frac{x}{y}) = 1$ and $\pm\sin(2\pi\frac{x}{y}) = 0$. Using any of these equations, we see that $\frac{x}{y}= n$ for some $n\in\mathbb{Z}$. Therefore, $ker(\phi)=\mathbb{Z}$ and this representation is degenerate.\\
+
 
 Alternatively, we can formulate the definition of a representation in a different context, illuminating a useful interpretation that will be used extensively throughout this paper.
 
@@ -399,23 +404,370 @@ Does the map \begin{tabular}{l}
        		 \end{tabular}
 satisfy the criteria to be considered a representation (by the first definition)? If $g,h \in G$, then
 
-	$$\psi(gh) = M(U_{gh}) = M(U_g\circ U_h) = M(U_g)*M(U_h) = \psi(g)\psi(h)$$
+	$$\psi(gh) = M(\phi(gh)) = M(\phi(g)\circ \phi(h)) = M(\phi(g))*M(\phi(h)) = \psi(g)\psi(h)$$
 
-Where the homomorphism property of $\phi$ is used in succession with link between composition and multiplication of operators and their corresponding matrices. Therefore, we have established a very special link between th
+Where the homomorphism property of $\phi$ is used in succession with the relationship between the composition of operators and the multiplication of their corresponding matrices. This observation illustrates a special conenction between the two definitions of a representation. If we are given a representation defined in the either way, we can interpret the target space of the homomorphism in the context of both definitions. That is to say, every $n\times n$ matrix can be interpreted as a linear operator on an $n$-dimensional vector space, and vice-versa. The homomorphism property of one definition is a necessary condition for the homomorphism in the other definition. Hence, we can see the two definitions of representations are equivalent in the case of a finite dimensional vector space.
 \end{remark}
 
-%Identify $\phi$ with operators on a vector space.
-%i.e. show representation matrices act on vector space and that linear transformations induce matrix reps.\\\\
+\begin{example}
+	Let $G$ be the group defined by the complex unit circle and the operation of multiplication and let $V = \mathbb{C}$ 
+	\begin{center}
+		 \begin{tabular}{l}$\phi:G\rightarrow \mathcal{L}(V)$\\
+				$\hspace{4mm}e^{i\theta}\mapsto U_{e^{i\theta}}$
+		\end{tabular}
+	\end{center}
+	where $U_{e^{i\theta}}$ is the linear operator (on $V$) that multiplies its input by $e^{i\theta}$. 
+\end{example}
+
+Each operator is clearly linear. The process of confirming a map is a representation is relatively standard. However, there does not seem to be any intuitive way to come up with a new representation. The rest of this chapter will be devoted the process of comparing and characterizing every representation of a given group. We appeal to Definition 3.5 to argue that this map is a representation. Let $e^{i\theta}$, $e^{i\psi} \in G$. Then $\phi(e^{i\theta} * e^{i\psi}) = U_{e^{i(\theta+\psi)}}$. For all $re^{i\gamma} \in V$, we have
+
+	\begin{equation}
+		\begin{aligned}
+			U_{e^{i(\theta+\psi)}}(re^{i\gamma}) &= re^{i\gamma} * e^{i(\theta+\psi)} \\
+										&= re^{i\gamma + i\psi + i\theta} \\
+										&= U_{e^{i\theta}}(re^{i\gamma + i\psi}) \\
+										&= U_{e^{i\theta}}(U_{e^{i\psi}}(re^{i\gamma})) \\
+										&= (U_{e^{i\theta}}\circ U_{e^{i\psi}}) (re^{i\gamma})
+		\end{aligned}
+	\end{equation}
+
+Since $\phi(e^{i\psi})*\phi(e^{i\theta}) = U_{e^{i\theta}}\circ U_{e^{i\psi}}$, we have shown that the homomorphism property of $\phi$ is satisfied. Therefore, $phi$ is a representation. We can now identify this definition of a representation with the initial formulation in two possible ways.
+
+\begin{assumption}
+	$V$ is a vector space over $\mathbb{C}$ (as a field). 
+\end{assumption}
+
+If we consider $V$ to be a vector space over $\mathbb{C}$, then it is a one-dimensional vector space. This means that the matrix of any operator defined on $V$ will be a $1\times 1$ matrix (or, an element of $\mathbb{C}$). Taking the basis $\{1\}$ of $V$ and $e^{i\theta} \in G$, we see that 
+
+$$M(U_{e^{i\theta}}) = \begin{bmatrix}
+					e^{i\theta}
+				\end{bmatrix} = e^{i\theta} $$
+This is clearly a degree one representation given by Definition 3.1.
+
+\begin{assumption}
+	$V$ is a vector space over $\mathbb{R}$
+\end{assumption}
+
+If $V$ is a vector space over $\mathbb{R}$, then it is a two-dimensional vector space. This means that the matrix of any operator defined on $V$ will have be of shape $2\times2$. Taking the basis $\{1,i\}$ of $V$, any $e^{i\theta} \in G$, and the identity $e^{i\theta} = \cos(\theta) + i\sin(\theta)$ we see that the following equalities hold:
+$$(a+bi)e^{i\theta} = (a\cos(\theta)-b\sin(\theta))+i(a\sin(\theta)+b\cos(\theta))$$
+$$M(U_{e^{i\theta}}) = \begin{bmatrix}
+					\cos(\theta) & -\sin(\theta) \\
+                                        \sin(\theta) & \cos(\theta)
+				\end{bmatrix}$$
+
+This representation will be revisited later in greater detail as multiplication of complex numebrs by $e^{i\theta}$ corresponds to rotation in the complex plane by the angle $\theta$ about the origin.
+
+For the rest of the paper, we shall almost exclusively be considering finite dimensional vector spaces and therefore will interchangeably use both definitions of representations as needed.
+
+\section{Properties of Representations}
+
+While we have shown it is relatively straightforward to argue whether a given map is a representation, it is not yet clear how we can come up with our own, compare different ones, or what kinds of properties a representation has. This section will explore the properties of representations and how we can use them to deepen our understanding of representations.
+
+\begin{definition}
+	Two representations, $\phi$ and $\psi$, are said to be \textbf{equivalent representations} if there exists some invertible operator/matrix (depending on definition of representation), $M$, such that $$\phi = M \psi M^{-1}$$
+\end{definition}
+
+In the context of linear algebra, this conjugation by an invertible matrix can most easily be thought of as a change of basis transformation. With this in mind, we can see that representations of groups can be spilt into equivalence classes based on matrix similarity (or similarity of any matrix of the operator). In order to deduce whether or not representations are equivalent, we need to utilize matrix-similarity-preserving opertations to find common traits. A natural first choice is the trace operation on matrices.
+
+\begin{definition}
+	The \textbf{character} of a representation, $\phi$, on $g \in G$, denoted $\chi^{\phi}(g)$, is defined by $$\chi^{\phi}(g)=trace(\phi(g))$$
+\end{definition}
+
+\begin{theorem}
+	If two representations are equivalent, then character of both representations are the same.
+\end{theorem}
+
+(Pf.) Suppose $\phi$ and $\psi$ be two equivalent representations. Then $\exists M$ such that $\forall g \in G$, $\phi(g) = M\psi(g)M^{-1}$. Then $\forall g \in G$,
+
+\begin{equation}
+	\begin{aligned}
+		\chi^{\phi}(g) &= trace(\phi(g)) \\
+						&= trace(M\psi(g)M^{-1}) \\
+						&= trace(\psi(g)M^{-1}M) \\
+						&= trace(\psi(g)) = \chi^{\psi}(g) \\
+	\end{aligned}
+\end{equation}
+
+Therefore, $\chi^{\phi} = \chi^{\psi}$. $\qedsymbol$\\
+
+The character of a representation gives us the ability to quickly rule out equivalence of representations without getting into messy matrix calculations, especially in higher degree representations.
+
+\begin{example}
+	Let $S_3$ be the symmetric group of degree 3 and $\phi$ and $\psi$ be defined below. Comparing the outputs of each map, it is clear that the maps are not identical. Are these representations equivalent? We can use the trace argument to justify why they are not. We can observe the following equalities directly: 
+$$\chi^{\phi}(\sigma) = \chi^{\psi}(\sigma) \hspace{1mm} for \hspace{1mm} \sigma \in \{e, (12), (13), (23)\}$$
+$$\chi^{\phi}(\sigma) \neq \chi^{\psi}(\sigma) \hspace{1mm} for \hspace{1mm} \sigma \in \{(132), (123)\}$$
+As a result, $\chi^{\phi} = \chi^{\psi}$, and therefore, these representations are not equivalent. Despite this fact, the significance of this example is that we can identify similarities in both representations that lead us to believe that there is something inherently similar about them. Specifically, both representations send every permutation in $S_3$ to a matrix with its first row (column) fixed as $[1 \hspace{1mm} 0 \hspace{1mm} 0](^T)$. This observation is reminiscent of the trivial representation, defined in Example 3.2. We will revisit this matter later.
+\\
+	\renewcommand{\arraystretch}{1.25}
+	\begin{center}
+		$\begin{array}{c c}
+			\begin{array}{c}
+				\phi:S_3\rightarrow M_3(\mathbb{R}) \\
+				\hspace{0mm} e \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 1 & 0 \\
+												0 & 0 & 1 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (12) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 1 & 0 \\
+												0 & 0 & -1 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (13) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 1 & 0 \\
+												0 & 0 & -1 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (23) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 1 & 0 \\
+												0 & 0 & -1 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (123) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 1 & 0 \\
+												0 & 0 & 1 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (132) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 1 & 0 \\
+												0 & 0 & 1 \\
+											\end{bmatrix}\\
+			\end{array} &
+	
+			\begin{array}{c}
+			\psi:S_3\rightarrow M_3(\mathbb{R}) \\
+				\hspace{0mm} e \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 1 & 0 \\
+												0 & 0 & 1 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (12) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 1 & 0 \\
+												0 & -1 & -1 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (13) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & -1 & -1 \\
+												0 & 0 & 1 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (23) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 0 & 1 \\
+												0 & 1 & 0 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (123) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & 0 & 1 \\
+												0 & -1 & -1 \\
+											\end{bmatrix}\\
+				\hspace{0mm} (132) \mapsto \begin{bmatrix}
+												1 & 0 & 0 \\
+												0 & -1 & -1 \\
+												0 & 1 & 0 \\
+											\end{bmatrix}\\
+			\end{array}
+		\end{array}$
+	\end{center}
+\end{example} 
+
+As eluded to in the previous example, it seems that representations can share "pieces" in common without being considered equivalent. In the same way we decompose linear operators (and their matrices) into a block diagonal structure for the simplicity of our study, we can decompose the linear operators (and matrices) of a representation in the same way to make strikingly similar conclusions. In this way, we can reveal a more intuitive understanding of the underlying representation and create an natural way to fully decompose any arbitrary representation into natural components. 
+
+\begin{definition}
+	Let $\phi$ be a representation of the group $G$ and $U_G \coloneq \{\phi(g)=U_g: V\rightarrow V \hspace{1mm}| \hspace{1mm} g\in G\}$. Let $W \subset V$. $W$ is said to be an \textbf{invariant subspace} with respect to $U_G$ if $\forall v \in W$ and $\forall g \in G$, $U_g(v)\in W$.
+\end{definition}
+
+In general, we say that a subspace satisfying the above condition is invariant with respect to $\phi$. Our most familiar understanding of invariant subspaces comes from our study of decomposing generic linear operators (matrices) into its corresponding eigenspaces. This process is not unfamiliar from what we will study next, but with a heavier restriction, since our new definition considers many operators at once.
+
+\begin{definition}
+	A representation is said to be \textbf{irreducible} if there is no nontrivial, invariant subspace with respect to it. Otherwise, we say that the representation is reducible.
+\end{definition}
+
+It will turn out that the irreducible representations of a group will be the "pieces" that we can recognize as the building blocks of each representation. Due to the nature of invariant subspaces, it is no surprise that we can see a block diagonal structure form in the matrices of representations.
+
+\begin{definition}
+	If $M$ and $N$ are square matrices, then let $$M\oplus N \coloneq \begin{bmatrix}
+																			M & 0\\
+																			0 & N\\
+																		\end{bmatrix}$$
+	we call this new matrix the \textbf{direct sum of M and N}
+\end{definition}
+
+\begin{example}
+	Referring back to one of the matrices from Example 3.13, we can see that
+$$\begin{bmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & -1 & -1
+\end{bmatrix} = \begin{bmatrix}
+					1
+					\end{bmatrix} \oplus
+					\begin{bmatrix}
+						1 & 0 \\
+						-1 & -1
+					\end{bmatrix}$$
+It becomes increasingly clear that the fixed first row and column of these matrices are directly linked to the trivial representation.
+\end{example}
+
+\begin{theorem}
+	Let $\phi$ be a representation of a group $G$.  Then there exists a set of irreducible representations of $G$, $\{\psi_i\}_{i=1}^j$, such that $$\phi = T\left(\bigoplus_{i=1}^j \alpha_i*\psi_i\right)T^{-1}$$ where $\alpha_i*\psi_i \coloneq \underbrace{\psi_i \oplus \psi_i \oplus \hdots \oplus \psi_i}_{\alpha_i times}$ and $T$ is some invertible matrix/operator. 
+\end{theorem}
+ 
+\noindent (Pf.) By induction on the degree of the representation $n$. \\
+
+(Base Case: $n = 1$) Suppose that $\phi$ is a degree one representation of $G$, with $U_G$ being defined as in Definition 3.14. Then $\forall U_g \in U_G$, we have seeking to show that every invariant subspace of $V$ with respect to $U_g$ is trivial. Suppose that $W \subset V$ is a subspace and let $dim(W)$ denote the dimension of $W$. Then, $dim(W) \leq dim(V) = 1$ as given by the degree of the representation. If $dim(W) = 1$, then $W=V$ and therefore, $W$ is a trivial subspace. If $dim(W) < dim(V)$, then it can only be the case that $dim(W) = 0$, and therefore, $W= \{0\}$, which is also trivial. Therefore, every possible subspace of $V$ must be trivial, and as a result, every invariant subspace must also be trivial. Hence, $\phi$ is an irreducible representation. \\
+
+(Inductive Hypothesis) Suppose that for any representation of degree $0<k\leq n$, $\phi$, we have that $\phi =T\left(\bigoplus_{i=1}^j \alpha_i*\psi_i\right)T^{-1}$ where $T$ is some invertible matrix/operator and $\{\psi_i\}_{i=1}^j$ is some set of irreducible representations of $G$. \\
+
+Let $\phi'$ be a representation of G of degree $n+1$. If $\phi'$ is irreducible, then we are done. If $\phi'$ is reducible, then $\exists W \subset V$ such that $W$ is a nontrivial, $\phi'$-invariant subspace. Let $W = span\{w_i\}_{i=1}^k$ where $k\leq n$ and choosing a basis for $V$ to be $\{w_i\}_{i=1}^k \cup \{v_i\}_{i=k+1}^{n+1}$ with $v_i \notin W \hspace{1.5mm} \forall i$. Then, there exists an invertible matrix $T$ such that
+\begin{equation}
+	M(\phi') = T\begin{bmatrix}
+					M_W& 0\\
+					0 & M_{X}\\
+					\end{bmatrix}T^{-1}
+\end{equation}
+where $M_W$ is a $k\times k$ block representing the invariant subspace $W$ and $M_{X}$ is a $(n-k+1)\times (n-k+1)$ block representing the subspace defined by $X \coloneq span\{v_i\}_{i=k+1}^{n+1}$. Given the structure of our block matrices, both the $M_W$ and $M_X$ blocks are $k$ degree and $n+1-k$ degree representations of $G$. Therefore, we can apply our induction hypothesis to each of the blocks and to argue that 
+$$M_W = A\left(\bigoplus_{i=1}^j \alpha_i\psi_i \right)A^{-1}$$
+$$M_W = B\left(\bigoplus_{i=1}^{l} \beta_i\mu_i  \right)B^{-1}$$
+\begin{equation}
+	M(\phi') = T\begin{bmatrix}
+					A\left(\bigoplus_{i=1}^j \alpha_i\psi_i \right)A^{-1}& 0\\
+					0 &  B\left(\bigoplus_{i=1}^{l} \beta_i\mu_i  \right)B^{-1}\\
+					\end{bmatrix}T^{-1}
+\end{equation}
+We can break up our matrix $T$ into block structure to match the size of our blocks in Equation 3.5.
+\begin{equation}
+	M(\phi') =  \begin{bmatrix}
+					T_{11} & T_{12} \\
+					T_{21} & T_{22}
+				\end{bmatrix}
+				\begin{bmatrix}
+					A\left(\bigoplus_{i=1}^j \alpha_i\psi_i \right)A^{-1}& 0\\
+					0 &  B\left(\bigoplus_{i=1}^{l} \beta_i\mu_i  \right)B^{-1}\\
+				\end{bmatrix}
+				\begin{bmatrix}
+					T_{11}^{-1} & T_{12}^{-1} \\
+					T_{21}^{-1} & T_{22}^{-1}
+				\end{bmatrix}
+\end{equation}
+Using algebraic manipulations, we can pull back our change of basis matrices into corresponding blocks of $T$.
+\begin{equation}
+	M(\phi') =  \begin{bmatrix}
+					T_{11}A & T_{12}B \\
+					T_{21}A & T_{22}B
+				\end{bmatrix}
+				\begin{bmatrix}
+					\bigoplus_{i=1}^j \alpha_i\psi_i & 0\\
+					0 &  \bigoplus_{i=1}^{l} \beta_i\mu_i \\
+				\end{bmatrix}
+				\begin{bmatrix}
+					A^{-1}T_{11}^{-1} & A^{-1}T_{12}^{-1} \\
+					B^{-1}T_{21}^{-1} & B^{-1}T_{22}^{-1}
+				\end{bmatrix}
+\end{equation}
+%Prove that our new T and T^{-1} are actually inverses
+Given that the flanking matrices are both inverses of each other, which we will refer to as $P$ and $P^{-1}$ respectively, we take $\{\nu_i\}_{i=1}^{j+l}$ and  $\{\gamma_i\}_{i=1}^{j+l}$ to be defined by 
+$$\begin{array}{c c}
+	\nu_i = \begin{cases}
+		\psi_i & i \leq j\\
+		\mu_{i-j} & i > j
+	\end{cases}
+&
+	\gamma_i = \begin{cases}
+		\alpha_i & i \leq j\\
+		\beta_{i-j} & i > j
+	\end{cases}
+\end{array}$$
+to conclude that
+\begin{equation}
+	\phi' = P\left(\bigoplus_{i=1}^{j+l} \gamma_i*\nu_i\right)P^{-1}
+\end{equation} \qedsymbol
+
+\begin{remark}
+	The main purpose of this theorem is to illustrate that any representation can be thought of as a "linear combination" of irreducible representations of that group. Being able to readily compare the irreducible representation decomposition of any two given representations is key to understanding similarities and differences between them.
+\end{remark}
+
+\begin{example}
+	Let $\phi$ and $\psi$ be defined as they were in Example 3.13. 
+\end{example}
+
+\noindent There have been three different irreducible representations that were used to construct these maps. Consider $\mu_1$ to be the trivial representation and $\mu_2$ and $\mu_3$ to be defines as below:
+$$\begin{array}{c c}
+	\begin{array}{c}
+		\mu_2 : S_3 \rightarrow \mathbb{R} \\
+		\sigma \mapsto sign(\sigma) = \begin{cases}
+										1 & \text{if even permutation} \\
+										-1 & \text{if odd permutation}
+									   \end{cases}\\
+		\text{Sign Representation}
+	\end{array}
+&
+	\begin{array}{c}
+		\mu_3 : S_3 \rightarrow M_2(\mathbb{R}) \\
+		\sigma \mapsto \text{Bottom Right } 2\times2 \text{ Block of } \psi(\sigma)\\
+		\text{Degree 2 Irreducible Representation}
+	\end{array}
+\end{array}$$
+We can see the following two equalities hold:
+$$\phi = \mu_1 \oplus \mu_1 \oplus \mu_2 = 2\mu_1 \oplus \mu_2$$
+$$\psi = \mu_1 \oplus \mu_3$$
+
+Now that we have established that representations are best understood by studying the irreducible representations that compose them, we shall focus our attention to characterizing the irreducible representations. There are many theorems and useful corrolaries that we will make use of later that will be established now.
+
+\begin{theorem} \textbf{Schur's Theorem}
+	Let $\phi$ and $\psi$ be two irreducible representations of the group $G$. Let $M$ be a matrix/linear map defined such that $M\phi(g) = \psi(g)M \hspace{1.5mm}\forall g \in G$. Then $M$ is invertible or $0$. 
+\end{theorem}
+
+\noindent (Pf.) Reminder: When viewing this proof from the perspective of operators, interpret the product of operators as composition as I defined at the beginning. 
+
+Suppose the degree of $\phi$ is $n$ and the degree of $\psi$ is $m$. Then $M$ must be an $m\times n$ matrix. Let $v\in ker(M)$. Then $\forall g \in G$, we have 
+\begin{equation}
+	 (M\phi(g))v= (\psi(g)M)v = 0
+\end{equation}
+
+This shows us that $\phi(g)v \in ker(M)$ as well. As a result, $ker(M)$ shown to be a $\phi$-invariant subspace. Since $\phi$ is irreducible, it must be the case that either $ker(M) =\{0\}$ or $ker(M)$ is the entire space.  
+
+Similarly, if $w \in im(M)$, then we can show that $im(M)$ is a $\psi$-invariant operator with the following argument: $\forall g\in G$,
+
+\begin{equation}
+	\psi(g)w =\psi(g)M(x) = M\phi(g)x \in im(M)
+\end{equation}
+
+for some $x$ in our space. Then, $im(M)$ must be a $\psi$-invariant subspace, and therefore, $im(M) = \{0\}$ or the whole space.
+
+If $ker(M)$ is the whole space or $im(M) = \{0\}$, then clearly, $M=0$. However, if this is not the case, then $ker(M) = \{0\}$ and $im(M)$ is the whole space, and we have $m=n$ giving us an invertible $M$. \qedsymbol
+
+\begin{corrolary}
+	Let $\phi$ be an irreducible representation and $M$ be a matrix/operator such that $M\phi(g)=\phi(g)M \hspace{1.5mm}\forall g \in G$. Then $M$ is a mulptiple of the identity matrix/map.
+\end{corrolary}
+
+\noindent (Pf.) Let $\lambda$ be an eigenvalue of $M$. Then $M - \lambda I$ is not invertible. Following from Schur's Theorem, we see that $\forall g \in G$
+$$(M-\lambda I)\phi(g) = \phi(g) (M-\lambda I)$$
+Therefore, it must be the case that $M-\lambda I = 0$ \qedsymbol
 
 
 
-%As illustrated in the previous example, the process of confirming a map is a representation is relatively standard. However, there does not seem to be any intuitive way to come up with a new representation. The rest of this chapter will be devoted the process of comparing and characterizing every representation of a given group.
 
-%Making new ones, comparing two, characterize all? 
+%Assume Reducible
+%Show Non-Trivial Invarint Subspace => decomp of matrices into block of invariant and block of other stuff
+% => each block can be written as direct sum
+% => together it is all one direct sum
 
-%\begin{definition}
-%	Two representations, $\phi$ and $\psi$, are said to be \textbf{equivalent representations} if there exists some invertible group homomorphism, $\mu$, such that $$\phi = \mu \psi \mu^{-1}$$
-%\end{definition}
+
+
+
+
+
+
+
+
+\vspace{2cm}
+Hello
+
+
+
+
 
 
 
