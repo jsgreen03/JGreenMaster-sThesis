@@ -715,6 +715,24 @@ $$\psi = \mu_1 \oplus \mu_3$$
 
 Now that we have established that representations are best understood by studying the irreducible representations that compose them, we shall focus our attention to characterizing the irreducible representations. There are many theorems and useful corrolaries that we will make use of later that will be established now.
 
+\begin{theorem}
+	If $\phi$ is an irreducible representation of a group $G$, then any representation equivalent to $\phi$ must also be irreducible.
+\end{theorem}
+
+\noindent (Pf.) For this proof, we will consider the linear operator definition of representations. Let $\phi_g \coloneq \phi(g)$ and consider each operator to be defined on the vector space $V$. Let $\psi$ be defined as an equivalent representation of $G$, so there exists an invertible, linear operator, $S$ such that $\phi_g = S\psi_g S^{-1}$ $\forall g \in G$. we can assume that for every $g$, $\phi_g$ is defined as an operator on the vector space $V'$. It will suffice to show that any $\psi_g$-invariant subspace of $V'$ is a trivial subspace. \\
+
+Let $W' \subset V'$ be a $\psi_g$-invariant subspace. Let $w' \in W'$. Then, the following equation holds:
+
+$$(\phi_gS)(w') = (S\psi_g)(w')$$
+
+This equality illustrates that for any $v \in S(W')$ (the image of $W'$ under $S$, $\phi_g (v) \in S(W')$. Therefore, $S(W')$ is a $\phi_g$-invariant subspace. By definition, $S(W') = \{0\}$ or $S(W') = V$. \\
+
+Since $S$ is an invertible operator, the rank-nullity theorem tells us that $dim(W')=0$ or $dim(W') = dim(V)$. Then, either $W' = \{0\}$ or the equivalence of representations gives us that $dim(V)=dim(V')$, and therefore, $W' = V'$. \\
+
+Since there are no non-trivial $\psi_g$-invariant subspaces, $\psi$ must also be an irreducible representation of $G$. \qedsymbol
+
+
+
 \begin{theorem} \textbf{Schur's Theorem}
 	Let $\phi$ and $\psi$ be two irreducible representations of the group $G$. Let $M$ be a matrix/linear map defined such that $M\phi(g) = \psi(g)M \hspace{1.5mm}\forall g \in G$. Then $M$ is invertible or $0$. 
 \end{theorem}
@@ -744,7 +762,15 @@ If $ker(M)$ is the whole space or $im(M) = \{0\}$, then clearly, $M=0$. However,
 
 \noindent (Pf.) Let $\lambda$ be an eigenvalue of $M$. Then $M - \lambda I$ is not invertible. Following from Schur's Theorem, we see that $\forall g \in G$
 $$(M-\lambda I)\phi(g) = \phi(g) (M-\lambda I)$$
-Therefore, it must be the case that $M-\lambda I = 0$ \qedsymbol
+Therefore, it must be the case that $M-\lambda I = 0$ \cite{Mendes} \qedsymbol 
+
+\begin{corrolary}
+	If $G$ is an abelian group, then any irreducible representation of $G$ is can be viewed as a degree one representation.
+\end{corrolary}
+
+\noindent(Pf.) Let $\phi$ be an irreducible representation of $G$. Let $g \in G$. Then, $\forall h \in G$, $\phi(g)\phi(h) = \phi(h)\phi(g)$. Then, Schur's Theorem tells us that $\phi(g) = \lambda_g I$ for some $\lambda_g \in \C$. Since $g$ is arbitrary, this argument forces every matrix in the representation to be a scalar multiple of the identity matrix. We can take the degree one representation to be the first entry of each matrix. \cite{Tung} \qedsymbol
+
+\section{Unitary Representations}
 
 While irreducible representations are of great importance to us, we can also deepend our understanding of a representation when our underlying vector space has an inner-product structure. In this case, we can further characterize our representations. 
 
@@ -761,6 +787,8 @@ While irreducible representations are of great importance to us, we can also dee
 \end{theorem}
 
 \noindent (Pf.) Let $\phi$ be a non-unitary representation of a finite group $G$ defined on an inner-product space. Let $\phi_g$ denote $\phi(g)$, and let $S$ be defined such that $\langle S(x) , S(y) \rangle = \sum_{g \in G} \langle \phi_g (x) , \phi_g (y) \rangle$. We will show that the operator $\forall g \in G$, $U_g \coloneq S\phi_gS^{-1}$ is unitary. Fixing $g\in G$,
+
+
 \begin{equation}
 	\begin{aligned}
 		\langle U_g(x) , U_g(y) \rangle &= \langle S\phi_gS^{-1}(x) , S\phi_gS^{-1}(y)\rangle \\
@@ -774,8 +802,411 @@ While irreducible representations are of great importance to us, we can also dee
 
 Therefore, $U_g$ is unitary $\forall g \in G$. \qedsymbol
 
+\begin{remark}
+	Combining \textbf{Theorem 1.21} and \textbf{Theorem 1.27} allows us to grant the property of unitary to any irreducible representation through similarity transform. 
+\end{remark}
 
 
+The next portion of this section will be devoted to identifying and proving some of the key properties of irreducible and unitary representations. We will extensively use these properties in later sections.
+
+\begin{theorem}
+	Let $G$ be a finite group, let $\Phi = \{\phi \mid \phi \text{ is a distinct (inequivalent to others in set) irreducible, unitary representation of }G\}$. Let $\phi,\psi \in \Phi$ with degrees $n_{\phi}$ and $n_{\psi}$ respectively. Let $\phi_g \coloneq \phi(g)$ and $\psi_g \coloneq \psi(g)$. Then the following equality holds:
+$$\frac{n_\phi}{|G|} \sum_{g\in G} \left[\phi_g \right]_{ij} \left[\psi_g^\dag \right]_{kl} = \begin{cases}
+																						1 & \text{if } \psi = \phi,\hspace{1mm} j=k,\hspace{1mm} \text{and } i=l\\
+																						0 & else
+																					 \end{cases}$$
+where for any matrix $M=\left[m\right]_{ij}$, $\left[M^\dag\right]_{ij} = \overline{m}_{ji} $. We refer to this as the \textbf{orthonormality condition} of unitary, irreducible representations.
+\end{theorem}
+
+\noindent (Pf.) Let $A$ be a $n_\phi \times n_\psi$ matrix and let $M_A \coloneq \sum_{g\in G} \phi_{g} A \psi_g^{\dag}$. Note: $\forall h \in G$, we have $\phi_h M_A  = M_A \psi_h^\dag$ by as seen from the following calculation:
+
+\begin{equation}
+	\begin{aligned}
+		\phi_h M_A &=  \phi_h \left(\sum_{g\in G} \phi_{g} A \psi_g^{\dag}\right) &= \sum_{g\in G} \phi_{hg} A \psi_g^{\dag} &= \sum_{k = hg \hspace{1mm} \in G} \phi_k A \psi_{h^{-1}k}^{\dag} &= \left(\sum_{g\in G} \phi_{k} A \psi_k^{\dag} \right)\psi_h \\ &= M_A\psi_h 
+	\end{aligned}
+\end{equation}
+
+By Schur's Theorem, $M_A$ is either the zero matrix with $\phi \neq \psi$ or $M_A$ is invertible with $\phi=\psi$. 
+
+Suppose that $M_A = 0$. Then we can recover entries in the right hand side of our equation by observing the following chain of equations:
+\begin{equation}
+	\begin{aligned}
+		    0 &= \left[M_A\right]_{il} \\ 
+			&= \left[\sum_{g\in G} \phi_{g} A \psi_g^{\dag}\right]_{il} \\
+			&= \sum_{g\in G} \left[\phi_{g} A \psi_g^{\dag}\right]_{il} \\
+			&= \sum_{g\in G} \sum_{x=1}^{n_\phi} \sum_{y=1}^{n_\psi}\left[\phi_{g}\right]_{ix} \left[A\right]_{xy} \left[\psi_g^{\dag}\right]_{yl} \\
+			&= \sum_{g\in G} \left[\phi_{g}\right]_{i1} \left[A\right]_{11} \left[\psi_g^{\dag}\right]_{1l} + \left[\phi_{g}\right]_{i1} \left[A\right]_{12} \left[\psi_g^{\dag}\right]_{2l} + \hdots + \left[\phi_{g}\right]_{i2} \left[A\right]_{21} \left[\psi_g^{\dag}\right]_{1l} + \hdots
+	\end{aligned}
+\end{equation}
+
+We can see that this summand contains $n_\phi n_\psi$ terms where $[A]_{xy}$ are arbitrary entries. This means that we can choose $A$ specifically to recover relationships between matrix entries in $\phi_g$, $\psi_g$ and the left hand side of our chain of equations. That is, for a fixed $j,k$, choose $$[A]_{xy} = \begin{cases}
+												1 & \text{if }x=j\text{ and } y=k \\
+												0 & \text{else}
+\end{cases}$$
+To uncover that for any combination of $i,j,k,l,$
+\begin{equation}
+	\begin{aligned}
+		\sum_{g\in G} \left[\phi_g\right]_{ij}\left[\psi^\dag_g\right]_{kl} = 0
+	\end{aligned}
+\end{equation}
+
+Therefore, $\sum_{g\in G}\phi_{g}\psi_g^{\dag}=0$ \\
+
+Suppose that $M_A$ is invertible and $\phi=\psi$. It must be the case then that $M_A = \lambda I_{n_\phi}$ where $\lambda \in \C$ following from Schur's Theorem. Choosing $A$ to be defined as it was in the previous case, we can see that for any $i,j,k,l,$
+\begin{equation}
+	\begin{aligned}
+		\sum_{g\in G} \left[\phi_g\right]_{ij}\left[\phi^\dag_g\right]_{kl} = \begin{cases}
+																			\lambda &\text{if } i = l\\
+																			0 & \text{else}
+																			\end{cases}\\
+	\end{aligned}
+\end{equation}
+
+The value of $\lambda$ will be shown to be dependent on the relationship between $j$ and $k$. If $j\neq k$, we can sum over every possible value for $i$ and then interepret this process as the standard inner-product (in $\C^{n_\phi}$) between two columns of a unitary matrix.
+
+\begin{equation}
+	\begin{aligned}
+		n_\phi \lambda &= \sum_{g\in G} \sum_{i=1}^{n_\phi}\left[\phi_g\right]_{ij}\overline{\left[\phi_g\right]_{ik}} &= \sum_{g\in G} 0 &= 0
+	\end{aligned}
+\end{equation}
+
+
+Therefore, whenever $j\neq k$, $\lambda = 0$. However, in the case that $j=k$, we can considering the fact that there are $n_\phi$ ways to choose $j$ and $k$ such that $j=k$. Summing over all these choices gives us a way to solve for $\lambda$:
+
+$$\begin{aligned}
+			\sum_{g\in G} \sum_{x=1}^{n_\phi}\left[\phi_g\right]_{ix}\left[\phi^\dag_g\right]_{xl} = \begin{cases}
+																			n_\phi\lambda &\text{if } i = l\\
+																			0 & \text{else}
+																			\end{cases}\\
+\Leftrightarrow
+			\sum_{g\in G} \left[\phi_g\phi^\dag_g\right]_{il} = \begin{cases}
+																			n_\phi\lambda &\text{if } i = l\\
+																			0 & \text{else}
+																			\end{cases}\\
+\Leftrightarrow
+			\sum_{g\in G} \left[I_{n_\phi}\right]_{il} = \begin{cases}
+																			n_\phi\lambda &\text{if } i = l\\
+																			0 & \text{else}
+																			\end{cases}\\
+\Leftrightarrow
+			|G|\left[I_{n_\phi}\right]_{il} = \begin{cases}
+																			n_\phi\lambda &\text{if } i = l\\
+																			0 & \text{else}
+																			\end{cases}\\
+\end{aligned}$$ 
+
+Therefore, whenever $i=l$, $j=k$, and $\phi=\psi$, $\lambda = \frac{|G|}{n_\phi}$. \qedsymbol \\
+
+
+
+\begin{corrolary}
+	The number of inequivalent, unitary, irreducible representations is bounded in the following way:
+$$\sum_{\phi \in \Phi}n^2_\phi \leq |G|$$
+where $\Phi = \{\phi \mid \phi$ is a unitary, irreducible representation of $G\}$
+\end{corrolary}
+
+\noindent (Pf.) Consider the entry of each matrix of a given representation $\phi$ for every $g \in G$ as denoted $[\phi_g]_{ij}$. We can create vectors in a $|G|$-dimensional vector space in the following way:
+$$\sqrt{\frac{n_\phi}{|G|}}\left([\phi_{g_1}]_{ij},\hspace{1mm} [\phi_{g_2}]_{ij}, \hspace{1mm}\hdots \hspace{1mm},\hspace{1mm} [\phi_{g_{|G|}}]_{ij}\right)$$
+where each choice of $i$ and $j$ gives us a new vector. Since there are $n_\phi$ choices for both $i$ and $j$, it follows that for a fixed $\phi$, there are $n_\phi^2$ choices of vectors in this space. Thus, we can make $\phi$ arbitrarily to see that the number of vectors that can be formed in this way is identically $\sum_{\phi \in \Phi}n^2_\phi$. The orthonormality condition gives us the pairwise orthogonality of these vectors in $\phi$, $i$, and $j$. Since orthogonal vectors are linearly independent, and the number of linearly independent vectors in a vector space must be at most as large as its dimension, we conclude that $\sum_{\phi \in \Phi}n^2_\phi \leq |G|$. \cite{Tung} \qedsymbol\\
+
+
+This conclusion is incredibly important because it tells us that the task of finding \textit{every} unitary, irreducible representation is possible to accomplish. In this way, we can not only characterize representations in terms of their unitary, irreducible counterparts, but we can do so for all representations with a finite number of special components. We further develop this idea with the next theorem.
+
+
+\section{Irreducible Characters and the Regular Representation}
+
+The process of fully characterizing representations in terms of irreducible components will ultimately come to analyzing and comparing characters. Due to the nature of the trace operation, analyzing characters of representation can lead to more powerful conclusions. The main two reasons come down to the matrix-similarity-preserving property of the trace operation. Firstly, representations need not be unitary, and as a result, any conclusion about an irreducible representation will be basis-independent (in construction of matrix or operator). Secondly, we can utilize the structure of the given group to identify how the character function takes values on multiple group elements simultaneously. 
+
+\begin{definition}
+	Let $G$ be a group. Two elements, $g,\hspace{1mm}h \in G$ are said to be \textbf{conjugate} to one another if $\exists k \in G$ such that $g = khk^{-1}$.
+\end{definition}
+
+Conjugacy is an equivalence relation, we we can use this relation to partition our group into different subsets.
+
+\begin{definition}
+	Let $G$ be a group and let $g \in G$. The \textbf{conjugacy class} of $g$ is defined in the following way:
+$$C_g = \{h\in G \mid g = khk^{-1} \text{ for some } k \in G \}$$
+\end{definition}
+
+Conjugacy classes are especially relevant in the contexts of representation theory because the character operation on representation is invariant on conjugacy classes.
+
+\begin{theorem}
+	Let $G$ be a group, $\phi$ be a representation of $G$, and $g\in G$. Then 
+$$\chi^\phi(g) = \chi^\phi(h) \hspace{1mm}\forall h \in C_g$$
+For future reference, we will denote $\chi^\phi_{C_g}$ to be the character of the representation $\phi$ on the conjugacy class $C_g$
+\end{theorem}
+\noindent (Pf.) Since $h\in C_g$, $\exists k\in G$ such that $g = khk^{-1}$. So 
+
+\begin{equation}
+	\begin{aligned}
+		\chi^\phi(g) &= trace(\phi(g)) \\
+					&= trace(\phi(khk^{-1}))\\ 
+					&= trace(\phi(k)\phi(h)\phi(k^{-1})) \\
+					&= trace(\phi(k^{-1})\phi(k)\phi(h)) \\
+					&= trace(\phi(h)) \\
+					&= \chi^\phi(h) \hspace{1mm}\cite{Mendes}\hspace{1mm} \qedsymbol
+	\end{aligned}
+\end{equation}
+
+We can use the character of representations to develop a similar set of condition as we have developed on representations themselves to give us a little more information about while relaxing the condition of unitarity.
+
+\begin{theorem}
+	Let $G$ be a group and let $\phi$ be a representation of $G$. Let $C$ be some conjugacy class of $G$. Then 
+$$\sum_{g\in C} \phi(g) =\frac{|C|}{n_\phi} \chi^\phi_C I_{n_\phi}$$
+where $\chi^\phi_C$ is the character of $\phi$ on the conjugacy class $C$.
+\end{theorem}
+\noindent (Pf.) Let $A\coloneq \sum_{g\in C} \phi(g)$. It is easy to see that for any $h\in G$, $\phi(h)A\phi(h)^{-1} = A$ due to the nature of conjugacy classes. Therefore, by \textbf{Schur's Theorem}, $A = \lambda I_{n_\phi}$ for some $\lambda \in \C$. Taking the trace of both sides of this equation, we get 
+\begin{equation}
+	\begin{aligned}
+		|C| * \chi_C^\phi = n_\phi * \lambda \hspace{1mm} \cite{Tung} \hspace{1mm} \qedsymbol
+	\end{aligned}
+\end{equation}
+
+With this theorem, we are armed to establish the orthonormality and completeness relation for characters of representations.
+
+\begin{theorem}
+	Let $G$ be a group, let $C_G$ be the set of all distinct conjugacy classes of $G$. Let $\Phi$ be the set of all inequivalent irreducible representations of $G$ and let $\phi,\psi\in\Phi$. Then the following equation is defined to be the \textbf{orthoronomality relation of irreducible characters of representations}.
+
+$$\sum_{C \in C_G} \frac{|C|}{|G|} \chi^{\phi}_C \overline{\chi^{\psi}_C } = \begin{cases}
+																1 & if \hspace{1mm} \phi = \psi \\
+																0 & else
+															\end{cases}$$
+\end{theorem}
+\noindent (Pf.) Following from \textbf{Theorem 1.29}, we have 
+$$\frac{n_\phi}{|G|} \sum_{g\in G} \left[\phi_g \right]_{ij} \left[\psi_g^\dag \right]_{kl} = \begin{cases}
+																						1 & \text{if } \psi = \phi,\hspace{1mm} j=k,\hspace{1mm} \text{and } i=l\\
+																						0 & else
+																					 \end{cases}$$
+Fixing $i=j$, $k=l$, and summing over $i$ and $k$ respectively, we obtain the character of each representation in the following equality:
+
+\begin{equation}
+	\begin{aligned}
+		\frac{n_\phi}{|G|} \sum_{g\in G} \chi^\phi(g) \overline{\chi^\psi}(g) = \begin{cases}
+																						n_\phi & \text{if } \psi = \phi \\
+																						0 & else
+																					 \end{cases}
+	\end{aligned}
+\end{equation}
+Observing the fact that the character operation is constant on conjugacy class, we can alter this equation to take the following equivalent form:
+
+\begin{equation}
+	\begin{aligned}
+		\frac{1}{|G|} \sum_{C\in C_G} |C| \chi^\phi_C \overline{\chi^\psi_C}= \begin{cases}
+																						1 & \text{if } \psi = \phi \\
+																						0 & else
+																					 \end{cases}
+	\end{aligned}
+\end{equation}
+giving the desired conclusion. \cite{Tung} \qedsymbol
+
+Now that we have established some valuable results about irreducible characters, we can establish one of the main results. It turns out that we can compare irreducible characters to the character of a generic representation to determine the number of copies of a given irreducible character in its irreducible decomposition. In other words, we can recover the coeffeicients ($\alpha_i$) from \textbf{Theorem 1.18}. In order to establish this, we first need the following useful theorems.
+
+\begin{theorem}
+	Let $M = \bigoplus_{i=1}^k A_i$ where $A_i$ is a square matrix for every $i$. Then $$trace(M) = \sum_{i=1}^k trace(A_i)$$
+\end{theorem} 
+
+\noindent (Pf.) $$M = \begin{bmatrix}
+						A_1 & 0 & 0 & \hdots & 0 \\
+						0 & A_2 & 0 & \hdots & 0 \\
+						\vdots & \ddots & \ddots & \ddots & \vdots \\
+						0 & 0 & 0 & \hdots & A_k
+					\end{bmatrix}$$
+
+$trace(M)$ is the sum of the diagonal entries in $M$, and since $M$ is a block-diagonal matrix (with blocks corresponding to $A_i$) the diagonal entries of $M$ coincide with the diagonal entries in $A_i$ for every $i$.
+
+\begin{equation}
+	\begin{aligned}
+		trace(M) &= \sum_i [A_1]_{ii} + \sum_i [A_2]_{ii} + \hdots \sum_i [A_k]_{ii} &= \sum_{i=1}^k trace(A_i) \hspace{1mm}\qedsymbol
+	\end{aligned}
+\end{equation}
+
+\begin{theorem}
+	Let $G$ be a group, let $\phi$ be a representation of $G$, and let the irreducible decomposition of $\phi$ be denoted $\phi = T \left( \bigoplus_{i=1}^k \alpha_i *\psi_i\right) T^{-1}$ where $\{\psi_i\}_{i=1}^k$ is a set of irreducible representations of $G$. Then $$\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^{\psi_i}_C}$$
+\end{theorem}
+
+\noindent (Pf.) First, note that using \textbf{Theorem 1.36}
+\begin{equation}
+	\begin{aligned}
+		\chi^\phi_C = \chi^{ \bigoplus_{i=1}^k \alpha_i *\psi_i}_C = \sum_{i=1}^k \alpha_i \chi^{\psi_i}_C
+	\end{aligned}
+\end{equation}
+
+So, using the Orthonormality Condition of Irreducible Characters, we get 
+
+\begin{equation}
+	\begin{aligned}
+\sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^{\psi_i}_C} &= \sum_{C\in C_G} \frac{|C|}{|G|} \sum_{j=1}^k \alpha_j \chi^{\psi_j}_C \overline{\chi^{\psi_i}_C} &= \sum_{j=1}^k \alpha_j \sum_{C\in C_G} \frac{|C|}{|G|} \chi^{\psi_j}_C \overline{\chi^{\psi_i}_C}  &= \alpha_i \hspace{1mm} \cite{Tung} \hspace{1mm} \qedsymbol
+	\end{aligned}
+\end{equation}
+
+\begin{theorem}
+	Let $G$ be a group, let $\phi$ be a representation of $G$. $\phi$ is an irreducible representation of $G$ if and only if $\sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^\phi_C} = 1$
+\end{theorem}
+
+\noindent (Pf.) $\Rightarrow$ Use \textbf{Theorem 1.35} for immediate conclusion. 
+
+\hspace{2mm}$\Leftarrow$ Let $\bigoplus_{i=1}^k \alpha_i\psi_i$ be the irreducible decomposition of $\phi$. Then utilizing this decomposition on the character operation and the orthonormality condition, we get the following equation.
+
+\begin{equation}
+	\begin{aligned}
+		1 &=\sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^\phi_C} &= \sum_{i=1}^k \sum_{j=1}^k \alpha_i \overline{\alpha_j} \sum_{C\in C_G} \frac{|C|}{|G|} \chi^{\psi_i}_C \overline{\chi^{\psi_j}_C} &= \sum_{i=1}^k |\alpha_i|^2
+	\end{aligned}
+\end{equation}
+
+Since the sum of square integers is equal to $1$, it must be the case that $\alpha_m = 1$ for some $m$ and $\alpha_n=0$  $\forall n \neq m$. \cite{Tung} \qedsymbol
+
+
+The last two theorems give us tools to determine when representations are irreducible and determine how many copies of a given irreducible representation are present in the irreducible decomposition of a generic representation. Armed with these techniques, we can analyze a new representation.
+
+\begin{definition}
+	Let $G=\{g_i\}^n_{i=1}$ be a finite group. We define the \textbf{Left Regular Representation} to be the matrix representation given by the following formula:
+$$g\stackrel{\phi}{\mapsto} [\phi_g]_{ij} = \begin{cases}
+								1 & \text{if } gg_j = g_i \\
+								0 & \text{else}
+							\end{cases}$$
+\end{definition}
+
+One could verify that this map is a representation through explicitly showing the multiplication rule in $G$ is satisfied by the matrices in $\phi(G)$. Due to the construction of our matrices, this representation has degree $|G|$. 
+
+\begin{theorem}
+	For any finite group, $G$, the left regular representation ($\phi$) contains every irreducible representation of $G$, $\{\psi_i\}_{i=1}^k$, exactly $n_{\psi_i}$ times.
+\end{theorem}
+
+\noindent(Pf.) Let $n=|G|$. Consider the matrices in given by the representation $\phi$. We know that $\phi(e) = I_n$, but what can we say about can we say about non-identity elements of $G$? It turns out, for any $g\in G$ such that $g\neq e$, $\phi_g$ always has a diagonal full of zeros. This must be the case, since it would be impossible for $g *g_i = g_i$  for any non-identity $g$. As a result, we see that $\chi^\phi_e = n$ and $\chi^\phi_g = 0$ $\forall g \in G$ with $g \neq e$. So, for any irreducible representation, $\psi_i$, \textbf{Theorem 1.37} tells us that 
+\begin{equation}
+	\begin{aligned}
+		\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|} \chi^\phi_C \overline{\chi_C^{\psi_i}} = \frac{1}{|G|}|G| \overline{\chi_e^{\psi_i}} = n_{\psi_i} \hspace{1mm}\cite{Tung} \hspace{1mm}\qedsymbol
+	\end{aligned}
+\end{equation}
+
+\begin{corrolary}
+\	For any finite group, $G$, $\sum_{\phi \in \Phi} n_\phi^2 = |G|$ where $\Phi=\{\phi \mid \phi \text{ is a distinct, irreducible representation of }G\}$.
+\end{corrolary}
+
+\noindent(Pf.) Since the left regular representation ($\phi$) has irreducible decomposition $\phi = T\left(\bigoplus_{i=1}^k n_{\psi_i}*\psi_i\right)T^{-1}$, we can use \textbf{Theorem 1.36} to show that
+\begin{equation}
+	\begin{aligned}
+		|G| = trace(\phi(e)) = trace\left(\bigoplus_{i=1}^k n_{\psi_i}*\psi_i(e)\right) = \sum_{i=1}^k n_{\psi_i}trace(\psi_i(e)) = \sum_{i=1}^k n_{\psi_i}^2 \hspace{1mm}\cite{Tung} \hspace{1mm} \qedsymbol
+	\end{aligned}
+\end{equation}
+
+\section{Completeness Conditions for Irreducible Representations and Characters}
+
+
+\begin{theorem}
+	Let $G$ be a finite group, let $\Phi = \{\phi \mid \phi$ is a unitary, irreducible representation of $G\}$, and let $n_\phi$ denote the degree of the representation $\phi$. Then for any pair $g$, $h \in G$, 
+$$\sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{n_\phi}{|G|} \left[\phi_g\right]_{ij}\left[\phi_{h}^\dag\right]_{ji} = \begin{cases}
+																										1 & if \hspace{1mm} g = h \\
+																										0 & else
+																									\end{cases}$$
+This is referred to as the \textbf{completeness condition} of unitary, irreducible representations.
+\end{theorem}
+
+\noindent (Pf.) Referencing the construction of a $|G|$-dimensional vector space, $V$, in \textbf{Corrolary 1.30}, we can create a set of orthonormal, linearly independent vectors. Thus, for any fixed $\phi$, $i$, $j$, the corresponding orthonormal vector is defined by:
+
+\begin{equation}
+	\begin{aligned}
+		e_{\phi,i,j} \coloneq \sqrt{\frac{n_\phi}{|G|}}\left([\phi_{g_1}]_{ij},\hspace{1mm} [\phi_{g_2}]_{ij}, \hspace{1mm}\hdots \hspace{1mm},\hspace{1mm} [\phi_{g_{|G|}}]_{ij}\right)
+	\end{aligned}
+\end{equation}
+
+As a result of our work in \textbf{Corrolary 1.41}, we can see the set $\{e_{\phi,i,j}\}_{\phi,i,j}$ is in fact an orthonormal basis of our vector space, given that the dimension of our vector space is now identically 
+$$n \coloneq |G| = \sum_{\phi\in \Phi} n_\phi^2$$
+
+Therefore, every $v\in V$ has the following orthogonal decomposition:
+\begin{equation}
+	\begin{aligned}
+		v &= \sum_{\phi,i,j} \langle v , e_{\phi,i,j} \rangle e_{\phi,i,j} &= \left(\sum_{\phi,i,j} e_{\phi,i,j} \otimes e_{\phi,i,j}\right) v
+	\end{aligned}
+\end{equation}
+
+where the tensor symbol is defined here as the outer-product of vectors in $V$, as realized in the following matrix:
+
+\begin{equation}
+	\begin{aligned}
+		e_{\phi,i,j} \otimes e_{\phi,i,j} &= \frac{n_\phi}{|G|}\begin{bmatrix}
+			[\phi_{g_1}]_{ij}\overline{[\phi_{g_1}]_{ij}} & \hdots & [\phi_{g_1}]_{ij}\overline{[\phi_{g_n}]_{ij}}\\
+			\vdots & \ddots & \vdots\\
+			[\phi_{g_n}]_{ij}\overline{[\phi_{g_1}]_{ij}} & \hdots & [\phi_{g_n}]_{ij}\overline{[\phi_{g_n}]_{ij}}
+		\end{bmatrix}
+	\end{aligned}
+\end{equation}
+
+Upon closer inspection of \textbf{Equation 1.29}, we can see that 
+
+\begin{equation}
+	\begin{aligned}
+		\sum_{\phi,i,j} {|G|} \hspace{1mm}e_{\phi,i,j} \otimes e_{\phi,i,j} &= I_n
+	\end{aligned}
+\end{equation}
+
+or equivalently, for any given $x$, $y \in \{1,\hdots,|G|\}$ 
+\begin{equation}
+	\begin{aligned}
+		\sum_{\phi,i,j} \frac{n_\phi}{|G|} [\phi_{g_x}]_{ij}[\phi^\dag_{g_y}]_{ji} &= \sum_{\phi,i,j} \left[e_{\phi,i,j} \otimes e_{\phi,i,j}\right]_{xy} &= \left[\sum_{\phi,i,j} e_{\phi,i,j} \otimes e_{\phi,i,j}\right]_{xy} &= \begin{cases}
+																	1 & \text{if } x=y\\
+																	0 & \text{else}
+																\end{cases}
+	\end{aligned}
+\end{equation}
+which is exactly what our completeness relation is defined to be. \qedsymbol \\
+
+
+
+
+
+
+
+\begin{theorem}
+Let $G$ be a group, let $C_G$ be the set of all distinct conjugacy classes of $G$. Let $\Phi$ be the set of all inequivalent irreducible representations of $G$. Then for any $g,h \in G$, the following equation is defined to be the \textbf{completeness relation of irreducible characters of representations}.
+$$\sum_{\phi \in \Phi} \frac{|C_g|}{|G|} \chi^{\phi}_{C_g} \overline{\chi^{\phi}_{C_h}} = \begin{cases}
+																1 & if \hspace{1mm} C_g = C_h \\
+																0 & else
+															\end{cases}$$
+\end{theorem}
+
+\noindent (Pf.) Utilizing \textbf{Theorem 1.37}, we see that for any $g, h \in G$, $$\sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{n_\phi}{|G|} \left[\phi_g\right]_{ij}\left[\phi_{h}^\dag\right]_{ji} = \begin{cases}
+																										1 & if \hspace{1mm} g = h \\
+																										0 & else
+																									\end{cases}$$
+Taking this equality and summing both sides over the entire conjugacy class of $g$ and $h$ respectively, we aquire
+\begin{equation}
+	\begin{aligned}
+		\sum_{g \in C_g} \sum_{h\in C_h} \sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{n_\phi}{|G|} \left[\phi_g\right]_{ij}\left[\phi_{h}^\dag\right]_{ji} = \sum_{g \in C_g} \sum_{h\in C_h} \begin{cases}
+																										1 & if \hspace{1mm} g = h \\
+																										0 & else
+																									\end{cases}
+	\end{aligned}
+\end{equation}
+Utilizing \textbf{Theorem 1.35} and analyizing the $ij-th$ component of both sides of its conclusion, we can equivalently write the above equality in the following way:
+\begin{equation}
+	\begin{aligned}
+		 \sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{|C_g||C_h|}{|G|n_\phi}\chi^\phi_{C_g}\overline{\chi^\phi_{C_h}} \left[I_{n_\phi}\right]_{ij}\left[I_{n_\phi}\right]_{ji} = \begin{cases}
+																										|C_h| & if \hspace{1mm} C_g = C_h \\
+																										0 & else
+																									\end{cases}
+	\end{aligned}
+\end{equation}
+
+Interpreting the inner-most sum as a matrix product of both identity matrices and the second sum as spanning the diagonal of the resulting product matrix, we obtain
+
+\begin{equation}
+	\begin{aligned}
+		 \sum_{\phi \in \Phi} \frac{|C_g|}{|G|}\chi^\phi_{C_g}\overline{\chi^\phi_{C_h}} = \begin{cases}
+																										1 & if \hspace{1mm} C_g = C_h \\
+																										0 & else
+																									\end{cases}
+	\end{aligned}
+\end{equation}
+
+to achieve our desired result. \cite{Tung} \qedsymbol
+
+
+With our main results developed for unitary, irreducible representations and irreducible characters, we can use these ideas as motivation for our study of specific groups. While most of these results are only useful in the finite group setting, we will continue to develop equivalent conditions and conclusions for groups of infinite order. Through our analysis, we will characterize our selected groups using the techniques and tools established in this chapter as a guide.
+
+
+
+\chapter{$SO2$: The Rotation Group in Two Dimensions}
 
 
 
@@ -812,32 +1243,34 @@ Hello
 \begin{thebibliography}{9}
 \bibliographystyle{IEEEtran}
 
-\bibitem{Blum}
-A.~F. Blumberg and G.~L. Mellor.
-\newblock A description of a three-dimensional coastal circulation model.
-\newblock In N.~Heaps, editor, {\em Three Dimensional Coastal Ocean Models},
-  pages 1--16. Amer. Geophys. Union, 1987.
+\bibitem{Tung}
 
-\bibitem{Gill}
-A.~Gill.
-\newblock {\em Atmosphere - {O}cean {D}ynamics}.
-\newblock Academic Press, 1982.
+\bibitem{Mendes}
+%A.~F. Blumberg and G.~L. Mellor.
+%\newblock A description of a three-dimensional coastal circulation model.
+%\newblock In N.~Heaps, editor, {\em Three Dimensional Coastal Ocean Models},
+  %pages 1--16. Amer. Geophys. Union, 1987.
 
-\bibitem{Chob}
-P.~F. Choboter, R.~M. Samelson, and J.~S. Allen.
-\newblock A {N}ew {S}olution of a {N}onlinear {M}odel of {U}pwelling.
-\newblock {\em J. Phys Oceanogr.}, 35:532--544, 2005.
+%\bibitem{Gill}
+%A.~Gill.
+%\newblock {\em Atmosphere - {O}cean {D}ynamics}.
+%\newblock Academic Press, 1982.
 
-\bibitem{Lentz}
-S.~J. Lentz and D.~C. Chapman.
-\newblock The importance of non-linear cross-shelf momentum flux during
-  wind-driven coastal upwelling.
-\newblock {\em J. Phys. Oceanogr.}, 34:2444--2457, 2004.
+%\bibitem{Chob}
+%P.~F. Choboter, R.~M. Samelson, and J.~S. Allen.
+%\newblock A {N}ew {S}olution of a {N}onlinear {M}odel of {U}pwelling.
+%\newblock {\em J. Phys Oceanogr.}, 35:532--544, 2005.
 
-\bibitem{Ped2}
-J.~Pedlosky.
-\newblock A {N}onlinear {M}odel of the {O}nset of {U}pwelling.
-\newblock {\em J. Phys Oceanogr.}, 8:178--187, 1978.
+%\bibitem{Lentz}
+%S.~J. Lentz and D.~C. Chapman.
+%\newblock The importance of non-linear cross-shelf momentum flux during
+  %wind-driven coastal upwelling.
+%\newblock {\em J. Phys. Oceanogr.}, 34:2444--2457, 2004.
+
+%\bibitem{Ped2}
+%J.~Pedlosky.
+%\newblock A {N}onlinear {M}odel of the {O}nset of {U}pwelling.
+%\newblock {\em J. Phys Oceanogr.}, 8:178--187, 1978.
 
 \end{thebibliography}
 

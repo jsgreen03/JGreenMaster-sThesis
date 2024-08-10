@@ -3,7 +3,11 @@
 \contentsline {chapter}{\numberline {1}Representation Theory}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction to Representations}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Decomposing and Characterizing Representations}{5}{section.1.2}%
-\contentsline {chapter}{Bibliography}{13}{chapter*.4}%
+\contentsline {section}{\numberline {1.3}Unitary Representations}{13}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Irreducible Characters and the Regular Representation}{17}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Completeness Conditions for Irreducible Representations and Characters}{21}{section.1.5}%
+\contentsline {chapter}{\numberline {2}$SO2$: The Rotation Group in Two Dimensions}{24}{chapter.2}%
+\contentsline {chapter}{Bibliography}{25}{chapter*.4}%
 \let \l@chapter \l@section 
 \noindent APPENDICES 
-\contentsline {chapter}{\numberline {A}Appendix A Title}{14}{appendix.1.A}%
+\contentsline {chapter}{\numberline {A}Appendix A Title}{26}{appendix.1.A}%

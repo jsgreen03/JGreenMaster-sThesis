@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  23 JUL 2024 14:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  10 AUG 2024 00:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -974,13 +974,34 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [10]
+Underfull \hbox (badness 10000) in paragraph at lines 722--723
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 728--729
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 730--731
+
+ []
+
+
 
 
 Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [11]
-Overfull \hbox (1.10458pt too wide) in paragraph at lines 763--764
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[12]
+Overfull \hbox (1.10458pt too wide) in paragraph at lines 789--790
 \OT1/cmr/m/n/10 space. Let $\OML/cmm/m/it/10 ^^^[]$ \OT1/cmr/m/n/10 de-note $\O
 ML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 )$, and le
 t $\OML/cmm/m/it/10 S$ \OT1/cmr/m/n/10 be de-fined such that $\OMS/cmsy/m/n/10 
@@ -997,13 +1018,141 @@ h\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm
 Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
-[12]
+[13]
+Overfull \hbox (208.28493pt too wide) in paragraph at lines 813--814
+[][]\OT1/cmr/bx/n/10 Theorem 1.29. []\OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 G$ 
+\OT1/cmr/m/it/10 be a fi-nite group, let $\OT1/cmr/m/n/10 ^^H = \OMS/cmsy/m/n/1
+0 f\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 ^^^[]G\OMS/cmsy/m/n
+/10 g$\OT1/cmr/m/it/10 .
+ []
+
+
 
 
 Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
-[13
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 853--854
+
+ []
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 898--899
+
+ []
+
+
+Overfull \hbox (1.3324pt too wide) in paragraph at lines 903--904
+[][]\OT1/cmr/bx/n/10 Corrolary 1.30. []\OT1/cmr/m/it/10 The num-ber of in-equiv
+-a-lent, uni-tary, ir-re-ducible rep-re-sen-ta-tions is bounded
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 909--911
+
+ []
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[16]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[17]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[18]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[19]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[20]
+Overfull \hbox (133.79692pt too wide) in paragraph at lines 1083--1084
+[][]\OT1/cmr/bx/n/10 Corrolary 1.41. [] \OT1/cmr/m/it/10 For any fi-nite group,
+ $\OML/cmm/m/it/10 G$\OT1/cmr/m/it/10 , $[][] \OML/cmm/m/it/10 n[] \OT1/cmr/m/n
+/10 = \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 G\OMS/cmsy/m/n/10 j$ \OT1/cmr/m/it/10 
+where $\OT1/cmr/m/n/10 ^^H = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m
+/n/10 j \OML/cmm/m/it/10 ^^^[]G\OMS/cmsy/m/n/10 g$\OT1/cmr/m/it/10 . 
+ []
+
+
+Overfull \hbox (50.4947pt too wide) in paragraph at lines 1086--1087
+\OT1/cmr/m/n/10 (Pf.) Since the left reg-u-lar rep-re-sen-ta-tion ($\OML/cmm/m/
+it/10 ^^^$\OT1/cmr/m/n/10 ) has ir-re-ducible de-com-po-si-tion $\OML/cmm/m/it/
+10 ^^^ \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T [] T[]$\OT1/cmr/m/n/10 ,
+ []
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 1151--1153
+
+ []
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[22]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[23]
+Chapter 2.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1209.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1209.
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[24
+
+]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[25
 
 
 ]
@@ -1014,42 +1163,58 @@ Appendix A.
 Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
-[14
+[26
 
 ] (./mastersthesistemplate.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
  ***********
-Package rerunfilecheck Info: File `mastersthesistemplate.out' has not changed.
-(rerunfilecheck)             Checksum: 3282114EFEEA976715327EE1519F3A25;1133.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `mastersthesistemplate.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `mastersthesistemplate.out':
+(rerunfilecheck)             Before: 98FAA4437E56E58149C932586BE6DA58;2336
+(rerunfilecheck)             After:  C48DEFE606B1838F68EE01C2378BADCB;2325.
  ) 
 Here is how much of TeX's memory you used:
- 18784 strings out of 475517
- 292725 string characters out of 5777237
- 1950908 words of memory out of 5000000
- 41046 multiletter control sequences out of 15000+600000
- 561386 words of font info for 49 fonts, out of 8000000 for 9000
+ 18843 strings out of 475517
+ 293519 string characters out of 5777237
+ 1949908 words of memory out of 5000000
+ 41049 multiletter control sequences out of 15000+600000
+ 562084 words of font info for 51 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  94i,20n,93p,2360b,661s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2024/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c
-:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2
-024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb>
-Output written on mastersthesistemplate.pdf (21 pages, 252487 bytes).
+
+pdfTeX warning (dest): name{section.1.6} has been referenced but does not exist
+, replaced by a fixed one
+
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texli
+ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2024/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/
+type1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2024/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texli
+ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb>
+Output written on mastersthesistemplate.pdf (33 pages, 318391 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 407 PDF objects out of 1000 (max. 8388607)
+ 334 compressed objects within 4 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
