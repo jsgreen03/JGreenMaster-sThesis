@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  14 AUG 2024 16:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  19 AUG 2024 00:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -941,6 +941,23 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 brarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
+(c:/texlive/2024/texmf-dist/tex/latex/tikz-3dplot/tikz-3dplot.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brary3d.code.tex
+File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen320
+)))
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 braryangles.code.tex
 File: tikzlibraryangles.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -948,53 +965,130 @@ File: tikzlibraryangles.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 braryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2024/texmf-dist/tex/latex/nowidow/nowidow.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+
+Package subfig Warning: Your document class has a bad definition
+ of \endfigure, most likely
+ \let\endfigure=\end@float
+ which has now been changed to
+ \def\endfigure{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endfigure.
+ Please complain to your document class author.
+
+
+Package subfig Warning: Your document class has a bad definition
+ of \endtable, most likely
+ \let\endtable=\end@float
+ which has now been changed to
+ \def\endtable{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endtable.
+ Please complain to your document class author.
+
+(c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen321
+\captionmargin=\dimen322
+\caption@leftmargin=\dimen323
+\caption@rightmargin=\dimen324
+\caption@width=\dimen325
+\caption@indent=\dimen326
+\caption@parindent=\dimen327
+\caption@hangindent=\dimen328
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\par \ifdim \prevdepth 
+>-\p@ \vskip 10\p@ \relax \fi \setbox \@tempboxa \hbox {\vbox to\topskip {}#1: 
+#2\unskip \strut }\ifdim \wd \@tempboxa >\hsize {\ssp #1: #2\unskip \strut \par
+ } \else \hbox to\hsize {\hfil \unhbox \@tempboxa \hfil }\fi  on input line 117
+5.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count378
+\c@continuedfloat=\count379
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+(c:/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: wrapfig package is loaded.
+)
+\c@KVtest=\count380
+\sf@farskip=\skip98
+\sf@captopadj=\dimen329
+\sf@capskip=\skip99
+\sf@nearskip=\skip100
+\c@subfigure=\count381
+\c@subfigure@save=\count382
+\c@lofdepth=\count383
+\c@subtable=\count384
+\c@subtable@save=\count385
+\c@lotdepth=\count386
+\sf@top=\skip101
+\sf@bottom=\skip102
+)
+(c:/texlive/2024/texmf-dist/tex/latex/nowidow/nowidow.sty
 Package: nowidow 2011/09/20 1.0 Easily prevent widows and orphans
 Package: nowidow 
-) (c:/texlive/2024/texmf-dist/tex/latex/setspace/setspace.sty
+)
+(c:/texlive/2024/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-\c@definition=\count378
+\c@definition=\count387
 
 (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count379
+\l__color_backend_stack_int=\count388
 \l__pdf_internal_box=\box87
 )
 (./mastersthesistemplate.aux)
 \openout1 = `mastersthesistemplate.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
 
 (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count380
-\scratchdimen=\dimen320
+\scratchcounter=\count389
+\scratchdimen=\dimen330
 \scratchbox=\box88
-\nofMPsegments=\count381
-\nofMParguments=\count382
+\nofMPsegments=\count390
+\nofMParguments=\count391
 \everyMPshowfont=\toks62
-\MPscratchCnt=\count383
-\MPscratchDim=\dimen321
-\MPnumerator=\count384
-\makeMPintoPDFobject=\count385
+\MPscratchCnt=\count392
+\MPscratchDim=\dimen331
+\MPnumerator=\count393
+\makeMPintoPDFobject=\count394
 \everyMPtoPDFconversion=\toks63
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1005,7 +1099,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 156.
+Package hyperref Info: Link coloring ON on input line 172.
 
 (./mastersthesistemplate.out) (./mastersthesistemplate.out)
 \@outlinefile=\write4
@@ -1046,10 +1140,13 @@ Package hyperref Info: Link coloring ON on input line 156.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count386
+\c@lstlisting=\count395
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 
 Package hyperref Warning: Option `nolinks' has already been used,
-(hyperref)                setting the option has no effect on input line 157.
+(hyperref)                setting the option has no effect on input line 173.
 
 
 
@@ -1067,7 +1164,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.192 \end{abstract}
+l.208 \end{abstract}
                      [1]
 
 
@@ -1123,12 +1220,12 @@ Overfull \vbox (4.30554pt too high) has occurred while \output is active []
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--309
+Underfull \hbox (badness 10000) in paragraph at lines 320--325
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--321
+Underfull \hbox (badness 10000) in paragraph at lines 331--337
 
  []
 
@@ -1142,31 +1239,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.326 	(
+l.342 	(
         Degree 2 Representation) \\\\ [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 326--334
+Underfull \hbox (badness 10000) in paragraph at lines 342--350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 
  []
 
 
-Overfull \hbox (55.73068pt too wide) detected at line 357
+Overfull \hbox (55.73068pt too wide) detected at line 373
 [][][][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--359
+Underfull \hbox (badness 10000) in paragraph at lines 373--375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--374
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
 
  []
 
@@ -1195,12 +1292,12 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--506
+Underfull \hbox (badness 10000) in paragraph at lines 518--522
 
  []
 
@@ -1223,17 +1320,17 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 621--622
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 623--624
+Underfull \hbox (badness 10000) in paragraph at lines 639--640
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 641--642
 
  []
 
@@ -1244,7 +1341,7 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [9]
-Overfull \hbox (0.69853pt too wide) detected at line 715
+Overfull \hbox (0.69853pt too wide) detected at line 731
 []
  []
 
@@ -1255,17 +1352,17 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 726--727
+Underfull \hbox (badness 10000) in paragraph at lines 742--743
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--733
+Underfull \hbox (badness 10000) in paragraph at lines 748--749
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 734--735
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
 
  []
 
@@ -1282,7 +1379,7 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [12]
-Overfull \hbox (1.10458pt too wide) in paragraph at lines 793--794
+Overfull \hbox (1.10458pt too wide) in paragraph at lines 809--810
 \OT1/cmr/m/n/10 space. Let $\OML/cmm/m/it/10 ^^^[]$ \OT1/cmr/m/n/10 de-note $\O
 ML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 )$, and le
 t $\OML/cmm/m/it/10 S$ \OT1/cmr/m/n/10 be de-fined such that $\OMS/cmsy/m/n/10 
@@ -1300,7 +1397,7 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [13]
-Overfull \hbox (208.28493pt too wide) in paragraph at lines 816--817
+Overfull \hbox (208.28493pt too wide) in paragraph at lines 832--833
 [][]\OT1/cmr/bx/n/10 Theorem 1.29. []\OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 G$ 
 \OT1/cmr/m/it/10 be a fi-nite group, let $\OT1/cmr/m/n/10 ^^H = \OMS/cmsy/m/n/1
 0 f\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 ^^^[]G\OMS/cmsy/m/n
@@ -1314,7 +1411,7 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 856--857
+Underfull \hbox (badness 10000) in paragraph at lines 872--873
 
  []
 
@@ -1325,18 +1422,18 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 901--902
+Underfull \hbox (badness 10000) in paragraph at lines 917--918
 
  []
 
 
-Overfull \hbox (1.3324pt too wide) in paragraph at lines 906--907
+Overfull \hbox (1.3324pt too wide) in paragraph at lines 922--923
 [][]\OT1/cmr/bx/n/10 Corrolary 1.30. []\OT1/cmr/m/it/10 The num-ber of in-equiv
 -a-lent, uni-tary, ir-re-ducible rep-re-sen-ta-tions is bounded
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 912--914
+Underfull \hbox (badness 10000) in paragraph at lines 928--930
 
  []
 
@@ -1371,7 +1468,7 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [20]
-Overfull \hbox (133.79692pt too wide) in paragraph at lines 1086--1087
+Overfull \hbox (133.79692pt too wide) in paragraph at lines 1102--1103
 [][]\OT1/cmr/bx/n/10 Corrolary 1.41. [] \OT1/cmr/m/it/10 For any fi-nite group,
  $\OML/cmm/m/it/10 G$\OT1/cmr/m/it/10 , $[][] \OML/cmm/m/it/10 n[] \OT1/cmr/m/n
 /10 = \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 G\OMS/cmsy/m/n/10 j$ \OT1/cmr/m/it/10 
@@ -1380,7 +1477,7 @@ where $\OT1/cmr/m/n/10 ^^H = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m
  []
 
 
-Overfull \hbox (50.4947pt too wide) in paragraph at lines 1089--1090
+Overfull \hbox (50.4947pt too wide) in paragraph at lines 1105--1106
 \OT1/cmr/m/n/10 (Pf.) Since the left reg-u-lar rep-re-sen-ta-tion ($\OML/cmm/m/
 it/10 ^^^$\OT1/cmr/m/n/10 ) has ir-re-ducible de-com-po-si-tion $\OML/cmm/m/it/
 10 ^^^ \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T [] T[]$\OT1/cmr/m/n/10 ,
@@ -1393,7 +1490,7 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1154--1156
+Underfull \hbox (badness 10000) in paragraph at lines 1170--1172
 
  []
 
@@ -1413,11 +1510,11 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 Chapter 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1212.
+(hyperref)                removing `math shift' on input line 1228.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1212.
+(hyperref)                removing `math shift' on input line 1228.
 
 
 
@@ -1434,7 +1531,7 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1314--1315
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1331
 
  []
 
@@ -1457,7 +1554,7 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1458--1459
+Underfull \hbox (badness 10000) in paragraph at lines 1474--1475
 
  []
 
@@ -1470,14 +1567,14 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 [29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1481.
+(hyperref)                removing `math shift' on input line 1497.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1481.
+(hyperref)                removing `math shift' on input line 1497.
 
 
-Overfull \hbox (2.97223pt too wide) in paragraph at lines 1492--1493
+Overfull \hbox (2.97223pt too wide) in paragraph at lines 1508--1509
 \OML/cmm/m/it/10 e[]$\OT1/cmr/m/n/10 . Eigen-val-ues serve as a great tool for 
 con-struct-ing de-gree one rep-re-sen-ta-tions. Through-
  []
@@ -1489,7 +1586,7 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1526--1527
+Underfull \hbox (badness 10000) in paragraph at lines 1542--1543
 
  []
 
@@ -1500,16 +1597,392 @@ Overfull \vbox (6.44444pt too high) has occurred while \output is active []
 
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1571--1572
+Underfull \hbox (badness 10000) in paragraph at lines 1587--1588
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1595--1596
+Underfull \hbox (badness 10000) in paragraph at lines 1611--1612
 
  []
 
 
 
 
-Overfull \vbox (6.4444
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[32]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[33]
+Chapter 3.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1631.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1631.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[34
+
+]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (57.03116pt too wide) in paragraph at lines 1680--1821
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1826--1827
+
+ []
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 1828--1829
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1837--1838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1839--1840
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1855--1856
+
+ []
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[36]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[37]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[38]
+Overfull \hbox (69.52298pt too wide) detected at line 2064
+[][][][][]
+ []
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[39]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[40]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2176.
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[41]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 225
+1.
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[42]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[43]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[44]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[45]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[46]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[47]
+Overfull \hbox (113.79654pt too wide) detected at line 2543
+[][][][][]
+ []
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[48]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[49]
+Chapter 4.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2551.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2551.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2551.
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[50
+
+]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[51]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2648.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2648.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2648.
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[52]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[53]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[54]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[55]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[56]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2798.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2798.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2798.
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[57]
+Overfull \hbox (7.01807pt too wide) detected at line 2878
+[][][][][]
+ []
+
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[58]
+Chapter 5.
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[59
+
+]
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[60
+
+
+]
+Appendix A.
+
+
+
+Overfull \vbox (6.44444pt too high) has occurred while \output is active []
+
+
+[61
+
+] (./mastersthesistemplate.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 1
+L3 programming layer <2024-05-27>
+ ***********
+
+
+Package rerunfilecheck Warning: File `mastersthesistemplate.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `mastersthesistemplate.out':
+(rerunfilecheck)             Before: C5DB3261ED1BF66156BE9FEA916E5955;4626
+(rerunfilecheck)             After:  B543ADC87B8AF8B7B931D6C27A7FD995;5064.
+ ) 
+Here is how much of TeX's memory you used:
+ 32461 strings out of 475517
+ 582906 string characters out of 5777237
+ 1953908 words of memory out of 5000000
+ 54233 multiletter control sequences out of 15000+600000
+ 569292 words of font info for 79 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 94i,20n,133p,2360b,1271s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2024/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/font
+s/type1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2024/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.
+pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/te
+xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texli
+ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/
+fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2024/texmf-dist/fonts/
+type1/public/amsfonts/euler/eufm5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/p
+ublic/amsfonts/euler/eufm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msam7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/s
+ymbols/msbm7.pfb>
+Output written on mastersthesistemplate.pdf (68 pages, 521897 bytes).
+PDF statistics:
+ 819 PDF objects out of 1000 (max. 8388607)
+ 690 compressed objects within 7 object streams
+ 296 named destinations out of 1000 (max. 500000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+
