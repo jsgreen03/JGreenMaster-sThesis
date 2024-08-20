@@ -3414,9 +3414,266 @@ We can make an intuitive identification of geometric braids with braid diagrams 
 
 Much like the braids the that braid diagrams represent, two braid diagrams are said to be isotopic if one can be continuously deformed into the other. Further, we can define a product on braid diagrams as well in an identical process that we did to define it on the braids. The product of two braid diagrams visually resembles stacking two diagrams on top of each other. In this way, we can  identify the group of geometric braids with a carefully group of braid diagrams (of course defined on equivalency classes in both settings). 
 
-However, these groups are not necessarily isomorphic. When projecting down in onto a two-dimensional surface, we lose information about the geometric braid. There is potential to confuse two braid diagrams as representing different geometric braids when in reality, the appearance in three-dimensions would correspond .
+However, these groups are not necessarily isomorphic. When projecting down in onto a two-dimensional surface, we lose information about the geometric braid. There is potential to confuse two braid diagrams as representing different geometric braids when in reality they represent an isotopic geometric braid.
 
- 
+\textbf{Draw an example of R-equivalent braids and their corresponding geometric braid}
+
+We appeal to the Reidemeister moves developed in Knot Theory to aid us in our ability to detect when braid diagrams represent the same geometric braid. There are two specific types of moves we will reference.
+
+Our first kind Reidemeister move to be consider will be given the label $\Omega$. Applying the move $\Omega$ to two adjacent strands of a braid does the following: First, it chooses one strand to be the overgoing strand and the other to be the undergoing strand. Then it takes the overgoing strand and creates two crossings by moving part of the strand over and across the other strand. There are two crossings because the strands are not switching positions, meaning the path the strand makes must return back the way it came. Note that we have to make a choice about which strand is under-versus-overgoing, and so we will take the convention that $\Omega_1$ is the move that favors the left strand as overgoing and $\Omega_2$ is the move that favors the right as overgoing. The inverses of both these moves are also Reidemeister moves.
+
+\textbf{Draw a Picture to illustrate this}
+
+Our second kind of Reidemeister move will be given the label of $\Theta$. In order to execute this move, we require there be three adjacent strands. Further we need one strand to cross both other strands in the same manner (simultaneously under-or-overgoing) and that the remaining two strands cross in an unspecified manner. The move theta will take the one strand that under/overgoes both and moves it under/over the crossing of the other two strands to the other side. 
+
+\textbf{Draw a Picture to illustrate this}
+
+\begin{definition}
+	Two braid diagrams are said to be \textbf{R-equivalent} if one can be transformed into the other by means of a finite sequence of isotopies and Reidemeister moves.
+\end{definition}
+
+R-equivalence is naturally an equivalence relation, and if we consider the quotient space of the group of braid diagrams, we get a group isomorphic to the group of geometric braids.
+
+Now, all that is left to do is connect our geometric braids back to the algebraic definition. We can start by considering the braid diagrams of our geometric braids. If we are considering braids on $n$ strands, then we define $\sigma_i^+$ to be the braid diagram where the only crossing is the $i$th strand crossing under the $i+1$th strand and $\sigma_i^-$ to be the braid diagram where the only crossing is the $i$th strand crossing over the $i+1$th strand. We define this for ever $i\in\{1,2,\hdots,n-1\}$. Then the following holds:
+
+\begin{theorem}
+	Let $\mathcal{B}_n$ be the group of geometric braids on $n$ strands. Then for any $\beta\in\mathcal{B}_n$, $\beta$ has a natural decomposition:
+$$\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$$ 
+where $i_1,i_2,\hdots,i_k\in\{1,2,\hdots,n-1\}$ and $\epsilon_i = \pm$
+\end{theorem}
+
+\noindent (Pf.) Let $D(\beta)$ be the braid diagram of $\beta$. Then, we can create a partition of the interval $[0,1]$ in such a way that for every subinterval indicated by the partition, only one crossing occurs. Each subinterval thus defines a braid diagram where only one crossing occurs, which is defined to be $\sigma_i^\epsilon$ for some $i\in\{1,2,\hdots,n-1\}$ and some $\epsilon = \pm$. Since products of braid diagrams are crudely defined as a stacking of braids on top of one another, we can recover the entire diagram of $D(\beta)$ by considering it as a product of the diagrams defined by the subintervals. This brings us to our desired result of 
+
+\begin{equation}
+\begin{aligned}
+\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k} \qedsymbol \cite{Kassel}
+\end{aligned}
+\end{equation}
+
+\begin{corrolary}
+	Any $\beta\in\mathcal{B}_n$ has a well defined inverse in $\mathcal{B}_n$.
+\end{corrolary}
+
+\noindent(Pf.) If $\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$, then $\beta = \sigma^{-\epsilon_k}_{i_k}\hdots\sigma^{-\epsilon_1}_{i_1}$ \qedsymbol \cite{Kassel}
+
+\begin{theorem}
+	The following map is an isomorphism of groups:
+$$\phi:\mathcal{B}_n\rightarrow B_n$$
+$$\sigma_i^+ \mapsto \sigma_i$$
+\end{theorem}
+
+\noindent(Pf.) Since $\phi$ is defined on generators, it must naturally inheret homomorphism properties. 
+
+(Surjective) Since $\phi$ maps to every generator of $B_n$, the map is automatically surjective.
+
+(Injective) Let $\psi:B_n\rightarrow\mathcal{B}_n$, $\sigma_i\mapsto\sigma_i^+$. Injectivity is dependent on whether or not this map is the identity map. Then, for any element, $\beta\in\mathcal{B}_n$, $\psi(\phi(\beta)) = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$. If this construction perserves R-equivalence, then we are done. Reidemeister rules are straigforward to check. Our $\Omega$ moves at terms of $\sigma_i^+\sigma_i^-$ which is the identity. Our $\Theta$ moves exchange $\sigma_i^+\sigma_{i+1}^+\sigma_i^+$ with $\sigma_{i+1}^+\sigma_i^+\sigma_{i+1}^+$ which are equivalent given our braid relations. Finally, isotopies only exchange the order in which the terms in the decomposition would occur as long as the strands are not adjacent (which the braid relations assert are equivalent). Therefore, this image under the composition is the same $\beta$ we started with! \qedsymbol \cite{Kassel}
+
+\section{The Burau Representation}
+
+
+In the past, we have considered representations where the matrices have been defined to have entries in a field. For our discussion of this representation however, we will relax our definition to allow for entries in generic rings to be acceptable. To this end, we consider matrices in $M_n(\Z[t,t^{-1}])$ where $\Z[t,t^{-1}]$ is the ring of Laurant polynomials with integer coefficients. For a fixed $n>2\in\N$, we define the following block diagonal matrices for all $i\in \{1,\hdots,n-1\}$
+
+\begin{equation}
+\begin{aligned}
+U_i = \begin{bmatrix}
+			I_{i-1}& 0 & 0 & 0 \\
+			0 & 1-t & t & 0\\
+			0 & 1 & 0 & 0\\
+			0 & 0 & 0 & I_{n-i-1}
+		\end{bmatrix}
+\end{aligned}
+\end{equation}
+
+Based on this construction, there are a few things worth noting immediately. First, $U_1$ has no identity block in the top left corner and $U_{n-1}$ has no block in the bottom right corner. The next noteworthy observation to make is that this complicated construction is actually somewhat simpler than it appears at first glance. If we make the substitution $t=1$ into this matrix, we would have a permutation matrix. More specifically, we have a matrix corresponding to a transposition of adjacent indices, which happens to be what the image of the generators of the braid group are under the map defined near \textbf{Definition 6.1}. Lastly, the most relevant feature of these matrices is the middle block. Since the entire matrix acts as an identity matrix aside from this $2\times 2$ block, the key to studying these matrices in more detail lies here.
+
+Setting $U= \begin{bmatrix} 1-t & t\\1 & 0 \end{bmatrix}$, we use the Cayley-Hamilton theorem to conclude that
+
+\begin{equation}
+\begin{aligned}
+	U^2 - (1-t)U - tI_2 = 0
+\end{aligned}
+\end{equation}
+
+The identity matrix happen to also satisfy this equation, and therefore we can generally claim that 
+
+\begin{equation}
+\begin{aligned}
+	U_i^2 - (1-t)U_i - tI_n = 0
+\end{aligned}
+\end{equation}
+
+which can be rewritten as 
+
+\begin{equation}
+\begin{aligned}
+	U_i(\frac{1}{t}U_i - \frac{1}{t}(1-t)I_n) =I_n 
+\end{aligned}
+\end{equation}
+
+Showing that $U_i$ is invertible with an explicit formula:
+
+\begin{equation}
+\begin{aligned}
+	U_i^{-1}=\begin{bmatrix}
+			I_{i-1}& 0 & 0 & 0 \\
+			0 & 0 & 1 & 0\\
+			0 & \frac{1}{t} & 1-\frac{1}{t} & 0\\
+			0 & 0 & 0 & I_{n-i-1}
+		\end{bmatrix}
+\end{aligned}
+\end{equation}
+
+which is established just the way we expect it to be.
+
+It is also worth noting that these matrices satisfy the braid relations. That is, $U_iU_j=U_jU_i$ commute when $|i-j|>1$ (which is clear when we notice that the nontrivial blocks do not coincide when this condition is met) and $U_iU_{i+1}U_i=U_{i+1}U_iU_{i+1}$ $\forall i\in\{1,\hdots,n-2\}$ (which can be confirmed by matrix algebra.
+
+\begin{definition}
+	The \textbf{Burau Representation} of $B_n$ is the map 
+$$\phi_n:B_n\rightarrow M_n(\Z[t,t^{-1}])$$
+$$\sigma_i \mapsto U_i$$
+\end{definition}
+
+It turns out that this representation can lead us to the creation of a unitary representation. We will proceed to aruge this as follows. Consider the following $n\times n$ matrix
+
+\begin{equation}
+\begin{aligned}
+	\Omega_n = \begin{bmatrix}
+						1 & 0 & 0 &\hdots & 0 \\
+						1-t & 1 & 0 & \hdots & 0 \\
+						1-t & 1-t & 1 & \hdots & 0 \\
+						\vdots&\ddots&\ddots&\hdots&\vdots\\
+						1-t & 1-t & 1-t & \hdots & 1
+					\end{bmatrix}
+\end{aligned}
+\end{equation}\\
+
+\begin{theorem}
+	For any $M\in \phi_n(B_n)$, 
+$$\overline{M}\Omega_nM^\intercal = \Omega_n$$
+where $\overline{M}=[\overline{M_{ij}}]$ where the conjugate bar maps $t$ to $\frac{1}{t}$.
+\end{theorem}
+
+\noindent(Pf.) It suffices to prove this statement for the image under generators of $B_n$. If we let $K_{m,n}$ be the matrix of dimension $m\times n$ filled with the entry $1-t$, we can consider the decomposing the matrix $\Omega_n$ into a block structure consistent with the blocks of the image of one generator. Let $i\in\{1,\hdots,n-1\}$. Then consider 
+
+\begin{equation}
+	\begin{aligned}
+		\Omega_n = \begin{bmatrix}
+							\Omega_{i-1} & 0 & 0\\
+							K_{2,i-1} & \Omega_2 & 0 \\
+							K_{n-i-1,i-1}& K_{n-i-1,2}&\Omega_{n-i-1}
+						\end{bmatrix}
+	\end{aligned}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		M = U_i = \begin{bmatrix}
+							I_{i-1} & 0 & 0\\
+							0 & U & 0 \\
+							0& 0&I_{n-i-1}
+						\end{bmatrix}
+	\end{aligned}
+\end{equation}
+
+Then
+
+\begin{equation}
+	\begin{aligned}
+		\overline{M}\Omega_nM^\intercal = \begin{bmatrix}
+														\Omega_{i-1} & 0 & 0\\
+														\overline{U}K_{2,i-1} & \overline{U}\Omega_2U^\intercal & 0 \\
+														K_{n-i-1,i-1}& K_{n-i-1,2}U^\intercal&\Omega_{n-i-1}
+													\end{bmatrix}
+	\end{aligned}
+\end{equation}
+
+It can be shown that $\overline{U}K_{2,i-1} = K_{2,i-1}$ and $K_{n-i-1,2}U^\intercal=K_{n-i-1,2}$. All that's left to calculate is 
+
+
+\begin{equation}
+	\begin{aligned}
+		\overline{U}\Omega_2U^\intercal &= \begin{bmatrix}
+													1-\frac{1}{t} & \frac{1}{t}\\
+													1 & 0 
+													\end{bmatrix}
+													\begin{bmatrix}
+													1 & 0\\
+													1-t & 1 
+													\end{bmatrix}
+													\begin{bmatrix}
+													1-t & 1\\
+													t & 0 
+													\end{bmatrix}\\
+												&= \begin{bmatrix}
+													1-\frac{1}{t} & \frac{1}{t}\\
+													1 & 0 
+													\end{bmatrix}
+													\begin{bmatrix}
+													1-t & 1\\
+													(1-t)^2 + t & 1-t 
+													\end{bmatrix}\\
+												&= \begin{bmatrix}
+													1 & 0\\
+													1-t & 1 
+													\end{bmatrix} \\
+												&= \Omega_2
+	\end{aligned}
+\end{equation}
+
+Therefore, our substitution of these matrices into their respective blocks gives us our desired results. \qedsymbol \cite{Kassel}
+
+Taking the "conjugate"-transpose of both sides of this theorem's result gives us an identical formulation:
+
+\begin{equation}
+	\begin{aligned}
+		\overline{M} \overline{\Omega_n}^\intercal M^\intercal = \overline{\Omega_n}^\intercal
+	\end{aligned}
+\end{equation}
+
+We can add these two equations together in order to obtain
+
+\begin{equation}
+	\begin{aligned}
+		\overline{M}(\Omega_n + \overline{\Omega_n}^\intercal )M^\intercal = \Omega_n + \overline{\Omega_n}^\intercal 
+	\end{aligned}
+\end{equation}
+
+If we define a new matrix in terms of our $\Omega_n$ matrices:
+\begin{equation}
+	\begin{aligned}
+		\Theta_n &= \Omega_n + \overline{\Omega_n}^\intercal \\
+					&=  \begin{bmatrix}
+						2 & 1-\frac{1}{t} & 1-\frac{1}{t} &\hdots & 1-\frac{1}{t} \\
+						1-t & 2 & 1-\frac{1}{t} & \hdots & 1-\frac{1}{t} \\
+						1-t & 1-t & 2 & \hdots & 1-\frac{1}{t} \\
+						\vdots&\ddots&\ddots&\hdots&\vdots\\
+						1-t & 1-t & 1-t & \hdots & 2
+					\end{bmatrix}
+	\end{aligned}
+\end{equation}
+
+It is clear that $\overline{\Theta_n}^\intercal = \Theta_n$, illustrating that this matrix is "Hermitian." We now have all that we require to transform the Burau representation into a classical unitary representation.
+
+Let $\zeta$ be a complex number with $|\zeta|=1$. $p_\zeta:\Z([t,t^{-1}]) \rightarrow \C$ be the ring homomorphism defined to send $t\mapsto\zeta$. If we apply this map entry-wise on our matrices, the act of conjugation as we defined on the matrices has the same effect ass complex conjugation. To this end, we can define the representation:
+
+$$P_\zeta = p_\zeta\circ\phi_n: B_n\rightarrow GL_n(\C)$$
+
+Selecting $\zeta=1$ gives us the $p_\zeta(\Theta_n) = 2I_n$, and therefore the identity derived in \textbf{Equation 6.14} becomes
+
+\begin{equation}
+	\begin{aligned}
+		\overline{P_\zeta(\beta)}P_\zeta(\beta)^\intercal = I_n &\\
+		\Leftrightarrow P_\zeta(\beta)\overline{P_\zeta(\beta)}^\intercal  = I_n
+	\end{aligned}
+\end{equation}
+
+Therefore, we have uncovered a unitary representation of $B_n$
+
+\section{Anyons and their Relation to the Braid Group}
+
+We begin our discussion of anyons by first analyzing the general set-up. We consider two particles that are indistinguishable from one another. That is to say, we have no way to tell one apart from the other, not even based on their position. In fact, we do not know their exact position. What we do have a function, referred to as a "wave function," which takes as an input two values (one corresponding to each particle) and delivers as output a probability that the particles occupy the spatial values input. Conventionally, we refer to the wave function with the variable $\psi$ and the two positional inputs as $r_1$ and $r_2$.+
+
+
+
 
 
 \newpage
@@ -3456,6 +3713,10 @@ Hello
 \bibitem{Mendes}
 
 \bibitem{Kassel}
+
+\bibitem{Deshmukh}
+
+\bibitem{Trebst}
 %A.~F. Blumberg and G.~L. Mellor.
 %\newblock A description of a three-dimensional coastal circulation model.
 %\newblock In N.~Heaps, editor, {\em Three Dimensional Coastal Ocean Models},
