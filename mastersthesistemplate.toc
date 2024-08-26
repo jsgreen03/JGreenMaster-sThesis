@@ -23,7 +23,7 @@
 \contentsline {section}{\numberline {6.1}Construction of the Braid Group}{68}{section.6.1}%
 \contentsline {section}{\numberline {6.2}The Burau Representation}{72}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Anyons and their Relation to the Braid Group}{76}{section.6.3}%
-\contentsline {chapter}{Bibliography}{78}{chapter*.6}%
+\contentsline {chapter}{Bibliography}{84}{chapter*.6}%
 \let \l@chapter \l@section 
 \noindent APPENDICES 
-\contentsline {chapter}{\numberline {A}Appendix A Title}{79}{appendix.1.A}%
+\contentsline {chapter}{\numberline {A}Appendix A Title}{85}{appendix.1.A}%

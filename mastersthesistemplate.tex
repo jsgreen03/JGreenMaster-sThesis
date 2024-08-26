@@ -3670,7 +3670,160 @@ Therefore, we have uncovered a unitary representation of $B_n$
 
 \section{Anyons and their Relation to the Braid Group}
 
-We begin our discussion of anyons by first analyzing the general set-up. We consider two particles that are indistinguishable from one another. That is to say, we have no way to tell one apart from the other, not even based on their position. In fact, we do not know their exact position. What we do have a function, referred to as a "wave function," which takes as an input two values (one corresponding to each particle) and delivers as output a probability that the particles occupy the spatial values input. Conventionally, we refer to the wave function with the variable $\psi$ and the two positional inputs as $r_1$ and $r_2$.+
+We begin our discussion of anyons by first analyzing the general set-up. We will be viewing these problems through the lens of quantum mechanics. As a general practice, the study of quantum mechanics takes the form of studying functions that represent a system of subatomic particles (in our case anyons). We refer to such functions as "wave functions." Wave functions are a catch all for describing every phenomenon occuring in the system at a given moment in time. As such, we think to each wave function as representing the state of a system. Even though these functions are dependent on time, in our analysis, we will regard time as a fixed quantity (we analyze our states in a specific instance in time). The dependence of the system therefore relies on other characteristics, like the number of particles, each particle's respective properties, etc. As such, any wave function will be defined entirely based on the instantaneous physical properties of the objects we study. Despite these differences, the fundamental idea of what wave functions represent remains the same. In the study of quantum mechanics, we embrace an element of stochasticity in the way our particles are defined: we never actively know where a particle is unless we measure it empirically. To this end, any wave function, $\psi$, is constructed to measure the ambiguity in the following way:
+
+\begin{equation}
+	\begin{aligned}
+		\int_\Omega |\psi|^2 d\mu = 1
+	\end{aligned}
+\end{equation}
+
+The interpretation for this property is that $|\psi|^2$ acts as a probability density function for our quantum system. For a specific example, if we use the positions of particles as the inputs of a wave function, we can compute the probability that our particles fall a specific region using the above condition. In general, this class of functions is somewhat broad; any particles in a quantum system (regardless of what kind of particle they are) have $100\%$ chance of being in the space we are considering. So, in an effort to simplify our exploration, let us rigorously define the space of wave functions we will be working in. Suppose that we have a two particle quantum system in which both of our particles are indistinguishable. That is to say we have no way to tell one apart from the other, not even based on their position. All of their intrinsic properties must be considered as equivalent. We will then consider each particle's position as an independent variable. Our interpretation of \textbf{Equation 6.17} will therefore be a probability that both our particles fall within a specified region. These wave functions will intuitively come from the Hilbert space $L^2(\C^2)$ and be normalized with respect to the $2-norm$. It is clear that this a vector space, and that any linear combination of functions in this space can be normalized to form new wave functions. This process is referred to as quantum superposition and will be revisited as we develop our work. Briefly, superpositions of wave functions inherently have coefficients (after normalization) that corresponds the probability that the given state will "collapse" into its corresponding summand. That is to say, every quantum superposition is a weighted sum of distinct states with coefficients equal to the probability that the superposition will when measured by observed as a its corresponding state.
+
+An immediate observation we can make about this set up concerns the equivalence of states. It is clear that if we have the wave function, $\psi$, then for any complex number of the form $e^{i\theta}$,
+
+\begin{equation}
+	\begin{aligned}
+		|e^{i\theta}\psi(r_1,r_2)|^2 = |\psi(r_1,r_2)|^2 
+	\end{aligned}
+\end{equation}
+
+As a result, any integration over either function will yield the same value. These wave functions therefore must represent the exact same state. If we wish to reference (normalized) functions in $L^2(\C^2)$ as distinct wave functions, we can construct the a quotient space to this end. If we define an equivalence relation, $\sim$, by asserting two functions are related if one is a non-zero scalar multiple of the other, we can construct our space of interest:
+
+\begin{equation}
+	\begin{aligned}
+		H \coloneq L^2(\C^2)/\sim
+	\end{aligned}
+\end{equation}
+
+this type of space is sometimes referred to as a projective Hilbert space, where elements (referred to as rays) are one-dimensional subspaces of the original Hilbert space. We can choose a unit representative to be the wave function represented by the wave function of interest. We refer to the value $e^{i\theta}$ as the global phase of the wave function.
+
+With all this set up in mind we can easily construct our vector space(s) of interest for the rest of this section. In general, we will constuct an $n$-dimensional vector space, $V$, to be the span of distinct $\psi_1,\hdots,\psi_n\in H$. We will always take the unit representative in $H$ for each choice of basis vector in $V$. This construction is necessary in order to focus on a finite-dimensional vector space, since $H$ is infinite dimensional. While our space will always be finite dimensional, since our choice of basis vectors is arbitrary, we can still make wide reaching conclusions. 
+
+For our initial exploration of these spaces, let $V = span\{\psi\}$ as perscribed above. We characterize this state ($\psi$) by our recollection that the system we are studying is a two particle system where particles are indistinguishable ($\psi:\C^2\rightarrow\C^2$). While the classification of particles being indistinguishable appears to make our problem more difficult, it will actually lead to an interesting simplification. If we consider the first input ($r_1$) to track the position of particle one and the second input ($r_2$) to track the position of particle two, then we make the following crude interpretation:
+
+\begin{equation}
+	\begin{aligned}
+		\int_B \int_A |\psi(r_1,r_2)|^2 d\mu(A)d\mu(B) \sim \text{ The Probability that particle one is in A and particle two is in B}
+	\end{aligned}
+\end{equation}
+
+where $A,B\subset\C$. Given that the nature of indistinguishable particles, we cannot be able to tell whether or not two particles switch places at any given state. If we did have a way to deduce this, our particles would be abe to be distinguished from one another. Therefore, it should not make a difference if we assert that particle one is in the set $A$ and particle two in set $B$ versus particle one being in set $B$ and particle two being in set $A$. Explicitly,
+
+\begin{equation}
+	\begin{aligned}
+		\underset{\text{Particle one is in A and Particle two is in B}}{\int_B \int_A |\psi(r_1,r_2)|^2 d\mu(A)d\mu(B)} = \underset{\text{Particle one is in B and Particle two is in A}}{\int_B \int_A |\psi(r_2,r_1)|^2 d\mu(A)d\mu(B)}
+	\end{aligned}
+\end{equation}
+
+Since $A$ and $B$ are arbitrary, we conclude that 
+
+\begin{equation}
+	\begin{aligned}
+		|\psi(r_1,r_2)|^2 = |\psi(r_2,r_1)|^2 \hspace{3mm}a.e.
+	\end{aligned}
+\end{equation}
+
+or rather,
+
+\begin{equation}
+	\begin{aligned}
+		\psi(r_1,r_2) = e^{i\theta} \psi(r_2,r_1) \hspace{3mm}\text{for some }\theta\in[0,2\pi) \hspace{1mm} a.e.
+	\end{aligned}
+\end{equation}
+
+In this way, we can classify our particles based on the choice of $\theta$, where the factor is sometimes referred to the relative phase of a wave function (when the phase is observed in comparison to another wave function). If we make the assumtion that the process of swapping these particles brings the state back to of its original state, then swapping the two particles a second time will result in the following 
+
+\begin{equation}
+	\begin{aligned}
+		\psi(r_1,r_2) = e^{2i\theta} \psi(r_1,r_2) \hspace{3mm}\text{for some }\theta\in[0,2\pi) \hspace{1mm} a.e.
+	\end{aligned}
+\end{equation}
+
+meaning that $\theta = 0,\pi$. Thus we have a natural split characterizing two different classes of particles. In the $\theta=0$ case, this wave function characterizes the state of two bosons. The category of bosons consists of many kinds of subatomic particles or composites of them. Many bosons are characterized as "force-carrying" and are responsible for particles experiencing forces that act on each other. The other case, $\theta=\pi$, charaterizes the state of two fermions. Fermions are generally thought of as classifying the kind of particles that make up basic components of matter. Examples include the classical protons, neutrons, electrons, and more. An inherent property of fermions, which is not necessarily true for bosons is their intrinsic need to not take up the same space (which is evidenced by the above wave function). This is actually responsible for many of the chemical properties that force atomic structure into place.
+
+In order to assert these two particles have the following behavior, we had to know that transposing the particles twice would lead us to have the same state. However, there are some cases in which this assumption cannot be made, specifically in two-dimensions. In this way, there is a sort of ``memory" that these particles have, in that their relative phase with respect to one another is dependent on all previous particle exchanges. As a result, arbitrary permutations of our inputs need not ever return the value of the wave function back to its initial phase. We call such particles anyons.
+
+For a moment, let us extend our construction of the space of wave equations to include $n$ anyon particles. In this case, wave functions are normalized elements of $L^2(\C_n)$. From a physical stand point, it is clear that exchanging two particles and then exchanging two different particles (no overlap in particles selected for exchange from either swap) can happen in any order without changing to acheive an identical state. In other words, swapping particles is a commutative action unless the swaps utilize some of the same particles. Further, the braid relation $\sigma_i\sigma_{i+1}\sigma_i =\sigma_{i+1}\sigma_i\sigma_{i+1}$ can be viewed in the context of particle exchange. Physical properties of the system allow us to conclude that this relationship must be satisfied by anyons. Therefore, we can homomorphically identify the generators of the braid group on $n$ particles with exchanges of adjacent, indistinguishable particles in a quantum system.
+
+Now that we have identified the connection between the braid group and anyon particle exchange, we can immediately write down our first irreducible representation. If the exchange of anyons scales the wave function by a phase of $e^{i\theta}$, we say that the anyons ``obey $\theta$ statistics". Then, we can construct an irreducible representation for any anyons obeying $\theta$ statistics is defined in the following way:
+
+$$\phi_\theta:B_n\rightarrow \C$$
+$$\beta\mapsto e^{i\theta}$$
+
+Since we can use the interpretation that representations act as linaer operators on our vector space (which in this case is $span\{\psi\}$), each anyon exchange corresponds to a phase shift as realized through this homomorphism. It is clear that the image of this homomorphism is an abelian group. In this sense, there is some freedom in the braid we can choose to showcase distinct particle exchanges. All that matters is the number of generators used in the calculation of the braid. To this end, if $\beta\in B_n$ with decomposition $\beta = \sigma^{m_1}_{i_1}\hdots\sigma^{m_k}_{i_k}$ for some $i_1,\hdots,i_k\in\{1,\hdots,n-1\},m_j\in\N$, and if $\sigma$ is the underlying permutation of $\beta$, then
+
+
+\begin{equation}
+	\begin{aligned}
+		\psi(\sigma(r_1),\sigma(r_2),\hdots,\sigma(r_n)) = e^{i\theta(m_1+\hdots+m_k)} \psi(r_1,r_2,\hdots,r_m)
+	\end{aligned}
+\end{equation}
+
+This intuitively alignes with our understanding of the impact of anyons on wave functions. When anyons behave in such a way that only the number of transpositions in the permutation of particles impacts the resultant phase of the wave function, we say that these anyons are abelian. This homomorphism is clearly unfaithful, but is the simplest construction we can create.
+
+Since our vector space was one dimensional, our representation needed to be degree $1$. What happens if we add more vectors to our basis of $V$. Suppose that $V \coloneq \bigotimes_{i=1}^n\psi$ where $n>1$. This vector space is clearly $n$-dimensional. It turns out that we have a lot of freedom as to how we can construct a representation of the braid group.
+
+\begin{theorem}\cite{Riverside}
+	Let $V \coloneq \bigotimes_{i=1}^m\psi$ where $m>1$ and let $R: V\otimes V \rightarrow V\otimes V $ be an invertible, linear operator. Then the following map is a representation of $B_n$
+$$\phi_R:B_n\rightarrow GL_m(\C)$$
+$$\sigma_i \mapsto M(U_i)$$
+where $M(U_i)$ is the matrix of the operator $U_i$ defined by
+$$U_i:V\rightarrow V$$
+$$(v_1\otimes\hdots\otimes v_i\otimes v_{i+1}\otimes\hdots\otimes v_m)\mapsto (v_1\otimes\hdots\otimes R(v_i\otimes v_{i+1})\otimes\hdots\otimes v_m)$$
+\end{theorem}
+
+\noindent (Pf.) Let $\sigma_i,\sigma_j\in B_n$. Then
+
+\begin{equation}
+	\begin{aligned}
+		\phi_R(\sigma_i\sigma_j) = M(U_iU_j) = M(U_i)M(U_j) =  \phi_R(\sigma_i)\phi_R(\sigma_j) \qedsymbol
+	\end{aligned}
+\end{equation}
+
+In this construction, we see that the operator $R$ acts as a generic "exchange" of anyons viewed as a consequence of braid generators. The braid relations can be seen to easily be valid (as a result of the homomorphism property ot directly as a result of the construction of $U_i$). The matrices of these operators will therefore take the following block diagonal form by construction:
+
+\begin{equation}
+	\begin{aligned}
+		M(U_i) = \begin{bmatrix}
+						I_{i-1} & 0 & 0 \\
+						0 & M(R) & 0 \\
+						0 & 0 & I_{m - i - 1}
+					\end{bmatrix}
+	\end{aligned}
+\end{equation}\\
+
+
+\begin{example}Take $R$ to be the operator that sends $(\psi_1,\psi_2)$ to $(\psi_2,\psi_1)$ 
+\end{example}
+We see that we have constructed the Burau representation evaluated at $\zeta=1$ through the evaluation map as seen above.
+
+Given the generality of this approach, we have found a simple way to construct a degree $n$ representation of the braid group. However, what is the inherent meaning behind the ``swapping" of wave functions? In a physical situation, it might correspond to a quantum system comprised of $m$ particles where each particle is composed of $n$ anyons. In this sense, the swapping of states corresponds to the exchange of two whole particles (exchanging $2n$ anyons). Given our example above, we can intrepret the each braid as some nontrivial exchange of an $m$ composite anyons. 
+
+However, this physical description makes hefty assumptions. First, we assume that we have only one variety of anyon. That is, every anyon obeys $\theta$ statistics for a fixed $\theta$. Secondly, when we fuse anyons together to create composite anyons, we also assume that the composite anyons obey the same $\theta$ statistics. In general, we cannot construct this kind of representation for anyons because their behavior may vary based on their statistics and their fusions' behavior. In our previous discussion, we have considered anyons to only have one kind of statistic and fuse into an anyone of that statistic. We call this a trivial anyonic system. In the coming text, we will rigorously discuss a nontrivial anyonic system which is referred to as Fibonacci 
+anyons. We can view nontrivial anyonic systems in the context of category theory.
+
+\begin{definition}
+	A monoidal category is a category $C$ equipped with the following structure:
+\begin{itemize}
+	\item a bifunctor $\otimes:C\times C\rightarrow C$
+	\item an object $e$ which acts as the identity object
+	\item three natural isomorphisms defined in the following way:
+		\begin{itemize}
+			\item The associator, $\alpha$, whose components are $\alpha_{a,b,c}: a\otimes(b\otimes c) \cong (a\otimes b)\otimes c$
+			\item The left unitor, $\lambda$, whose components are $\lambda_a : e\otimes a \cong a$
+			\item The right unitor, $\rho$, whose components are $\rho_a:a\otimes e \cong a$
+		\end{itemize}
+\end{itemize}
+\end{definition}
+
+The above definition can be seen more explicitly in the following commutative diagram:
+
+\textbf{insert commutative diagram}
+
+
+ Before beginning our discussion, we must note some physical postulates that our system must respect. First, we must construct a ``placebo" particle, that every anyon must have some statistic it obeys. To this end, if we fuse two anyons 
+
 
 
 
@@ -3717,6 +3870,8 @@ Hello
 \bibitem{Deshmukh}
 
 \bibitem{Trebst}
+
+\bibitem{Riverside}
 %A.~F. Blumberg and G.~L. Mellor.
 %\newblock A description of a three-dimensional coastal circulation model.
 %\newblock In N.~Heaps, editor, {\em Three Dimensional Coastal Ocean Models},
