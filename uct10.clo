@@ -1,18 +1,9 @@
-%% uct11.clo 11/3/94
-%% Copyright (C) 1988-2004 Daniel Gildea, BBF, Ethan Munson.
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2003/12/01 or later.
-%
-% This work has the LPPL maintenance status "maintained".
-% 
-% The Current Maintainer of this work is Daniel Gildea.
- 
+%% UCTHESIS DOCUMENT CLASS OPTION
+%% modified June 1996 by John T. Whelan (JTW) from
+%% Chris Martin's modification of
+% UCTHESIS DOCUMENT STYLE -- Released 10 Feb 93.
+%    for LaTeX version 2.09
+
 %  ****************************************
 %  *               FONTS                  *
 %  ****************************************
@@ -20,8 +11,9 @@
  
 \lineskip 1pt            % \lineskip is 1pt for all font sizes.
 \normallineskip 1pt
-\def\baselinestretch{1.37}
+\def\baselinestretch{1.67}
  
+%% Adapted modification:
 % All of the font selection commands have been revised to conform with the
 % LaTeX2e font selection commands (BBF 10/31/94).
 %
@@ -32,49 +24,49 @@
 %                  (preloaded) font sizes are: \@vpt (5pt), \@vipt (6pt),
 %                  \@viipt (etc.), \@viiipt, \@ixpt, \@xpt, \@xipt, \@xiipt,
 %                  \@xivpt, \@xviipt, \@xxpt, \@xxvpt.  These are defined
-%                  in ltfss.dtx.
+%          in ltfss.dtx.
 %
-%   BASELINESKIP = Normal value of \baselineskip for that size. (Actual
+%   BASELINESKIP = Normal value of \baselineskip for that size. (Actual 
 %                  value will be \baselinestretch * BASELINESKIP.)
 %
 % For reasons of efficiency that needn't concern the designer, the
 % document style defines \@normalsize instead of \normalsize .  This
 % is done only for \normalsize, not for any other size-changing
 % commands.
-
-\renewcommand{\normalsize}{\fontsize\@xipt{13.6}\selectfont%
-\abovedisplayskip 11\p@ plus3\p@ minus6\p@
-\belowdisplayskip \abovedisplayskip
-\abovedisplayshortskip  \z@ plus3\p@   
-\belowdisplayshortskip  6.5\p@ plus3.5\p@ minus3\p@
-\let\@listi\@listI}   % Setting of \@listi added 9 Jun 87
  
-\newcommand{\small}{\fontsize\@xpt{12}\selectfont%
+\renewcommand{\normalsize}{\fontsize\@xpt{12}\selectfont%
 \abovedisplayskip 10\p@ plus2\p@ minus5\p@
 \belowdisplayskip \abovedisplayskip
 \abovedisplayshortskip  \z@ plus3\p@   
 \belowdisplayshortskip  6\p@ plus3\p@ minus3\p@
-\def\@listi{\leftmargin\leftmargini %% Added 22 Dec 87
-\topsep 6\p@ plus2\p@ minus2\p@\parsep 3\p@ plus2\p@ minus\p@
-\itemsep \parsep}}
+\let\@listi\@listI}   % Setting of \@listi added 9 Jun 87
  
-\newcommand{\footnotesize}{\fontsize\@ixpt{11}\selectfont%
-\abovedisplayskip 8\p@ plus2\p@ minus4\p@
+\newcommand{\small}{\fontsize\@ixpt{11}\selectfont%
+\abovedisplayskip 8.5\p@ plus3\p@ minus4\p@
 \belowdisplayskip \abovedisplayskip
-\abovedisplayshortskip \z@ plus\p@
+\abovedisplayshortskip \z@ plus2\p@
 \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@
 \def\@listi{\leftmargin\leftmargini %% Added 22 Dec 87
 \topsep 4\p@ plus2\p@ minus2\p@\parsep 2\p@ plus\p@ minus\p@
 \itemsep \parsep}}
  
-\newcommand{\scriptsize}{\fontsize\@viiipt{9.5pt}\selectfont} 
-\newcommand{\tiny}{\fontsize\@vipt{7pt}\selectfont} 
-\newcommand{\large}{\fontsize\@xiipt{14pt}\selectfont} 
-\newcommand{\Large}{\fontsize\@xivpt{18pt}\selectfont} 
-\newcommand{\LARGE}{\fontsize\@xviipt{22pt}\selectfont} 
-\newcommand{\huge}{\fontsize\@xxpt{25pt}\selectfont} 
-\newcommand{\Huge}{\fontsize\@xxvpt{30pt}\selectfont} 
-
+\newcommand{\footnotesize}{\fontsize\@viiipt{9.5}\selectfont%
+\abovedisplayskip 6\p@ plus2\p@ minus4\p@
+\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip \z@ plus\p@
+\belowdisplayshortskip 3\p@ plus\p@ minus2\p@
+\def\@listi{\leftmargin\leftmargini %% Added 22 Dec 87
+\topsep 3\p@ plus\p@ minus\p@\parsep 2\p@ plus\p@ minus\p@
+\itemsep \parsep}}
+ 
+\newcommand{\scriptsize}{\fontsize\@viipt{8pt}\selectfont}
+\newcommand{\tiny}{\fontsize\@vpt{6pt}\selectfont}
+\newcommand{\large}{\fontsize\@xiipt{14pt}\selectfont}
+\newcommand{\Large}{\fontsize\@xivpt{18pt}\selectfont}
+\newcommand{\LARGE}{\fontsize\@xviipt{22pt}\selectfont}
+\newcommand{\huge}{\fontsize\@xxpt{25pt}\selectfont}
+\newcommand{\Huge}{\fontsize\@xxvpt{30pt}\selectfont}
+ 
 % The shortform font selection commands are not defined in LaTeX2e.  This
 % defines them so that they do non-orthogonal font selection, which is 
 % useful if you are in the middle of converting a document from 2.09.
@@ -89,7 +81,6 @@
 \newcommand{\sc}{\scshape}
  
 \normalsize  % Choose the normalsize font.
- 
 
 %  ****************************************
 %  *            PAGE LAYOUT               *
@@ -104,41 +95,41 @@
 
 % SIDE MARGINS:
 \if@twoside               % Values for two-sided printing:
-   \oddsidemargin 0.5in   %   Left margin on odd-numbered pages.
-   \evensidemargin 0.0in  %   Left margin on even-numbered pages.
+   \oddsidemargin 0.6in   %   Left margin on odd-numbered pages.
+   \evensidemargin 0.35in  %   Left margin on even-numbered pages.
    \marginparwidth 0pt    %   Width of marginal notes.
 \else                     % Values for one-sided printing:
-   \oddsidemargin 0.5in   %   Note that \oddsidemargin = \evensidemargin
-   \evensidemargin 0.5in
+   \oddsidemargin 0.6in   %   Note that \oddsidemargin = \evensidemargin
+   \evensidemargin 0.6in
    \marginparwidth 0pt
 \fi
-\marginparsep 10pt        % Horizontal space between outer margin and 
+\marginparsep 11pt        % Horizontal space between outer margin and 
                           % marginal note
  
  
 % VERTICAL SPACING:        
-                        % Top of page:
-\topmargin 0.0in         %    Nominal distance from top of page to top of
-                        %    box containing running head.
-\headheight 12pt        %    Height of box containing running head.
-\headsep 25pt           %    Space between running head and text.
-\topskip = 11pt         %    '\baselineskip' for first line of page.
-                        % Bottom of page:
-\footskip 30pt          %    Distance from baseline of box containing
-                        %    foot to baseline of last line of text.
+                         % Top of page:
+\topmargin 0.35in         %    Nominal distance from top of page to top
+                         %    of box containing running head.
+\headheight 12pt         %    Height of box containing running head.
+\headsep 25pt            %    Space between running head and text.
+\topskip = 10pt          %    '\baselineskip' for first line of page.
+                         % Bottom of page:
+\footskip 30pt           %    Distance from baseline of box containing
+                         %    foot to baseline of last line of text.
  
  
 % DIMENSION OF TEXT:
 % 24 Jun 86: changed to explicitly compute \textheight to avoid
 % roundoff.  The value of the multiplier was calculated as the floor
 % of the old \textheight minus \topskip, divided by \baselineskip for
-% \normalsize.  The old value of \textheight was 530.4pt.  \textheight
+% \normalsize.  The old value of \textheight was 528pt.  \textheight
 % is the height of text (including footnotes and figures, excluding
 % running head and foot).
  
-\textheight = 32\baselineskip
-\advance\textheight by \topskip
-\textwidth 6.0truein     % Width of text line.
+\textheight = 7.4in
+
+\textwidth 5.55truein     % Width of text line.
                          % For two-column mode: 
 \columnsep 10pt          %    Space between columns 
 \columnseprule 0pt       %    Width of rule between columns.
@@ -148,12 +139,12 @@
  
 % FOOTNOTES:
  
-\footnotesep 7.7pt    % Height of strut placed at the beginning of every
+\footnotesep 6.65pt   % Height of strut placed at the beginning of every
                       % footnote = height of normal \footnotesize strut,
                       % so no extra space between footnotes.
  
-\skip\footins 10pt plus 4pt minus 2pt  % Space between last line of text
-                                       % and top of first footnote.
+\skip\footins 9pt plus 4pt minus 2pt  % Space between last line of text
+                                      % and top of first footnote.
  
 % FLOATS: (a float is something like a figure or table)
 %
@@ -173,8 +164,8 @@
                                          % double-column figures in
                                          % two-column mode.
 \dbltextfloatsep 20pt plus 2pt minus 4pt % \textfloatsep for
-                                         % double-column floats.
- 
+                                         % double-column  floats.
+
 %  FOR FLOATS ON A SEPARATE FLOAT PAGE OR COLUMN:
 %    ONE-COLUMN MODE OR SINGLE-COLUMN FLOATS IN TWO-COLUMN MODE:
 \@fptop 0pt plus 1fil    % Stretch at top of float page/column. (Must
@@ -187,7 +178,7 @@
 \@dblfptop 0pt plus 1fil % Stretch at top of float page. (Must be 0pt
                          % plus ...)
 \@dblfpsep 8pt plus 2fil % Space between floats on float page.
-\@dblfpbot 0pt plus 1fil % Stretch at bottom of float page. (Must be 
+\@dblfpbot 0pt plus 1fil % Stretch at bottom of float page. (Must be
                          % 0pt plus ... )
 % MARGINAL NOTES:
 %
@@ -202,14 +193,14 @@
 \parskip 0pt plus 1pt              % Extra vertical space between
                                    % paragraphs.
 \parindent 4em                     % Width of paragraph indentation.
-%\topsep 9pt plus 3pt minus 5pt    % Extra vertical space, in addition
+%\topsep 8pt plus 2pt minus 4pt    % Extra vertical space, in addition
                                    % to \parskip, added above and below
                                    % list and paragraphing environments.
-\partopsep 3pt plus 1pt minus 2pt  % Extra vertical space, in addition
+\partopsep 2pt plus 1pt minus 1pt  % Extra vertical space, in addition
                                    % to \parskip and \topsep, added when
                                    % user leaves blank line before
                                    % environment.
-%\itemsep 4.5pt plus 2pt minus 1pt % Extra vertical space, in addition
+%\itemsep 4pt plus 2pt minus 1pt   % Extra vertical space, in addition
                                    % to \parskip, added between list
                                    % items.
 % See \@listI for values of \topsep and \itemsep
@@ -240,18 +231,18 @@
 %    *        CHAPTERS AND SECTIONS         *
 %    ****************************************
 %
+%
  
-% Definition of \part moved to report.doc  19 Jan 88
-
-% \@makechapterhead {TEXT} : Makes the heading for the \chapter
-% command.
+% Definition of \part moved to report.doc  on 19 Jan 88
+ 
+% \@makechapterhead {TEXT} : Makes the heading for the \chapter command.
 %
  
 \def\@makechapterhead#1{%           % Heading for \chapter command
   \vspace*{50\p@}%                  % Space at top of text page.
-  {\parindent \z@ \raggedright 
+  {\parindent \z@\raggedright 
     \ifnum \c@secnumdepth >\m@ne    % IF secnumdepth > -1 THEN
-      \huge\bfseries \@chapapp{} \thechapter %Print '\chaptername' and number.
+     \huge\bfseries \@chapapp{} \thechapter % Print '\chaptername' and number.
     \par 
     \vskip 20\p@ \fi                % Space between number and title.
     \Huge \bfseries                       % Title.
@@ -277,24 +268,40 @@
 %    When defining a \chapter or \section command without using
 %    \@startsection, you can use \secdef as follows:
 %       \def\chapter { ... \secdef \CMDA \CMDB }
-%       \def\CMDA    [#1]#2{ ...   % Command to define
-%                                  % \chapter[...]{...}
-%       \def\CMDB    #1{ ...       % Command to define
-%                                  % \chapter*{...}
+%       \def\CMDA    [#1]#2{ ... }  % Command to define
+%                                   % \chapter[...]{...}
+%       \def\CMDB    #1{ ... }      % Command to define
+%                                   % \chapter*{...}
  
-\def\chapter{\clearpage      % Starts new page.
+\def\clearchapterdoublepage{\clearpage
+    \if@twoside 
+        \ifodd\c@page
+        \else
+            \markboth{}{}
+                \hbox{}\newpage
+            \if@twocolumn\hbox{}\newpage
+            \fi
+        \fi
+    \fi}
+
+\def\chapter{\clearchapterdoublepage      % Starts new page.
    \thispagestyle{plain}%    % Page style of chapter page is 'plain'
    \global\@topnum\z@        % Prevents figures from going
                              % at top of page.
    \@afterindenttrue         % Suppresses indent in first paragraph.
    \secdef\@chapter\@schapter}   % Change to \@afterindentfase for no indent.
  
+%% \@chapter modified so that the optional first argument determines %%
+%% only what goes in the heading, while the full title goes in the   %%
+%% table of contents -- JTW                                          %%
 \def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
         \refstepcounter{chapter}%
         \typeout{\@chapapp\space\thechapter.}%
         \addcontentsline{toc}{chapter}{\protect
-        \numberline{\thechapter}#1}\else
-      \addcontentsline{toc}{chapter}{#1}\fi
+%%         \numberline{\thechapter}#1}\else
+%%       \addcontentsline{toc}{chapter}{#1}\fi
+        \numberline{\thechapter}#2}\else
+      \addcontentsline{toc}{chapter}{#2}\fi
    \chaptermark{#1}%
    \addtocontents{lof}%
        {\protect\addvspace{10\p@}} % Adds between-chapter space
@@ -329,6 +336,7 @@
 %  there should be no [ALTHEADING] argument.  A sectioning command
 %  is normally defined to \@startsection + its first six arguments.
  
+\let\reset@font\relax
 \def\section{\@startsection {section}{1}{\z@}{-3.5ex plus-1ex minus
     -.2ex}{2.3ex plus.2ex}{\reset@font\Large\bfseries}}
 \def\subsection{\@startsection{subsection}{2}{\z@}{-3.25ex plus-1ex
@@ -337,10 +345,11 @@
     -1ex minus-.2ex}{1.5ex plus.2ex}{\reset@font\normalsize\bfseries}}
 \def\paragraph{\@startsection
     {paragraph}{4}{\z@}{3.25ex plus1ex minus.2ex}{-1em}{\reset@font
-    \normalsize\bfseries}}
+    \normalsize \bfseries}}
 \def\subparagraph{\@startsection
      {subparagraph}{4}{\parindent}{3.25ex plus1ex minus
      .2ex}{-1em}{\reset@font\normalsize\bfseries}}
+ 
  
 % Default initializations of \...mark commands.  (See below for their
 % us in defining page styles.
@@ -393,38 +402,38 @@
 % For efficiency, level-one list's values are defined at top level, and
 % \@listi is defined to set only \leftmargin.
  
-\leftmargini 2.5em
-\leftmarginii 2.2em     % > \labelsep + width of '(m)'
-\leftmarginiii 1.87em   % > \labelsep + width of 'vii.'
-\leftmarginiv 1.7em     % > \labelsep + width of 'M.'
-\leftmarginv 1em
-\leftmarginvi 1em
+\leftmargini 25pt
+\leftmarginii 22pt     % > \labelsep + width of '(m)'
+\leftmarginiii 18.7pt  % > \labelsep + width of 'vii.'
+\leftmarginiv 17pt     % > \labelsep + width of 'M.'
+\leftmarginv 10pt
+\leftmarginvi 10pt
  
 \leftmargin\leftmargini
-\labelsep .5em
+\labelsep 5pt
 \labelwidth\leftmargini\advance\labelwidth-\labelsep
-%\parsep 4.5pt plus 2pt minus 1pt  %(Removed 9 Jun 87)
+%\parsep 4pt plus 2pt minus 1pt (Removed 9 Jun 87)
  
 % \@listI defines top level and \@listi values of
 % \leftmargin, \topsep, \parsep, and \itemsep
 % (Added 9 Jun 87)
-\def\@listI{\leftmargin\leftmargini \parsep 4.5\p@ plus2\p@ minus\p@
-\topsep 9\p@ plus3\p@ minus5\p@
-\itemsep 4.5\p@ plus2\p@ minus\p@}
+\def\@listI{\leftmargin\leftmargini \parsep 4\p@ plus2\p@ minus\p@%
+\topsep 8\p@ plus2\p@ minus4\p@
+\itemsep 4\p@ plus2\p@ minus\p@}
  
 \let\@listi\@listI
 \@listi 
  
 \def\@listii{\leftmargin\leftmarginii
    \labelwidth\leftmarginii\advance\labelwidth-\labelsep
-   \topsep 4.5\p@ plus2\p@ minus\p@
+   \topsep 4\p@ plus2\p@ minus\p@
    \parsep 2\p@ plus\p@ minus\p@
    \itemsep \parsep}
  
 \def\@listiii{\leftmargin\leftmarginiii
     \labelwidth\leftmarginiii\advance\labelwidth-\labelsep
     \topsep 2\p@ plus\p@ minus\p@ 
-    \parsep \z@ \partopsep \p@ plus\z@ minus\p@
+    \parsep \z@ \partopsep\p@ plus\z@ minus\p@
     \itemsep \topsep}
  
 \def\@listiv{\leftmargin\leftmarginiv

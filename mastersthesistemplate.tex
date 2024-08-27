@@ -1,5 +1,6 @@
 \documentclass[10pt]{ucthesis}
-
+\usepackage[hyphens]{url}
+%\include{ucthesis}
 %\newif\ifpdf
 %\ifx\pdfoutput\undefined
 %    \pdffalse % we are not running PDFLaTeX
@@ -7,20 +8,19 @@
 %\pdfoutput=1 % we are running PDFLaTeX
 %\pdftrue \fi
 
-\usepackage{url}
 %\ifpdf
 
-    \usepackage[pdftex]{graphicx}
+%    \usepackage[pdftex]{graphicx}
     % Update title and author below...
-    \usepackage[pdftex,plainpages=false,breaklinks=true,colorlinks=true,urlcolor=black,citecolor=black,%
-                                       linkcolor=black,bookmarks=true,bookmarksopen=true,%
-                                       bookmarksopenlevel=3,pdfstartview=FitV,
-                                       pdfauthor={YOUR NAME},
-                                       pdftitle={YOUR THESIS TITLE},
-                                       pdfkeywords={thesis, masters, cal poly}
-                                       ]{hyperref}
+   % \usepackage[pdftex,plainpages=false,breaklinks=true,colorlinks=true,urlcolor=black,citecolor=black,%
+      %                                 linkcolor=black,bookmarks=true,bookmarksopen=true,%
+         %                              bookmarksopenlevel=3,pdfstartview=FitV,
+            %                           pdfauthor={YOUR NAME},
+               %                        pdftitle={YOUR THESIS TITLE},
+                  %                     pdfkeywords={thesis, masters, cal poly}
+                     %                  ]{hyperref}
     %Options with pdfstartview are FitV, FitB and FitH
-    \pdfcompresslevel=1
+    %\pdfcompresslevel=1
 
 %\else
 %    \usepackage{graphicx}
@@ -40,7 +40,7 @@
 %\usepackage{nohyperref}  % This makes hyperref commands do nothing without errors
 %\usepackage{url}  % This makes \url work
 %\usepackage[morefloats=125]{morefloats}
-%\usepackage[hyphens]{url}
+
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{amssymb}
@@ -62,11 +62,18 @@
 \usepackage{tikz-3dplot}
 \usetikzlibrary{angles,quotes}
 \usepackage{amsfonts}
+\usepackage[hyphens]{url}
 \usepackage{subfig}
 \usepackage{caption}
+\usepackage{etex}
+\usepackage{enumitem}
+\usepackage{morefloats}
+ 
+\usepackage{ifthen}
 
-%\usepackage[breaklinks=true,hidelinks,pdfusetitle]{hyperref}
-% \usepackage{cleveref}
+
+\usepackage[breaklinks=true,hidelinks,pdfusetitle]{hyperref}
+\usepackage{cleveref}
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
@@ -75,6 +82,37 @@
 \usepackage[all]{nowidow}
 % Added to fix spacing between footnote entries
 \usepackage{setspace}
+\newlength{\myfootnotesep}
+\setlength{\myfootnotesep}{\baselineskip}
+\addtolength{\myfootnotesep}{-\footnotesep}
+\setlength{\footnotesep}{\myfootnotesep} 
+
+
+\makeindex
+\makeglossaries
+
+\titleformat{\chapter}[display]
+        {\normalfont\normalsize\centering}
+        {\ifthenelse{\equal{\thechapter}{A}}{APPENDICES\\[4.3ex]}{}\chaptertitlename\ \thechapter}
+        {0pt}{\normalsize\uppercase}
+\titlespacing*{\chapter}{0pt}{-20pt}{4.3ex plus .2ex}
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\small\bfseries}
+\titleformat*{\subsubsection}{\small\bfseries}
+\titleformat*{\paragraph}{\small\bfseries}
+\titleformat*{\subparagraph}{\small\bfseries}
+
+\bibliographystyle{abbrv}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0.in} \setlength{\parskip}{1.em}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\newcommand{\captionfonts}{\small\bf\ssp}
+
+\newcommand{\mycaption}[2]{\caption[#1 --- #2]{#1 --- #2}}
+
 
 \makeatletter
 \let\normalsize\relax
@@ -114,8 +152,7 @@
 \setcounter{tocdepth}{2}
 
 
-% Different font in captions (single-spaced, bold) ------------
-\newcommand{\captionfonts}{\small\bf\ssp}
+
 
 \makeatletter  % Allow the use of @ in command names
 \long\def\@makecaption#1#2{%
@@ -130,95 +167,89 @@
 \makeatother   % Cancel the effect of \makeatletter
 % ---------------------------------------
 
+\crefname{app}{appendix}{appendices}
+\Crefname{app}{Appendix}{Appendices}
+
+\graphicspath{{Figures/}{figures/}}
    
-\titleformat{\chapter}[hang]
-{\normalfont%
+\hypersetup{
+    bookmarksnumbered=true,
+    bookmarksopen=false,
+    bookmarksopenlevel=0,
+    colorlinks=false,
+    pdfstartview=Fit,
+    pdfborder={0 0 0},
+}
+
+
+\newcounter{qcounter}
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords:}} #1}
+
+%\titleformat{\chapter}[hang]
+%{\normalfont%
     % \huge% %change this size to your needs for the first line
-    \bfseries}{\chaptertitlename\ \thechapter}{10pt}{%
+   % \bfseries}{\chaptertitlename\ \thechapter}{10pt}{%
     % \huge %change this size to your needs for the second line
-    }
+    %}
     
-\titleformat{\section}[hang]
-{\normalfont%
+%\titleformat{\section}[hang]
+%{\normalfont%
     % \huge% %change this size to your needs for the first line
-    \bfseries}{ \thesection}{10pt}{%
+   % \bfseries}{ \thesection}{10pt}{%
     % \huge %change this size to your needs for the second line
-    }
+    %}
 
 % \renewcommand*{\chapterheadendvskip}{%
 %   \vspace{0.725\baselineskip plus 0.115\baselineskip minus 0.192\baselineskip}%
 % }
 
-\titleformat{\chapter}[display]
-        {\normalfont\normalsize\centering%\bfseries
-        }
-        {\ifthenelse{\equal{\thechapter}{A}}{APPENDICES\\[4.3ex]}{}\chaptertitlename\ \thechapter}
-        {0pt}{\normalsize\uppercase}
-\titlespacing*{\chapter}{0pt}{-10pt}{4.3ex plus .2ex}
+%\titleformat{\chapter}[display]
+   %     {\normalfont\normalsize\centering%\bfseries
+      %  }
+        %{\ifthenelse{\equal{\thechapter}{A}}{APPENDICES\\[4.3ex]}{}\chaptertitlename\ \thechapter}
+        %{0pt}{\normalsize\uppercase}
+%\titlespacing*{\chapter}{0pt}{-10pt}{4.3ex plus .2ex}
 
 
-\titleformat*{\section}{\normalsize%\bfseries
-}
-\titleformat*{\subsection}{\small%\bfseries
-}
-\titleformat*{\subsubsection}{\small%\bfseries
-}
-\titleformat*{\paragraph}{\small%\bfseries
-}
-\titleformat*{\subparagraph}{\small%\bfseries}
-}
+%\titleformat*{\section}{\normalsize%\bfseries
+%}
+%\titleformat*{\subsection}{\small%\bfseries
+%}
+%\titleformat*{\subsubsection}{\small%\bfseries
+%}
+%\titleformat*{\paragraph}{\small%\bfseries
+%}
+%\titleformat*{\subparagraph}{\small%\bfseries}
+%}
 
 % \hypersetup{nolinks=true}
 \begin{document}
-\hypersetup{nolinks=true}
+%\hypersetup{nolinks=true}
+
+%\input{frontmatter}
 
 
-% Declarations for Front Matter
+%\maketitle
 
-% Update fields below!
-\title{Representation Theory in Braid Groups}
-\author{Jaxon Green}
-\degreeyear{2024}
-\degreesemester{June}
-\degree{Master of Science}
-\chair{Professor Ben Richert\\  Professor of Mathematics} 
-\othermembers{Professor Sean Gasiorek}
-%\othermemberA{OTHER MEMBER HERE \\ & Professor of Mathematics}
-%\othermemberB{OTHER MEMBER HERE\\ & Professor of Mathematics} 
-\prevdegrees{None}
-\numberofmembers{1}
-\field{Mathematics} 
-\campus{San Luis Obispo}
-%\copyrightyears{seven}
+%\begin{frontmatter}
 
+%\copyrightpage
+%\committeemembershippage
+
+%\begin{abstract}
+%\input{abstract}
+%\end{abstract}
+
+%\begin{acknowledgements}
+%\input{acknowledgements}
+%\end{acknowledgements}
+
+%\tableofcontents
 
 
-\maketitle
+%\listoftables
 
-\begin{frontmatter}
-
-\copyrightpage
-
-
-\begin{abstract}
-
-Write an abstract here.
-
-\vspace*{-10pt}
-\end{abstract}
-
-\begin{acknowledgements}
-
-Any acknowledgements?
-
-\end{acknowledgements}
-
-\tableofcontents
-
-
-\listoftables
-
-\listoffigures
+%\listoffigures
 
 % Add CHAPTER into table of contents.
 
@@ -227,7 +258,7 @@ Any acknowledgements?
    %\noindent Representations of Groups in Physics
 %}
 
-\end{frontmatter}
+%\end{frontmatter}
 
 \pagestyle{plain}
 
@@ -317,12 +348,9 @@ To illustrate to concept of representations, we will consider the group of all r
 \noindent Note: Since $GL_1(\mathbb{C})$ as $\mathbb{C}$ are isomorphic, we identify 3each $1x1$ matrix with its corresponding entry with its element in $\mathbb{C}$.
 
 \begin{example}
-	(Trivial Representation)\\\\
-	\renewcommand{\arraystretch}{0.7}
-	Let   \begin{tabular}{l}$\phi:G\rightarrow GL_1(\mathbb{C})$\\
-		$\hspace{6mm}g\mapsto 1$
-		\end{tabular}
+(Trivial Representation)$$\phi:G\rightarrow GL_1(\mathbb{C})$$$$g\mapsto 1$$
 \end{example}
+
 \noindent This map is the trivial homomorphism from $G$ to $GL_1(\mathbb{C})$ and therefore it easily satisfies the requirement of a degree $1$ representation of $G$. We say that $\phi$ is the \textbf{trivial representation} of $G$.
 
 	
