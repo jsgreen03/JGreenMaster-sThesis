@@ -335,7 +335,7 @@
 
 \section{Introduction to Representations}
 
-Over the course of this chapter, we will develop the theory and utility of representations. At a glance, representations give us the ability to dial back the complexity of a mysterious group by viewing its elements as matrices. Thanks to the rigorous development and study of linear algebra, groups of matrices are well-understood structures. Representations allow us to unravel the mystery of an unknown group structure and reveal a group's fundamental properties as results of linear algebra techniques. 
+Over the course of this chapter, we will develop the theory and utility of representations. At a glance, representations give us the ability to dial back the complexity of a mysterious group by viewing its elements as matrices. Thanks to the rigorous development and study of linear algebra, groups of matrices are well-understood structures. Representations allow us to unravel the mystery of an unknown group structure and reveal a group's fundamental properties as results of linear algebra techniques. This chapter follows the structure of both Wu-Ki Tung's \textit{Group Theory in Physics} and Anthony Mendes' ``Matrix Representations of the Symmetric Group" Lecture Notes. \cite{Tung,Mendes}
 
 \begin{definition}
 	(First Definition) A \textbf{representation} of degree n is a group homomorphism that maps a group into $GL_n(\mathbb{C})$
@@ -345,15 +345,14 @@ Over the course of this chapter, we will develop the theory and utility of repre
 
 To illustrate to concept of representations, we will consider the group of all roots of unity, $G$, for the following examples. We can construct multiple homomorphisms from $G$ to showcase different kinds of representations. 
 
-\noindent Note: Since $GL_1(\mathbb{C})$ as $\mathbb{C}$ are isomorphic, we identify 3each $1x1$ matrix with its corresponding entry with its element in $\mathbb{C}$.
+\noindent Note: Since $GL_1(\mathbb{C})$ as $\mathbb{C}$ are isomorphic, we identify each $1x1$ matrix with its corresponding entry with its element in $\mathbb{C}$.
 
-\begin{example}
-	(Trivial Representation)
-	\renewcommand{\arraystretch}{0.7}
-		\begin{tabular}{l}$\phi:G\rightarrow GL_1(\mathbb{C})$\\
-		$\hspace{6mm}g\mapsto 1$
-		\end{tabular}
-\end{example}
+\begin{example}\end{example}\renewcommand{\arraystretch}{0.7}\begin{center}
+			\begin{tabular}{l}$\phi:G\rightarrow GL_1(\mathbb{C})$\\
+			$\hspace{6mm}g\mapsto 1$
+			\end{tabular}
+		\end{center}
+
 
 	
 
@@ -361,38 +360,39 @@ To illustrate to concept of representations, we will consider the group of all r
 
 	
 
-\begin{example}
-	(Nontrivial Degree 1 Representation) \\
-	By construction of $G$, if $g\in G$, then $g = e^{\frac{2\pi im }{n}}$ where $m,n\in \mathbb{Z}$	
-	\renewcommand{\arraystretch}{0.7}\\\\
-	Let   \begin{tabular}{l}$\phi:G\rightarrow GL_1(\mathbb{C})$\\
+\begin{example}\end{example} 
+By construction of $G$, if $g\in G$, then $g = e^{\frac{2\pi im }{n}}$ where $m,n\in \mathbb{Z}$	
+	\renewcommand{\arraystretch}{0.7}
+		\begin{center}	
+		 \begin{tabular}{l}$\phi:G\rightarrow GL_1(\mathbb{C})$\\
 		$\hspace{6mm}g\mapsto g$
 		\end{tabular}
-\end{example}
+		\end{center}
+
 \noindent where we view $G$ as a multiplicative subgroup of $\mathbb{C}$. This observation trivializes the argument that $\phi$ is a homomorphism. Therefore, $\phi$ is a degree $1$ representation of $G$.		
 
 
-\begin{example}
-	(Degree 2 Representation) \\\\
-	\renewcommand{\arraystretch}{1}
-	Let   \begin{tabular}{l}$\phi:G\rightarrow GL_2(\mathbb{C})$\\
+\begin{example}\end{example}
+	\renewcommand{\arraystretch}{1}\begin{center}
+		\begin{tabular}{l}$\phi:G\rightarrow GL_2(\mathbb{C})$\\
 		$\hspace{0mm}e^{2\pi i\frac{m}{n}}\mapsto \begin{bmatrix}
 							\cos(\frac{2\pi m}{n}) & \sin(\frac{2\pi m}{n}) \\
 							-\sin(\frac{2\pi m}{n}) & \cos(\frac{2\pi m}{n})
 						      \end{bmatrix}$
 		\end{tabular}
-\end{example}
+\end{center}
+
 \noindent To show this map is a homomorphism, we will take two elements of $G$, say $e^{2\pi i\frac{x}{y}}$ and $e^{2\pi i\frac{a }{b}}$ and track the image of their product under $\phi$. \\
 	\begin{equation}
 		\begin{aligned}
-			\phi(e^{2\pi i\frac{x}{y}} * e^{2\pi i\frac{a}{b}} ) &= \phi(e^{2\pi i(\frac{x}{y}+\frac{a}{b})})\\ 
+			\phi(e^{2\pi i\frac{x}{y}} e^{2\pi i\frac{a}{b}} ) &= \phi(e^{2\pi i(\frac{x}{y}+\frac{a}{b})})\\ 
 												    &= \begin{bmatrix}
 														\cos(2\pi(\frac{x}{y}+\frac{a}{b})) & \sin(2\pi(\frac{x}{y}+\frac{a}{b})) \\
 														-\sin(2\pi(\frac{x}{y}+\frac{a}{b})) & \cos(2\pi(\frac{x}{y}+\frac{a}{b}))
 													  \end{bmatrix}\\
 												    &= \begin{bmatrix}
-														\cos(2\pi\frac{x}{y})\cos(2\pi\frac{a}{b}) - \sin(2\pi\frac{x}{y})\sin(2\pi\frac{a}{b})   &\sin(2\pi\frac{x}{y})\cos(2\pi\frac{a}{b}) + \cos(2\pi\frac{x}{y})\sin(2\pi\frac{a}{b})\\
-														-\sin(2\pi\frac{x}{y})\cos(2\pi\frac{a}{b}) - \cos(2\pi\frac{x}{y})\sin(2\pi\frac{a}{b}) & \cos(2\pi\frac{x}{y})\cos(2\pi\frac{a}{b}) - \sin(2\pi\frac{x}{y})\sin(2\pi\frac{a}{b})
+														\cos(\frac{2\pi x}{y})\cos(\frac{2\pi a}{b}) - \sin(\frac{2\pi x}{y})\sin(\frac{2\pi a}{b})   &\sin(\frac{2\pi x}{y})\cos(\frac{2\pi a}{b}) + \cos(\frac{2\pi x}{y})\sin(\frac{2\pi a}{b})\\
+														-\sin(\frac{2\pi x}{y})\cos(\frac{2\pi a}{b}) - \cos(\frac{2\pi x}{y})\sin(\frac{2\pi a}{b}) & \cos(\frac{2\pi x}{y})\cos(\frac{2\pi a}{b}) - \sin(\frac{2\pi x}{y})\sin(\frac{2\pi a}{b})
 													  \end{bmatrix}\\ 
 												    &= \begin{bmatrix}
 														\cos(2\pi\frac{x}{y}) & \sin(2\pi\frac{x}{y}) \\
@@ -402,7 +402,7 @@ To illustrate to concept of representations, we will consider the group of all r
 														\cos(2\pi\frac{a}{b}) & \sin(2\pi\frac{a}{b}) \\
 														-\sin(2\pi\frac{a}{b}) & \cos(2\pi\frac{a}{b})
 													  \end{bmatrix} \\
-		                                                                                    &= \phi(e^{2\pi i\frac{x}{y}})*\phi(e^{2\pi i\frac{a}{b}})
+		                                                                                    &= \phi(e^{2\pi i\frac{x}{y}})\phi(e^{2\pi i\frac{a}{b}})
 		\end{aligned}
 	\end{equation}
 	Since, $\phi$ has been shown to be a homomorphism, we can conclude that $\phi$ is also a degree $2$ representation of $G$.\\
@@ -460,10 +460,10 @@ satisfy the criteria to be considered a representation (by the first definition)
 
 	$$\psi(gh) = M(\phi(gh)) = M(\phi(g)\circ \phi(h)) = M(\phi(g))*M(\phi(h)) = \psi(g)\psi(h)$$
 
-Where the homomorphism property of $\phi$ is used in succession with the relationship between the composition of operators and the multiplication of their corresponding matrices. This observation illustrates a special conenction between the two definitions of a representation. If we are given a representation defined in the either way, we can interpret the target space of the homomorphism in the context of both definitions. That is to say, every $n\times n$ matrix can be interpreted as a linear operator on an $n$-dimensional vector space, and vice-versa. The homomorphism property of one definition is a necessary condition for the homomorphism in the other definition. Hence, we can see the two definitions of representations are equivalent in the case of a finite dimensional vector space.
+\noindent where the homomorphism property of $\phi$ is used in succession with the relationship between the composition of operators and the multiplication of their corresponding matrices. This observation illustrates a special conenction between the two definitions of a representation. If we are given a representation defined in the either way, we can interpret the target space of the homomorphism in the context of both definitions. That is to say, every $n\times n$ matrix can be interpreted as a linear operator on an $n$-dimensional vector space, and vice-versa. The homomorphism property of one definition is a necessary condition for the homomorphism in the other definition. Hence, we can see the two definitions of representations are equivalent in the case of a finite dimensional vector space.
 \end{remark}
 
-\begin{example}
+\begin{example}\end{example}
 	Let $G$ be the group defined by the complex unit circle and the operation of multiplication and let $V = \mathbb{C}$ 
 	\begin{center}
 		 \begin{tabular}{l}$\phi:G\rightarrow \mathcal{L}(V)$\\
@@ -471,13 +471,13 @@ Where the homomorphism property of $\phi$ is used in succession with the relatio
 		\end{tabular}
 	\end{center}
 	where $U_{e^{i\theta}}$ is the linear operator (on $V$) that multiplies its input by $e^{i\theta}$. 
-\end{example}
 
-Each operator is clearly linear. The process of confirming a map is a representation is relatively standard. However, there does not seem to be any intuitive way to come up with a new representation. The rest of this chapter will be devoted the process of comparing and characterizing every representation of a given group. We appeal to Definition 3.5 to argue that this map is a representation. Let $e^{i\theta}$, $e^{i\psi} \in G$. Then $\phi(e^{i\theta} * e^{i\psi}) = U_{e^{i(\theta+\psi)}}$. For all $re^{i\gamma} \in V$, we have
+
+Each operator is clearly linear. The process of confirming a map is a representation is relatively standard. However, there does not seem to be any intuitive way to come up with a new representation. The rest of this chapter will be devoted the process of comparing and characterizing every representation of a given group. We appeal to Definition 3.5 to argue that this map is a representation. Let $e^{i\theta}$, $e^{i\psi} \in G$. Then $\phi(e^{i\theta} e^{i\psi}) = U_{e^{i(\theta+\psi)}}$. For all $re^{i\gamma} \in V$, we have
 
 	\begin{equation}
 		\begin{aligned}
-			U_{e^{i(\theta+\psi)}}(re^{i\gamma}) &= re^{i\gamma} * e^{i(\theta+\psi)} \\
+			U_{e^{i(\theta+\psi)}}(re^{i\gamma}) &= re^{i\gamma}  e^{i(\theta+\psi)} \\
 										&= re^{i\gamma + i\psi + i\theta} \\
 										&= U_{e^{i\theta}}(re^{i\gamma + i\psi}) \\
 										&= U_{e^{i\theta}}(U_{e^{i\psi}}(re^{i\gamma})) \\
@@ -485,11 +485,7 @@ Each operator is clearly linear. The process of confirming a map is a representa
 		\end{aligned}
 	\end{equation}
 
-Since $\phi(e^{i\psi})*\phi(e^{i\theta}) = U_{e^{i\theta}}\circ U_{e^{i\psi}}$, we have shown that the homomorphism property of $\phi$ is satisfied. Therefore, $phi$ is a representation. We can now identify this definition of a representation with the initial formulation in two possible ways.
-
-\begin{assumption}
-	$V$ is a vector space over $\mathbb{C}$ (as a field). 
-\end{assumption}
+Since $\phi(e^{i\psi})\phi(e^{i\theta}) = U_{e^{i\theta}}\circ U_{e^{i\psi}}$, we have shown that the homomorphism property of $\phi$ is satisfied. Therefore, $\phi$ is a representation. We can now identify this definition of a representation with the initial formulation in two possible ways.
 
 If we consider $V$ to be a vector space over $\mathbb{C}$, then it is a one-dimensional vector space. This means that the matrix of any operator defined on $V$ will be a $1\times 1$ matrix (or, an element of $\mathbb{C}$). Taking the basis $\{1\}$ of $V$ and $e^{i\theta} \in G$, we see that 
 
@@ -497,10 +493,6 @@ $$M(U_{e^{i\theta}}) = \begin{bmatrix}
 					e^{i\theta}
 				\end{bmatrix} = e^{i\theta} $$
 This is clearly a degree one representation given by Definition 3.1.
-
-\begin{assumption}
-	$V$ is a vector space over $\mathbb{R}$
-\end{assumption}
 
 If $V$ is a vector space over $\mathbb{R}$, then it is a two-dimensional vector space. This means that the matrix of any operator defined on $V$ will have be of shape $2\times2$. Taking the basis $\{1,i\}$ of $V$, any $e^{i\theta} \in G$, and the identity $e^{i\theta} = \cos(\theta) + i\sin(\theta)$ we see that the following equalities hold:
 $$(a+bi)e^{i\theta} = (a\cos(\theta)-b\sin(\theta))+i(a\sin(\theta)+b\cos(\theta))$$
@@ -511,7 +503,7 @@ $$M(U_{e^{i\theta}}) = \begin{bmatrix}
 
 This representation will be revisited later in greater detail as multiplication of complex numebrs by $e^{i\theta}$ corresponds to rotation in the complex plane by the angle $\theta$ about the origin.
 
-For the rest of the paper, we shall almost exclusively be considering finite dimensional vector spaces and therefore will interchangeably use both definitions of representations as needed.
+Unless otherwise specified, we shall almost exclusively be considering finite dimensional vector spaces and therefore will interchangeably use both definitions of representations as needed.
 
 \section{Decomposing and Characterizing Representations}
 
@@ -531,7 +523,7 @@ In the context of linear algebra, this conjugation by an invertible matrix can m
 	If two representations are equivalent, then character of both representations are the same.
 \end{theorem}
 
-(Pf.) Suppose $\phi$ and $\psi$ be two equivalent representations. Then $\exists M$ such that $\forall g \in G$, $\phi(g) = M\psi(g)M^{-1}$. Then $\forall g \in G$,
+\begin{proof}Suppose $\phi$ and $\psi$ be two equivalent representations. Then $\exists M$ such that $\forall g \in G$, $\phi(g) = M\psi(g)M^{-1}$. Then $\forall g \in G$,
 
 \begin{equation}
 	\begin{aligned}
@@ -542,11 +534,11 @@ In the context of linear algebra, this conjugation by an invertible matrix can m
 	\end{aligned}
 \end{equation}
 
-Therefore, $\chi^{\phi} = \chi^{\psi}$. $\qedsymbol$\\
+Therefore, $\chi^{\phi} = \chi^{\psi}$. \end{proof}
 
 The character of a representation gives us the ability to quickly rule out equivalence of representations without getting into messy matrix calculations, especially in higher degree representations.
 
-\begin{example}
+\begin{example}\end{example} 
 	Let $S_3$ be the symmetric group of degree 3 and $\phi$ and $\psi$ be defined below. Comparing the outputs of each map, it is clear that the maps are not identical. Are these representations equivalent? We can use the trace argument to justify why they are not. We can observe the following equalities directly: 
 $$\chi^{\phi}(\sigma) = \chi^{\psi}(\sigma) \hspace{1mm} for \hspace{1mm} \sigma \in \{e, (12), (13), (23)\}$$
 $$\chi^{\phi}(\sigma) \neq \chi^{\psi}(\sigma) \hspace{1mm} for \hspace{1mm} \sigma \in \{(132), (123)\}$$
@@ -624,9 +616,9 @@ As a result, $\chi^{\phi} = \chi^{\psi}$, and therefore, these representations a
 			\end{array}
 		\end{array}$
 	\end{center}
-\end{example} 
 
-As eluded to in the previous example, it seems that representations can share "pieces" in common without being considered equivalent. In the same way we decompose linear operators (and their matrices) into a block diagonal structure for the simplicity of our study, we can decompose the linear operators (and matrices) of a representation in the same way to make strikingly similar conclusions. In this way, we can reveal a more intuitive understanding of the underlying representation and create an natural way to fully decompose any arbitrary representation into natural components. 
+
+As alluded to in the previous example, it seems that representations can share ``pieces" in common without being considered equivalent. In the same way we decompose linear operators (and their matrices) into a block diagonal structure for the simplicity of our study, we can decompose the linear operators (and matrices) of a representation in the same way to make strikingly similar conclusions. In this way, we can reveal a more intuitive understanding of the underlying representation and create an natural way to fully decompose any arbitrary representation into natural components. 
 
 \begin{definition}
 	Let $\phi$ be a representation of the group $G$ and $U_G \coloneq \{\phi(g)=U_g: V\rightarrow V \hspace{1mm}| \hspace{1mm} g\in G\}$. Let $W \subset V$. $W$ is said to be an \textbf{invariant subspace} with respect to $U_G$ if $\forall v \in W$ and $\forall g \in G$, $U_g(v)\in W$.
@@ -638,17 +630,17 @@ In general, we say that a subspace satisfying the above condition is invariant w
 	A representation is said to be \textbf{irreducible} if there is no nontrivial, invariant subspace with respect to it. Otherwise, we say that the representation is reducible.
 \end{definition}
 
-It will turn out that the irreducible representations of a group will be the "pieces" that we can recognize as the building blocks of each representation. Due to the nature of invariant subspaces, it is no surprise that we can see a block diagonal structure form in the matrices of representations.
+It will turn out that the irreducible representations of a group will be the ``pieces" that we can recognize as the building blocks of each representation. Due to the nature of invariant subspaces, it is no surprise that we can see a block diagonal structure form in the matrices of representations.
 
 \begin{definition}
 	If $M$ and $N$ are square matrices, then let $$M\oplus N \coloneq \begin{bmatrix}
 																			M & 0\\
 																			0 & N\\
 																		\end{bmatrix}$$
-	we call this new matrix the \textbf{direct sum of M and N}
+	we call this new matrix the \textbf{direct sum} of M and N.
 \end{definition}
 
-\begin{example}
+\begin{example}\end{example}
 	Referring back to one of the matrices from Example 3.13, we can see that
 $$\begin{bmatrix}
 	1 & 0 & 0 \\
@@ -662,13 +654,13 @@ $$\begin{bmatrix}
 						-1 & -1
 					\end{bmatrix}$$
 It becomes increasingly clear that the fixed first row and column of these matrices are directly linked to the trivial representation.
-\end{example}
+
 
 \begin{theorem}
 	Let $\phi$ be a representation of a group $G$.  Then there exists a set of irreducible representations of $G$, $\{\psi_i\}_{i=1}^j$, such that $$\phi = T\left(\bigoplus_{i=1}^j \alpha_i*\psi_i\right)T^{-1}$$ where $\alpha_i*\psi_i \coloneq \underbrace{\psi_i \oplus \psi_i \oplus \hdots \oplus \psi_i}_{\alpha_i times}$ and $T$ is some invertible matrix/operator. 
 \end{theorem}
  
-\noindent (Pf.) By induction on the degree of the representation $n$. \\
+\begin{proof} By induction on the degree of the representation $n$. \\
 
 (Base Case: $n = 1$) Suppose that $\phi$ is a degree one representation of $G$, with $U_G$ being defined as in Definition 3.14. Then $\forall U_g \in U_G$, we have seeking to show that every invariant subspace of $V$ with respect to $U_g$ is trivial. Suppose that $W \subset V$ is a subspace and let $dim(W)$ denote the dimension of $W$. Then, $dim(W) \leq dim(V) = 1$ as given by the degree of the representation. If $dim(W) = 1$, then $W=V$ and therefore, $W$ is a trivial subspace. If $dim(W) < dim(V)$, then it can only be the case that $dim(W) = 0$, and therefore, $W= \{0\}$, which is also trivial. Therefore, every possible subspace of $V$ must be trivial, and as a result, every invariant subspace must also be trivial. Hence, $\phi$ is an irreducible representation. \\
 
@@ -736,17 +728,14 @@ $$\begin{array}{c c}
 to conclude that
 \begin{equation}
 	\phi' = P\left(\bigoplus_{i=1}^{j+l} \gamma_i*\nu_i\right)P^{-1}
-\end{equation} \qedsymbol
+\end{equation} \end{proof}
 
 \begin{remark}
-	The main purpose of this theorem is to illustrate that any representation can be thought of as a "linear combination" of irreducible representations of that group. Being able to readily compare the irreducible representation decomposition of any two given representations is key to understanding similarities and differences between them.
+	The main purpose of this theorem is to illustrate that any representation can be thought of as a ``linear combination" of irreducible representations of that group. Being able to readily compare the irreducible representation decomposition of any two given representations is key to understanding similarities and differences between them.
 \end{remark}
 
-\begin{example}
-	Let $\phi$ and $\psi$ be defined as they were in Example 3.13. 
-\end{example}
-
-\noindent There have been three different irreducible representations that were used to construct these maps. Consider $\mu_1$ to be the trivial representation and $\mu_2$ and $\mu_3$ to be defines as below:
+\begin{example}\end{example}
+	Let $\phi$ and $\psi$ be defined as they were in Example 3.13. There have been three different irreducible representations that were used to construct these maps. Consider $\mu_1$ to be the trivial representation and $\mu_2$ and $\mu_3$ to be defines as below:
 $$\begin{array}{c c}
 	\begin{array}{c}
 		\mu_2 : S_3 \rightarrow \mathbb{R} \\
@@ -773,7 +762,7 @@ Now that we have established that representations are best understood by studyin
 	If $\phi$ is an irreducible representation of a group $G$, then any representation equivalent to $\phi$ must also be irreducible.
 \end{theorem}
 
-\noindent (Pf.) For this proof, we will consider the linear operator definition of representations. Let $\phi_g \coloneq \phi(g)$ and consider each operator to be defined on the vector space $V$. Let $\psi$ be defined as an equivalent representation of $G$, so there exists an invertible, linear operator, $S$ such that $\phi_g = S\psi_g S^{-1}$ $\forall g \in G$. we can assume that for every $g$, $\phi_g$ is defined as an operator on the vector space $V'$. It will suffice to show that any $\psi_g$-invariant subspace of $V'$ is a trivial subspace. \\
+\begin{proof}For this proof, we will consider the linear operator definition of representations. Let $\phi_g \coloneq \phi(g)$ and consider each operator to be defined on the vector space $V$. Let $\psi$ be defined as an equivalent representation of $G$, so there exists an invertible, linear operator, $S$ such that $\phi_g = S\psi_g S^{-1}$ $\forall g \in G$. we can assume that for every $g$, $\phi_g$ is defined as an operator on the vector space $V'$. It will suffice to show that any $\psi_g$-invariant subspace of $V'$ is a trivial subspace. \\
 
 Let $W' \subset V'$ be a $\psi_g$-invariant subspace. Let $w' \in W'$. Then, the following equation holds:
 
@@ -783,17 +772,15 @@ This equality illustrates that for any $v \in S(W')$ (the image of $W'$ under $S
 
 Since $S$ is an invertible operator, the rank-nullity theorem tells us that $dim(W')=0$ or $dim(W') = dim(V)$. Then, either $W' = \{0\}$ or the equivalence of representations gives us that $dim(V)=dim(V')$, and therefore, $W' = V'$. \\
 
-Since there are no non-trivial $\psi_g$-invariant subspaces, $\psi$ must also be an irreducible representation of $G$. \qedsymbol
+Since there are no non-trivial $\psi_g$-invariant subspaces, $\psi$ must also be an irreducible representation of $G$. \end{proof}
 
 
 
 \begin{theorem} \textbf{Schur's Theorem}
-	Let $\phi$ and $\psi$ be two irreducible representations of the group $G$. Let $M$ be a matrix/linear map defined such that $M\phi(g) = \psi(g)M \hspace{1.5mm}\forall g \in G$. Then $M$ is invertible or $0$. 
+	Let $\phi$ and $\psi$ be two irreducible representations of the group $G$. Let $M$ be a matrix defined such that $M\phi(g) = \psi(g)M \hspace{1.5mm}\forall g \in G$. Then $M$ is invertible or $0$. 
 \end{theorem}
 
-\noindent (Pf.) Reminder: When viewing this proof from the perspective of operators, interpret the product of operators as composition as I defined at the beginning. 
-
-Suppose the degree of $\phi$ is $n$ and the degree of $\psi$ is $m$. Then $M$ must be an $m\times n$ matrix. Let $v\in ker(M)$. Then $\forall g \in G$, we have 
+\begin{proof}Suppose the degree of $\phi$ is $n$ and the degree of $\psi$ is $m$. Then $M$ must be an $m\times n$ matrix. Let $v\in ker(M)$. Then $\forall g \in G$, we have 
 \begin{equation}
 	 (M\phi(g))v= (\psi(g)M)v = 0
 \end{equation}
@@ -808,25 +795,25 @@ Similarly, if $w \in im(M)$, then we can show that $im(M)$ is a $\psi$-invariant
 
 for some $x$ in our space. Then, $im(M)$ must be a $\psi$-invariant subspace, and therefore, $im(M) = \{0\}$ or the whole space.
 
-If $ker(M)$ is the whole space or $im(M) = \{0\}$, then clearly, $M=0$. However, if this is not the case, then $ker(M) = \{0\}$ and $im(M)$ is the whole space, and we have $m=n$ giving us an invertible $M$. \qedsymbol
+If $ker(M)$ is the whole space or $im(M) = \{0\}$, then clearly, $M=0$. However, if this is not the case, then $ker(M) = \{0\}$ and $im(M)$ is the whole space, and we have $m=n$ giving us an invertible $M$. \end{proof}
 
 \begin{corrolary}
 	Let $\phi$ be an irreducible representation and $M$ be a matrix/operator such that $M\phi(g)=\phi(g)M \hspace{1.5mm}\forall g \in G$. Then $M$ is a mulptiple of the identity matrix/map.
 \end{corrolary}
 
-\noindent (Pf.) Let $\lambda$ be an eigenvalue of $M$. Then $M - \lambda I$ is not invertible. Following from Schur's Theorem, we see that $\forall g \in G$
+\begin{proof}[\cite{Mendes}]Let $\lambda$ be an eigenvalue of $M$. Then $M - \lambda I$ is not invertible. Following from Schur's Theorem, we see that $\forall g \in G$
 $$(M-\lambda I)\phi(g) = \phi(g) (M-\lambda I)$$
-Therefore, it must be the case that $M-\lambda I = 0$ \cite{Mendes} \qedsymbol 
+Therefore, it must be the case that $M-\lambda I = 0$ \end{proof}
 
 \begin{corrolary}
 	If $G$ is an abelian group, then any irreducible representation of $G$ is can be viewed as a degree one representation.
 \end{corrolary}
 
-\noindent(Pf.) Let $\phi$ be an irreducible representation of $G$. Let $g \in G$. Then, $\forall h \in G$, $\phi(g)\phi(h) = \phi(h)\phi(g)$. Then, Schur's Theorem tells us that $\phi(g) = \lambda_g I$ for some $\lambda_g \in \C$. Since $g$ is arbitrary, this argument forces every matrix in the representation to be a scalar multiple of the identity matrix. We can take the degree one representation to be the first entry of each matrix. \cite{Tung} \qedsymbol
+\begin{proof}[\cite{Tung}]Let $\phi$ be an irreducible representation of $G$. Let $g \in G$. Then, $\forall h \in G$, $\phi(g)\phi(h) = \phi(h)\phi(g)$. Schur's Theorem tells us that $\phi(g) = \lambda_g I$ for some $\lambda_g \in \C$. Since $g$ is arbitrary, this argument forces every matrix in the representation to be a scalar multiple of the identity matrix. We can take the degree one representation to be the first entry of each matrix.  \end{proof}
 
 \section{Unitary Representations}
 
-While irreducible representations are of great importance to us, we can also deepend our understanding of a representation when our underlying vector space has an inner-product structure. In this case, we can further characterize our representations. 
+While irreducible representations are of great importance to us, we can also deepened our understanding of a representation when our underlying vector space has an inner-product structure. In this case, we can further characterize our representations. 
 
 \begin{definition}
 	Let $V$ be an inner-product space. Let $U \in \mathcal{L}(V)$. $U$ is said to be \textbf{unitary} if $U$ is surjective and $\forall x,y \in V$, $\langle x , y \rangle = \langle U(x) , U(y) \rangle$.
@@ -840,7 +827,7 @@ While irreducible representations are of great importance to us, we can also dee
 	Every representation of a finite group on an inner-product space is equivalent to a unitary representation
 \end{theorem}
 
-\noindent (Pf.) Let $\phi$ be a non-unitary representation of a finite group $G$ defined on an inner-product space. Let $\phi_g$ denote $\phi(g)$, and let $S$ be defined such that $\langle S(x) , S(y) \rangle = \sum_{g \in G} \langle \phi_g (x) , \phi_g (y) \rangle$. We will show that the operator $\forall g \in G$, $U_g \coloneq S\phi_gS^{-1}$ is unitary. Fixing $g\in G$,
+\begin{proof} Let $\phi$ be a non-unitary representation of a finite group $G$ defined on an inner-product space. Let $\phi_g$ denote $\phi(g)$, and let $S$ be defined such that $\langle S(x) , S(y) \rangle = \sum_{g \in G} \langle \phi_g (x) , \phi_g (y) \rangle$. We will show that the operator $\forall g \in G$, $U_g \coloneq S\phi_gS^{-1}$ is unitary. Fixing $g\in G$,
 
 
 \begin{equation}
@@ -854,24 +841,24 @@ While irreducible representations are of great importance to us, we can also dee
 	\end{aligned}
 \end{equation}
 
-Therefore, $U_g$ is unitary $\forall g \in G$. \qedsymbol
+Therefore, $U_g$ is unitary $\forall g \in G$. \end{proof}
 
 \begin{remark}
-	Combining \textbf{Theorem 1.21} and \textbf{Theorem 1.27} allows us to grant the property of unitary to any irreducible representation through similarity transform. 
+	Combining Theorem (1.21) and Theorem (1.27) allows us to grant the property of unitary to any irreducible representation through similarity transform. 
 \end{remark}
 
 The next portion of this section will be devoted to identifying and proving some of the key properties of irreducible and unitary representations. We will extensively use these properties in later sections.
 
 \begin{theorem}
-	Let $G$ be a finite group, let $\Phi = \{\phi \mid \phi \text{ is a distinct (inequivalent to others in set) irreducible, unitary representation of }G\}$. Let $\phi,\psi \in \Phi$ with degrees $n_{\phi}$ and $n_{\psi}$ respectively. Let $\phi_g \coloneq \phi(g)$ and $\psi_g \coloneq \psi(g)$. Then the following equality holds:
+	Let $G$ be a finite group, let $\Phi$ be the set of distinct (inequivalent to others in set) irreducible, unitary representation of $G$. Let $\phi,\psi \in \Phi$ with degrees $n_{\phi}$ and $n_{\psi}$ respectively. Let $\phi_g \coloneq \phi(g)$ and $\psi_g \coloneq \psi(g)$. Then the following equality holds:
 $$\frac{n_\phi}{|G|} \sum_{g\in G} \left[\phi_g \right]_{ij} \left[\psi_g^\dag \right]_{kl} = \begin{cases}
 																						1 & \text{if } \psi = \phi,\hspace{1mm} j=k,\hspace{1mm} \text{and } i=l\\
 																						0 & else
 																					 \end{cases}$$
-where for any matrix $M=\left[m\right]_{ij}$, $\left[M^\dag\right]_{ij} = \overline{m}_{ji} $. We refer to this as the \textbf{orthonormality condition} of unitary, irreducible representations.
+where for any matrix $M=\left[m\right]_{ij}$, $\left[M^\dag\right]_{ij} = \overline{m}_{ji} $. We refer to this as the \textbf{orthonormality condition} of unitary irreducible representations.
 \end{theorem}
 
-\noindent (Pf.) Let $A$ be a $n_\phi \times n_\psi$ matrix and let $M_A \coloneq \sum_{g\in G} \phi_{g} A \psi_g^{\dag}$. Note: $\forall h \in G$, we have $\phi_h M_A  = M_A \psi_h^\dag$ by as seen from the following calculation:
+\begin{proof} Let $A$ be a $n_\phi \times n_\psi$ matrix and let $M_A \coloneq \sum_{g\in G} \phi_{g} A \psi_g^{\dag}$. Note: $\forall h \in G$, we have $\phi_h M_A  = M_A \psi_h^\dag$ by as seen from the following calculation:
 
 \begin{equation}
 	\begin{aligned}
@@ -948,7 +935,7 @@ $$\begin{aligned}
 																			\end{cases}\\
 \end{aligned}$$ 
 
-Therefore, whenever $i=l$, $j=k$, and $\phi=\psi$, $\lambda = \frac{|G|}{n_\phi}$. \qedsymbol \\
+Therefore, whenever $i=l$, $j=k$, and $\phi=\psi$, $\lambda = \frac{|G|}{n_\phi}$. \end{proof} 
 
 
 
@@ -958,9 +945,9 @@ $$\sum_{\phi \in \Phi}n^2_\phi \leq |G|$$
 where $\Phi = \{\phi \mid \phi$ is a unitary, irreducible representation of $G\}$
 \end{corrolary}
 
-\noindent (Pf.) Consider the entry of each matrix of a given representation $\phi$ for every $g \in G$ as denoted $[\phi_g]_{ij}$. We can create vectors in a $|G|$-dimensional vector space in the following way:
+\begin{proof}[\cite{Tung}] Consider the entry of each matrix of a given representation $\phi$ for every $g \in G$ as denoted $[\phi_g]_{ij}$. We can create vectors in a $|G|$-dimensional vector space in the following way:
 $$\sqrt{\frac{n_\phi}{|G|}}\left([\phi_{g_1}]_{ij},\hspace{1mm} [\phi_{g_2}]_{ij}, \hspace{1mm}\hdots \hspace{1mm},\hspace{1mm} [\phi_{g_{|G|}}]_{ij}\right)$$
-where each choice of $i$ and $j$ gives us a new vector. Since there are $n_\phi$ choices for both $i$ and $j$, it follows that for a fixed $\phi$, there are $n_\phi^2$ choices of vectors in this space. Thus, we can make $\phi$ arbitrarily to see that the number of vectors that can be formed in this way is identically $\sum_{\phi \in \Phi}n^2_\phi$. The orthonormality condition gives us the pairwise orthogonality of these vectors in $\phi$, $i$, and $j$. Since orthogonal vectors are linearly independent, and the number of linearly independent vectors in a vector space must be at most as large as its dimension, we conclude that $\sum_{\phi \in \Phi}n^2_\phi \leq |G|$. \cite{Tung} \qedsymbol\\
+where each choice of $i$ and $j$ gives us a new vector. Since there are $n_\phi$ choices for both $i$ and $j$, it follows that for a fixed $\phi$, there are $n_\phi^2$ choices of vectors in this space. Thus, we can make $\phi$ arbitrarily to see that the number of vectors that can be formed in this way is identically $\sum_{\phi \in \Phi}n^2_\phi$. The orthonormality condition gives us the pairwise orthogonality of these vectors in $\phi$, $i$, and $j$. Since orthogonal vectors are linearly independent, and the number of linearly independent vectors in a vector space must be at most as large as its dimension, we conclude that $\sum_{\phi \in \Phi}n^2_\phi \leq |G|$.  \end{proof}
 
 
 This conclusion is incredibly important because it tells us that the task of finding \textit{every} unitary, irreducible representation is possible to accomplish. In this way, we can not only characterize representations in terms of their unitary, irreducible counterparts, but we can do so for all representations with a finite number of special components. We further develop this idea with the next theorem.
@@ -988,7 +975,7 @@ Conjugacy classes are especially relevant in the contexts of representation theo
 $$\chi^\phi(g) = \chi^\phi(h) \hspace{1mm}\forall h \in C_g$$
 For future reference, we will denote $\chi^\phi_{C_g}$ to be the character of the representation $\phi$ on the conjugacy class $C_g$
 \end{theorem}
-\noindent (Pf.) Since $h\in C_g$, $\exists k\in G$ such that $g = khk^{-1}$. So 
+\begin{proof}[\cite{Mendes}] Since $h\in C_g$, $\exists k\in G$ such that $g = khk^{-1}$. So 
 
 \begin{equation}
 	\begin{aligned}
@@ -997,9 +984,10 @@ For future reference, we will denote $\chi^\phi_{C_g}$ to be the character of th
 					&= trace(\phi(k)\phi(h)\phi(k^{-1})) \\
 					&= trace(\phi(k^{-1})\phi(k)\phi(h)) \\
 					&= trace(\phi(h)) \\
-					&= \chi^\phi(h) \hspace{1mm}\cite{Mendes}\hspace{1mm} \qedsymbol
+					&= \chi^\phi(h) 
 	\end{aligned}
 \end{equation}
+\end{proof}
 
 We can use the character of representations to develop a similar set of condition as we have developed on representations themselves to give us a little more information about while relaxing the condition of unitarity.
 
@@ -1008,12 +996,13 @@ We can use the character of representations to develop a similar set of conditio
 $$\sum_{g\in C} \phi(g) =\frac{|C|}{n_\phi} \chi^\phi_C I_{n_\phi}$$
 where $\chi^\phi_C$ is the character of $\phi$ on the conjugacy class $C$.
 \end{theorem}
-\noindent (Pf.) Let $A\coloneq \sum_{g\in C} \phi(g)$. It is easy to see that for any $h\in G$, $\phi(h)A\phi(h)^{-1} = A$ due to the nature of conjugacy classes. Therefore, by \textbf{Schur's Theorem}, $A = \lambda I_{n_\phi}$ for some $\lambda \in \C$. Taking the trace of both sides of this equation, we get 
+\begin{proof}[\cite{Tung}] Let $A\coloneq \sum_{g\in C} \phi(g)$. It is easy to see that for any $h\in G$, $\phi(h)A\phi(h)^{-1} = A$ due to the nature of conjugacy classes. Therefore, by \textbf{Schur's Theorem}, $A = \lambda I_{n_\phi}$ for some $\lambda \in \C$. Taking the trace of both sides of this equation, we get 
 \begin{equation}
 	\begin{aligned}
-		|C| * \chi_C^\phi = n_\phi * \lambda \hspace{1mm} \cite{Tung} \hspace{1mm} \qedsymbol
+		|C| * \chi_C^\phi = n_\phi * \lambda 
 	\end{aligned}
 \end{equation}
+\end{proof}
 
 With this theorem, we are armed to establish the orthonormality and completeness relation for characters of representations.
 
@@ -1025,7 +1014,7 @@ $$\sum_{C \in C_G} \frac{|C|}{|G|} \chi^{\phi}_C \overline{\chi^{\psi}_C } = \be
 																0 & else
 															\end{cases}$$
 \end{theorem}
-\noindent (Pf.) Following from \textbf{Theorem 1.29}, we have 
+\noindent \begin{proof}[\cite{Tung}] Following from Theorem (1.29), we have 
 $$\frac{n_\phi}{|G|} \sum_{g\in G} \left[\phi_g \right]_{ij} \left[\psi_g^\dag \right]_{kl} = \begin{cases}
 																						1 & \text{if } \psi = \phi,\hspace{1mm} j=k,\hspace{1mm} \text{and } i=l\\
 																						0 & else
@@ -1050,15 +1039,15 @@ Observing the fact that the character operation is constant on conjugacy class, 
 																					 \end{cases}
 	\end{aligned}
 \end{equation}
-giving the desired conclusion. \cite{Tung} \qedsymbol
+giving the desired conclusion.  \end{proof}
 
-Now that we have established some valuable results about irreducible characters, we can establish one of the main results. It turns out that we can compare irreducible characters to the character of a generic representation to determine the number of copies of a given irreducible character in its irreducible decomposition. In other words, we can recover the coeffeicients ($\alpha_i$) from \textbf{Theorem 1.18}. In order to establish this, we first need the following useful theorems.
+Now that we have established some valuable results about irreducible characters, we can establish one of the main results. It turns out that we can compare irreducible characters to the character of a generic representation to determine the number of copies of a given irreducible character in its irreducible decomposition. In other words, we can recover the coeffeicients ($\alpha_i$) from Theorem (1.18). In order to establish this, we first need the following useful theorems.
 
 \begin{theorem}
 	Let $M = \bigoplus_{i=1}^k A_i$ where $A_i$ is a square matrix for every $i$. Then $$trace(M) = \sum_{i=1}^k trace(A_i)$$
 \end{theorem} 
 
-\noindent (Pf.) $$M = \begin{bmatrix}
+\noindent \begin{proof} $$M = \begin{bmatrix}
 						A_1 & 0 & 0 & \hdots & 0 \\
 						0 & A_2 & 0 & \hdots & 0 \\
 						\vdots & \ddots & \ddots & \ddots & \vdots \\
@@ -1069,15 +1058,16 @@ $trace(M)$ is the sum of the diagonal entries in $M$, and since $M$ is a block-d
 
 \begin{equation}
 	\begin{aligned}
-		trace(M) &= \sum_i [A_1]_{ii} + \sum_i [A_2]_{ii} + \hdots \sum_i [A_k]_{ii} &= \sum_{i=1}^k trace(A_i) \hspace{1mm}\qedsymbol
+		trace(M) &= \sum_i [A_1]_{ii} + \sum_i [A_2]_{ii} + \hdots \sum_i [A_k]_{ii} &= \sum_{i=1}^k trace(A_i) \hspace{1mm}
 	\end{aligned}
 \end{equation}
+\end{proof}
 
 \begin{theorem}
 	Let $G$ be a group, let $\phi$ be a representation of $G$, and let the irreducible decomposition of $\phi$ be denoted $\phi = T \left( \bigoplus_{i=1}^k \alpha_i *\psi_i\right) T^{-1}$ where $\{\psi_i\}_{i=1}^k$ is a set of irreducible representations of $G$. Then $$\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^{\psi_i}_C}$$
 \end{theorem}
 
-\noindent (Pf.) First, note that using \textbf{Theorem 1.36}
+\noindent \begin{proof}[\cite{Tung}] First, note that using Theorem (1.36)
 \begin{equation}
 	\begin{aligned}
 		\chi^\phi_C = \chi^{ \bigoplus_{i=1}^k \alpha_i *\psi_i}_C = \sum_{i=1}^k \alpha_i \chi^{\psi_i}_C
@@ -1088,15 +1078,16 @@ So, using the Orthonormality Condition of Irreducible Characters, we get
 
 \begin{equation}
 	\begin{aligned}
-\sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^{\psi_i}_C} &= \sum_{C\in C_G} \frac{|C|}{|G|} \sum_{j=1}^k \alpha_j \chi^{\psi_j}_C \overline{\chi^{\psi_i}_C} &= \sum_{j=1}^k \alpha_j \sum_{C\in C_G} \frac{|C|}{|G|} \chi^{\psi_j}_C \overline{\chi^{\psi_i}_C}  &= \alpha_i \hspace{1mm} \cite{Tung} \hspace{1mm} \qedsymbol
+\sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^{\psi_i}_C} &= \sum_{C\in C_G} \frac{|C|}{|G|} \sum_{j=1}^k \alpha_j \chi^{\psi_j}_C \overline{\chi^{\psi_i}_C} &= \sum_{j=1}^k \alpha_j \sum_{C\in C_G} \frac{|C|}{|G|} \chi^{\psi_j}_C \overline{\chi^{\psi_i}_C}  &= \alpha_i 
 	\end{aligned}
 \end{equation}
+\end{proof}
 
 \begin{theorem}
 	Let $G$ be a group, let $\phi$ be a representation of $G$. $\phi$ is an irreducible representation of $G$ if and only if $\sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^\phi_C} = 1$
 \end{theorem}
 
-\noindent (Pf.) $\Rightarrow$ Use \textbf{Theorem 1.35} for immediate conclusion. 
+\noindent \begin{proof}[\cite{Tung}] $\Rightarrow$ Use Theorem (1.35) for immediate conclusion. 
 
 \hspace{2mm}$\Leftarrow$ Let $\bigoplus_{i=1}^k \alpha_i\psi_i$ be the irreducible decomposition of $\phi$. Then utilizing this decomposition on the character operation and the orthonormality condition, we get the following equation.
 
@@ -1106,7 +1097,7 @@ So, using the Orthonormality Condition of Irreducible Characters, we get
 	\end{aligned}
 \end{equation}
 
-Since the sum of square integers is equal to $1$, it must be the case that $\alpha_m = 1$ for some $m$ and $\alpha_n=0$  $\forall n \neq m$. \cite{Tung} \qedsymbol
+Since the sum of square integers is equal to $1$, it must be the case that $\alpha_m = 1$ for some $m$ and $\alpha_n=0$  $\forall n \neq m$.  \end{proof}
 
 
 The last two theorems give us tools to determine when representations are irreducible and determine how many copies of a given irreducible representation are present in the irreducible decomposition of a generic representation. Armed with these techniques, we can analyze a new representation.
@@ -1125,23 +1116,25 @@ One could verify that this map is a representation through explicitly showing th
 	For any finite group, $G$, the left regular representation ($\phi$) contains every irreducible representation of $G$, $\{\psi_i\}_{i=1}^k$, exactly $n_{\psi_i}$ times.
 \end{theorem}
 
-\noindent(Pf.) Let $n=|G|$. Consider the matrices in given by the representation $\phi$. We know that $\phi(e) = I_n$, but what can we say about can we say about non-identity elements of $G$? It turns out, for any $g\in G$ such that $g\neq e$, $\phi_g$ always has a diagonal full of zeros. This must be the case, since it would be impossible for $g *g_i = g_i$  for any non-identity $g$. As a result, we see that $\chi^\phi_e = n$ and $\chi^\phi_g = 0$ $\forall g \in G$ with $g \neq e$. So, for any irreducible representation, $\psi_i$, \textbf{Theorem 1.37} tells us that 
+\noindent\begin{proof}[\cite{Tung}] Let $n=|G|$. Consider the matrices in given by the representation $\phi$. We know that $\phi(e) = I_n$, but what can we say about can we say about non-identity elements of $G$? It turns out, for any $g\in G$ such that $g\neq e$, $\phi_g$ always has a diagonal full of zeros. This must be the case, since it would be impossible for $g *g_i = g_i$  for any non-identity $g$. As a result, we see that $\chi^\phi_e = n$ and $\chi^\phi_g = 0$ $\forall g \in G$ with $g \neq e$. So, for any irreducible representation, $\psi_i$, Theorem (1.37) tells us that 
 \begin{equation}
 	\begin{aligned}
-		\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|} \chi^\phi_C \overline{\chi_C^{\psi_i}} = \frac{1}{|G|}|G| \overline{\chi_e^{\psi_i}} = n_{\psi_i} \hspace{1mm}\cite{Tung} \hspace{1mm}\qedsymbol
+		\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|} \chi^\phi_C \overline{\chi_C^{\psi_i}} = \frac{1}{|G|}|G| \overline{\chi_e^{\psi_i}} = n_{\psi_i}
 	\end{aligned}
 \end{equation}
+\end{proof}
 
 \begin{corrolary}
-\	For any finite group, $G$, $\sum_{\phi \in \Phi} n_\phi^2 = |G|$ where $\Phi=\{\phi \mid \phi \text{ is a distinct, irreducible representation of }G\}$.
+\	For any finite group, $G$, $\sum_{\phi \in \Phi} n_\phi^2 = |G|$ where $\Phi$ is the set of a distinct, irreducible representations of $G$.
 \end{corrolary}
 
-\noindent(Pf.) Since the left regular representation ($\phi$) has irreducible decomposition $\phi = T\left(\bigoplus_{i=1}^k n_{\psi_i}*\psi_i\right)T^{-1}$, we can use \textbf{Theorem 1.36} to show that
+\noindent\begin{proof}[\cite{Tung}] Since the left regular representation ($\phi$) has irreducible decomposition $\phi = T\left(\bigoplus_{i=1}^k n_{\psi_i}\psi_i\right)T^{-1}$, we can use Theorem (1.36) to show that
 \begin{equation}
 	\begin{aligned}
-		|G| = trace(\phi(e)) = trace\left(\bigoplus_{i=1}^k n_{\psi_i}*\psi_i(e)\right) = \sum_{i=1}^k n_{\psi_i}trace(\psi_i(e)) = \sum_{i=1}^k n_{\psi_i}^2 \hspace{1mm}\cite{Tung} \hspace{1mm} \qedsymbol
+		|G| = trace(\phi(e)) = trace\left(\bigoplus_{i=1}^k n_{\psi_i}*\psi_i(e)\right) = \sum_{i=1}^k n_{\psi_i}trace(\psi_i(e)) = \sum_{i=1}^k n_{\psi_i}^2 
 	\end{aligned}
 \end{equation}
+\end{proof}
 
 \section{Completeness Conditions for Irreducible Representations and Characters}
 
@@ -1155,7 +1148,7 @@ $$\sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{n_\phi}{|G|
 This is referred to as the \textbf{completeness condition} of unitary, irreducible representations.
 \end{theorem}
 
-\noindent (Pf.) Referencing the construction of a $|G|$-dimensional vector space, $V$, in \textbf{Corrolary 1.30}, we can create a set of orthonormal, linearly independent vectors. Thus, for any fixed $\phi$, $i$, $j$, the corresponding orthonormal vector is defined by:
+\noindent \begin{proof} Referencing the construction of a $|G|$-dimensional vector space, $V$, in Corrolary (1.30), we can create a set of orthonormal, linearly independent vectors. Thus, for any fixed $\phi$, $i$, $j$, the corresponding orthonormal vector is defined by:
 
 \begin{equation}
 	\begin{aligned}
@@ -1163,7 +1156,7 @@ This is referred to as the \textbf{completeness condition} of unitary, irreducib
 	\end{aligned}
 \end{equation}
 
-As a result of our work in \textbf{Corrolary 1.41}, we can see the set $\{e_{\phi,i,j}\}_{\phi,i,j}$ is in fact an orthonormal basis of our vector space, given that the dimension of our vector space is now identically 
+As a result of our work in Corrolary (1.41), we can see the set $\{e_{\phi,i,j}\}_{\phi,i,j}$ is in fact an orthonormal basis of our vector space, given that the dimension of our vector space is now identically 
 $$n \coloneq |G| = \sum_{\phi\in \Phi} n_\phi^2$$
 
 Therefore, every $v\in V$ has the following orthogonal decomposition:
@@ -1185,7 +1178,7 @@ where the tensor symbol is defined here as the outer-product of vectors in $V$, 
 	\end{aligned}
 \end{equation}
 
-Upon closer inspection of \textbf{Equation 1.29}, we can see that 
+Upon closer inspection of Equation (1.29), we can see that 
 
 \begin{equation}
 	\begin{aligned}
@@ -1202,7 +1195,7 @@ or equivalently, for any given $x$, $y \in \{1,\hdots,|G|\}$
 																\end{cases}
 	\end{aligned}
 \end{equation}
-which is exactly what our completeness relation is defined to be. \qedsymbol \\
+which is exactly what our completeness relation is defined to be. \end{proof} 
 
 
 
@@ -1218,7 +1211,7 @@ $$\sum_{\phi \in \Phi} \frac{|C_g|}{|G|} \chi^{\phi}_{C_g} \overline{\chi^{\phi}
 															\end{cases}$$
 \end{theorem}
 
-\noindent (Pf.) Utilizing \textbf{Theorem 1.37}, we see that for any $g, h \in G$, $$\sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{n_\phi}{|G|} \left[\phi_g\right]_{ij}\left[\phi_{h}^\dag\right]_{ji} = \begin{cases}
+\noindent \begin{proof}[\cite{Tung}] Utilizing Theorem (1.37), we see that for any $g, h \in G$, $$\sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{n_\phi}{|G|} \left[\phi_g\right]_{ij}\left[\phi_{h}^\dag\right]_{ji} = \begin{cases}
 																										1 & if \hspace{1mm} g = h \\
 																										0 & else
 																									\end{cases}$$
@@ -1231,7 +1224,7 @@ Taking this equality and summing both sides over the entire conjugacy class of $
 																									\end{cases}
 	\end{aligned}
 \end{equation}
-Utilizing \textbf{Theorem 1.35} and analyizing the $ij-th$ component of both sides of its conclusion, we can equivalently write the above equality in the following way:
+Utilizing Theorem (1.35) and analyizing the $ij-th$ component of both sides of its conclusion, we can equivalently write the above equality in the following way:
 \begin{equation}
 	\begin{aligned}
 		 \sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{|C_g||C_h|}{|G|n_\phi}\chi^\phi_{C_g}\overline{\chi^\phi_{C_h}} \left[I_{n_\phi}\right]_{ij}\left[I_{n_\phi}\right]_{ji} = \begin{cases}
@@ -1252,7 +1245,7 @@ Interpreting the inner-most sum as a matrix product of both identity matrices an
 	\end{aligned}
 \end{equation}
 
-to achieve our desired result. \cite{Tung} \qedsymbol
+to achieve our desired result.  \end{proof}
 
 
 With our main results developed for unitary, irreducible representations and irreducible characters in finite groups, we can use these ideas as motivation for our study groups with infinite order as well. Most of these results are only useful in the finite group setting, we will continue to develop equivalent conditions and conclusions for groups of infinite order. Through our analysis, we will characterize our selected groups using the techniques and tools established in this chapter as a guide.
@@ -1272,17 +1265,17 @@ In the case that $V$ is finite dimensional, we can choose $v,w\in V$ to be stand
 
 \chapter{$SO(2)$: The Rotation Group in Two Dimensions}
 
-The group $SO(2)$ is a very abstract structure meant to represent a very concrete physical idea. Elements of this group correspond to the action of rotating vectors in two-dimensional space about some central point. Although its construction can be more generalized, we can gleam the most important features of the group's structure are not altered in any meaningful way when care is exercise. That said, throughout this discussion, we will develop the structure of $SO2$ with the assumptions that rotations (elements) act on real-valued two-dimensional vectors who are all centered at the origin. The way we will distinguish rotations will be by the measure of the angle (traditionally denoted by $\theta$) rotated in the counter-clockwise direction. Consequently, $\theta$ will always be real-valued. Rotations will occur about the origin. Unless otherwise specified, we will always take $\{e_1,$ $e_2\}$ to be an orthonormal basis of $\R^2$.
+$SO(2)$ is a group whose elements correspond to the action of rotating vectors in two-dimensional space about some central point. Although its construction can be more generalized, we can glean the most important features of the group's structure are not altered in any meaningful way when care is exercise. That said, throughout this discussion, we will develop the structure of $SO(2)$ with the assumptions that rotations (elements) act on real-valued two-dimensional vectors emanating from the origin. The way we will distinguish rotations will be by the measure of the angle (traditionally denoted by $\theta$) rotated in the counter-clockwise direction. Consequently, $\theta$ will always be real-valued. Rotations will occur about the origin. Unless otherwise specified, we will always take $\{e_1,$ $e_2\}$ to be an orthonormal basis of $\R^2$. This chapter follows the structure laid out in Wu-Ki Tung's \textit{Group Theory in Physics}.\cite{Tung}
 
 \section{Construction and Properties}
 
-To begin, consider $\R^2$ as a the natural two-dimensional vector space. Let $(x,y)\in\R^2$. Then, any rotation of this vector, by some angle $\theta$, in the manner described above will change the coordinates. If we refer to this new, rotated vector as $(x',y')$, we can visualize this action.
+To begin, consider $\R^2$ as a the natural two-dimensional vector space. Let $(x,y)\in\R^2$. Then any rotation of this vector by some angle, $\theta$, in the manner described above will change the coordinates. If we refer to this new, rotated vector as $(x',y')$, we can visualize this action.
 
 \begin{center}
             \begin{tikzpicture}[scale=1]
-                \draw[step=1cm ,color=gray] (-4,-4) grid (4,4);
-                \draw[thick,<->] (-4.1,0) -- (4.1,0) node[anchor=north west] {$e_1$};
-                \draw[thick,<->] (0,-4.1) -- (0,4.1) node[anchor=south west] {$e_2$};
+                %\draw[step=1cm ,color=gray] (-4,-4) grid (4,4);
+                \draw[thin,<->] (-4.1,0) -- (4.1,0) node[anchor=north west] {$e_1$};
+                \draw[thin,<->] (0,-4.1) -- (0,4.1) node[anchor=south west] {$e_2$};
 			\draw[fill=black] (0,0) coordinate (o);
 			\draw[thick, ->] (0,0) -- (2,3) coordinate (a) node[anchor=south west] {$(x,y)$};
 			\draw[thick, ->] (0,0) -- (-3,2) coordinate (b) node[anchor=south] {$(x',y')$};
@@ -1293,23 +1286,23 @@ To begin, consider $\R^2$ as a the natural two-dimensional vector space. Let $(x
 For a more intuitive understanding of the action, we can turn our attention to the polar coordinates corresponding to these two vectors. Letting $r = \sqrt{x^2 + y^2}$, we can see that the polar form of these vectors can be written in the following way:
 \begin{center}
 	$\begin{aligned}
-		(x,y) &\sim (r,\psi)\\
-		(x',y') &\sim (r,\psi+\theta)
+		(x,y) &\leftrightarrow (r,\psi)\\
+		(x',y') &\leftrightarrow (r,\psi+\theta)
 	\end{aligned}$
 \end{center}
 where $\psi$ is the angle that the vector $(x,y)$ makes with the positive $e_1$-axis. Through use of trigonometric identities, we can observe the following equations hold true:
 \begin{equation}
 	\begin{aligned}
-		x' &= r\cos(\psi+\theta) = r\left(\cos(\psi)\cos(\theta) - \sin(\psi)\sin(\theta)\right) = \cos(\theta)*x -\sin(\theta)*y
+		x' &= r\cos(\psi+\theta) = r\left(\cos(\psi)\cos(\theta) - \sin(\psi)\sin(\theta)\right) = x\cos(\theta) -y\sin(\theta)
 	\end{aligned}
 \end{equation}
 \begin{equation}
 	\begin{aligned}
-		y' &= r\sin(\psi+\theta) = r\left(\cos(\psi)\sin(\theta) + \sin(\psi)\cos(\theta)\right) = \sin(\theta)*x +\cos(\theta)*y
+		y' &= r\sin(\psi+\theta) = r\left(\cos(\psi)\sin(\theta) + \sin(\psi)\cos(\theta)\right) = x\sin(\theta) +y\cos(\theta)
 	\end{aligned}
 \end{equation}
 
-We can see that the rotated coordinates are completely determined by the originial coordinates and the angle of rotation. With the use of matrix algebra, we can combine \textbf{Equations 2.1 and 2.2} into 
+We can see that the rotated coordinates are completely determined by the originial coordinates and the angle of rotation. With the use of matrix algebra, we can combine (2.1) and (2.2) into 
 
 \begin{equation}
 	\begin{aligned}
@@ -1330,17 +1323,17 @@ We can see that the rotated coordinates are completely determined by the origini
 
 While this matrix algebra is useful, its construction is somewhat ad-hoc. Questions about the well-defined nature of this relationship are bound to be raised. In order for us to make real use of these matrices, we must first establish a bona-fide connection between the abstract notion of a rotation and the concrete matrix that acts on vectors in $\R^2$ in the same way.
 
-We will define the group of rotations in two dimensions to be $G = \{g_\theta\}$ where $g_\theta$ represents the action of rotating vectors in $\R^2$ by angle $\theta$. It's main properties arise from physical observations, but we can give them axiomatic rigor. When rotating vectors in $\R^2$, we can see that the successive rotations by the angles $\theta_1$ and $\theta_2$ are identical to a singular rotation by the angle $\theta_1+\theta_2$. In this way, the group law must be defined in the following way: $g_{\theta_1} * g_{\theta_2} = g_{(\theta_1 + \theta_2)}$ for any $\theta_1,\theta_2\in\R$. Further, due to the abelian nature of $\R$, we can see that our group law will necessarily guarantee that $G$ is abelian:  $g_{\theta_1} * g_{\theta_2} = g_{(\theta_1 + \theta_2)}= g_{(\theta_2 + \theta_1)}= g_{\theta_2} * g_{\theta_1} \hspace{1mm}\forall \theta_1,\theta_2\in\R$. Finally, due to the physical symmetry of rotation in the path of a circle, it must be the case that $g_\theta = g_{\theta \pm 2\pi}$ for any $\theta \in \R$. The last property suggests that while $G$ is clearly an infinite group, the physical rotation corresponding to each of its elements is not unique. With these key ideas in mind we will establish the link between $G$ and the set of matrices defined in \textbf{Equation 2.3}.
+We will define the group of rotations in two dimensions to be $G = \{g_\theta\}$ where $g_\theta$ represents the action of rotating vectors in $\R^2$ by angle $\theta$. It's main properties arise from physical observations, but we can give them axiomatic rigor. When rotating vectors in $\R^2$, we can see that the successive rotations by the angles $\theta_1$ and $\theta_2$ are identical to a singular rotation by the angle $\theta_1+\theta_2$. In this way, the group law must be defined in the following way: $g_{\theta_1}  g_{\theta_2} = g_{(\theta_1 + \theta_2)}$ for any $\theta_1,\theta_2\in\R$. Further, due to the abelian nature of $\R$, we can see that our group law will necessarily guarantee that $G$ is abelian:  $g_{\theta_1}  g_{\theta_2} = g_{(\theta_1 + \theta_2)}= g_{(\theta_2 + \theta_1)}= g_{\theta_2}  g_{\theta_1} \hspace{1mm}\forall \theta_1,\theta_2\in\R$. Finally, due to the physical symmetry of rotation in the path of a circle, it must be the case that $g_\theta = g_{\theta \pm 2\pi}$ for any $\theta \in \R$. The last property suggests that while $G$ is clearly an infinite group, the physical rotation corresponding to each of its elements is not unique. With these key ideas in mind we will establish the link between $G$ and the set of matrices defined in (2.3).
 
 \begin{theorem}
-	Let $G/(g_{2\pi})$ be the quotient group defined by taking equivalence classes of physical rotations of vectors in $\R^2$ by regarding rotations that are off by integer multiples of $2\pi$ as equivalent. Let $H$ be the group defined by taking the set of all matrices of the form defined in \textbf{Equation 2.3}. together with the operation of matrix multiplication. Then the map $\phi$ (defined below) is an isomorphism of groups.
+	Let $G/(g_{2\pi})$ be the quotient group defined by taking equivalence classes of physical rotations of vectors in $\R^2$ by regarding rotations that differ by integer multiples of $2\pi$ as equivalent. Let $H$ be the group defined by taking the set of all matrices of the form defined in (2.3). together with the operation of matrix multiplication. Then the map $\phi$ (defined below) is an isomorphism of groups.
 $$\phi:G/(g_{2\pi})\rightarrow H$$
 $$[g_\theta] \overset{\phi}{\mapsto} \begin{bmatrix}
 			\cos(\theta) & -\sin(\theta) \\
 			\sin(\theta) & \cos(\theta)
 		\end{bmatrix}$$
 \end{theorem}
-\noindent(Pf.) 
+\noindent\begin{proof} 
 
 (Homomorphism) Let $g_{\theta_1},g_{\theta_2},\in G$. Then 
 \begin{equation}
@@ -1349,7 +1342,7 @@ $$[g_\theta] \overset{\phi}{\mapsto} \begin{bmatrix}
 			\cos(\theta_1+\theta_2) & -\sin(\theta_1+\theta_2) \\
 			\sin(\theta_1+\theta_2) & \cos(\theta_1+\theta_2)
 		\end{bmatrix} \\
-		&\overset{*}{=} \begin{bmatrix}
+		&\overset{\star}{=} \begin{bmatrix}
 			\cos(\theta_1) & -\sin(\theta_1) \\
 			\sin(\theta_1) & \cos(\theta_1)
 		\end{bmatrix}
@@ -1360,7 +1353,7 @@ $$[g_\theta] \overset{\phi}{\mapsto} \begin{bmatrix}
 		&= \phi([g_{\theta_1}])\phi([g_{\theta_2}])
 	\end{aligned}
 \end{equation}
-where a more detailed expansion for the starred($*$) equality can be found in \textbf{Example 1.4}.
+where a more detailed expansion for the starred($\star$) equality can be found in Example (1.4).
 
 (Injective) Suppose $\phi([g_\theta]) = I_2$. Then $\cos(\theta) = 1$ and $\sin(\theta) = 0$. This means that $\theta = 2\pi n$ for $n\in\Z$. Therefore, $ker(\phi) = \{[0]\}$. Note: if we instead used the group of rotations itself as our domain, we would not have a trivial kernel, since all interger multiples of $2\pi$ would have rotations that get mapped to $I_2$. For one-to-one correspondence to occur, we need to focus our attention on the quotient group (which is physically acceptable).
 
@@ -1372,10 +1365,10 @@ where a more detailed expansion for the starred($*$) equality can be found in \t
 			\sin(\theta) & \cos(\theta)
 		\end{bmatrix}$. Therefore, $im(\phi) = H$.
 
-Thus, $\phi$ is an isomorphism of groups. \qedsymbol\\
+Thus, $\phi$ is an isomorphism of groups. \end{proof}
 
 
-Through this interpretation, we are justified in viewing any rotation, by angle $\theta$, as the result of a matrix multiplication. Although our map is defined on the quotient group, we can see that we lose no information for angle values outside of the range $[0,2\pi)$. That is, we can always use the equivalence of rotations in $G$ that are off by $\pm 2\pi n$ to do our algebra exclusively in the $[0,2\pi)$ range. We will refer to the matrices in $H$ as $R(\theta)$, or $R_\theta$ interchangeably, $\theta$ is the angle we rotate vectors of $\R^2$ by. 
+Through this interpretation, we are justified in viewing any rotation, by angle $\theta$, as the result of a matrix multiplication. Although our map is defined on the quotient group, we can see that we lose no information for angle values outside of the range $[0,2\pi)$. That is, we can always use the equivalence of rotations in $G$ that are off by $\pm 2\pi n$ to do our algebra exclusively in the $[0,2\pi)$ range. We will refer to the matrices in $H$ as $R(\theta)$, or $R_\theta$ interchangeably, $\theta$ is the angle by which we rotate vectors of $\R^2$. 
 
 Due to the isomophic nature of $G/(g_{2\pi})$ and $H$, $H$ inherets most of the properties of $G$. It turns out that $H$ is abelian and periodic in $\theta$ (the latter was already known by using properties of trigonometric functions). We can observe some other interesting properties about $H$ through the lens of $G$.
 
@@ -1386,7 +1379,7 @@ Due to the isomophic nature of $G/(g_{2\pi})$ and $H$, $H$ inherets most of the 
 \begin{theorem}
 	For any $\theta$, $R(\theta)$ is an orthogonal matrix.
 \end{theorem}
-\noindent(Pf.) It would not be difficult to use a matrix product argument. However, in the spirit of the isomorphism, we will use $\phi$ from \textbf{Theorem 2.1} to articulate the argument. It is clear that for any $g_\theta \in G$, $g_\theta^{-1} = g_{-\theta}$. Therefore, $[g_\theta]^{-1} = [g_{-\theta}]$. So, for any $\theta$, 
+\noindent\begin{proof} It would not be difficult to use a matrix product argument. However, in the spirit of the isomorphism, we will use $\phi$ from Theorem (2.1) to articulate the argument. It is clear that for any $g_\theta \in G$, $g_\theta^{-1} = g_{-\theta}$. Therefore, $[g_\theta]^{-1} = [g_{-\theta}]$. So, for any $\theta$, 
 \begin{equation}
 	\begin{aligned}
 		I_2 &= \phi([g_\theta][g_\theta]^{-1})\\
@@ -1403,7 +1396,7 @@ Due to the isomophic nature of $G/(g_{2\pi})$ and $H$, $H$ inherets most of the 
 		 &= R(\theta)R(\theta)^\intercal
 	\end{aligned}
 \end{equation}
-where the computation of $\phi([g_{-\theta}])$ uses the facts that cosine is an even function and sine is an odd function. Therefore, $R(\theta)^{-1} = R(\theta)^\intercal$. \qedsymbol
+where the computation of $\phi([g_{-\theta}])$ uses the facts that cosine is an even function and sine is an odd function. Therefore, $R(\theta)^{-1} = R(\theta)^\intercal$. \end{proof}
 
 While not explicitly stated previously, rotations are practically understood to be an action that preserves a vector's magnitude. More rigorously put, if $(x,y)$ is rotated to the vector $(x',y')$, $x^2+y^2 = x^{\prime^2}+y^{\prime^2}$. The matrices in $H$ also satisfy this property. After a vector in $\R^2$ is multiplied by a matrix in $H$, its magnitude is preserved. This property is both a result of the orthogonal nature of these matrices and another property which we will explore below.
 
@@ -1414,12 +1407,13 @@ While not explicitly stated previously, rotations are practically understood to 
 \begin{theorem}
 	For any $\theta$, $R(\theta)$ is a special matrix.
 \end{theorem}
-\noindent(Pf.)
+\noindent\begin{proof}
 \begin{equation}
 	\begin{aligned}
-		\det(R(\theta)) &= \cos^2(\theta) - (-\sin^2(\theta)) &= 1 \hspace{1mm} \qedsymbol
+		\det(R(\theta)) &= \cos^2(\theta) - (-\sin^2(\theta)) &= 1 \hspace{1mm} 
 	\end{aligned}
 \end{equation}
+\end{proof}
 
 Given that elements of the group $H$ are special, orthogonal matrices that act as rotations on $\R^2$, it seems fitting that we give this group a more explicit name. We call this group $SO(2)$, and we will henceforth treat its elements as the rotations that we discussed in the construction of our group $G$. $SO(2)$ is our two-dimensional rotation group.
 
@@ -1435,11 +1429,11 @@ Consider then a rotation by angle $d\theta$ (arbitrarily small). The element in 
 
 \begin{equation}
 	\begin{aligned}
-		R(d\theta) \coloneq I_2 + (-i)d\theta * J
+		R(d\theta) \coloneq I_2 + (-i)d\theta  J
 	\end{aligned}
 \end{equation}  
 
-where $J$ is some fixed matrix, the factor of $-i$ is given as a convention, and the factor of $d\phi$ forces the change to $I_2$ to be arbitrarily small. It will turn out that $J$ will be the generator of our group. With this in mind, for any $\theta$, we can make the following observations:
+\noindent where $J$ is some fixed matrix, the factor of $-i$ is given as a convention, and the factor of $d\phi$ forces the change to $I_2$ to be arbitrarily small. It will turn out that $J$ will be the generator of our group. With this in mind, for any $\theta$, we can make the following observations:
 
 \begin{equation}
 	\begin{aligned}
@@ -1464,11 +1458,11 @@ This differential equation can be converted into an initial value problem using 
 
 \begin{equation}
 	\begin{aligned}
-		R(\theta) = e^{-i\theta J} = \sum_{i=0}^\infty \frac{-i\theta J}{n!}
+		R(\theta) = e^{-i\theta J} = \sum_{n=0}^\infty \frac{(-i\theta J)^n}{n!}
 	\end{aligned}
 \end{equation}  
 
-where we interpret our solution in the following way:
+\noindent where we interpret our solution in the following way:
 
 \begin{equation}
 	\begin{aligned}
@@ -1476,7 +1470,7 @@ where we interpret our solution in the following way:
 	\end{aligned}
 \end{equation}  
 
-Given this formulation, we say that $J$ is the generator of $SO(2)$, since any rotation matrix can be written in terms of this exponential. We can explicitly compute this matrix given its relationship outlined in \textbf{Equation 2.7}. Letting $J = [j]_{ij}$,
+Given this formulation, we say that $J$ is the generator of $SO(2)$, since any rotation matrix can be written in terms of this exponential. We can explicitly compute this matrix given its relationship outlined in Equation (2.7). Letting $J = [j]_{ij}$,
 
 \begin{equation}
 	\begin{aligned}
@@ -1508,7 +1502,7 @@ When comparing both sides entry by entry, we see that
 	\end{aligned}
 \end{equation}
 
-This matrix turns out to have the property that its square is the identity, making expansion in \textbf{Equation 2.12} much simpler.
+This matrix turns out to have the property that its square is the identity, making expansion in (2.12) much simpler.
 
 \begin{equation}
 	\begin{aligned}
@@ -1526,11 +1520,11 @@ While this construction for rotation matrices is satisfactory, we can recast the
 	\end{aligned}
 \end{equation}  
 
-where $J$ can be shown to be the generator of the group of operators. Tracing the steps, we see that 
+\noindent where $J$ can be shown to be the generator of the group of operators. Tracing the steps, we see that 
 
 \begin{equation}
 	\begin{aligned}
-		U_\theta = e^{-i\theta J} = \sum_{i=0}^\infty \frac{-i\theta J}{n!}
+		U_\theta = e^{-i\theta J} = \sum_{i=0}^\infty \frac{(-i\theta J)^n}{n!}
 	\end{aligned}
 \end{equation}  
 
@@ -1541,12 +1535,12 @@ We will use this formulation extensively in the next section.
 
 \section{Irreducible Representations for $SO(2)$}
 
-In the previous section, we illustrated many properties of $SO(2)$, including the fact that is is abelian. According to \textbf{Corrolary 1.24}, this means that all irreducible representations must be degree one. Recalling that in order for a representation to be irreducible, the only invariant subspaces must be trivial, we naturally turn our attention to eigenvalues of our generator operator. Let $v$ be an eigenvector of $J$ corresponding to eigenvalue $\lambda$. Then for any rotation operator, $U_\theta$,
+In the previous section, we illustrated many properties of $SO(2)$, including the fact that is is abelian. According to Corrolary (1.24), this means that all irreducible representations must be degree one. Recalling that in order for a representation to be irreducible, the only invariant subspaces must be trivial, we naturally turn our attention to eigenvalues of our generator operator. Let $v$ be an eigenvector of $J$ corresponding to eigenvalue $\lambda$. Then for any rotation operator, $U_\theta$,
 
 
 \begin{equation}
 	\begin{aligned}
-		U_\theta (v) = \left(\sum_{i=0}^\infty \frac{-i\theta J}{n!}\right) (v) = \left(\sum_{i=0}^\infty \frac{-i\theta \lambda}{n!}\right)v = \left(e^{-i\theta \lambda}\right)v
+		U_\theta (v) = \left(\sum_{i=0}^\infty \frac{(-i\theta J)^n}{n!}\right) (v) = \left(\sum_{i=0}^\infty \frac{(-i\theta \lambda)^n}{n!}\right)v = \left(e^{-i\theta \lambda}\right)v
 	\end{aligned}
 \end{equation}
 
@@ -1558,8 +1552,7 @@ It can clearly be seen that for any two rotation operators, $U_{\theta_1}$ and $
 		U_{\theta_1}(U_{\theta_2}(v)) = U_{\theta_1}(e^{-i\theta_2 \lambda}v) = e^{-i\theta_1 \lambda}e^{-i\theta_2 \lambda}v = e^{-i(\theta_1 + \theta_2) \lambda}v = U_{\theta_1+\theta_2}(v) 
 	\end{aligned}
 \end{equation}
-
-the group operation of composition (and therefore, corresponding matrix multiplication) respect our eigenvalues. But in order for the representation to be a true homomorphism, we need $2\pi n \mapsto 1$ for any $n\in\Z$. This quickly forces a restriction on $\lambda$ in the following way:
+showing us the group operation of composition (and therefore, corresponding matrix multiplication) respect our eigenvalues. But in order for the representation to be a true homomorphism, we need $2\pi n \mapsto 1$ for any $n\in\Z$. This quickly forces a restriction on $\lambda$ in the following way:
 
 \begin{equation}
 	\begin{aligned}
@@ -1574,12 +1567,12 @@ $$\begin{aligned}
 	U_\theta \mapsto e^{-i\theta m} \\
 \end{aligned}$$
 
-We can also show that these representations are unitary. Consider a one dimensional inner-product space one which the operators/matrices $\phi_m$ are defined upon. Letting $x,y\in V$, consider the following argument:
+We can also show that these representations are unitary. Consider a one dimensional inner-product space one which the matrices $\phi_m$ are defined upon. Letting $x,y\in V$, consider the following argument:
 
 \begin{equation}
 	\begin{aligned}
-		\langle \phi_m(x) , \phi_m(y) \rangle &= \langle e^{-i\theta m}*x , e^{-i\theta m}*y \rangle \\
-												&= e^{-i\theta m}*\overline{e^{-i\theta m}} \langle x , y \rangle\\
+		\langle \phi_m(x) , \phi_m(y) \rangle &= \langle e^{-i\theta m}x , e^{-i\theta m}y \rangle \\
+												&= e^{-i\theta m}\overline{e^{-i\theta m}} \langle x , y \rangle\\
 												&=\langle x , y \rangle
 	\end{aligned}
 \end{equation}
@@ -1659,7 +1652,7 @@ Therefore, $\phi_m$ is unitary for every $m\in\Z$.
 Are these the only irreducible representations of $SO(2)$? So far, we have defined our irreducible representations in terms of integer values. What would happen if we were to replace these integers with other numbers? For example, consider the map $\phi_{\frac{1}{2}}: U_\theta \mapsto e^\frac{i\theta}{2}$. Unfortunately, the physical implications of this map would be problematic, seeing as $\phi_\frac{1}{2}(\theta + 2\pi) \neq  \phi_\frac{1}{2}(\theta)$. However, this mapping is still periodic, with period $4\pi$. If we relax our definition of a representation, this mapping can still be of use to us.
 
 \begin{definition}
-	A \textbf{mult-valued rrepresentation} is a multi-valued mapping of a group into $GL_n(\C)$ which is a group homomorphism in the sense that at least one of the outputs (from each input) may be used to satisfy the relation.
+	A \textbf{multi-valued representation} is a multi-valued mapping of a group into $GL_n(\C)$ which is a group homomorphism in the sense that at least one of the outputs (from each input) may be used to satisfy the homomorphism property.
 \end{definition}
 
 In this sense, $\phi_{\frac{1}{2}}$ is a $2$-valued representation since $\phi_{\frac{1}{2}}(U_\theta) = e^\frac{\pm i\theta}{2}$ and $\phi_{\frac{1}{2}}(U_\theta U_\psi) =  e^\frac{\pm i(\theta + \psi)}{2} =  e^\frac{\pm i\theta}{2} e^\frac{\pm i\psi}{2} = \phi_{\frac{1}{2}}(U_\theta)\phi_{\frac{1}{2}}(U_\psi)$.
@@ -1675,13 +1668,13 @@ As it turns out, $2$-valued representations actually play a significant role in 
 
 \chapter{$SO(3)$: The Rotation Group in Three Dimensions}
 
-Similar to $SO(2)$, the group $SO(3)$ represents all possible ways to take the physical action or rotating a vector in space. However, the space we can rotate within has changed to a three-dimensional space for this group, allowing us to have far more possibilities for our rotations. While we will make some simplifying generalizations here, this group still becomes incredibly more complicated than its two-dimensional counterpart. We will assume all rotations take place in $\R^3$. Like before, we will always assume our angle of rotation is real-valued, but we do not specify yet an orientation about which positive rotation occurs. Unless otherwise indicated, we will take $\{e_1,e_2,e_3\}$ to be an orthonormal basis of $\R^3$.
+Similar to $SO(2)$, the group $SO(3)$ represents all possible ways to take the physical action or rotating a vector in space. However, the space we can rotate within has changed to a three-dimensional space for this group, allowing us to have far more possibilities for our rotations. While we will make some simplifying generalizations here, this group still becomes incredibly more complicated than its two-dimensional counterpart. We will assume all rotations take place in $\R^3$. Like before, we will always assume our angle of rotation is real-valued, but we do not specify yet an orientation about which positive rotation occurs. Unless otherwise indicated, we will take $\{e_1,e_2,e_3\}$ to be an orthonormal basis of $\R^3$. This chapter follows the structure laid out in Wu-ki Tung's \textit{Group Theory in Physics}. \cite{Tung}
 
 \section{Construction and Properties}
 
-If we define $SO(3)$ to act on $\R^3$ in a similar way that $SO(2)$ acts on $\R^2$, we could not as easily uncover a formulation for every matrix. Instead, we use the characteristics of $SO(2)$ to guide our intuition for a way to understand the matrices that compose $SO(3)$. Firstly, any rotation should leave the magnitude of a vector in $\R^3$ unchanged. This leads us to conclude that the matrices must be orthogonal. Further, it will also follow that these matrices have determinant $1$, since all rotations can be reached continuously from the identity. With this information alone, we can deduce that the $SO(3)$ matrices form a group under matrix multiplication. The question of classifying these matrices is still open for use to answer. There are two main ways we can do so.
+If we define $SO(3)$ to act on $\R^3$ in a similar way that $SO(2)$ acts on $\R^2$, we could not as easily uncover a formulation for every matrix. Instead, we use the characteristics of $SO(2)$ to guide our intuition for a way to understand the matrices that compose $SO(3)$. Firstly, any rotation should leave the magnitude of a vector in $\R^3$ unchanged. This leads us to conclude that the matrices must be orthogonal. Further, it will also follow that these matrices have determinant $1$, since all rotations can be reached continuously from the identity. With this information alone, we can deduce that the $SO(3)$ matrices form a group under matrix multiplication. The question of classifying these matrices is still open for us to answer. There are two main ways we can do so.
 
-First, let us consider any $n\in\R^3$. Once picking $n$, we can consider rotating about the vector, treating it as an axis, considering any positive angle measure to be a counter-clockwise rotation about this axis. Without taking into account the vector's length, the orientation of $n$ is uniquely determined by two angles, $\theta$ and $\phi$, as defined by spherical coordinates in $\R^3$. In this way, every possible rotation in $\R^3$ is characterized by one angle of counter-clockwise rotation and the two angles that determine the orientation about which we rotate (direction that $n$ points). In other words, the rotation, which we will refer to as $R_n(\psi) = R_{\theta,\phi}(\psi)$, identifies a rotation as displayed in the picture below.
+In two dimensions, it is straightforward to define a convention for orientation and measurement of any rotation. However, when we get to three dimensions, we need to be more careful about how we describe these actions. Our first attempt to characterize these wil have us focus on embedding two dimensional rotations in three dimensional space. First, let us consider any $n\in\R^3$. We can treat this vector as an axis about which we rotate by taking the plane normal to it. One we have rotated vectors about this axis, we can measure the angle of rotation by projecting these vectors onto normal plane and calculating the angle just as we did in our two dimensional derivation in Chapter 2. We still take the convention that positive angle measure corresponds to a counter-clockwise rotation about in the normal plane. The orientation of $n$ is uniquely determined by two angles, $\theta$ and $\phi$, as defined by spherical coordinates in $\R^3$. For this discussion, we do not care about $||n||$, since any this value does not impact the direction the axis points. In this way, every possible rotation in $\R^3$ is characterized by one angle of counter-clockwise rotation and the two angles that determine the orientation about which we rotate (direction that $n$ points). In other words, the rotation, which we will refer to as $R_n(\psi) = R_{\theta,\phi}(\psi)$, identifies a rotation as displayed in the picture below.
 
 \tdplotsetmaincoords{60}{120}
 \tdplotsetrotatedcoords{60}{45}{225}
@@ -1864,7 +1857,7 @@ $\overset{R_n(\psi)}{\rightarrow}$
 
 \end{tabular}
 
-This is truly a consequence of the fact that positive (counter-clockwise) rotation is relative to the direction one faces. Consider placing yourself in the center of the square at the point where the two vectors touch. Looking both up and down will show that the angle of rotation is in the counter-clockwise direction. We can match every rotation in one direction with an opposite direction rotation by another angle using this relationship. In order to keep ourselves from double-counting, we can restrict the values of our parameters to conform to the following convention: 
+This is truly a consequence of the fact that positive (counter-clockwise) rotation is relative to the direction one faces. Consider placing yourself in the center of the square at the point where $n$ and $-n$ touch. Looking both up and down will show that the angle of rotation is in the counter-clockwise direction. We can match every rotation in one direction with an opposite direction rotation by another angle using this relationship. In order to keep ourselves from double-counting, we can restrict the values of our parameters to conform to the following convention: 
 
 $$0\leq\psi\leq\pi, \hspace{3mm} 0\leq\theta\leq2\pi, \hspace{3mm} 0\leq\phi\leq\pi$$
 
@@ -2046,7 +2039,7 @@ In this way, we view every rotation in $SO(3)$ as the composition of three rotat
 
 \end{figure} 
 
-An couple important observations can be made by observing these figures: $R_n(\beta)$ is the rotation that moves $z$ to $z'$ and $R_z(\alpha)$ is the rotation that moves $y$ to $n$. Using this fact and \textbf{Theorem 3.1}, we can conclude the following:
+An couple important observations can be made by observing these figures: $R_n(\beta)$ is the rotation that moves $z$ to $z'$ and $R_z(\alpha)$ is the rotation that moves $y$ to $n$. Using this fact and Theorem (3.1), we can conclude the following:
 
 \begin{equation}
 	\begin{aligned}
@@ -2063,7 +2056,7 @@ An couple important observations can be made by observing these figures: $R_n(\b
 		R(\alpha,\beta,\gamma) = R_z(\alpha)R_y(\beta)R_z(\gamma)
 	\end{aligned}
 \end{equation}
-where \textbf{Equation 3.3} comes from applying \textbf{Equations 3.1-2} to \textbf{Definition 3.3}. This result tells us that every rotation can be categorized three angles we use to rotate about the $y$ and $z$ axis. While any orthogonal basis can serve as our fixed frame, we get the most use out of choosing the standard basis. In doing so, we focus our attention to $xy$-plane and the $xz$-planes when rotating about the $z$ and $y$ axes respectively. In these two-dimensional settings, we can construct $SO(2)$-like matrices that impact the right coordinates of vectors in $\R^3$. To this end, we see that
+where (3.3) comes from applying (3.1-2) to Definition (3.3). This result tells us that every rotation can be categorized three angles we use to rotate about the $y$ and $z$ axis. While any orthogonal basis can serve as our fixed frame, we get the most use out of choosing the standard basis. In doing so, we focus our attention to $xy$-plane and the $xz$-planes when rotating about the $z$ and $y$ axes respectively. In these two-dimensional settings, we can construct $SO(2)$-like matrices that impact the right coordinates of vectors in $\R^3$. To this end, we see that
 
 \begin{equation}
 	\begin{aligned}
@@ -2153,14 +2146,14 @@ Given this isomorphic relationship, we can construct a generator for $H_n$ in a 
 
 
 \begin{theorem}
-	 For any arbitrary direction, $n\in\R^3$, the generator, $J_n$, of $H_n$, can be written in the following way:
+	 For any arbitrary direction, $n=(n_1,n_2,n_3)\in\R^3$, the generator, $J_n$, of $H_n$, can be written in the following way:
 $$J_n = n_1J_x + n_2J_y + n_3J_z$$
 \end{theorem}
-\noindent (Pf.) If $n$ is determined by the prototypical angles $\phi$ and $\theta$, then we can always rotate the $z$-axis into $n$ with the rotation $R(\theta,\phi,0)$. Therefore, $n_i = [R(\theta,\phi,0)]_{i3}$.
+\noindent \begin{proof}[\cite{Tung}] If $n$ is determined by the prototypical angles $\phi$ and $\theta$, then we can always rotate the $z$-axis into $n$ with the rotation $R(\theta,\phi,0)$. Therefore, $n_i = [R(\theta,\phi,0)]_{i3}$.
 
 \textbf{Insert Pretty Picture}
 
-Using \textbf{Equation 3.8} and the above matrix, we can establish a relationship between $J_z$ and $J_n$. For any angle of rotation, $\psi$,
+Using (3.8) and the above matrix, we can establish a relationship between $J_z$ and $J_n$. For any angle of rotation, $\psi$,
 
 \begin{equation}
 	\begin{aligned}
@@ -2186,19 +2179,20 @@ Further, arduous matrix algebra can be done explicitly to show the following ide
 
 \begin{equation}
 	\begin{aligned}
-		RJ_kR^{-1} = J_x * [R]_{1k} + J_y * [R]_{2k}  +J_z * [R]_{3k} 
+		RJ_kR^{-1} = J_x [R]_{1k} + J_y  [R]_{2k}  +J_z  [R]_{3k} 
 	\end{aligned}
 \end{equation}
 
-Showing this is true consists of proving it for $R_z(\alpha)$ and $R_y(\beta)$ and arguing that any product of matrices of this form will also work. (Combining \textbf{Equations 3.13 and 3.14}, we get 
+Showing this is true consists of proving it for $R_z(\alpha)$ and $R_y(\beta)$ and arguing that any product of matrices of this form will also work. Combining (3.13) and (3.14), we get 
 
 \begin{equation}
 	\begin{aligned}
 		J_n &= R(\theta,\phi,0)J_z R(\theta,\phi,0)^{-1} \\
 			&= J_x * [R(\theta,\phi,0)]_{13} + J_y * [R(\theta,\phi,0)]_{23}  +J_z * [R(\theta,\phi,0)]_{33}\\
-			 &= n_1J_x + n_2J_y + n_3J_z \cite{Tung} \qedsymbol
+			 &= n_1J_x + n_2J_y + n_3J_z 
 	\end{aligned}
 \end{equation} 
+\end{proof}
 
 In this way, we can see that the generator of a rotation about any direction is a linear combination of the generators about our coordinate axes. For any generic rotation, $\psi$, about $n$, we see that 
 
@@ -2225,7 +2219,7 @@ In order to uncover the irreducible representations of $SO(3)$, we will embark u
 First, let us tackle the problem of commuting. We begin with the following definition.
 
 \begin{definition}
-	The \textbf{commutator} of two matrices/operators $A$ and $B$ is defined by to be 
+	The \textbf{commutator} of two matrices $A$ and $B$ is defined by to be 
 $$[A,B]=AB-BA$$
 \end{definition}
 
@@ -2235,12 +2229,12 @@ By definition, two operators/matrices commute if and only if their commutator is
 	Let $J_k,J_l \in \{J_x,J_y,J_z\}$. Consider the word $xyz$, and all 6 rearrangements of it (identifying each rearrangement with a permutation in $S_3$). Then 
 $$[J_k , J_l] = \begin{cases}
 					0 & \text{if }k = l \\
-					i*sign(klm)*J_m& \text{else}
+					isign(klm)J_m& \text{else}
 					\end{cases}$$
 where $m$ is the label of the remaining generator in $\{J_x,J_y,J_z\}$.
 \end{theorem}
 
-\noindent(Pf.) These nine commutators can all be verified by direct calculation. In the case where $k=l$, $[J_k,J_k] = J_kJ_k - J_kJ_k = 0$. However, if $k\neq l$, the calculation is dependent on the choice for $k$ and $l$. We will illustrate one example, and the other five commutators can be verified to follow a similar pattern. Take $k=x$ and $l=y$, our word $klm=xyz$ which represents the trivial permutation. Therefore, $sign(xyz)=1$.
+\noindent\begin{proof} These nine commutators can all be verified by direct calculation. In the case where $k=l$, $[J_k,J_k] = J_kJ_k - J_kJ_k = 0$. However, if $k\neq l$, the calculation is dependent on the choice for $k$ and $l$. We will illustrate one example, and the other five commutators can be verified to follow a similar pattern. Take $k=x$ and $l=y$, our word $klm=xyz$ which represents the trivial permutation. Therefore, $sign(xyz)=1$.
 
 \begin{equation}
 	\begin{aligned}
@@ -2291,9 +2285,19 @@ where $m$ is the label of the remaining generator in $\{J_x,J_y,J_z\}$.
 	\end{aligned}
 \end{equation} 
 
-Clearly, transposing $x$ and $y$ will make the commutator negative (applying a transposition to $x$ and $y$ turns the word into $yxz$, so this is kept track of in the sign term). The other four cases can be recovered in a symmetric way. \qedsymbol
+Clearly, transposing $x$ and $y$ will make the commutator negative (applying a transposition to $x$ and $y$ turns the word into $yxz$, so this is kept track of in the sign term). The other four cases can be recovered in a symmetric way. \end{proof}
 
-While we can clearly see that these relationships give us a non-commutative structue, they are incredibly helpful when viewed through another lens. If we consider the commutator operation as a "multiplication" operation, we can construct create a Lie algebra (using standard addition and scalar multiplication of matrices/operators). Lie algebras have an inherent structure of a vector space. Keeping the generators $\{J_x,J_y,J_z\}$, we will denote this Lie algebra as $\mathfrak{so(3)} := \{a_1J_x + a_2J_y + a_3Jz \mid a_z,a_2,a_3\in\C\}$ We can see than any arbitrary element, $M\in \mathfrak{so(3)}$ takes the following form:
+While we can clearly see that these relationships give us a non-commutative structue, we can still glean some value from these these commutators if we use them in a different context.
+
+\begin{definition}
+	A \textbf{Lie Algebra} is a vector space, $\mathfrak{g}$, together with a bilinear operation, $[\dot,\dot]$ that satisfies the the following identities:
+\begin{itemize}
+	\item$ [x,x] = 0$  $\forall x\in\mathfrak{g}$
+	\item $[x,[y,z]] + [y,[z,x]] + [z[y,x]]= 0 $ $\forall x,y,z\in\mathfrak{g}$
+\end{itemize}
+\end{definition}
+
+If we consider the commutator operation our bilinear operation, we can construct create a Lie algebra (using standard addition and scalar multiplication of matrices). Keeping the generators $\{J_x,J_y,J_z\}$, we will denote this Lie algebra as $\mathfrak{so}(3) := \{a_1J_x + a_2J_y + a_3Jz \mid a_1,a_2,a_3\in\C\}$ We can see than any arbitrary element, $M\in \mathfrak{so}(3)$ takes the following form:
 
 \begin{equation}
 	\begin{aligned}
@@ -2305,9 +2309,9 @@ While we can clearly see that these relationships give us a non-commutative stru
 	\end{aligned}
 \end{equation} 
 
-showing us that there is a one-to-one correspondence between the skew-symmetric matrices of size $3\times 3$ and matrices in $\mathfrak{so(3)}$. With this in mind, we can make the arguement that any representation of this Lie algebra ($\mathfrak{so(3)}$) will provide use with a representation of the Lie group ($SO(3)$). The process for this is much the same as embarked upon for $SO(2)$, but since those representations were one-dimensional and revolved only around one generator, it was not necessary to introduce the complexity of Lie algebras just yet to create the representations. 
+showing us that there is a one-to-one correspondence between the skew-symmetric matrices of size $3\times 3$ and matrices in $\mathfrak{so}(3)$. With this in mind, we can make the arguement that any representation of this Lie algebra ($\mathfrak{so}(3)$) will provide use with a representation of the Lie group ($SO(3)$). There is a deep reason for this connection that can be explored in the following source \cite{Hall}. The process for this is much the same as embarked upon for $SO(2)$, but since those representations were one-dimensional and revolved only around one generator, it was not necessary to introduce the complexity of Lie algebras just yet to create the representations. 
 
-As we search for the representations of $\mathfrak{so(3)}$, we still need to find commuting generators. For the moment, it seems that we did not reduce our problem whatosever, but rather added a layer of abstraction. In light of this, we can add even more abstraction to eventually shed some clarity on our circumstances.
+As we search for the representations of $\mathfrak{so}(3)$, we still need to find commuting generators. For the moment, it seems that we did not reduce our problem whatosever, but rather added a layer of abstraction. In light of this, we can add even more abstraction to eventually shed some clarity on our circumstances.
 
 \begin{definition}
 	The \textbf{universal enveloping algebra} of a Lie algebra is the largest embedding of Lie algebra into an algebra. 
@@ -2315,38 +2319,38 @@ As we search for the representations of $\mathfrak{so(3)}$, we still need to fin
 
 The inherent utility of the universal enveloping algebra (of a Lie algebra) is that it is the most generic algebra that perserves the commutating properties of the Lie algebra. We will later discuss the necessity of appealing to this larger structure, but we will discuss what this space actuall looks like. 
 
-The construction of the universal enveloping algebra of $\mathfrak{so(3)}$ (which we will denote $A_{\mathfrak{so(3)}}$) follows this prototypical scheme: First, we construct the tensor algebra of $\mathfrak{so(3)}$. This takes the following form:
+The construction of the universal enveloping algebra of $\mathfrak{so}(3)$ (which we will denote $A_{\mathfrak{so}(3)}$) follows this prototypical scheme: First, we construct the tensor algebra of $\mathfrak{so}(3)$. This takes the following form:
 
 \begin{equation}
 	\begin{aligned}
-		T(\mathfrak{so(3)}) = \bigoplus_{i=0}^\infty \left(\bigotimes_{k=0}^i \mathfrak{so(3)}\right) = \left(\C\right) \oplus \left(\mathfrak{so(3)}\right) \oplus \left(\mathfrak{so(3)}\otimes \mathfrak{so(3)}\right) \oplus \hdots
+		T(\mathfrak{so}(3)) = \bigoplus_{i=0}^\infty \left(\bigotimes_{k=0}^i \mathfrak{so}(3)\right) = \left(\C\right) \oplus \left(\mathfrak{so}(3)\right) \oplus \left(\mathfrak{so}(3)\otimes \mathfrak{so}(3)\right) \oplus \hdots
 	\end{aligned}
 \end{equation} 
 
-Now that we have created (free) tensor algebra on elements of $\mathfrak{so(3)}$, we can establish the commutation relations on elements. We identify each of our generators $J_i$ with its counterpart in the tensor algebra, $\mathfrak{J}_i$. We can construct an ideal, $I$ to be generated by the three elements defined below: 
+Now that we have created (free) tensor algebra on elements of $\mathfrak{so}(3)$, we can establish the commutation relations on elements. We identify each of our generators $J_i$ with its counterpart in the tensor algebra, $\mathfrak{J}_i$. We can construct an ideal, $I$ to be generated by the three elements defined below: 
 
 $$\mathfrak{g_i} \coloneq \mathfrak{J}_k \otimes \mathfrak{J}_l - \mathfrak{J}_l\otimes \mathfrak{J}_k - \begin{cases}
 	0 & \text{if }k=l	\\
 	i*sign(klm) \mathfrak{J}_m &\text{else}
 \end{cases}$$
 
-We then gather our universal enveloping algebra on $\mathfrak{so(3)}$ by taking the corresponding quotient space.
+We then gather our universal enveloping algebra on $\mathfrak{so}(3)$ by taking the corresponding quotient space.
 
-$$A_{\mathfrak{so(3)}} \coloneq T(\mathfrak{so(3)}) / I$$
+$$A_{\mathfrak{so}(3)} \coloneq T(\mathfrak{so}(3)) / I$$
 
-As of now, we have shifted out problem to looking for commutative elements in $A_{\mathfrak{so(3)}}$. What is the inherent significance of this? If we view our generators $J_x$, $J_y$, $J_z$ as elements in $A_{\mathfrak{so(3)}}$, we can see that the commutator relations are still satisfied as they are in $\mathfrak{so(3)}$. However, due to the construction, there is no way to meaningfully combine them. All that we know is that any formal combination of our generators of can potentially be simplified with our commutator relations, and no other information is given. So, we must set out to find an element in $A_{\mathfrak{so(3)}}$ that commutes with all other elements.
+As of now, we have shifted out problem to looking for commutative elements in $A_{\mathfrak{so}(3)}$. What is the inherent significance of this? If we view our generators $J_x$, $J_y$, $J_z$ as elements in $A_{\mathfrak{so}(3)}$, we can see that the commutator relations are still satisfied as they are in $\mathfrak{so}(3)$. However, due to the construction, there is no way to meaningfully combine them. All that we know is that any formal combination of our generators of can potentially be simplified with our commutator relations, and no other information is given. So, we must set out to find an element in $A_{\mathfrak{so}(3)}$ that commutes with all other elements.
 
 \begin{definition}
 	A \textbf{Casimir element} of a Lie algebra, $A$, is any element in the center of the universal enveloping algebra of $A$.
 \end{definition}
 
-This process, while a seemingly daunting task, is easily solved by taking a well-known physics concept to do the work for us. We define the element $\mathfrak{J^2} \coloneq (\mathfrak{J}_x \otimes \mathfrak{J}_x) \oplus (\mathfrak{J}_y \otimes \mathfrak{J}_y) \oplus (\mathfrak{J}_z \otimes \mathfrak{J}_z) = \mathfrak{J}_x^2 + \mathfrak{J}_y^2 + \mathfrak{J}_z^2$ where we suppress the tensor algebra notation for easier readbility. (It can be intuitively understood that any element referenced in $\mathfrak{this}$ $\mathfrak{script}$ will be contained in $A_{\mathfrak{so(3)}}$ and abide by its properties of multiplication).
+This process, while a seemingly daunting task, is easily solved by taking a well-known physics concept to do the work for us. We define the element $\mathfrak{J^2} \coloneq (\mathfrak{J}_x \otimes \mathfrak{J}_x) \oplus (\mathfrak{J}_y \otimes \mathfrak{J}_y) \oplus (\mathfrak{J}_z \otimes \mathfrak{J}_z) = \mathfrak{J}_x^2 + \mathfrak{J}_y^2 + \mathfrak{J}_z^2$ where we suppress the tensor algebra notation for easier readbility. (It can be intuitively understood that any element referenced in $\mathfrak{this}$ $\mathfrak{script}$ will be contained in $A_{\mathfrak{so}(3)}$ and abide by its properties of multiplication).
 
 \begin{theorem}
 	$\mathfrak{J^2}$ is a Casimir element.
 \end{theorem}
 
-\noindent (Pf.) Let $k\in \{x,y,z\}$.
+\noindent \begin{proof} Let $k\in \{x,y,z\}$.
 \begin{equation}
 \begin{aligned}
 	[\mathfrak{J^2}, \mathfrak{J}_k] &= [\mathfrak{J}_x^2, \mathfrak{J}_k] + [\mathfrak{J}_y^2, \mathfrak{J}_k] + [\mathfrak{J}_z^2, \mathfrak{J}_k]\\
@@ -2355,9 +2359,9 @@ This process, while a seemingly daunting task, is easily solved by taking a well
 										&= 0
 \end{aligned}
 \end{equation}
-where the last equality is established by the fact that our choice is limited to $m_2$ and $l_2$ are forced to be exactly $l_1$ and $m_1$ respectively. \qedsymbol
+where the last equality is established by the fact that our choice is limited to $m_2$ and $l_2$ are forced to be exactly $l_1$ and $m_1$ respectively. \end{proof}
 
-The natural question to ask is why did we have to build the structure of the universal enveloping algebra to be able to use a seemingly straightforward element. The answer comes from the fact that there is no corresponding $J^2$ element in the Lie algebra $\mathfrak{so(3)}$. A direct computation would show us that:
+The natural question to ask is why did we have to build the structure of the universal enveloping algebra to be able to use a seemingly straightforward element. The answer comes from the fact that there is no corresponding $J^2$ element in the Lie algebra $\mathfrak{so}(3)$. A direct computation would show us that:
 
 \begin{equation} 
 	\begin{aligned}
@@ -2393,15 +2397,15 @@ The natural question to ask is why did we have to build the structure of the uni
 								0 & 2 & 0 \\
 								0 & 0 & 2
 							\end{bmatrix} \\
-					&= 2I_3 \notin \mathfrak{so(3)}
+					&= 2I_3 \notin \mathfrak{so}(3)
 	\end{aligned}
 \end{equation} 
 
-Therefore, our discussion must be specific to $A_\mathfrak{so(3)}$ in order for us to develop any useful insight with commutative elements.
+Therefore, our discussion must be specific to $A_{\mathfrak{so}(3)}$ in order for us to develop any useful insight with commutative elements.
 
-Letting $\phi$ be any irreducible representation of $A_\mathfrak{so(3)}$, the commutativity of $\mathfrak{J^2}$ shows us that for any $\mathfrak{J}_n \in A_\mathfrak{so(3)}$, $\phi(\mathfrak{J}_n)\phi(\mathfrak{J^2}) = \phi(\mathfrak{J^2})\phi(\mathfrak{J}_n)$. Schur's Theorem asserts that $\phi(\mathfrak{J^2}) = \lambda I_m$ where $\lambda\in\C$ and $m$ is the degree of the representation. This means that for any $v\in V$ (on which the representations are defined to be operators), $v$ is an eigenvector of $\phi(\mathfrak{J^2})$ with eigenvalue $\lambda$.
+Letting $\phi$ be any irreducible representation of $A_{\mathfrak{so}(3)}$, the commutativity of $\mathfrak{J^2}$ shows us that for any $\mathfrak{J}_n \in A_{\mathfrak{so}(3)}$, $\phi(\mathfrak{J}_n)\phi(\mathfrak{J^2}) = \phi(\mathfrak{J^2})\phi(\mathfrak{J}_n)$. Schur's Theorem asserts that $\phi(\mathfrak{J^2}) = \lambda I_m$ where $\lambda\in\C$ and $m$ is the degree of the representation. This means that for any $v\in V$ (on which the representations are defined to be operators), $v$ is an eigenvector of $\phi(\mathfrak{J^2})$ with eigenvalue $\lambda$.
 
-In search of our invariant subspace, we now must choose an eigenbasis of $V$ with respect to a basis of commuting generators (whose span collects all possible generators in $A_\mathfrak{so(3)}$). We can easily select $\mathfrak{J^2}$ and an additional generator from our typical collection $\{\mathfrak{J}_x,\mathfrak{J}_y,\mathfrak{J}_z\}$, but after choosing one, we can't choose any of the remaining options for fear of not commuting. Conventionally, we select $\{\mathfrak{J^2},\mathfrak{J}_z\}$ as our generators, and choose an eigenbasis of $V$ to be defined with respect to both these generators. With the remaining two generators, we construct two useful linear combinations that will aid us in our efforts.
+In search of our invariant subspace, we now must choose an eigenbasis of $V$ with respect to a basis of commuting generators (whose span collects all possible generators in $A_{\mathfrak{so}(3)}$). We can easily select $\mathfrak{J^2}$ and an additional generator from our typical collection $\{\mathfrak{J}_x,\mathfrak{J}_y,\mathfrak{J}_z\}$, but after choosing one, we can't choose any of the remaining options for fear of not commuting. Conventionally, we select $\{\mathfrak{J^2},\mathfrak{J}_z\}$ as our generators, and choose an eigenbasis of $V$ to be defined with respect to both these generators. With the remaining two generators, we construct two useful linear combinations that will aid us in our efforts.
 
 \begin{equation}
 	\begin{aligned}
@@ -2409,7 +2413,7 @@ In search of our invariant subspace, we now must choose an eigenbasis of $V$ wit
 	\end{aligned}
 \end{equation} 
 
-$\mathfrak{J}_+$ is referred to as the "raising" generator and $\mathfrak{J}_-$ is referred to as the "lowering generator". It is straightforward to verify that these new generators have special relationships with our conventionally selected generators as seen below:
+$\mathfrak{J}_+$ is referred to as the ``raising" generator and $\mathfrak{J}_-$ is referred to as the ``lowering generator". It is straightforward to verify that these new generators have special relationships with our conventionally selected generators as seen below:
 
 \begin{equation}
 	\begin{aligned}
@@ -2484,15 +2488,14 @@ Which implies that $\lambda = -l$. Given that we arrived at eigenvalue $l$ from 
 
 
 \begin{theorem}
-	The irreducible representations of the $A_\mathfrak{so(3)}$ are characterized by eigenvalues that take on positive integer and positive half-integers. If $\lambda$ is one such eigenvalue, then we can construct our eigenvectors, $\{v_m\}_{m=-\lambda}^\lambda$, corresponding to $\phi_{\mathfrak{J}_z}$ with eigenvalue $m$, using the raising or lowering operators. This gives us a degree $2\lambda +1$ representation characterized by the following relationships:
+	The irreducible representations of the $A_{\mathfrak{so}(3)}$ are characterized by eigenvalues that take on positive integer and positive half-integers. If $\lambda$ is one such eigenvalue, then we can construct our eigenvectors, $\{v_m\}_{m=-\lambda}^\lambda$, corresponding to $\phi_{\mathfrak{J}_z}$ with eigenvalue $m$, using the raising or lowering operators. This gives us a degree $2\lambda +1$ representation characterized by the following relationships:
 $$\phi_{\mathfrak{J}^2}(v_m) = \lambda(\lambda+1)v_m$$
 $$\phi_{\mathfrak{J}_z}(v_m) =  mv_m$$ 
 $$v_{m+1} =  \frac{\phi_{\mathfrak{J}_\pm}(v_m)}{\sqrt{\lambda(\lambda+1) - m(m\pm 1)}}$$
 \end{theorem}
+\noindent where the normalizing factor comes from a brief calculation similar to the matrix product calculation done in (3.32). Theorem (3.10) gives us a way to calculate an irreducible, unitary representation up to any degree. The unitary aspect comes from the fact that $\{v_m\}$ are normalized and orthogonal by their construction. When we do the calculations, we have constructed our operators (in the image of our representation) and seek to construct an orthonormal basis with respect to these operators. As we have shown, following this form will ensure that we cannot create a nontrivial-invariant subspace, due to the fact that the cyclical nature of our eigenbasis construction. Explicitly, every vector in this basis will be an eigenvector of $\phi_{\mathfrak{J^2}}$, and since this operator commutes with every other, we inheret a set of eigenvectors that will span the entire space.
 
-where the normalizing factor comes from a brief calculation similar to the matrix product calculation done in \textbf{Equation 3.32}. \textbf{Theorem 3.10} gives us a way to calculate an irreducible, unitary representation up to any degree. The unitary aspect comes from the fact that $\{v_m\}$ are normalized and orthogonal by their construction. When we do the calculations, we have constructed our operators (in the image of our representation) and seek to construct an orthonormal basis with respect to these operators. As we have shown, following this form will ensure that we cannot create a nontrivial-invariant subspace, due to the fact that the cyclical nature of our eigenbasis construction. Explicitly, every vector in this basis will be an eigenvector of $\phi_{\mathfrak{J^2}}$, and since this operator commutes with every other, we inheret a set of eigenvectors that will span the entire space.
-
-Given our hard work to establish a representation on $A_\mathfrak{so(3)}$, we can immediately conclude that we can construct a representation on $SO(3)$. Any rotation under the image of such an irreducible representation must behave in the following way:
+Given our hard work to establish a representation on $A_{\mathfrak{so}(3)}$, we can immediately conclude that we can construct a representation on $SO(3)$. Any rotation under the image of such an irreducible representation must behave in the following way:
 
 \begin{equation}
 \begin{aligned}
@@ -2502,11 +2505,8 @@ Given our hard work to establish a representation on $A_\mathfrak{so(3)}$, we ca
 
 We are required to compute explicitly $\phi_{\mathfrak{J}_z}$ and $\phi_{\mathfrak{J}_y}$ to make use of these formulas. The following example will illustrate this process more closely.
 
-\begin{example}
-	Take $\lambda= \frac{1}{2}$. We expect the degree of our representation to be $2$. 
-\end{example}
-
-We can immediately conclude that:
+\begin{example}\end{example}
+	Take $\lambda= \frac{1}{2}$. We expect the degree of our representation to be $2$ and we can immediately conclude that:
 
 \begin{equation}
 \begin{aligned}
@@ -2526,7 +2526,7 @@ and
 \end{aligned}
 \end{equation}
 
-Using the identities found in \textbf{Equations 3.24-3.28}, we can calculate $\phi_{\mathfrak{J}_\pm}$ as 
+Using the identities found in (3.24-3.28), we can calculate $\phi_{\mathfrak{J}_\pm}$ as 
 
 \begin{equation}
 \begin{aligned}
@@ -2566,24 +2566,25 @@ We note that $\phi_{\mathfrak{J}_z}$ and $\phi_{\mathfrak{J}_y}$ are a scalar mu
 
 \begin{equation}
 \begin{aligned}
-	\phi_\frac{1}{2}(R(\alpha,\beta,\gamma)) &= e^{-i\alpha\phi_{\mathfrak{J}_z}}e^{-i\beta\phi_{\mathfrak{J}_y}}e^{-i\gamma\phi_{\mathfrak{J}_z}}	\\
-													&= (\cos(\frac{\alpha}{2})I_2 -isin(\frac{\alpha}{2})2*\phi_{\mathfrak{J}_z})(\cos(\frac{\beta}{2})I_2 -isin(\frac{\beta}{2})\phi_{\mathfrak{J}_y})(\cos(\frac{\gamma}{2})I_2 -isin(\frac{\gamma}{2})\phi_{\mathfrak{J}_z})\\
-													&=\begin{bmatrix}
-															\cos(\frac{\alpha}{2}) - i (\sin(\frac{\alpha}{2}) & 0\\
-															0 & \cos(\frac{\alpha}{2}) + i (\sin(\frac{\alpha}{2})
-														\end{bmatrix}
-														\begin{bmatrix}
-															\cos(\frac{\beta}{2}) & -\sin(\frac{\beta}{2}) \\
-															  \sin(\frac{\beta}{2}) & \cos(\frac{\beta}{2}) 
-														\end{bmatrix}
+	&\phi_\frac{1}{2}(R(\alpha,\beta,\gamma)) \\
+	&= e^{-i\alpha\phi_{\mathfrak{J}_z}}e^{-i\beta\phi_{\mathfrak{J}_y}}e^{-i\gamma\phi_{\mathfrak{J}_z}}	\\
+	&= (\cos(\frac{\alpha}{2})I_2 -i\sin(\frac{\alpha}{2})2*\phi_{\mathfrak{J}_z})(\cos(\frac{\beta}{2})I_2 -i\sin(\frac{\beta}{2})\phi_{\mathfrak{J}_y})(\cos(\frac{\gamma}{2})I_2 -i\sin(\frac{\gamma}{2})\phi_{\mathfrak{J}_z})\\
+	&=\begin{bmatrix}
+			\cos(\frac{\alpha}{2}) - i (\sin(\frac{\alpha}{2}) & 0\\
+			0 & \cos(\frac{\alpha}{2}) + i (\sin(\frac{\alpha}{2})
+		\end{bmatrix}
+		\begin{bmatrix}
+			\cos(\frac{\beta}{2}) & -\sin(\frac{\beta}{2}) \\
+			  \sin(\frac{\beta}{2}) & \cos(\frac{\beta}{2}) 
+		\end{bmatrix}
 \begin{bmatrix}
-															\cos(\frac{\gamma}{2}) - i (\sin(\frac{\gamma}{2}) & 0\\
-															0 & \cos(\frac{\gamma}{2}) + i (\sin(\frac{\gamma}{2})
-														\end{bmatrix} \\
-														&=\begin{bmatrix}
-															e^{-i\frac{\alpha}{2}}\cos(\frac{\beta}{2})e^{-i\frac{\gamma}{2}} & -e^{-i\frac{\alpha}{2}}\sin(\frac{\beta}{2})e^{-i\frac{\gamma}{2}} \\
-															e^{-i\frac{\alpha}{2}}  \sin(\frac{\beta}{2})e^{-i\frac{\gamma}{2}} & e^{-i\frac{\alpha}{2}}\cos(\frac{\beta}{2}) e^{-i\frac{\gamma}{2}}
-														\end{bmatrix}
+			\cos(\frac{\gamma}{2}) - i (\sin(\frac{\gamma}{2}) & 0\\
+			0 & \cos(\frac{\gamma}{2}) + i (\sin(\frac{\gamma}{2})
+		\end{bmatrix} \\
+		&=\begin{bmatrix}
+			e^{-i\frac{\alpha}{2}}\cos(\frac{\beta}{2})e^{-i\frac{\gamma}{2}} & -e^{-i\frac{\alpha}{2}}\sin(\frac{\beta}{2})e^{-i\frac{\gamma}{2}} \\
+			e^{-i\frac{\alpha}{2}}  \sin(\frac{\beta}{2})e^{-i\frac{\gamma}{2}} & e^{-i\frac{\alpha}{2}}\cos(\frac{\beta}{2}) e^{-i\frac{\gamma}{2}}
+		\end{bmatrix}
 \end{aligned}
 \end{equation}
 
@@ -2591,17 +2592,17 @@ It is worth noting that this example illustrates a multi-valued representation, 
 
 \chapter{The Euclidean Group in Two and Three Dimensions}
 
-While we have discussed rotations extensively, there are many more physical phenomena that are not a result of this action. More specifically, this section will focus on actions that can be represented by compositions of physical rotations and translations. We call the group that takes combinations of these actions the Euclidean Group (in $n$ dimensional space). For the purposes of our study, we will focus on the two and three dimensional cases. While we have covered much of the group for the rotational component of this group, we will need to handle the addition of translations with care.
+While we have discussed rotations extensively, there are many more physical phenomena that are not a result of this action. More specifically, this section will focus on actions that can be represented by compositions of physical rotations and translations. We call the group that takes combinations of these actions the Euclidean Group (in $n$ dimensional space). For the purposes of our study, we will focus on the two and three dimensional cases. While we have covered much of the group for the rotational component of this group, we will need to handle the addition of translations with care. This chapter follows the structure laid out in Wu-ki Tung's \textit{Group Theory in Physics}. \cite{Tung}
 
 \section{Construction and Properties of $E_2$}
 
 \begin{definition}
-	The \textbf{Euclidean Group, $E_n$,} (in $n$ dimensions) is the group of all continuous, isometric, linear transformations on $\R^n$.
+	The $n$-dimensional \textbf{Euclidean Group, $E_n$,} is the group of all continuous, isometric, linear transformations on $\R^n$.
 \end{definition}
 
 For any transformation of this kind, all vectors, $x\in\R^n$, get mapped to $x'\in\R^n$ in the following way 
 $$x' = Rx + b$$
-for some fixed $R\in SO(n)$ and $b\in\R^n$. This gives us a natural decomposition of our transformation into a rotation (given by our matrix $R$) and a translation (by a vector, $b$).
+for some fixed $R\in SO(n)$ and $b\in\R^n$. This gives us a natural decomposition of our transformation into a rotation (given by the matrix $R$) and a translation (by a vector, $b$).
 
 In two dimensions, our rotations are characterized by one angle and our translations are characterized by one vector in $\R^2$. Therefore, any element can be reference in $E_2$ by choosing $\theta$ and $b$ respectively. For any $g(\theta,b)\in E_2$, $x\overset{g(\theta,b)}{\mapsto}x'$ by through the following transformation:
 
@@ -2612,7 +2613,7 @@ $$\begin{bmatrix}x'_1\\x'_2\end{bmatrix} = \begin{bmatrix}
 
 One can see that through this lens, the composition of transformations in $E_2$ follows the general rule:
 
-$$g(\theta_2,b_2)*g(\theta_1,b_1) = g(\theta_2+\theta_1,R(\theta_2)b_1 + b_2)$$
+$$g(\theta_2,b_2)g(\theta_1,b_1) = g(\theta_2+\theta_1,R(\theta_2)b_1 + b_2)$$
 
 We can construct an invertible matrix to represent each transformation if we take each vector in $\R^2$ to be embedded in $\R^3$ on the $z=1$ plane.
 
@@ -2622,7 +2623,7 @@ $$\begin{bmatrix}x'_1\\x'_2 \\ 1\end{bmatrix} = \begin{bmatrix}
 			0&0&1
 		\end{bmatrix} \begin{bmatrix}x_1\\x_2\\1\end{bmatrix} $$
 
-Adopting this convetion, we can easily derive the subgroup of $E_2$ corresponding to pure rotations in terms of the generator who's exists we proved in Chapter 2. 
+\noindent Adopting this convetion, we can easily derive the subgroup of $E_2$ corresponding to pure rotations in terms of the generator who's exists we proved in Chapter 2. 
 
 $$J=\begin{bmatrix}
 			0 & -i & 0\\
@@ -2634,20 +2635,20 @@ Turning our focus to the translations, we can perform a similar derivation. At f
 
 $$T_{dx} = I -idxP$$
 
-where we will show $P$ to be the generator of translations in an almost symmetric calculation as we did in $SO(2)$.
+\noindent where we will show $P$ to be the generator of translations in a similar calculation to what we did for the generator of $SO(2)$.
 
 We can write $T_x$ in terms of our generator by utilizing the following two equations:
 
 $$T_{x+dx} = T_x + dx \frac{d}{dx}T_x$$
-$$T_{x+dx} = T_{dx}*T_x$$
+$$T_{x+dx} = T_{dx}T_x$$
 
 Solving this system gives us the same result as in $SO(2)$:
 
 $$T(x) = e^{-iPx}$$
 
-We can explicitly calculate $P$ by looking at how $T_dx$ should interact with it.
+We can explicitly calculate $P$ by looking at how $T_{dx}$ should interact with it.
 
-$$x + dx = T_{dx}(x) = x -i*dx * P \Rightarrow P = i$$
+$$x + dx = T_{dx}(x) = x -idx  P \Rightarrow P = i$$
 
 Generalizing to two dimensions requires we construct the same scheme twice (treating each component separately). Therefore, we get two generator matrices with respect to each component of the matrix specified to be the location for a component of the translation vector.
 
@@ -2677,16 +2678,17 @@ $$R(\theta)T_bR(\theta)^{-1} = T_{R(\theta)b}$$
 This identity will is geometrically intuitive and will prove incredibly useful for calculations later. Most usefully, we can see a natural decomposition form for group elements in $E_2$.
 
 \begin{theorem}
-	For any $g(\theta,b)\in E_2$, there is a natural decomposition of the transformation into a rotation times a translation.
-$$g(\theta,b) = \overset{T_b}{g(0,b)}\overset{R(\theta)}{g(\theta,0)}$$
+	For any $g(\theta,b)\in E_2$, there is a natural decomposition of the transformation into a pure rotation times a pure translation.
+$$g(\theta,b) = g(0,b)g(\theta,0)$$
 \end{theorem}
 
-\noindent(Pf.) 
+\noindent\begin{proof}[\cite{Tung}]
 \begin{equation}
 \begin{aligned}
-g(\theta,b)R(\theta)^{-1} = g(\theta,b)g(-\theta,0) = g(\theta-\theta,b) = T_b \cite{Tung} \qedsymbol
+g(\theta,b)R(\theta)^{-1} = g(\theta,b)g(-\theta,0) = g(\theta-\theta,b) = T_b 
 \end{aligned}
 \end{equation}
+\end{proof}
 
 Having discussed ways to generically refer to elements of $E_2$, we can begin to discuss the construction of its irreducible representations.
 
@@ -2718,7 +2720,7 @@ Now that we have defined our space rigidly, we will begin analyzing the commutat
 \end{aligned}
 \end{equation}
 
-The fact that the generators for translations commute with each other gives us a vantage point to analyze an abelian subgroup of $E_2$. Consider the subgroup of pure translations, $T_2 = \{ T_b \coloneq g(\theta,b)\in E_2 \mid \theta=0\}$. Based on our argument with the commutator of generators, this group is abelian. As a result, the quotient group $E_2/T_2$ is well-defined, and intuitively, it is isomorphic to $SO(2)$. Since irreducible representations on quotient groups are irreducible on whole groups\textbf{go back to chapter 1 to prove}, it is clear that our analysis of $SO(2)$ will immediately show us the following irreducible representations of $E_2$.
+The fact that the generators for translations commute with each other gives us a vantage point to analyze an abelian subgroup of $E_2$. Consider the subgroup of pure translations, $T_2 = \{ T_b \coloneq g(\theta,b)\in E_2 \mid \theta=0\}$. Based on our argument with the commutator of generators, this group is abelian. As a result, the quotient group $E_2/T_2$ is well-defined, and intuitively, it is isomorphic to $SO(2)$. Since irreducible representations on quotient groups are irreducible on whole groups \cite{Mendes}, it is clear that our analysis of $SO(2)$ will immediately show us the following irreducible representations of $E_2$.
 
 $$\phi_m:E_2\rightarrow \C$$
 $$g(\theta,b)\mapsto e^{im\theta}$$
@@ -2739,9 +2741,9 @@ Now, if we look to encorporate the other generators, we can follow a similar pro
 \end{aligned}
 \end{equation}
 
-As we did in the previous chapter, we have to leave the comfort of the Lie algebra and journey into the universal enveloping algebra to find mutually commuting generators. We will denote the universal enveloping algebra of $E_2$ as $A_{\mathfrak{e_2}}$. All of the commutator identities we stated above will clearly translate to identical relations in our new space. As a reminder, when we discuss generators in this space, we will refer to them with our $\mathfrak{special script}$. 
+As we did in the previous chapter, we have to leave the comfort of the Lie algebra and journey into the universal enveloping algebra to find mutually commuting generators. We will denote the universal enveloping algebra of $E_2$ as $A_{\mathfrak{e_2}}$. All of the commutator identities we stated above will clearly translate to identical relations in our new space. As a reminder, when we discuss generators in this space, we will refer to them with our $\mathfrak{special}$ $\mathfrak{script}$. 
 
-In $A_{\mathfrak{e_2}}$, there is a Casimir element similar to that of $A_\mathfrak{so(3)}$. 
+In $A_{\mathfrak{e_2}}$, there is a Casimir element similar to that of $A_{\mathfrak{so}(3)}$. 
 \begin{equation}
 \begin{aligned}
 	\mathfrak{P}^2 = (\mathfrak{P}_x)^2 + (\mathfrak{P}_y)^2 = \mathfrak{P}_+\mathfrak{P}_- = \mathfrak{P}_-\mathfrak{P}_+
@@ -2810,12 +2812,12 @@ If we use the eigenbasis $\{v_m\}_{m\in\Z}$, then we can find every matrix eleme
 
 With this in mind, we can fully characterize the matrix elements of the irreducible representations of $E_2$.
 
-\begin{theorem}\cite{Tung}
+\begin{theorem}[\cite{Tung}]
 	The faithful, unitary, irreducible representations of $E_2$ are characterized by the following equation defined in terms of matrix elements. If $\psi_p$ is a representation corresponding to a $p>0$, then $[\psi_p(g)]_{mm'}$ corresponds to the matrix element specified by the choice of $v_m$, $v_{m'}$, and $g$. The representations, $\psi_p$ have the following form:
 $$[\psi_p(g(\theta,b))]_{mm'} = e^{i(m-m')\phi}J_{m-m'}(pr)e^{-im\theta}$$
 where $r$ and $\phi$ are the polar coordinates for the vector $b$.
 \end{theorem}
-\noindent(Pf.) For any pure rotation, $R(\theta)$, we can see that
+\noindent\begin{proof} For any pure rotation, $R(\theta)$, we can see that
 
 \begin{equation}
 \begin{aligned}
@@ -2876,7 +2878,7 @@ However if $n\leq m'-m$, then we reindex with the new variable $q =\frac{n-m'+m}
 \end{aligned}
 \end{equation}
 
-and therefore, when we combine every component of this generic transformation in $E_2$, we have achieved the desired result. \qedsymbol
+and therefore, when we combine every component of this generic transformation in $E_2$, we have achieved the desired result. \end{proof}
 
 \section{Construction of $E_3$ and its Irreducible Representations}
 
@@ -2895,7 +2897,7 @@ $E_3$ consists of all compositions of rotations and translations in three dimens
 \end{aligned}
 \end{equation}	
 
-We imbed the action of a transformation in $E_3$ into $M_4(\R)$ by adding an additional component to every vector in $\R^3$ (setting it to $1$) and taking a matrix of this form:
+We imbed the action of a transformation in $E_3$ into $GL_4(\R)$ by adding an additional component to every vector in $\R^3$ (setting it to $1$) and taking a matrix of this form:
 
 \begin{equation}
 \begin{aligned}
@@ -2920,7 +2922,7 @@ Therefore, it is straightforward to compute the following commutation relations:
 \begin{aligned}
 	[J_k,J_l] = \begin{cases}
 					0 & \text{if } k = l\\
-					i*sign(klm)*J_m & else
+					isign(klm)J_m & else
 					\end{cases}
 \end{aligned}
 \end{equation}
@@ -2929,7 +2931,7 @@ where $m$ is the remaining label for the unused generator in the commutator.
 \begin{aligned}
 	[P_k,J_l] = \begin{cases}
 					0 & \text{if } k = l\\
-					i*sign(klm)*P_m & else \end{cases}
+					isign(klm)P_m & else \end{cases}
 \end{aligned}
 \end{equation}
 where $m$ is the unused label not in the commutator.
@@ -2952,8 +2954,8 @@ Further, it is acceptable to decompose any element in $E_3$ as a composition of 
 
 As we continue, we begin our descent into the familiar universal enveloping algebra of our Lie group, we identify each of the generators with its corresponding element. Now that we have more elements to work with, we can actually identifiy two useful Casimir elements in $A_\mathfrak{e_2}$: $\mathfrak{P^2}\coloneq (\mathfrak{P}_x)^2 + (\mathfrak{P}_y)^2 + (\mathfrak{P}_z)^2$ and $\mathfrak{J}* \mathfrak{P} \coloneq \mathfrak{J}_x\mathfrak{P}_x +\mathfrak{J}_y\mathfrak{P}_y + \mathfrak{J}_z\mathfrak{P}_z$.
 
-$\mathfrak{P^2}$ commutes with all the translational generators trivially, and it commutes with the rotational generators because \textbf{insert reason}
-$\mathfrak{J}*\mathfrak{P}$ commutes with the rotational generators for the same reason that $\mathfrak{P}^2$ does, and it commutes with the translational generators for the following reason:
+$\mathfrak{P^2}$ commutes with all the translational generators trivially, and it can be shown to commute with the rotational generators.
+$\mathfrak{J}*\mathfrak{P}$ can also be shown to commute with the rotational generators, and we will explicitly show that it commutes with the translational generators for the following reason:
 \begin{equation}
 \begin{aligned}
  [\mathfrak{J}_x\mathfrak{P}_x+\mathfrak{J}_y\mathfrak{P}_y+\mathfrak{J}_z\mathfrak{P}_z, \mathfrak{P}_k] = [\mathfrak{J}_x,\mathfrak{P}_k]\mathfrak{P}_x + [\mathfrak{J}_y,\mathfrak{P}_k]\mathfrak{P}_y + [\mathfrak{J}_z,\mathfrak{P}_k]\mathfrak{P}_z = i\mathfrak{P}_k\mathfrak{P}_m-i\mathfrak{P}_m\mathfrak{P}_k = 0
@@ -3016,7 +3018,10 @@ We can construct the rest of our vector space by using rotations that are not in
 where $p' = R(\alpha,\beta,\gamma)p$, the cylindrical angles of $p'$ are $\theta'$ and $\phi'$, and $\xi$ is the angle ascertained from the equation $R(0,0,\theta)=R(\phi',\theta',0)^{-1}R(\alpha,\beta,\gamma) R(\phi,\theta,0)$. This construction explicitly gives us our irreducible unitary representations as desired. We can construct the corresponding matrices explicitly using this formulation. All we need to do is fix our $\lambda$ and our eigenvalue of $P_z$.
 
 
-\chapter{The Lorentz and Poincare Groups}
+\chapter{The Lorentz and Poincar\'e Groups}
+
+Now that we have identified the representations of the Euclidean group, we have established firm connections between most tangible physical actions and ways to analyze them through linear algebra techniques. Raising dimensions leaves us with a very limited understanding of the physical bearing of what our representations will truly embody. However, not all hope is lost in this regard. In this chapter, we introduce the Lorentz and Poincar\'e Groups, which are generalizations of four dimensional space designed to embody properties of modern physics. In these spaces, our calculations will differ from those in prototypical four dimensional space due to a relativistic paradigm shift. Our time component (which is the fourth dimension) will add negative weight to each vector's norm, leading to many failures of the normed linear structure that we are inherently used to. In more explicity terms, our space will obey the Minkowski metric as opposed to our standard Euclidean metric, which we will discuss in more detail below. This development will lead to a unique decomposition of our space and some physically meaningful interpretations. This chapter follows the structure laid out in Wu-ki Tung's \textit{Group Theory in Physics}. \cite{Tung}
+
 
 \section{Construction and Basic Properties}
 
@@ -3052,13 +3057,13 @@ $$\begin{array}{c@{\hskip 1cm}c}
 
 \end{array}$$
 
-In this light, entries along the diagonal of the $4\times 4$ matrix are what determine the value of the functional.
+In this light, entries along the diagonal of the $4\times 4$ matrix are what determine the value of the functional. Each of these matrices is referred to as a metric on this space, and it is clear that our space will inheret new structure as a consequence of the (latter) Minkowski metric.
 
 \begin{definition}
 	The \textbf{signature} of the length functional is the ordered quadruple of its diagonal elements $(-1,1,1,1)$.
 \end{definition}
 
-Before, we thought of our rotations and translations as being length preserving operations. But in this four-dimensional space, what we define as length changing to be a less intrinsic measurement. As a result, discussing transformations that "preserve length" will grow in complexity. A transformation can increase spatial components while decreasing a time component, leaving our length measure unaltered. This will have physical implications to be discussed later. For now, we will introduce our first group of interest
+Before, we thought of our rotations and translations as being length preserving operations. But in this four-dimensional space, what we define as length changing to be a less intrinsic measurement. As a result, discussing transformations that ``preserve length" will grow in complexity. A transformation can increase spatial components while decreasing a time component, leaving our length measure unaltered. This will have physical implications to be discussed later. For now, we will introduce our first group of interest
 
 \begin{definition}
 	A \textbf{Homogeneous Lorentz Transformation} is a continuous, length-preserving, linear transformation defined on our space-time vector space. By convention, we refer to such maps with the variable $\Lambda$.
@@ -3127,7 +3132,7 @@ We can view this restriction in the context of the signature of the length by us
 \end{aligned}
 \end{equation}
 
-Which allows us to conclude that 
+which allows us to conclude that 
 
 \begin{equation}
 \begin{aligned}
@@ -3135,10 +3140,7 @@ Which allows us to conclude that
 \end{aligned}
 \end{equation}
 
-
-\textbf{Add some details}
-
-As a result, we can conclude that $\Lambda$ is an orthogonal matrix. Therefore, $det(\lambda) = \pm 1$, but for our purposes, we only wish to consider matrices which are continuously connected to the identity matrix, meaning all the matrices must share determinant $1$. A unique aspect of these matrices lies in the first component. If we take $[\Lambda]_{00}\geq 0$ this corresponds to a transformation that moves our event forward in time. The oppositie scenario $[\Lambda]_{00}\leq 0$ yields a time reversing transformation. Both cases will be analyzed by us. However, we distinguish the former to be \textbf{proper} homogeneous Lorentz transformations.
+As a result, we can conclude that $\Lambda$ is an orthogonal matrix. Therefore, $\det(\lambda) = \pm 1$, but for our purposes, we only wish to consider matrices which are continuously connected to the identity matrix, meaning all the matrices must share determinant $1$. A unique aspect of these matrices lies in the first component. If we take $[\Lambda]_{00}\geq 0$ this corresponds to a transformation that moves our event forward in time. The oppositie scenario $[\Lambda]_{00}\leq 0$ yields a time reversing transformation. Both cases will be analyzed by us. However, we distinguish the former to be \textbf{proper} homogeneous Lorentz transformations.
 
 When we consider a proper homogeneous Lorentz transformation, there are a few kinds that we are already familiar with. For example, any pure spatial rotation that we have studied clearly satisfies the criteria to be designated a Lorentz transformation if we simply embed the matrix into the $4\times 4$ Lorentz matrix. Take any $R\in SO(3)$ for instance. It is straightforward to verify that 
 
@@ -3176,7 +3178,7 @@ This Lorentz boost is defined in terms of the spatial coordinate corresponding t
 Up until this point, we have been ambiguous as to the space where our vectors are defined that are transformed under the elements of $\overset{\sim}{L}_+$. We will define the space now.
 
 \begin{definition}
-	The four dimensional vector space on which length of events (elements of the space) is defined as in \textbf{Definition 5.2} is referred to as \textbf{Minkowski Space}. Elements of the Minkowski Space are defined to transform under Lorentz transformations in the way we expect vectors in $\R^4$ to be transformed under matrices in $M_4(\R)$. We call the elements of the Minkowski Space four-vectors or Lorentz-vectors. We will denote the Minkowski Space by $M$.
+	The four dimensional vector space on which length of events (elements of the space) is defined as in Definition (5.2) is referred to as \textbf{Minkowski Space}. Elements of the Minkowski Space are defined to transform under Lorentz transformations in the way we expect vectors in $\R^4$ to be transformed under matrices in $GL_4(\R)$. We call the elements of the Minkowski Space four-vectors or Lorentz-vectors. We will denote the Minkowski Space by $M$.
 \end{definition}
 
 
@@ -3184,12 +3186,12 @@ We can define a linear functional on this space that acts like an inner product 
 
 \begin{equation}
 \begin{aligned}
-	x*y \coloneq -x^0y^0 + x^1y^1 + x^2y^2 + x^3y^3
+	x\dot y \coloneq -x^0y^0 + x^1y^1 + x^2y^2 + x^3y^3
 \end{aligned}
 \end{equation}
 
 
-Therefore, the length of any vector in $M$ can be recast in the following way: $|x|^2 = x*x$. It turns out, we can dissect the Minkowski space into three distinct physically relevant components based on the following equation:
+Therefore, the length of any vector in $M$ can be recast in the following way: $|x|^2 = x\dot x$. It turns out, we can dissect the Minkowski space into three distinct physically relevant components based on the following equation:
 
 \begin{equation}
 \begin{aligned}
@@ -3197,19 +3199,19 @@ Therefore, the length of any vector in $M$ can be recast in the following way: $
 \end{aligned}
 \end{equation}
 
-Where $||x||$ is the Euclidean 2-norm on $\R^3$. We say that the solutions to this equation are part of the "light cone". This is because the spatial components and the time components balance eachother out , and physical states that embody these characteristics behave as light do. Elements satisfy $|x|^2 < 0$ with $x^0>0$ are said to be "future-like" events. Events like this can be reached by moving forward in time (keeping spatial components constant). The all events that satisfy this are said to compose the future cone. In a similar case, elements that satisfy $|x|^2 < 0$ with $x^0<0$, then the event is said to be past-like because events of this nature can in theory come to fruition if held constant positionally over time. Both past-like and future-like events can be transformed (by some Lorentz transformation) to meet the following form: $v' = (ct',0,0,0)$ and so we refer to both these types of events as time-like events. In a symmetric scenario, we classify the events defined by $|x|^2 >0$. In this case, Lorentz transformations can be applied to any vector of this form to transmute it into $v' = (0,(x^1)',(x^2)',x(^3)')$. Therefore, these events are said to be space-like. The classification is depicted below, and it becomes clear why we choose to refer to these objects as cones.
+\noindent where $||x||$ is the Euclidean 2-norm on $\R^3$. We say that the solutions to this equation are part of the ``light cone". This is because the spatial components and the time components balance eachother out, and physical states that embody these characteristics behave as light do. Elements satisfy $|x|^2 < 0$ with $x^0>0$ are said to be  in the ``future cone". Events like this can be reached by moving forward in time (keeping spatial components constant). The all events that satisfy this are said to compose the future cone. In a similar case, elements that satisfy $|x|^2 < 0$ with $x^0<0$, then the event is said to be in the ``past cone" because events of this nature can in theory come to fruition if held constant positionally over time. Events in both the past and future cones can be transformed (by some Lorentz transformation) to meet the following form: $v' = (ct',0,0,0)$ and so we refer to both these types of events as \textbf{time-like} events. In a similar scenario, we classify the events defined by $|x|^2 >0$. In this case, Lorentz transformations can be applied to any vector of this form to trasnform it into $v' = (0,(x^1)',(x^2)',x(^3)')$. Therefore, these events are said to be \textbf{space-like}. The classification is depicted below, and it becomes clear why we choose to refer to these objects as cones.
 
 \textbf{Insert Picture}
 
-\begin{theorem}
+In our study of many other groups in this thesis, group elements have been show to have helpful decompositions that will make calculations for efficient. The proper Lorentz group is no exception to this.
+
+\begin{theorem}[\cite{Tung}]
 	Any $\Lambda \in \overset{\sim}{L}_+$ can be uniquely written in the following way:
 $$\Lambda = R(\theta,\phi,0)L_z(\xi)R(\alpha,\beta,\gamma)^{-1}$$
 where $L_z(\xi)$ is a Lorentz boost along the $z$-axis by angle $\xi$ and the parameters for the Euler angles of the rotations from $SO(3)$ are defined as expected.
 \end{theorem}
 
-If $\Lambda$ is a proper Lorentz transformation, the its columns are "orthogonormal" with respect to the functional product defined in \textbf{Equation 5.7}. Taking the first column, we see that 
-
-\textbf{Prove Later}
+For the sake of clarity, the proof is ommitted, as it does not give insight into why this decomposition is possible. One can find more details here.\cite{Tung}
 
 While we have covered what could be crudely considered rotations on Minkowski space, it is relatively straightforward to switch gears and now to consider the translations on Minkowski space. Fortunately for us, the construction of these types of operations is very straightforward, and is mostly omitted for simplicty. We define the translation group $T_4 = \{T_b \mid b\in\R^4\}$ in the most natural way. It is inherently abelian and will be used to aid us in defining a new group.
 
@@ -3217,7 +3219,7 @@ While we have covered what could be crudely considered rotations on Minkowski sp
 	The set of all compositions of translations proper Lorentz transformations is called the \textbf{Poincar\'e Group}, denoted $\overset{\sim}{P}$
 \end{definition}
 
-Generically speaking, for any transformation in $\overset{\sim}{P}$, any $x\in M$ is trasnmuted into $x'$ under the transformation in the following way:
+Generically speaking, for any transformation in $\overset{\sim}{P}$, any $x\in M$ is mapped into $x'$ in the following way:
 
 \begin{equation}
 \begin{aligned}
@@ -3225,7 +3227,7 @@ Generically speaking, for any transformation in $\overset{\sim}{P}$, any $x\in M
 \end{aligned}
 \end{equation}
 
-Much like the Euclidean Group, the composition of any two $g(\Lambda,b),g(\Lambda',b')\in\overset{\sim}{P} $  can be seen to follow the below scheme:
+Much like the Euclidean Group, the composition of any two $g(\Lambda,b),g(\Lambda',b')\in\overset{\sim}{P} $  can be seen to follow the equation below:
 
 \begin{equation}
 \begin{aligned}
@@ -3249,7 +3251,7 @@ g(\Lambda,b)=T_b\Lambda
 \end{equation}
 
 
-taking $T_b \sim g(I_4,b)$ and $\Lambda \sim g(\Lambda,0)$.
+\noindent taking $T_b \sim g(I_4,b)$ and $\Lambda \sim g(\Lambda,0)$.
 
 We can use this identity in a similar manner we did in the Euclidean Group to show that for any $T_b,\Lambda\in\overset{\sim}{P}$, we have
 
@@ -3329,25 +3331,27 @@ It can then be easily verified with matrix algebra that for any Lorentz transfor
 \end{aligned}
 \end{equation}
 
-This should feel like a familiar relationship as we derived in the Euclidean group (and would likely be the case if we had discussed $E_4$). However, this should allude to the fact that the translational subgroup is intuitively invariant under rotations, and will later be used to search for our invariant subspace. We now shift our focus to our generators for rotations. For now, we will consider pure spatial rotations separately from rotations involding a time component. In this sense, we can keep our naming convention by denoting the rotational generator $J_\mu$ where $\mu\in\{x,y,z\}$ to be the rotation about the $\mu$ axis in $\R^3$. Through our symmetric derivation in $SO(3)$, we recover the following matrices for our generators:
+This should feel like a familiar relationship as we derived in the Euclidean Group (and would likely be the case if we had discussed $E_4$). However, this should allude to the fact that the translational subgroup is intuitively invariant under rotations, and will later be used to search for our invariant subspace. 
+
+We now shift our focus to our generators for rotations. For now, we will consider pure spatial rotations separately from rotations involving a time component. In this sense, we can keep our naming convention by denoting the rotational generator $J_\mu$ where $\mu\in\{x,y,z\}$ to be the rotation about the $\mu$ axis in $\R^3$. Through our similar derivation in $SO(3)$, we recover the following matrices for our generators:
 
 
 \begin{center}
-\begin{tabular}{c}
+\begin{tabular}{ccc}
 	$J_x = \begin{bmatrix}
 				0 & 0 & 0 & 0 & 0 \\
 				0 & 0 & 0 & 0 & 0\\
 				0 & 0 & 0 & -i & 0\\
 				0 & 0 & i & 0 & 0\\
 				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ \\
+			\end{bmatrix}$ &
 	$J_y = \begin{bmatrix}
 				0 & 0 & 0 & 0 & 0 \\
 				0 & 0 & 0 & i & 0\\
 				0 & 0 & 0 & 0 & 0\\
 				0 & -i & 0 & 0 & 0\\
 				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ \\
+			\end{bmatrix}$ &
 	$J_z = \begin{bmatrix}
 				0 & 0 & 0 & 0 & 0 \\
 				0 & 0 & -i & 0 & 0\\
@@ -3361,21 +3365,21 @@ This should feel like a familiar relationship as we derived in the Euclidean gro
 Handling the generators of the Lorentz boosts ultimately takes the same form as we have already established. Using the arbitrarily small angle of rotation to create two different ways of computing a generic element, we uncover the following form for our generators of Lorentz boosts: Let $K_m$ where $m\in\{x,y,z\}$ denote the generator of the Lorentz boost along the $m$ axis. Then,
 
 \begin{center}
-\begin{tabular}{c}
+\begin{tabular}{ccc}
 	$K_x = \begin{bmatrix}
 				0 & i & 0 & 0 & 0 \\
 				i & 0 & 0 & 0 & 0\\
 				0 & 0 & 0 & 0 & 0\\
 				0 & 0 & 0 & 0 & 0\\
 				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ \\
+			\end{bmatrix}$ &
 	$K_y = \begin{bmatrix}
 				0 & 0 & i & 0 & 0 \\
 				0 & 0 & 0 & 0 & 0\\
 				i & 0 & 0 & 0 & 0\\
 				0 & 0 & 0 & 0 & 0\\
 				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ \\
+			\end{bmatrix}$ &
 	$K_z = \begin{bmatrix}
 				0 & 0 & 0 & i & 0 \\
 				0 & 0 & 0 & 0 & 0\\
@@ -3394,7 +3398,7 @@ As would be expected, any Lorentz transformation can be written in terms of the 
 \end{aligned}
 \end{equation}
 
-where $\omega$ is a six component vector containing values appropriately assigned that decompose $\Lambda$ into rotations in the specified planes. This decomposition can be arrived at with more work using \textbf{Theorem 5.7}. 
+\noindent where $\omega$ is a six component vector containing values appropriately assigned that decompose $\Lambda$ into rotations in the specified planes. This decomposition can be arrived at with more work using Theorem (5.7). 
 
 At this stage, we can construct a generic element of our Lie algebra, $\mathfrak{\overset{\sim}{p}}$ in the following way. If $A\in\mathfrak{\overset{\sim}{p}}$, 
 
@@ -3426,7 +3430,7 @@ We can now establish the following commutator relationships through matrix algeb
 \begin{aligned}
 	[P_\mu,J_\nu] = \begin{cases}
 							0 &\text{if } \mu=\nu \\
-							i*sign(\mu,\nu,\tau)P_\tau & \text{else}
+							isign(\mu,\nu,\tau)P_\tau & \text{else}
 						\end{cases} \hspace{3mm} \forall \mu,\nu,\tau\in\{x,y,z\}\text{ where }\tau \neq\mu,\nu
 \end{aligned}
 \end{equation}
@@ -3434,7 +3438,7 @@ We can now establish the following commutator relationships through matrix algeb
 \begin{aligned}
 	[P_\mu,K_\nu] = \begin{cases}
 							0 &\text{if } \mu=\nu \\
-							i*P_t & \text{else}
+							iP_t & \text{else}
 						\end{cases} \hspace{3mm} \forall \mu,\nu\in\{x,y,z\}
 \end{aligned}
 \end{equation}
@@ -3447,7 +3451,7 @@ We can now establish the following commutator relationships through matrix algeb
 \begin{aligned}
 	[J_\mu,J_\nu] = \begin{cases}
 							0 &\text{if } \mu=\nu \\
-							i*sign(\mu,\nu,\tau)J_\tau & \text{else}
+							isign(\mu,\nu,\tau)J_\tau & \text{else}
 						\end{cases} \hspace{3mm} \forall \mu,\nu,\tau\in\{x,y,z\}\text{ where }\tau \neq\mu,\nu
 \end{aligned}
 \end{equation}
@@ -3455,7 +3459,7 @@ We can now establish the following commutator relationships through matrix algeb
 \begin{aligned}
 	[K_\mu,J_\nu] = \begin{cases}
 							0 &\text{if } \mu=\nu \\
-							i*sign(\mu,\nu,\tau)K_\tau & \text{else}
+							isign(\mu,\nu,\tau)K_\tau & \text{else}
 						\end{cases} \hspace{3mm} \forall \mu,\nu,\tau\in\{x,y,z\}\text{ where }\tau \neq\mu,\nu
 \end{aligned}
 \end{equation}
@@ -3463,7 +3467,7 @@ We can now establish the following commutator relationships through matrix algeb
 \begin{aligned}
 	[K_\mu,K_\nu] = \begin{cases}
 							0 &\text{if } \mu=\nu \\
-							-i*sign(\mu,\nu,\tau)J_\tau & \text{else}
+							-isign(\mu,\nu,\tau)J_\tau & \text{else}
 						\end{cases} \hspace{3mm} \forall \mu,\nu,\tau\in\{x,y,z\}\text{ where }\tau \neq\mu,\nu
 \end{aligned}
 \end{equation}
@@ -3522,7 +3526,7 @@ This can be shown in a very similar manner to the methods used in the Euclidean 
 
 \chapter{The Braid Group and Anyons}
 
-For our last group of study, we will focus our attention to a group of quite unique construction. We seek to make the idea of a braiding mathematically rigorous. We will be taking $n$ strands and tying them around each other to form new objects within our group. While this inherently concrete idea is our main goal to study, we require lots of rigorous mathematics to develop this concept sufficiently. 
+For our last group of study, we will focus our attention to a group of quite unique construction. We seek to make the idea of a braiding mathematically rigorous. We will be taking $n$ strands and tying them around each other to form new objects within our group. While this inherently concrete idea is our main goal to study, we require lots of rigorous mathematics to develop this concept sufficiently. Our ultimate goal is to begin characterization of a special kind of quasiparticle known as anyons. It turns out that when systems of anyons go through a processes that exchange their position, they exhibit behavior that resembles the structure of braids. We will utilize our study of representation theory to both study anyons through the perspective of braids and then study braids from the perspective of anyons. This chapter follows the structure of multiple sources, including Christian Kassel's \textit{Braid Groups}, Avinash Deshmukh's \textit{An Introduction to Anyons}, and Simon Trebst's \textit{A Short Introduction to Fibonacci Anyon Models}. \cite{Kassel,Deshmukh,Trebst}
 
 
 \section{Construction of the Braid Group}
@@ -3538,9 +3542,9 @@ $$\sigma_i\sigma_{i+1}\sigma_i=\sigma_{i+1}\sigma_i\sigma_{i+1} \hspace{3mm} \fo
 These relations are somewhat daunting at first glance, but we can identify the braid group with a familiar group through the lens of a homomorphism to give us an easier interpretation for now. Consider the following map:
 
 $$\phi:B_n\rightarrow S_n$$
-$$\sigma_k \mapsto (k k+1)$$
+$$\sigma_k \mapsto (k \hspace{2mm} k+1)$$
 
-where $(k k+1)$ is cycle notation for the transposition that swaps $k$ and $k+1$. This map can be shown to be a homomorphism, but most importantly, this map perserves the braid relations. That is to say, the transpositions of $S_n$ adhere to the braid relations. However we must be wary; these two groups are not the same. Namely, this is a result of the fact that every transposition is its own inverse in $S_n$ and none of the generators of $B_n$ are their own inverses. 
+\noindent where $(k \hspace{2mm}k+1)$ is cycle notation for the transposition that swaps $k$ and $k+1$. This map can be shown to be a homomorphism, but most importantly, this map perserves the braid relations. That is to say, the transpositions of $S_n$ adhere to the braid relations. However we must be wary; these two groups are not the same. Namely, this is a result of the fact that every transposition is its own inverse in $S_n$ and none of the generators of $B_n$ are their own inverses. 
 
 While this is a good way to get our bearings in the algebraic richness of the braid group, we can also construct this group in a more topological sense.
 
@@ -3554,7 +3558,9 @@ $$b\cap(\R^2\times\{1\}) = \{(1,0,1),(2,0,1),\hdots,(n,0,1)\}$$
 
 Based on this construction of a braid, we can immediately notice a few properties. First, every stand will intersect a level curve of this set at exactly one point (otherwise the stands are not homeomorphic to $[0,1]$). Further, every strand can be traveled as a path, having a unique start and end point. If each strand begins at the point $(n,0,0)$ and ends at $(n',0,1)$, then we can construct a permutation in $S_n$ that captures the behavior of this transition (from $n$ to $n'$). We call such a permutation the underlying permutation of $b$.
 
-Two braids are said to be isotopic to each other if one can be continuously deformed into the other. We use this equivalence to define equivalence classes of braids on which we can work.
+\begin{definition}
+	Two braids, $b_1$ and $b_2$, are said to be \textbf{isotopic} to each other if one can be continuously deformed into the other. This is an equivalence relation.
+\end{definition}
 
 We can define the product between two braids heuristically and formally. Crudely, the product of two braids is defined to be the stacking of one braid on top of the other, lining up the start and end points. More formally, if $b_1$ and $b_2$ are two geometric braids, we define 
 
@@ -3579,7 +3585,7 @@ In order to visualize more easily, we will formally introduce the concept of a b
 \end{itemize}
 \end{definition}
 
-We can make an intuitive identification of geometric braids with braid diagrams by thinking of the latter as a projection of the former onto the $xt$-plane ($t$ representing the interval $[0,1]$). Identifying a geometric braid with a braid diagram takes the diagram and at every crossing, splits the strands in such a way that the undergoing strand gets placed "behind" the overgoing strand, which there is plenty of room to do in $\R$.
+We can make an intuitive identification of geometric braids with braid diagrams by thinking of the latter as a projection of the former onto the $xt$-plane ($t$ representing the interval $[0,1]$). Identifying a geometric braid with a braid diagram takes the diagram and at every crossing, splits the strands in such a way that the undergoing strand gets placed ``behind" the overgoing strand, which there is plenty of room to do in $\R$.
 
 Much like the braids the that braid diagrams represent, two braid diagrams are said to be isotopic if one can be continuously deformed into the other. Further, we can define a product on braid diagrams as well in an identical process that we did to define it on the braids. The product of two braid diagrams visually resembles stacking two diagrams on top of each other. In this way, we can  identify the group of geometric braids with a carefully group of braid diagrams (of course defined on equivalency classes in both settings). 
 
@@ -3603,7 +3609,7 @@ Our second kind of Reidemeister move will be given the label of $\Theta$. In ord
 
 R-equivalence is naturally an equivalence relation, and if we consider the quotient space of the group of braid diagrams, we get a group isomorphic to the group of geometric braids.
 
-Now, all that is left to do is connect our geometric braids back to the algebraic definition. We can start by considering the braid diagrams of our geometric braids. If we are considering braids on $n$ strands, then we define $\sigma_i^+$ to be the braid diagram where the only crossing is the $i$th strand crossing under the $i+1$th strand and $\sigma_i^-$ to be the braid diagram where the only crossing is the $i$th strand crossing over the $i+1$th strand. We define this for ever $i\in\{1,2,\hdots,n-1\}$. Then the following holds:
+Now, all that is left to do is connect our geometric braids back to the algebraic definition. We can start by considering the braid diagrams of our geometric braids. If we are considering braids on $n$ strands, then we define $\sigma_i^+$ to be the braid diagram where the only crossing is the $i^{th}$ strand crossing under the $i+1^{th}$ strand and $\sigma_i^-$ to be the braid diagram where the only crossing is the $i^{th}$ strand crossing over the $i+1^{th}$ strand. We define this for ever $i\in\{1,2,\hdots,n-1\}$. Then the following holds:
 
 \begin{theorem}
 	Let $\mathcal{B}_n$ be the group of geometric braids on $n$ strands. Then for any $\beta\in\mathcal{B}_n$, $\beta$ has a natural decomposition:
@@ -3611,19 +3617,20 @@ $$\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$$
 where $i_1,i_2,\hdots,i_k\in\{1,2,\hdots,n-1\}$ and $\epsilon_i = \pm$
 \end{theorem}
 
-\noindent (Pf.) Let $D(\beta)$ be the braid diagram of $\beta$. Then, we can create a partition of the interval $[0,1]$ in such a way that for every subinterval indicated by the partition, only one crossing occurs. Each subinterval thus defines a braid diagram where only one crossing occurs, which is defined to be $\sigma_i^\epsilon$ for some $i\in\{1,2,\hdots,n-1\}$ and some $\epsilon = \pm$. Since products of braid diagrams are crudely defined as a stacking of braids on top of one another, we can recover the entire diagram of $D(\beta)$ by considering it as a product of the diagrams defined by the subintervals. This brings us to our desired result of 
+\noindent \begin{proof}[\cite{Kassel}] Let $D(\beta)$ be the braid diagram of $\beta$. Then, we can create a partition of the interval $[0,1]$ in such a way that for every subinterval indicated by the partition, only one crossing occurs. Each subinterval thus defines a braid diagram where only one crossing occurs, which is defined to be $\sigma_i^\epsilon$ for some $i\in\{1,2,\hdots,n-1\}$ and some $\epsilon = \pm$. Since products of braid diagrams are crudely defined as a stacking of braids on top of one another, we can recover the entire diagram of $D(\beta)$ by considering it as a product of the diagrams defined by the subintervals. This brings us to our desired result of 
 
 \begin{equation}
 \begin{aligned}
-\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k} \qedsymbol \cite{Kassel}
+\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}  
 \end{aligned}
 \end{equation}
+\end{proof}
 
 \begin{corrolary}
 	Any $\beta\in\mathcal{B}_n$ has a well defined inverse in $\mathcal{B}_n$.
 \end{corrolary}
 
-\noindent(Pf.) If $\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$, then $\beta = \sigma^{-\epsilon_k}_{i_k}\hdots\sigma^{-\epsilon_1}_{i_1}$ \qedsymbol \cite{Kassel}
+\noindent\begin{proof}[\cite{Kassel}] If $\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$, then $\beta = \sigma^{-\epsilon_k}_{i_k}\hdots\sigma^{-\epsilon_1}_{i_1}$ \end{proof} 
 
 \begin{theorem}
 	The following map is an isomorphism of groups:
@@ -3631,11 +3638,11 @@ $$\phi:\mathcal{B}_n\rightarrow B_n$$
 $$\sigma_i^+ \mapsto \sigma_i$$
 \end{theorem}
 
-\noindent(Pf.) Since $\phi$ is defined on generators, it must naturally inheret homomorphism properties. 
+\noindent\begin{proof}[\cite{Kassel}] Since $\phi$ is defined on generators, it must naturally inheret homomorphism properties. 
 
 (Surjective) Since $\phi$ maps to every generator of $B_n$, the map is automatically surjective.
 
-(Injective) Let $\psi:B_n\rightarrow\mathcal{B}_n$, $\sigma_i\mapsto\sigma_i^+$. Injectivity is dependent on whether or not this map is the identity map. Then, for any element, $\beta\in\mathcal{B}_n$, $\psi(\phi(\beta)) = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$. If this construction perserves R-equivalence, then we are done. Reidemeister rules are straigforward to check. Our $\Omega$ moves at terms of $\sigma_i^+\sigma_i^-$ which is the identity. Our $\Theta$ moves exchange $\sigma_i^+\sigma_{i+1}^+\sigma_i^+$ with $\sigma_{i+1}^+\sigma_i^+\sigma_{i+1}^+$ which are equivalent given our braid relations. Finally, isotopies only exchange the order in which the terms in the decomposition would occur as long as the strands are not adjacent (which the braid relations assert are equivalent). Therefore, this image under the composition is the same $\beta$ we started with! \qedsymbol \cite{Kassel}
+(Injective) Let $\psi:B_n\rightarrow\mathcal{B}_n$, $\sigma_i\mapsto\sigma_i^+$. Injectivity is dependent on whether or not this map is the identity map. Then, for any element, $\beta\in\mathcal{B}_n$, $\psi(\phi(\beta)) = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$. If this construction perserves R-equivalence, then we are done. Reidemeister rules are straigforward to check. Our $\Omega$ moves at terms of $\sigma_i^+\sigma_i^-$ which is the identity. Our $\Theta$ moves exchange $\sigma_i^+\sigma_{i+1}^+\sigma_i^+$ with $\sigma_{i+1}^+\sigma_i^+\sigma_{i+1}^+$ which are equivalent given our braid relations. Finally, isotopies only exchange the order in which the terms in the decomposition would occur as long as the strands are not adjacent (which the braid relations assert are equivalent). Therefore, this image under the composition is the same $\beta$ we started with! \end{proof} 
 
 \section{The Burau Representation}
 
@@ -3653,7 +3660,7 @@ U_i = \begin{bmatrix}
 \end{aligned}
 \end{equation}
 
-Based on this construction, there are a few things worth noting immediately. First, $U_1$ has no identity block in the top left corner and $U_{n-1}$ has no block in the bottom right corner. The next noteworthy observation to make is that this complicated construction is actually somewhat simpler than it appears at first glance. If we make the substitution $t=1$ into this matrix, we would have a permutation matrix. More specifically, we have a matrix corresponding to a transposition of adjacent indices, which happens to be what the image of the generators of the braid group are under the map defined near \textbf{Definition 6.1}. Lastly, the most relevant feature of these matrices is the middle block. Since the entire matrix acts as an identity matrix aside from this $2\times 2$ block, the key to studying these matrices in more detail lies here.
+Based on this construction, there are a few things worth noting immediately. First, $U_1$ has no identity block in the top left corner and $U_{n-1}$ has no block in the bottom right corner. The next noteworthy observation to make is that this complicated construction is actually somewhat simpler than it appears at first glance. If we make the substitution $t=1$ into this matrix, we would have a permutation matrix. More specifically, we have a matrix corresponding to a transposition of adjacent indices, which happens to be what the image of the generators of the braid group are under the map defined near Definition (6.1). Lastly, the most relevant feature of these matrices is the middle block. Since the entire matrix acts as an identity matrix aside from this $2\times 2$ block, the key to studying these matrices in more detail lies here.
 
 Setting $U= \begin{bmatrix} 1-t & t\\1 & 0 \end{bmatrix}$, we use the Cayley-Hamilton theorem to conclude that
 
@@ -3694,7 +3701,7 @@ Showing that $U_i$ is invertible with an explicit formula:
 
 which is established just the way we expect it to be.
 
-It is also worth noting that these matrices satisfy the braid relations. That is, $U_iU_j=U_jU_i$ commute when $|i-j|>1$ (which is clear when we notice that the nontrivial blocks do not coincide when this condition is met) and $U_iU_{i+1}U_i=U_{i+1}U_iU_{i+1}$ $\forall i\in\{1,\hdots,n-2\}$ (which can be confirmed by matrix algebra.
+It is also worth noting that these matrices satisfy the braid relations. That is, $U_iU_j=U_jU_i$ commute when $|i-j|>1$ (which is clear when we notice that the nontrivial blocks do not coincide when this condition is met) and $U_iU_{i+1}U_i=U_{i+1}U_iU_{i+1}$ $\forall i\in\{1,\hdots,n-2\}$ (which can be confirmed by matrix algebra).
 
 \begin{definition}
 	The \textbf{Burau Representation} of $B_n$ is the map 
@@ -3722,7 +3729,7 @@ $$\overline{M}\Omega_nM^\intercal = \Omega_n$$
 where $\overline{M}=[\overline{M_{ij}}]$ where the conjugate bar maps $t$ to $\frac{1}{t}$.
 \end{theorem}
 
-\noindent(Pf.) It suffices to prove this statement for the image under generators of $B_n$. If we let $K_{m,n}$ be the matrix of dimension $m\times n$ filled with the entry $1-t$, we can consider the decomposing the matrix $\Omega_n$ into a block structure consistent with the blocks of the image of one generator. Let $i\in\{1,\hdots,n-1\}$. Then consider 
+\noindent\begin{proof}[\cite{Kassel}] It suffices to prove this statement for the image under generators of $B_n$. If we let $K_{m,n}$ be the matrix of dimension $m\times n$ filled with the entry $1-t$, we can consider the decomposing the matrix $\Omega_n$ into a block structure consistent with the blocks of the image of one generator. Let $i\in\{1,\hdots,n-1\}$. Then consider 
 
 \begin{equation}
 	\begin{aligned}
@@ -3788,7 +3795,7 @@ It can be shown that $\overline{U}K_{2,i-1} = K_{2,i-1}$ and $K_{n-i-1,2}U^\inte
 	\end{aligned}
 \end{equation}
 
-Therefore, our substitution of these matrices into their respective blocks gives us our desired results. \qedsymbol \cite{Kassel}
+Therefore, our substitution of these matrices into their respective blocks gives us our desired results. \end{proof} 
 
 Taking the "conjugate"-transpose of both sides of this theorem's result gives us an identical formulation:
 
@@ -3826,7 +3833,7 @@ Let $\zeta$ be a complex number with $|\zeta|=1$. $p_\zeta:\Z([t,t^{-1}]) \right
 
 $$P_\zeta = p_\zeta\circ\phi_n: B_n\rightarrow GL_n(\C)$$
 
-Selecting $\zeta=1$ gives us the $p_\zeta(\Theta_n) = 2I_n$, and therefore the identity derived in \textbf{Equation 6.14} becomes
+Selecting $\zeta=1$ gives us the $p_\zeta(\Theta_n) = 2I_n$, and therefore the identity derived in (6.14) becomes
 
 \begin{equation}
 	\begin{aligned}
@@ -3847,7 +3854,7 @@ We begin our discussion of anyons by first analyzing the general set-up. We will
 	\end{aligned}
 \end{equation}
 
-The interpretation for this property is that $|\psi|^2$ acts as a probability density function for our quantum system. For a specific example, if we use the positions of particles as the inputs of a wave function, we can compute the probability that our particles fall a specific region using the above condition. In general, this class of functions is somewhat broad; any particles in a quantum system (regardless of what kind of particle they are) have $100\%$ chance of being in the space we are considering. So, in an effort to simplify our exploration, let us rigorously define the space of wave functions we will be working in. Suppose that we have a two particle quantum system in which both of our particles are indistinguishable. That is to say we have no way to tell one apart from the other, not even based on their position. All of their intrinsic properties must be considered as equivalent. We will then consider each particle's position as an independent variable. Our interpretation of \textbf{Equation 6.17} will therefore be a probability that both our particles fall within a specified region. These wave functions will intuitively come from the Hilbert space $L^2(\C^2)$ and be normalized with respect to the $2-norm$. It is clear that this a vector space, and that any linear combination of functions in this space can be normalized to form new wave functions. This process is referred to as quantum superposition and will be revisited as we develop our work. Briefly, superpositions of wave functions inherently have coefficients (after normalization) that corresponds the probability that the given state will "collapse" into its corresponding summand. That is to say, every quantum superposition is a weighted sum of distinct states with coefficients equal to the probability that the superposition will when measured by observed as a its corresponding state.
+The interpretation for this property is that $|\psi|^2$ acts as a probability density function for our quantum system. For a specific example, if we use the positions of particles as the inputs of a wave function, we can compute the probability that our particles fall a specific region using the above condition. In general, this class of functions is somewhat broad; any particles in a quantum system (regardless of what kind of particle they are) have $100\%$ chance of being in the space we are considering. So, in an effort to simplify our exploration, let us rigorously define the space of wave functions we will be working in. Suppose that we have a two particle quantum system in which both of our particles are indistinguishable. That is to say we have no way to tell one apart from the other, not even based on their position. All of their intrinsic properties must be considered as equivalent. We will then consider each particle's position as an independent variable. Our interpretation of (6.17) will therefore be a probability that both our particles fall within a specified region. These wave functions will intuitively come from the Hilbert space $L^2(\C^2)$ and be normalized with respect to the $2-norm$. It is clear that this a vector space, and that any linear combination of functions in this space can be normalized to form new wave functions. This process is referred to as quantum superposition and will be revisited as we develop our work. Briefly, superpositions of wave functions inherently have coefficients (after normalization) that corresponds the probability that the given state will "collapse" into its corresponding summand. That is to say, every quantum superposition is a weighted sum of distinct states with coefficients equal to the probability that the superposition will when measured by observed as a its corresponding state.
 
 An immediate observation we can make about this set up concerns the equivalence of states. It is clear that if we have the wave function, $\psi$, then for any complex number of the form $e^{i\theta}$,
 
@@ -3933,7 +3940,7 @@ This intuitively alignes with our understanding of the impact of anyons on wave 
 
 Since our vector space was one dimensional, our representation needed to be degree $1$. What happens if we add more vectors to our basis of $V$. Suppose that $V \coloneq \bigotimes_{i=1}^n\psi$ where $n>1$. This vector space is clearly $n$-dimensional. It turns out that we have a lot of freedom as to how we can construct a representation of the braid group.
 
-\begin{theorem}\cite{Riverside}
+\begin{theorem}[\cite{Riverside}]
 	Let $V \coloneq \bigotimes_{i=1}^m\psi$ where $m>1$ and let $R: V\otimes V \rightarrow V\otimes V $ be an invertible, linear operator. Then the following map is a representation of $B_n$
 $$\phi_R:B_n\rightarrow GL_m(\C)$$
 $$\sigma_i \mapsto M(U_i)$$
@@ -3942,13 +3949,14 @@ $$U_i:V\rightarrow V$$
 $$(v_1\otimes\hdots\otimes v_i\otimes v_{i+1}\otimes\hdots\otimes v_m)\mapsto (v_1\otimes\hdots\otimes R(v_i\otimes v_{i+1})\otimes\hdots\otimes v_m)$$
 \end{theorem}
 
-\noindent (Pf.) Let $\sigma_i,\sigma_j\in B_n$. Then
+\noindent \begin{proof} Let $\sigma_i,\sigma_j\in B_n$. Then
 
 \begin{equation}
 	\begin{aligned}
-		\phi_R(\sigma_i\sigma_j) = M(U_iU_j) = M(U_i)M(U_j) =  \phi_R(\sigma_i)\phi_R(\sigma_j) \qedsymbol
+		\phi_R(\sigma_i\sigma_j) = M(U_iU_j) = M(U_i)M(U_j) =  \phi_R(\sigma_i)\phi_R(\sigma_j)
 	\end{aligned}
 \end{equation}
+ \end{proof}
 
 In this construction, we see that the operator $R$ acts as a generic "exchange" of anyons viewed as a consequence of braid generators. The braid relations can be seen to easily be valid (as a result of the homomorphism property ot directly as a result of the construction of $U_i$). The matrices of these operators will therefore take the following block diagonal form by construction:
 
@@ -3963,9 +3971,7 @@ In this construction, we see that the operator $R$ acts as a generic "exchange" 
 \end{equation}\\
 
 
-\begin{example}Take $R$ to be the operator that sends $(\psi_1,\psi_2)$ to $(\psi_2,\psi_1)$ 
-\end{example}
-We see that we have constructed the Burau representation evaluated at $\zeta=1$ through the evaluation map as seen above.
+\begin{example}\end{example}Take $R$ to be the operator that sends $(\psi_1,\psi_2)$ to $(\psi_2,\psi_1)$. We see that we have constructed the Burau representation evaluated at $\zeta=1$ through the evaluation map as seen in (6.16).
 
 Given the generality of this approach, we have found a simple way to construct a degree $n$ representation of the braid group. However, what is the inherent meaning behind the ``swapping" of wave functions? In a physical situation, it might correspond to a quantum system comprised of $m$ particles where each particle is composed of $n$ anyons. In this sense, the swapping of states corresponds to the exchange of two whole particles (exchanging $2n$ anyons). Given our example above, we can intrepret the each braid as some nontrivial exchange of an $m$ composite anyons. 
 
@@ -4005,10 +4011,11 @@ Anyons of type $\tau$ are specifically referred to as the Fibonacci anyons. Our 
 
 In general, we have multiple anyons to keep track of, and the fusion rules ascribed to the system play out in successive fusions of neighboring quasiparticles. If we have $n$ Fibonacci anyons and we track their statistics through their fusion channels, it is no surprise that for any resulting anyon type, the process of arriving to it was not unique. We represent each possible scenario with a diagram, known as a fushion path.
 
-\begin{example}
+\begin{example}\end{example} 
 Suppose we have three Fibonacci anyons. We can illustrate the following fusion paths to see every possible way we can fuse these anyons.\\
+
 \textbf{insert picture}
-\end{example} 
+
 
 These diagrams represent different states of the same anyonic system. If the resulting anyon type is $\tau$, we refer to the fusion tree as representing a ground state. We can use the fusion trees to characterize all possible ground states (degeneracy), and therefore, these trees represent an orthonormal basis of the ground-state manifold\cite{Trebst}. We refer to this as the fusion tree basis of the anyonic system. We can then utilize a combinatorial technique to count the number of ground states (given a fixed number of anyons). If we have $n$ anyons, and $F_n$ represents the number of ground states, we can see that last fusion must have been one of two possible fusions: $\tau\otimes \tau$ or $e \otimes \tau$. In the former scenario, the number of ways for this to happen is characterized by $F_{n-1}$ and in the latter scenario, the number of ways for this to happen is $F_{n-2}$. In general, we can see that the degeneracy of the ground states is exactly equal to the $n^{th}$ Fibonacci number.
 
@@ -4169,8 +4176,7 @@ where each factor in the product represents a single exchange of two specified a
 
 
 
-\newpage
-Hello
+
 
 
 
@@ -4216,6 +4222,8 @@ Hello
 \bibitem{Rose3}
 
 \bibitem{Joyal}
+
+\bibitem{Hall}
 %A.~F. Blumberg and G.~L. Mellor.
 %\newblock A description of a three-dimensional coastal circulation model.
 %\newblock In N.~Heaps, editor, {\em Three Dimensional Coastal Ocean Models},
@@ -4255,12 +4263,12 @@ Hello
    \noindent APPENDICES
 }
 
-\begin{appendices}
-\chapter{Appendix A Title} \label{Appendix A}
+%\begin{appendices}
+%\chapter{Appendix A Title} \label{Appendix A}
 
-Blah blah
+%Blah blah
 
-\end{appendices}
+%\end{appendices}
 
 
 %\addcontentsline{toc}{chapter}{Bibliography}

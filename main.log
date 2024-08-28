@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  27 AUG 2024 17:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  27 AUG 2024 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1186,11 +1186,6 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 341
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 365--371
-
- []
-
-
 
 [1
 
@@ -1198,17 +1193,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 365--371
 
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 376--384
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
 
-Overfull \hbox (57.39734pt too wide) detected at line 407
+Overfull \hbox (30.78929pt too wide) detected at line 407
 [][][][][]
  []
 
@@ -1231,14 +1221,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 422--424
 [4]
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 545--546
-
- []
-
-
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 552--556
+Underfull \hbox (badness 10000) in paragraph at lines 544--548
 
  []
 
@@ -1247,17 +1232,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 552--556
 [7]
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 671--672
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 673--674
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--676
+Underfull \hbox (badness 10000) in paragraph at lines 667--668
 
  []
 
@@ -1266,24 +1251,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 675--676
 [9]
 
 [10]
-Overfull \hbox (0.69853pt too wide) detected at line 765
+Overfull \hbox (0.69853pt too wide) detected at line 754
 []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 776--777
-
  []
 
 
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 782--783
+Underfull \hbox (badness 10000) in paragraph at lines 765--766
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 784--785
+Underfull \hbox (badness 10000) in paragraph at lines 771--772
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
 
  []
 
@@ -1292,7 +1277,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 784--785
 [12]
 
 [13]
-Overfull \hbox (1.10458pt too wide) in paragraph at lines 843--844
+Overfull \hbox (1.10458pt too wide) in paragraph at lines 830--831
 \OT1/cmr/m/n/10 space. Let $\OML/cmm/m/it/10 ^^^[]$ \OT1/cmr/m/n/10 de-note $\O
 ML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 )$, and le
 t $\OML/cmm/m/it/10 S$ \OT1/cmr/m/n/10 be de-fined such that $\OMS/cmsy/m/n/10 
@@ -1304,38 +1289,20 @@ h\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm
  []
 
 
-Overfull \hbox (208.28493pt too wide) in paragraph at lines 866--867
-[]\OT1/cmr/bx/n/10 Theorem 1.29. []\OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 G$ \O
-T1/cmr/m/it/10 be a fi-nite group, let $\OT1/cmr/m/n/10 ^^H = \OMS/cmsy/m/n/10 
-f\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 ^^^[]G\OMS/cmsy/m/n/1
-0 g$\OT1/cmr/m/it/10 .
- []
-
-
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 906--907
-
- []
-
-
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 951--952
+Underfull \hbox (badness 10000) in paragraph at lines 893--894
 
- []
-
-
-Overfull \hbox (1.3324pt too wide) in paragraph at lines 956--957
-[]\OT1/cmr/bx/n/10 Corrolary 1.30. []\OT1/cmr/m/it/10 The num-ber of in-equiv-a
--lent, uni-tary, ir-re-ducible rep-re-sen-ta-tions is bounded
  []
 
 
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 962--964
-
+Overfull \hbox (1.3324pt too wide) in paragraph at lines 943--944
+[]\OT1/cmr/bx/n/10 Corrolary 1.28. []\OT1/cmr/m/it/10 The num-ber of in-equiv-a
+-lent, uni-tary, ir-re-ducible rep-re-sen-ta-tions is bounded
  []
 
 
@@ -1349,144 +1316,127 @@ Underfull \hbox (badness 10000) in paragraph at lines 962--964
 [20]
 
 [21]
-Overfull \hbox (133.79692pt too wide) in paragraph at lines 1136--1137
-[]\OT1/cmr/bx/n/10 Corrolary 1.41. [] \OT1/cmr/m/it/10 For any fi-nite group, $
-\OML/cmm/m/it/10 G$\OT1/cmr/m/it/10 , $[][] \OML/cmm/m/it/10 n[] \OT1/cmr/m/n/1
-0 = \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 G\OMS/cmsy/m/n/10 j$ \OT1/cmr/m/it/10 wh
-ere $\OT1/cmr/m/n/10 ^^H = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^^ \OMS/cmsy/m/n
-/10 j \OML/cmm/m/it/10 ^^^[]G\OMS/cmsy/m/n/10 g$\OT1/cmr/m/it/10 . 
- []
-
-
-Overfull \hbox (50.4947pt too wide) in paragraph at lines 1139--1140
-\OT1/cmr/m/n/10 (Pf.) Since the left reg-u-lar rep-re-sen-ta-tion ($\OML/cmm/m/
-it/10 ^^^$\OT1/cmr/m/n/10 ) has ir-re-ducible de-com-po-si-tion $\OML/cmm/m/it/
-10 ^^^ \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T [] T[]$\OT1/cmr/m/n/10 ,
- []
-
-
 
 [22]
-
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 1204--1206
-
+Overfull \hbox (35.87057pt too wide) in paragraph at lines 1131--1132
+[]\OT1/cmr/m/n/10 Since the left reg-u-lar rep-re-sen-ta-tion ($\OML/cmm/m/it/1
+0 ^^^$\OT1/cmr/m/n/10 ) has ir-re-ducible de-com-po-si-tion $\OML/cmm/m/it/10 ^
+^^ \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T [] T[]$\OT1/cmr/m/n/10 ,
  []
 
 
+
+[23]
 
 [24]
 
 [25]
+
+[26]
 \uppercase {Chapter} 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1273.
+(hyperref)                removing `math shift' on input line 1266.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1273.
+(hyperref)                removing `math shift' on input line 1266.
 
 
 
-[26
+[27
 
 ]
 
-[27]
-
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1375--1376
-
- []
-
-
 
 [29]
 
 [30]
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1519--1520
-
- []
-
-
 
 [32]
+Underfull \hbox (badness 10000) in paragraph at lines 1513--1514
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1542.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1542.
-
-
-Overfull \hbox (2.97223pt too wide) in paragraph at lines 1553--1554
-\OML/cmm/m/it/10 e[]$\OT1/cmr/m/n/10 . Eigen-val-ues serve as a great tool for 
-con-struct-ing de-gree one rep-re-sen-ta-tions. Through-
  []
 
 
 
 [33]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1536.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1536.
+
+
+Overfull \hbox (2.97223pt too wide) in paragraph at lines 1547--1548
+\OML/cmm/m/it/10 e[]$\OT1/cmr/m/n/10 . Eigen-val-ues serve as a great tool for 
+con-struct-ing de-gree one rep-re-sen-ta-tions. Through-
+ []
+
+
+
 [34]
 
 [35]
+
+[36]
 \uppercase {Chapter} 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1676.
+(hyperref)                removing `math shift' on input line 1669.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1676.
-
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+(hyperref)                removing `math shift' on input line 1669.
 
 
-[36
+
+[37
 
 ]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (57.03116pt too wide) in paragraph at lines 1725--1866
+Overfull \hbox (57.03116pt too wide) in paragraph at lines 1718--1859
 [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1871--1872
-
- []
-
-
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 1873--1874
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1882--1883
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1884--1885
-
  []
 
 
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 1900--1901
+Underfull \hbox (badness 10000) in paragraph at lines 1864--1865
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1866--1867
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1875--1876
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1877--1878
+
+ []
+
+
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 1893--1894
 
  []
 
@@ -1505,42 +1455,40 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
 
-[39]
-
 [40]
 
 [41]
-Overfull \hbox (69.52298pt too wide) detected at line 2109
+
+[42]
+Overfull \hbox (69.52298pt too wide) detected at line 2102
 [][][][][]
  []
 
 
 
-[42]
-
 [43]
 
 [44]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2221.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2221.
-
-
-
 [45]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 229
-6.
- (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2215.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2215.
+
+
 
 [46]
 
 [47]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 229
+3.
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
 
 [48]
 
@@ -1553,50 +1501,50 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 [52]
 
 [53]
-Overfull \hbox (118.79651pt too wide) detected at line 2588
+
+[54]
+Overfull \hbox (56.06985pt too wide) detected at line 2589
 [][][][][]
  []
 
 
 
-[54]
+[55]
 \uppercase {Chapter} 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2596.
+(hyperref)                removing `math shift' on input line 2597.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2596.
+(hyperref)                removing `subscript' on input line 2597.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2596.
+(hyperref)                removing `math shift' on input line 2597.
 
 
 
-[55
+[56
 
 ]
 
-[56]
-
 [57]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2693.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2693.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2693.
-
-
-
 [58]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2695.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2695.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2695.
+
+
 
 [59]
 
@@ -1606,53 +1554,53 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [62]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2881.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2881.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2881.
-
-
-
 [63]
-Overfull \hbox (7.01807pt too wide) detected at line 2961
-[][][][][]
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2883.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2883.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2883.
 
 
 
 [64]
+Overfull \hbox (7.01807pt too wide) detected at line 2963
+[][][][][]
+ []
+
+
 
 [65]
 
 [66]
+
+[67]
+
+[68]
 \uppercase {Chapter} 5.
 
 
-[67
+[69
 
 ]
-Overfull \hbox (55.13582pt too wide) detected at line 3084
-[][][][][]
- []
-
-
-Overfull \hbox (29.64583pt too wide) detected at line 3128
-[][][][][]
- []
-
-
-
-[68]
-
-[69]
 
 [70]
+Overfull \hbox (55.13582pt too wide) detected at line 3089
+[][][][][]
+ []
+
+
+Overfull \hbox (29.64583pt too wide) detected at line 3133
+[][][][][]
+ []
+
+
 
 [71]
 
@@ -1671,9 +1619,13 @@ Overfull \hbox (29.64583pt too wide) detected at line 3128
 [78]
 
 [79]
+
+[80]
+
+[81]
 \uppercase {Chapter} 6.
 
-Overfull \hbox (0.39772pt too wide) in paragraph at lines 3533--3534
+Overfull \hbox (0.39772pt too wide) in paragraph at lines 3537--3538
 []\OT1/cmr/bx/n/10 Definition 6.1. []\OT1/cmr/m/it/10 The braid group, $\OML/cm
 m/m/it/10 B[]$\OT1/cmr/m/it/10 , is gen-er-ated by $\OML/cmm/m/it/10 n \OMS/cms
 y/m/n/10 ^^@ \OT1/cmr/m/n/10 1$ \OT1/cmr/m/it/10 gen-er-a-tors (de-noted $\OML/
@@ -1682,13 +1634,9 @@ cmm/m/it/10 ^^[[]; [] ; ^^[[]$\OT1/cmr/m/it/10 )
 
 
 
-[80
+[82
 
 ]
-
-[81]
-
-[82]
 
 [83]
 
@@ -1697,47 +1645,52 @@ cmm/m/it/10 ^^[[]; [] ; ^^[[]$\OT1/cmr/m/it/10 )
 [85]
 
 [86]
-Underfull \hbox (badness 10000) in paragraph at lines 3717--3718
-
- []
-
-
 
 [87]
 
 [88]
+Underfull \hbox (badness 10000) in paragraph at lines 3724--3725
+
+ []
+
+
 
 [89]
 
 [90]
-Overfull \hbox (32.67516pt too wide) detected at line 3878
-[][][][][]
- []
-
-
 
 [91]
 
 [92]
 
 [93]
-
-[94]
-Underfull \hbox (badness 10000) in paragraph at lines 3963--3964
-
+Overfull \hbox (32.67516pt too wide) detected at line 3885
+[][][][][]
  []
 
 
 
+[94]
+
 [95]
 
 [96]
+Underfull \hbox (badness 10000) in paragraph at lines 3971--3972
+
+ []
+
+
 
 [97]
 
 [98]
 
 [99]
+Underfull \hbox (badness 10000) in paragraph at lines 4015--4016
+
+ []
+
+
 
 [100]
 
@@ -1747,11 +1700,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 3963--3964
 
 [103]
 
-[104
+[104]
 
-
-]
-Appendix A.
+[105]
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -1759,7 +1710,8 @@ This document will not have a glossary.
 
 
 
-[105
+[106
+
 
 ] (./main.aux)
  ***********
@@ -1767,13 +1719,13 @@ LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E678DAB44340C39CA27FE5FB0293F07C;6935.
+(rerunfilecheck)             Checksum: C33EBBC7BA2B579678B4C6FCE369F527;6792.
  ) 
 Here is how much of TeX's memory you used:
- 34638 strings out of 475517
- 628361 string characters out of 5777237
- 1954908 words of memory out of 5000000
- 56256 multiletter control sequences out of 15000+600000
+ 34629 strings out of 475517
+ 628079 string characters out of 5777237
+ 1952908 words of memory out of 5000000
+ 56246 multiletter control sequences out of 15000+600000
  569292 words of font info for 79 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  94i,20n,133p,2343b,1257s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1801,10 +1753,10 @@ ublic/amsfonts/euler/eufm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msam7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm7.pfb>
-Output written on main.pdf (105 pages, 582149 bytes).
+Output written on main.pdf (106 pages, 584438 bytes).
 PDF statistics:
- 1122 PDF objects out of 1200 (max. 8388607)
- 953 compressed objects within 10 object streams
- 442 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1136 PDF objects out of 1200 (max. 8388607)
+ 966 compressed objects within 10 object streams
+ 443 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
