@@ -1271,17 +1271,19 @@ $SO(2)$ is a group whose elements correspond to the action of rotating vectors i
 
 To begin, consider $\R^2$ as a the natural two-dimensional vector space. Let $(x,y)\in\R^2$. Then any rotation of this vector by some angle, $\theta$, in the manner described above will change the coordinates. If we refer to this new, rotated vector as $(x',y')$, we can visualize this action.
 
-\begin{center}
-            \begin{tikzpicture}[scale=1]
-                %\draw[step=1cm ,color=gray] (-4,-4) grid (4,4);
-                \draw[thin,<->] (-4.1,0) -- (4.1,0) node[anchor=north west] {$e_1$};
-                \draw[thin,<->] (0,-4.1) -- (0,4.1) node[anchor=south west] {$e_2$};
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=1]
+	                %\draw[step=1cm ,color=gray] (-4,-4) grid (4,4);
+			\draw[thin,<->] (-4.1,0) -- (4.1,0) node[anchor=north west] {$e_1$};
+			\draw[thin,<->] (0,-4.1) -- (0,4.1) node[anchor=south west] {$e_2$};
 			\draw[fill=black] (0,0) coordinate (o);
 			\draw[thick, ->] (0,0) -- (2,3) coordinate (a) node[anchor=south west] {$(x,y)$};
 			\draw[thick, ->] (0,0) -- (-3,2) coordinate (b) node[anchor=south] {$(x',y')$};
 			\pic [draw, ->, angle eccentricity=0.7, angle radius=0.8cm, "$\theta$"]{angle=a--o--b};
-            \end{tikzpicture}
-    \end{center}
+	\end{tikzpicture}
+	\caption{Rotation of a generic vector in $\R^2$ by angle $\theta$}
+\end{figure}
 
 For a more intuitive understanding of the action, we can turn our attention to the polar coordinates corresponding to these two vectors. Letting $r = \sqrt{x^2 + y^2}$, we can see that the polar form of these vectors can be written in the following way:
 \begin{center}
@@ -1676,186 +1678,193 @@ If we define $SO(3)$ to act on $\R^3$ in a similar way that $SO(2)$ acts on $\R^
 
 In two dimensions, it is straightforward to define a convention for orientation and measurement of any rotation. However, when we get to three dimensions, we need to be more careful about how we describe these actions. Our first attempt to characterize these wil have us focus on embedding two dimensional rotations in three dimensional space. First, let us consider any $n\in\R^3$. We can treat this vector as an axis about which we rotate by taking the plane normal to it. One we have rotated vectors about this axis, we can measure the angle of rotation by projecting these vectors onto normal plane and calculating the angle just as we did in our two dimensional derivation in Chapter 2. We still take the convention that positive angle measure corresponds to a counter-clockwise rotation about in the normal plane. The orientation of $n$ is uniquely determined by two angles, $\theta$ and $\phi$, as defined by spherical coordinates in $\R^3$. For this discussion, we do not care about $||n||$, since any this value does not impact the direction the axis points. In this way, every possible rotation in $\R^3$ is characterized by one angle of counter-clockwise rotation and the two angles that determine the orientation about which we rotate (direction that $n$ points). In other words, the rotation, which we will refer to as $R_n(\psi) = R_{\theta,\phi}(\psi)$, identifies a rotation as displayed in the picture below.
 
-\tdplotsetmaincoords{60}{120}
-\tdplotsetrotatedcoords{60}{45}{225}
-\begin{center}
-		\begin{tikzpicture}
-				[scale=1.2,
-					tdplot_main_coords,
-					axis/.style={->,black,thin},
-					vector/.style={-stealth,black,very thick}]
-		
 
-			%draw the axes
-			\draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
-			\draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
-			\draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
-		
-			\coordinate (O) at (0,0,0);
-			\tdplotsetcoord{P}{3}{45}{60}
+\begin{figure}{H}
+	\centering
+	\tdplotsetmaincoords{60}{120}
+	\tdplotsetrotatedcoords{60}{45}{225}
+	\centering
+	\begin{tikzpicture}
+			[scale=1.2,
+				tdplot_main_coords,
+				axis/.style={->,black,thin},
+				vector/.style={-stealth,black,very thick}]
+	
 
-		%	\draw[thick,tdplot_rotated_coords,->](0,0,0)--(.5,0,0)node[anchor=west]{$x'$};
-			%\draw[thick,tdplot_rotated_coords,->](0,0,0)--(0,.5,0)node[anchor=west]{$y'$};
-			%\draw[thick,tdplot_rotated_coords,->](0,0,0)--(0,0,5)node[anchor=west]{$z'$};
-			\draw[dashed,color=red] (O)--(Pxy);
-			\draw[dashed,color=red] (P)--(Pxy);
-			%x =  y = z=2.09 r = 2.15218
+		%draw the axes
+		\draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
+		\draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
+		\draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
+	
+		\coordinate (O) at (0,0,0);
+		\tdplotsetcoord{P}{3}{45}{60}
 
-			\tdplotdrawarc[->,tdplot_rotated_coords,color=blue, very thick]{(0,0,0)}{0.5}{0}{360}{anchor=south west}{$\psi$};
-			\tdplotdrawarc[->]{(0,0,0)}{2.15218}{0}{60}{anchor=north}{$\theta$};
-			\tdplotsetrotatedcoords{-30}{-90}{0}
-			\tdplotdrawarc[->,tdplot_rotated_coords]{(0,0,0)}{2}{0}{45}{anchor=north east}{$\phi$};
-			\draw[->, very thick] (O) -- (P) node[anchor=south]{$n$} ;			
-		\end{tikzpicture}
-\end{center}
+	%	\draw[thick,tdplot_rotated_coords,->](0,0,0)--(.5,0,0)node[anchor=west]{$x'$};
+		%\draw[thick,tdplot_rotated_coords,->](0,0,0)--(0,.5,0)node[anchor=west]{$y'$};
+		%\draw[thick,tdplot_rotated_coords,->](0,0,0)--(0,0,5)node[anchor=west]{$z'$};
+		\draw[dashed,color=red] (O)--(Pxy);
+		\draw[dashed,color=red] (P)--(Pxy);
+		%x =  y = z=2.09 r = 2.15218
+	\tdplotsetrotatedcoords{60}{45}{225}
+		\tdplotdrawarc[->,tdplot_rotated_coords,color=blue, very thick]{(0,0,0)}{0.5}{0}{360}{anchor=south west}{$\psi$};
+		\tdplotdrawarc[->]{(0,0,0)}{2.15218}{0}{60}{anchor=north}{$\theta$};
+		\tdplotsetrotatedcoords{-30}{-90}{0}
+		\tdplotdrawarc[->,tdplot_rotated_coords]{(0,0,0)}{2}{0}{45}{anchor=north east}{$\phi$};
+		\draw[->, very thick] (O) -- (P) node[anchor=south]{$n$} ;			
+	\end{tikzpicture}
+	\caption{Generic rotation in $SO(3)$ characterized by $R_n(\psi)$}		
+\end{figure}
 
 By identifying rotations with these three parameters, we create some redundancy. Specifically, for any direction, $n$, the following equality holds:
 
 $$R_n(\psi) = R_{-n}(2\pi - \psi)$$
 
-as evidenced by the following picture: 
+\noindent as evidenced by the following picture: 
 
-\begin{tabular}{ccccc}
-	\tdplotsetmaincoords{60}{120}
-
-			\begin{tikzpicture}
-					[scale=1,
-						tdplot_main_coords,
-						axis/.style={->,black,thin},
-						vector/.style={-stealth,black,very thick}]
-			
-			
-				\coordinate (O) at (0,0,0);
-				\coordinate (r1) at (1.414,0,1);
-				\coordinate (r2) at (0,-1.414,1);
-				\coordinate (r3) at (-1.414,-0,1);
-				\coordinate (r4) at (0,1.414,1);
-				\coordinate (r5) at (1.414,0,-1);
-				\coordinate (r6) at (0,-1.414,-1);
-				\coordinate (r7) at (-1.414,0,-1);
-				\coordinate (r8) at (0,1.414,-1);
+\begin{figure}[H]
+	\begin{tabular}{ccccc}
+		\tdplotsetmaincoords{60}{120}
 	
-	
-				\draw[axis,color=gray] (0,0,0) -- (0,0,-2) node[anchor=west]{$-n$};
+				\begin{tikzpicture}
+						[scale=1,
+							tdplot_main_coords,
+							axis/.style={->,black,thin},
+							vector/.style={-stealth,black,very thick}]
 				
-				\draw[color=gray] (r1)--(r2);
-				\draw[color=gray] (r2)--(r3);
-				\draw[color=gray] (r3)--(r4);
-				\draw[color=gray] (r4)--(r1);
-				\draw[color=gray] (r1)--(r5);
-				\draw[color=gray] (r2)--(r6);
-				\draw[color=gray] (r3)--(r7);
-				\draw[color=gray] (r4)--(r8);
-				\draw[color=gray] (r5)--(r6);
-				\draw[color=gray] (r6)--(r7);
-				\draw[color=gray] (r7)--(r8);
-				\draw[color=gray] (r8)--(r5);
-	
 				
-	
-			\end{tikzpicture}
+					\coordinate (O) at (0,0,0);
+					\coordinate (r1) at (1.414,0,1);
+					\coordinate (r2) at (0,-1.414,1);
+					\coordinate (r3) at (-1.414,-0,1);
+					\coordinate (r4) at (0,1.414,1);
+					\coordinate (r5) at (1.414,0,-1);
+					\coordinate (r6) at (0,-1.414,-1);
+					\coordinate (r7) at (-1.414,0,-1);
+					\coordinate (r8) at (0,1.414,-1);
+		
+		
+					\draw[axis,color=gray] (0,0,0) -- (0,0,-2) node[anchor=west]{$-n$};
+					
+					\draw[color=gray] (r1)--(r2);
+					\draw[color=gray] (r2)--(r3);
+					\draw[color=gray] (r3)--(r4);
+					\draw[color=gray] (r4)--(r1);
+					\draw[color=gray] (r1)--(r5);
+					\draw[color=gray] (r2)--(r6);
+					\draw[color=gray] (r3)--(r7);
+					\draw[color=gray] (r4)--(r8);
+					\draw[color=gray] (r5)--(r6);
+					\draw[color=gray] (r6)--(r7);
+					\draw[color=gray] (r7)--(r8);
+					\draw[color=gray] (r8)--(r5);
+		
+					
+		
+				\end{tikzpicture}
+		&
+	\begin{LARGE}
+	$\overset{R_{-n}(2\pi-\psi)}{\leftarrow}$
+	\end{LARGE}
 	&
-\begin{LARGE}
-$\overset{R_{-n}(2\pi-\psi)}{\leftarrow}$
-\end{LARGE}
-&
-\tdplotsetmaincoords{60}{120}
-	%\tdplotsetrotatedcoords{60}{45}{225}
-			\begin{tikzpicture}
-					[scale=1,
-						tdplot_main_coords,
-						axis/.style={->,black,thin},
-						vector/.style={-stealth,black,very thick}]
-			
-			
-				\coordinate (O) at (0,0,0);
-				\coordinate (r1) at (1,1,1);
-				\coordinate (r2) at (-1,1,1);
-				\coordinate (r3) at (-1,-1,1);
-				\coordinate (r4) at (1,-1,1);
-				\coordinate (r5) at (1,1,-1);
-				\coordinate (r6) at (-1,1,-1);
-				\coordinate (r7) at (-1,-1,-1);
-				\coordinate (r8) at (1,-1,-1);
-	
-	
-				\draw[axis,color=black] (0,0,0) -- (0,0,2) node[anchor=west]{$n$};
-				\draw[axis,color=gray] (0,0,0) -- (0,0,-2) node[anchor=west]{$-n$};
-				\draw[color=gray] (r1)--(r2);
-				\draw[color=gray] (r2)--(r3);
-				\draw[color=gray] (r3)--(r4);
-				\draw[color=gray] (r4)--(r1);
-				\draw[color=gray] (r1)--(r5);
-				\draw[color=gray] (r2)--(r6);
-				\draw[color=gray] (r3)--(r7);
-				\draw[color=gray] (r4)--(r8);
-				\draw[color=gray] (r5)--(r6);
-				\draw[color=gray] (r6)--(r7);
-				\draw[color=gray] (r7)--(r8);
-				\draw[color=gray] (r8)--(r5);
-
-				\tdplotsetrotatedcoords{225}{180}{0}
-
-				\coordinate (Shift1) at (0,0,1);
-				\tdplotsetrotatedcoordsorigin{(Shift1)};
-				\tdplotdrawarc[->,tdplot_rotated_coords,color= blue, thick]{(0,0,0)}{1.414}{0}{45}{anchor=south}{$\psi$};
-
-				\coordinate (Shift2) at (0,0,-1);
-				\tdplotsetrotatedcoordsorigin{(Shift2)};
-				\tdplotdrawarc[->,tdplot_rotated_coords,color= bluegray, thick]{(0,0,0)}{1.414}{0}{-315}{anchor=north}{$2\pi-\psi$};
-				\draw[dashed, color=black] (1.414,0,-1.5) -- (1.414,0,2);
-	
-
+	\tdplotsetmaincoords{60}{120}
+		%\tdplotsetrotatedcoords{60}{45}{225}
+				\begin{tikzpicture}
+						[scale=1,
+							tdplot_main_coords,
+							axis/.style={->,black,thin},
+							vector/.style={-stealth,black,very thick}]
 				
-	
-			\end{tikzpicture}	
-
-
-&
-\begin{LARGE}
-$\overset{R_n(\psi)}{\rightarrow}$
-\end{LARGE}
-&
-\tdplotsetmaincoords{60}{120}
-	%\tdplotsetrotatedcoords{60}{45}{225}
-			\begin{tikzpicture}
-					[scale=1,
-						tdplot_main_coords,
-						axis/.style={->,black,thin},
-						vector/.style={-stealth,black,very thick}]
-			
-			
-				\coordinate (O) at (0,0,0);
-				\coordinate (r1) at (1.414,0,1);
-				\coordinate (r2) at (0,-1.414,1);
-				\coordinate (r3) at (-1.414,-0,1);
-				\coordinate (r4) at (0,1.414,1);
-				\coordinate (r5) at (1.414,0,-1);
-				\coordinate (r6) at (0,-1.414,-1);
-				\coordinate (r7) at (-1.414,0,-1);
-				\coordinate (r8) at (0,1.414,-1);
-	
-	
-				\draw[axis,color=black] (0,0,0) -- (0,0,2) node[anchor=west]{$n$};
-				\draw[color=gray] (r1)--(r2);
-				\draw[color=gray] (r2)--(r3);
-				\draw[color=gray] (r3)--(r4);
-				\draw[color=gray] (r4)--(r1);
-				\draw[color=gray] (r1)--(r5);
-				\draw[color=gray] (r2)--(r6);
-				\draw[color=gray] (r3)--(r7);
-				\draw[color=gray] (r4)--(r8);
-				\draw[color=gray] (r5)--(r6);
-				\draw[color=gray] (r6)--(r7);
-				\draw[color=gray] (r7)--(r8);
-				\draw[color=gray] (r8)--(r5);
-	
 				
+					\coordinate (O) at (0,0,0);
+					\coordinate (r1) at (1,1,1);
+					\coordinate (r2) at (-1,1,1);
+					\coordinate (r3) at (-1,-1,1);
+					\coordinate (r4) at (1,-1,1);
+					\coordinate (r5) at (1,1,-1);
+					\coordinate (r6) at (-1,1,-1);
+					\coordinate (r7) at (-1,-1,-1);
+					\coordinate (r8) at (1,-1,-1);
+		
+		
+					\draw[axis,color=black] (0,0,0) -- (0,0,2) node[anchor=west]{$n$};
+					\draw[axis,color=gray] (0,0,0) -- (0,0,-2) node[anchor=west]{$-n$};
+					\draw[color=gray] (r1)--(r2);
+					\draw[color=gray] (r2)--(r3);
+					\draw[color=gray] (r3)--(r4);
+					\draw[color=gray] (r4)--(r1);
+					\draw[color=gray] (r1)--(r5);
+					\draw[color=gray] (r2)--(r6);
+					\draw[color=gray] (r3)--(r7);
+					\draw[color=gray] (r4)--(r8);
+					\draw[color=gray] (r5)--(r6);
+					\draw[color=gray] (r6)--(r7);
+					\draw[color=gray] (r7)--(r8);
+					\draw[color=gray] (r8)--(r5);
 	
-			\end{tikzpicture}
-
-
-\end{tabular}
+					\tdplotsetrotatedcoords{225}{180}{0}
+	
+					\coordinate (Shift1) at (0,0,1);
+					\tdplotsetrotatedcoordsorigin{(Shift1)};
+					\tdplotdrawarc[->,tdplot_rotated_coords,color= blue, thick]{(0,0,0)}{1.414}{0}{45}{anchor=south}{$\psi$};
+	
+					\coordinate (Shift2) at (0,0,-1);
+					\tdplotsetrotatedcoordsorigin{(Shift2)};
+					\tdplotdrawarc[->,tdplot_rotated_coords,color= bluegray, thick]{(0,0,0)}{1.414}{0}{-315}{anchor=north}{$2\pi-\psi$};
+					\draw[dashed, color=black] (1.414,0,-1.5) -- (1.414,0,2);
+		
+	
+					
+		
+				\end{tikzpicture}	
+	
+	
+	&
+	\begin{LARGE}
+	$\overset{R_n(\psi)}{\rightarrow}$
+	\end{LARGE}
+	&
+	\tdplotsetmaincoords{60}{120}
+		%\tdplotsetrotatedcoords{60}{45}{225}
+				\begin{tikzpicture}
+						[scale=1,
+							tdplot_main_coords,
+							axis/.style={->,black,thin},
+							vector/.style={-stealth,black,very thick}]
+				
+				
+					\coordinate (O) at (0,0,0);
+					\coordinate (r1) at (1.414,0,1);
+					\coordinate (r2) at (0,-1.414,1);
+					\coordinate (r3) at (-1.414,-0,1);
+					\coordinate (r4) at (0,1.414,1);
+					\coordinate (r5) at (1.414,0,-1);
+					\coordinate (r6) at (0,-1.414,-1);
+					\coordinate (r7) at (-1.414,0,-1);
+					\coordinate (r8) at (0,1.414,-1);
+		
+		
+					\draw[axis,color=black] (0,0,0) -- (0,0,2) node[anchor=west]{$n$};
+					\draw[color=gray] (r1)--(r2);
+					\draw[color=gray] (r2)--(r3);
+					\draw[color=gray] (r3)--(r4);
+					\draw[color=gray] (r4)--(r1);
+					\draw[color=gray] (r1)--(r5);
+					\draw[color=gray] (r2)--(r6);
+					\draw[color=gray] (r3)--(r7);
+					\draw[color=gray] (r4)--(r8);
+					\draw[color=gray] (r5)--(r6);
+					\draw[color=gray] (r6)--(r7);
+					\draw[color=gray] (r7)--(r8);
+					\draw[color=gray] (r8)--(r5);
+		
+					
+		
+				\end{tikzpicture}
+	
+	
+	\end{tabular}
+	\caption{Identifying equivalent rotations about vectors pointing in opposite directions.}
+\end{figure}
 
 This is truly a consequence of the fact that positive (counter-clockwise) rotation is relative to the direction one faces. Consider placing yourself in the center of the square at the point where $n$ and $-n$ touch. Looking both up and down will show that the angle of rotation is in the counter-clockwise direction. We can match every rotation in one direction with an opposite direction rotation by another angle using this relationship. In order to keep ourselves from double-counting, we can restrict the values of our parameters to conform to the following convention: 
 
@@ -1863,18 +1872,65 @@ $$0\leq\psi\leq\pi, \hspace{3mm} 0\leq\theta\leq2\pi, \hspace{3mm} 0\leq\phi\leq
 
 While we still have the $\psi=\pi$ case to worry about, this greatly limits the amount of rotations we double count, and is a satisfactoy convention. A useful way to visualize each rotation is to view it as a point in $\R^3$ as an ordered triple in spherical coordinates $(\psi,\phi,\theta)$. $\phi$ and $\theta$ are defined conventionally as they are, but $\psi$ takes the place of the value for the distance from the origin. In this way, we identify every point in the sphere of radius $\pi$ centered at the origin with a rotation in $\R^3$ \\
 
-\textbf{Make a pretty picture} \\
+\begin{figure}[H]
+	\centering
+	\tdplotsetmaincoords{60}{120}
+	%\tdplotsetrotatedcoords{60}{45}{225}
+	\begin{tikzpicture}
+			[scale=2,
+				tdplot_main_coords,
+				axis/.style={->,black,thin},
+				vector/.style={-stealth,black,very thick}]
+		\draw[axis,color=gray] (0,0,0) -- (2,0,0) node[anchor=south]{$x$};
+		\draw[axis,color=gray] (0,0,0) -- (0,2,0) node[anchor=west]{$y$};
+		\draw[axis] (0,0,0) -- (0,0,2) node[anchor=east]{$z$};
+		\shade[ball color = gray, opacity=0.5] (0,0,0) circle (0.75cm);
+		\draw[->,thick,color=black] (0,0,0) -- (1.8137,1.8137,1.8137) node[anchor=south west]{$R_n(\pi)$};
+	
+	\end{tikzpicture}
+	\caption{Visualization of the group $SO(3)$}
+	
+
+\end{figure}
 
 We can use the geometry of three-dimensional space to observe a very simple but powerful fact.
 
 \begin{theorem}
-	Let $n, n'\in\R^3$ and $\psi\in[0,\pi]$. Let $R$ be a rotation that takes $n$ and points it in the direction of $n'$. Then, following identity holds:
+	Let $n, n'\in\R^3$ and $\psi\in[0,\pi]$. Let $R\in SO(3)$ be a rotation that takes $n$ and points it in the direction of $n'$. Then, following identity holds:
 $$R_{n}(\psi) = R^{-1}R_{n'}(\psi)R$$
 \end{theorem}
 
 This identity can be easily verified as seen in the following sequence of images\\
 
-\textbf{Make a pretty picture}\\
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{cc}
+		\includegraphics[width=0.4\textwidth]{Rnpsi1.png}
+&
+		\includegraphics[width=0.4\textwidth]{Rnpsi2.png}
+	\end{tabular}
+	\caption{Theorem 3.1: $R_n(\psi)$}
+	
+
+\end{figure}
+\begin{figure}[H]
+	\centering
+
+	\begin{tabular}{ccc}
+		\includegraphics[width=0.3\textwidth]{RRnR1.png}
+		&
+		\includegraphics[width=0.3\textwidth]{RRnR2.png}\\
+		\includegraphics[width=0.3\textwidth]{RRnR3.png}
+		&
+		\includegraphics[width=0.3\textwidth]{RRnR4.png}
+
+	\end{tabular}
+	\caption{Theorem 3.1: $R^{-1}R_{n'}(\psi)R$}
+	
+
+\end{figure}
+
+
 
 With this identifty in mind, we can make a deeper conclusion about the inherent structure of $SO(3)$.
 
@@ -1894,148 +1950,145 @@ In this way, we view every rotation in $SO(3)$ as the composition of three rotat
 
 \begin{figure}[H]
 	\centering
-	\subfloat[Fixed Frame, Rotated]
-		{
-		\tdplotsetmaincoords{60}{200}
-		\tdplotsetrotatedcoords{60}{45}{225}
-				\begin{tikzpicture}
-						[scale=2,
-							tdplot_main_coords,
-							axis/.style={->,black,thin},
-							vector/.style={-stealth,black,very thick}]
-					\draw[axis,color=gray] (0,0,0) -- (1,0,0) node[anchor=south]{$x$};
-					\draw[axis,color=gray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-					\draw[axis] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
-					\draw[axis,color=blue] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=west]{$z'$}; 
-					\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
-					\draw[axis,color=red] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$n$};
-					\tdplotdrawarc[->]{(0,0,0)}{1.2}{0}{315}{anchor=north}{$\alpha$};
-				\end{tikzpicture}
-		}\\
-	\subfloat[$R_z(\alpha)$ applied to Fixed Frame]
-		{
-		\tdplotsetmaincoords{60}{200}
-		\tdplotsetrotatedcoords{45}{90}{90}
-				\begin{tikzpicture}
-						[scale=2,
-							tdplot_main_coords,
-							axis/.style={->,black,thin},
-							vector/.style={-stealth,black,very thick}]
-					\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=south]{$x$};
-					\draw[axis,color=black] (0,0,0) -- (0.7071,-0.7071,0) node[anchor=north]{$x$};
-					\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-					\draw[axis,color=black] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
-					\draw[axis,color=blue] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$};
-					\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
-					\draw[axis,color=wildwatermelon] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$y$};
-					\tdplotdrawarc[->,color=gray]{(0,0,0)}{1.2}{0}{315}{anchor=south east}{$\alpha$};
-					\tdplotdrawarc[<-,tdplot_rotated_coords,color=red]{(0,0,0)}{1.2}{0}{90}{anchor=south west}{$\beta$};
-				\end{tikzpicture} 
-		} \\
-		\subfloat[$R_n(\beta)R_z(\alpha)$ applied to fixed frame]
-		{
-		\tdplotsetmaincoords{60}{200}
-		\tdplotsetrotatedcoords{45}{90}{90}
-	
-				\begin{tikzpicture}
-						[scale=2,
-							tdplot_main_coords,
-							axis/.style={->,black,thin},
-							vector/.style={-stealth,black,very thick}]
-				
+	\tdplotsetmaincoords{60}{200}
+	\tdplotsetrotatedcoords{60}{45}{225}
+	\begin{tikzpicture}
+			[scale=2,
+				tdplot_main_coords,
+				axis/.style={->,black,thin},
+				vector/.style={-stealth,black,very thick}]
+		\draw[axis,color=gray] (0,0,0) -- (1,0,0) node[anchor=south]{$x$};
+		\draw[axis,color=gray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
+		\draw[axis] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
+		\draw[axis,color=blue] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=west]{$z'$}; 
+		\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
+		\draw[axis,color=red] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$n$};
+		\tdplotdrawarc[->]{(0,0,0)}{1.2}{0}{315}{anchor=north}{$\alpha$};
+	\end{tikzpicture}
+	\caption{Euler Angles: Rotating Fixed Frame about $z$-axis by $\alpha$}
 		
-
-					\draw[axis,color=lightgray] (0,0,0) -- (0.7071,-0.7071,0) node[anchor=north]{$x$};
-					\draw[axis,color=black] (0,0,0) -- (0,0,1) node[anchor=south]{$x$};
-					%\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-					%\draw[axis,color=lightgray] (0,0,0) -- (-0.866,0.5,0) node[anchor=west]{$y$};
-					%\draw[axis,color=black] (0,0,0) -- (-0.183,-0.183,-0.96591) node[anchor=west]{$y$};
-					%\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
-		
-	
-					\draw[axis,color=cobalt] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=west]{$z'$}; %(-sqrt(2)/2,sqrt(2)/2,0)
-		
-					\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
-					\draw[axis,color=wildwatermelon] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$y$};
-		
-					\tdplotdrawarc[->,color=lightgray]{(0,0,0)}{1.2}{0}{315}{anchor=south east}{$\alpha$};
-					\tdplotdrawarc[<-,tdplot_rotated_coords,color=classicrose]{(0,0,0)}{1.2}{0}{90}{anchor=south west}{$\beta$};
-					\tdplotsetrotatedcoords{135}{90}{180}
-					\tdplotdrawarc[->,tdplot_rotated_coords,color=cobalt]{(0,0,0)}{1.2}{0}{315}{anchor=south}{$\gamma$};
-				\end{tikzpicture}
-		}\\
-		\subfloat[Final Rotated Frame]
-		{
-		\tdplotsetmaincoords{60}{200}
-		\tdplotsetrotatedcoords{45}{90}{90}
-	
-				\begin{tikzpicture}
-						[scale=2,
-							tdplot_main_coords,
-							axis/.style={->,black,thin},
-							vector/.style={-stealth,black,very thick}]
-					\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=north]{$x$};
-					\draw[axis,color=black] (0,0,0) -- (-0.5,-0.5,0.70711) node[anchor=south]{$x'$};
-					\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-					\draw[axis,color=wildwatermelon] (0,0,0) -- (0.5,0.5,0.70711) node[anchor=north east]{$y'$};
-					\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
-					\draw[axis,color=cobalt] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$}; 
-					\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
-
-		
-					\tdplotdrawarc[->,color=lightgray]{(0,0,0)}{1.2}{0}{315}{anchor=north west}{$\alpha$};
-					\tdplotdrawarc[<-,tdplot_rotated_coords,color=classicrose]{(0,0,0)}{1.2}{0}{90}{anchor=north west}{$\beta$};
-					\tdplotsetrotatedcoords{135}{90}{180}
-					\tdplotdrawarc[->,tdplot_rotated_coords,color=columbiablue]{(0,0,0)}{1.2}{0}{315}{anchor=south}{$\gamma$};
-				
-				\end{tikzpicture}
-		}
-	\caption{Euler Angles}
 \end{figure}
+
 \begin{figure}[H]
-	\ContinuedFloat
-	\subfloat[Finding $n$]
-		{
-		\tdplotsetmaincoords{60}{200}
-		\tdplotsetrotatedcoords{45}{90}{90}
+	\centering
+	\tdplotsetmaincoords{60}{200}
+	\tdplotsetrotatedcoords{45}{90}{90}
+	\begin{tikzpicture}
+			[scale=2,
+				tdplot_main_coords,
+				axis/.style={->,black,thin},
+				vector/.style={-stealth,black,very thick}]
+		\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=south]{$x$};
+		\draw[axis,color=black] (0,0,0) -- (0.7071,-0.7071,0) node[anchor=north]{$x$};
+		\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
+		\draw[axis,color=black] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
+		\draw[axis,color=blue] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$};
+		\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
+		\draw[axis,color=wildwatermelon] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$y$};
+		\tdplotdrawarc[->,color=gray]{(0,0,0)}{1.2}{0}{315}{anchor=south east}{$\alpha$};
+		\tdplotdrawarc[<-,tdplot_rotated_coords,color=red]{(0,0,0)}{1.2}{0}{90}{anchor=south west}{$\beta$};
+	\end{tikzpicture} 
+	\caption{Euler Angles: Rotating Intermediate Frame about new $y$-axis by $\beta$}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\tdplotsetmaincoords{60}{200}
+	\tdplotsetrotatedcoords{45}{90}{90}
+	\begin{tikzpicture}
+			[scale=2,
+				tdplot_main_coords,
+				axis/.style={->,black,thin},
+				vector/.style={-stealth,black,very thick}]
+		\draw[axis,color=lightgray] (0,0,0) -- (0.7071,-0.7071,0) node[anchor=north]{$x$};
+		\draw[axis,color=black] (0,0,0) -- (0,0,1) node[anchor=south]{$x$};
+		%\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
+		%\draw[axis,color=lightgray] (0,0,0) -- (-0.866,0.5,0) node[anchor=west]{$y$};
+		%\draw[axis,color=black] (0,0,0) -- (-0.183,-0.183,-0.96591) node[anchor=west]{$y$};
+		%\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
+
+		\draw[axis,color=cobalt] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=west]{$z'$}; %(-sqrt(2)/2,sqrt(2)/2,0)
+
+		\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
+		\draw[axis,color=wildwatermelon] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$y$};
+
+		\tdplotdrawarc[->,color=lightgray]{(0,0,0)}{1.2}{0}{315}{anchor=south east}{$\alpha$};
+		\tdplotdrawarc[<-,tdplot_rotated_coords,color=classicrose]{(0,0,0)}{1.2}{0}{90}{anchor=south west}{$\beta$};
+		\tdplotsetrotatedcoords{135}{90}{180}
+		\tdplotdrawarc[->,tdplot_rotated_coords,color=cobalt]{(0,0,0)}{1.2}{0}{315}{anchor=south}{$\gamma$};
+	\end{tikzpicture}
+	\caption{Euler Angles: Rotating Intermediate Frame about new $z$-axis by $\gamma$}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\tdplotsetmaincoords{60}{200}
+	\tdplotsetrotatedcoords{45}{90}{90}
 	
-				\begin{tikzpicture}
-						[scale=2,
-							tdplot_main_coords,
-							axis/.style={->,black,thin},
-							vector/.style={-stealth,black,very thick}]
-					\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=north]{$x$};
-					\draw[axis,color=black] (0,0,0) -- (-0.5,-0.5,0.70711) node[anchor=south]{$x'$};
-					\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-					\draw[axis,color=black] (0,0,0) -- (0.5,0.5,0.70711) node[anchor=north east]{$y'$};
-					\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
-					\draw[axis,color=black] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$}; 
-					\draw[axis,color=red] (0,0,0) -- (0.707106781186548,0.707106781186548,0) node[anchor=south]{$n$}; 
+	\begin{tikzpicture}
+			[scale=2,
+				tdplot_main_coords,
+				axis/.style={->,black,thin},
+				vector/.style={-stealth,black,very thick}]
+		\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=north]{$x$};
+		\draw[axis,color=black] (0,0,0) -- (-0.5,-0.5,0.70711) node[anchor=south]{$x'$};
+		\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
+		\draw[axis,color=wildwatermelon] (0,0,0) -- (0.5,0.5,0.70711) node[anchor=north east]{$y'$};
+		\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
+		\draw[axis,color=cobalt] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$}; 
+		\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
+	
+	
+		\tdplotdrawarc[->,color=lightgray]{(0,0,0)}{1.2}{0}{315}{anchor=north west}{$\alpha$};
+		\tdplotdrawarc[<-,tdplot_rotated_coords,color=classicrose]{(0,0,0)}{1.2}{0}{90}{anchor=north west}{$\beta$};
+		\tdplotsetrotatedcoords{135}{90}{180}
+		\tdplotdrawarc[->,tdplot_rotated_coords,color=columbiablue]{(0,0,0)}{1.2}{0}{315}{anchor=south}{$\gamma$};
+	
+	\end{tikzpicture}
+	\caption{Euler Angles: Rotated Frame}
+\end{figure}
 
-					\coordinate (p1) at (1.1,1.1,0);
-					\coordinate (p2) at (-1.1,1.1,0);
-					\coordinate (p3) at (-1.1,-1.1,0);
-					\coordinate (p4) at (1.1,-1.1,0);
-					\coordinate (p5) at  (1.1,1.1,1);
-					\coordinate (p6) at (1.1,1.1,-1);
-					\coordinate (p7) at (-1.1,-1.1,-1);
-					\coordinate (p8) at (-1.1,-1.1,1);
+\begin{figure}[H]
+	\centering
+	\tdplotsetmaincoords{60}{200}
+	\tdplotsetrotatedcoords{45}{90}{90}
+	\begin{tikzpicture}
+			[scale=2,
+				tdplot_main_coords,
+				axis/.style={->,black,thin},
+				vector/.style={-stealth,black,very thick}]
+		\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=north]{$x$};
+		\draw[axis,color=black] (0,0,0) -- (-0.5,-0.5,0.70711) node[anchor=south]{$x'$};
+		\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
+		\draw[axis,color=black] (0,0,0) -- (0.5,0.5,0.70711) node[anchor=north east]{$y'$};
+		\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
+		\draw[axis,color=black] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$}; 
+		\draw[axis,color=red] (0,0,0) -- (0.707106781186548,0.707106781186548,0) node[anchor=south]{$n$}; 
+	
+		\coordinate (p1) at (1.1,1.1,0);
+		\coordinate (p2) at (-1.1,1.1,0);
+		\coordinate (p3) at (-1.1,-1.1,0);
+		\coordinate (p4) at (1.1,-1.1,0);
+		\coordinate (p5) at  (1.1,1.1,1);
+		\coordinate (p6) at (1.1,1.1,-1);
+		\coordinate (p7) at (-1.1,-1.1,-1);
+		\coordinate (p8) at (-1.1,-1.1,1);
+	
+	
+	
+		\draw[color=lightgray] (p1) -- (p2);
+		\draw[color=lightgray] (p2) -- (p3);
+		\draw[color=lightgray] (p3) -- (p4);
+		\draw[color=lightgray] (p4) -- (p1);
+		\draw[color=black] (p5) -- (p6);
+		\draw[color=black] (p6) -- (p7);
+		\draw[color=black] (p7) -- (p8);
+		\draw[color=black] (p8) -- (p5);
+		\draw[dashed,color=red,very thin] (1.1,1.1,0)--(-1.1,-1.1,0);
+	
+	\end{tikzpicture}
 
-
-
-					\draw[color=lightgray] (p1) -- (p2);
-					\draw[color=lightgray] (p2) -- (p3);
-					\draw[color=lightgray] (p3) -- (p4);
-					\draw[color=lightgray] (p4) -- (p1);
-					\draw[color=black] (p5) -- (p6);
-					\draw[color=black] (p6) -- (p7);
-					\draw[color=black] (p7) -- (p8);
-					\draw[color=black] (p8) -- (p5);
-					\draw[dashed,color=red,very thin] (1.1,1.1,0)--(-1.1,-1.1,0);
-				
-				\end{tikzpicture}
-		}
-		\caption{Euler Angles}
+	\caption{Euler Angles: Identifying $n$}
 
 \end{figure} 
 
@@ -2151,7 +2204,11 @@ $$J_n = n_1J_x + n_2J_y + n_3J_z$$
 \end{theorem}
 \noindent \begin{proof}[\cite{Tung}] If $n$ is determined by the prototypical angles $\phi$ and $\theta$, then we can always rotate the $z$-axis into $n$ with the rotation $R(\theta,\phi,0)$. Therefore, $n_i = [R(\theta,\phi,0)]_{i3}$.
 
-\textbf{Insert Pretty Picture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{pushzton}
+	\caption{Rotation of the $z$-axis onto $n$}
+\end{figure}
 
 Using (3.8) and the above matrix, we can establish a relationship between $J_z$ and $J_n$. For any angle of rotation, $\psi$,
 
@@ -3201,7 +3258,11 @@ Therefore, the length of any vector in $M$ can be recast in the following way: $
 
 \noindent where $||x||$ is the Euclidean 2-norm on $\R^3$. We say that the solutions to this equation are part of the ``light cone". This is because the spatial components and the time components balance eachother out, and physical states that embody these characteristics behave as light do. Elements satisfy $|x|^2 < 0$ with $x^0>0$ are said to be  in the ``future cone". Events like this can be reached by moving forward in time (keeping spatial components constant). The all events that satisfy this are said to compose the future cone. In a similar case, elements that satisfy $|x|^2 < 0$ with $x^0<0$, then the event is said to be in the ``past cone" because events of this nature can in theory come to fruition if held constant positionally over time. Events in both the past and future cones can be transformed (by some Lorentz transformation) to meet the following form: $v' = (ct',0,0,0)$ and so we refer to both these types of events as \textbf{time-like} events. In a similar scenario, we classify the events defined by $|x|^2 >0$. In this case, Lorentz transformations can be applied to any vector of this form to trasnform it into $v' = (0,(x^1)',(x^2)',x(^3)')$. Therefore, these events are said to be \textbf{space-like}. The classification is depicted below, and it becomes clear why we choose to refer to these objects as cones.
 
-\textbf{Insert Picture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Light cone-1}
+	\caption{Decomposition of Minkowski Space based on length}
+\end{figure}
 
 In our study of many other groups in this thesis, group elements have been show to have helpful decompositions that will make calculations for efficient. The proper Lorentz group is no exception to this.
 
@@ -3554,7 +3615,11 @@ $$b\cap(\R^2\times\{0\}) = \{(1,0,0),(2,0,0),\hdots,(n,0,0)\}$$
 $$b\cap(\R^2\times\{1\}) = \{(1,0,1),(2,0,1),\hdots,(n,0,1)\}$$
 \end{definition}
 
-\textbf{Make Picture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{geobraid.png}
+	\caption{Generic geometric braid}
+\end{figure}
 
 Based on this construction of a braid, we can immediately notice a few properties. First, every stand will intersect a level curve of this set at exactly one point (otherwise the stands are not homeomorphic to $[0,1]$). Further, every strand can be traveled as a path, having a unique start and end point. If each strand begins at the point $(n,0,0)$ and ends at $(n',0,1)$, then we can construct a permutation in $S_n$ that captures the behavior of this transition (from $n$ to $n'$). We call such a permutation the underlying permutation of $b$.
 
@@ -3570,7 +3635,11 @@ We can define the product between two braids heuristically and formally. Crudely
 \end{aligned}
 \end{equation}
 
-\textbf{Make Picture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{geobraidprod.png}
+	\caption{The product of two geometric braids.}
+\end{figure}
 
 This operation is clearly associative, and there is an identity element corresponding to the geometric braid that does not wrap any strands around one another. Hence, the collection of all geometric braids forms a group. To avoid any unecessary craziness, we will work on the group of equivalence classes of geometric braids. We will work towards establishing the connection the canonical braid group $B_n$ and the group of geometric braids.
 
@@ -3591,17 +3660,29 @@ Much like the braids the that braid diagrams represent, two braid diagrams are s
 
 However, these groups are not necessarily isomorphic. When projecting down in onto a two-dimensional surface, we lose information about the geometric braid. There is potential to confuse two braid diagrams as representing different geometric braids when in reality they represent an isotopic geometric braid.
 
-\textbf{Draw an example of R-equivalent braids and their corresponding geometric braid}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{requiv.png}
+	\caption{Two braid diagrams that correspond to the same geometric braid.}
+\end{figure}
 
 We appeal to the Reidemeister moves developed in Knot Theory to aid us in our ability to detect when braid diagrams represent the same geometric braid. There are two specific types of moves we will reference.
 
 Our first kind Reidemeister move to be consider will be given the label $\Omega$. Applying the move $\Omega$ to two adjacent strands of a braid does the following: First, it chooses one strand to be the overgoing strand and the other to be the undergoing strand. Then it takes the overgoing strand and creates two crossings by moving part of the strand over and across the other strand. There are two crossings because the strands are not switching positions, meaning the path the strand makes must return back the way it came. Note that we have to make a choice about which strand is under-versus-overgoing, and so we will take the convention that $\Omega_1$ is the move that favors the left strand as overgoing and $\Omega_2$ is the move that favors the right as overgoing. The inverses of both these moves are also Reidemeister moves.
 
-\textbf{Draw a Picture to illustrate this}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{reidmove2.png}
+	\caption{$\Omega_1^{-1}$}
+\end{figure}
 
-Our second kind of Reidemeister move will be given the label of $\Theta$. In order to execute this move, we require there be three adjacent strands. Further we need one strand to cross both other strands in the same manner (simultaneously under-or-overgoing) and that the remaining two strands cross in an unspecified manner. The move theta will take the one strand that under/overgoes both and moves it under/over the crossing of the other two strands to the other side. 
+Our second kind of Reidemeister move will be given the label of $\Theta$. In order to execute this move, we require there be three adjacent strands. Further we need one strand to cross both other strands in the same manner (simultaneously under-or-overgoing) and that the remaining two strands cross in an unspecified manner. The move $\Theta$ will take the one strand that under/overgoes both and moves it under/over the crossing of the other two strands to the other side. 
 
-\textbf{Draw a Picture to illustrate this}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{reidmove3.png}
+	\caption{$Theta$}
+\end{figure}
 
 \begin{definition}
 	Two braid diagrams are said to be \textbf{R-equivalent} if one can be transformed into the other by means of a finite sequence of isotopies and Reidemeister moves.
@@ -3994,7 +4075,11 @@ However, this physical description makes hefty assumptions. First, we assume tha
 The above definition can be seen more explicitly in the following commutative diagram:
 
 
-\textbf{insert commutative diagram}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{pent diag.png}
+	\caption{Commutative Pentagon Diagram for Monoidal Categories}
+\end{figure}
 
 
 In the context of any nontrivial anyonic system, we intrepret the bifunctor applied to two objects (or tensor product) as being a fusion of two anyons. The identity object represents a trivial fusion. That is, when fusing any particle with the identity, it is equivalent to think that no fusion is happening at all, since the statistic of the fused anyon will not change with respect to the non-identity anyon. The natural isomorphisms reflect physical assertions we make about fusions between the identity and non-identity anyon types. While it is tempting to think that the objects in the category represent the anyons themselves, they actually represent distinct anyon types. More specifically, an anyon's type is distinguished by its statistics. So, viewing anyonic systems through this lens allows us to make conclusions about all anyons who obeys statistics perscribed by their objects. For more information on the explict link between monoidal category theory and boarder physical systems, see \cite{Rose3}
@@ -4012,20 +4097,26 @@ Anyons of type $\tau$ are specifically referred to as the Fibonacci anyons. Our 
 In general, we have multiple anyons to keep track of, and the fusion rules ascribed to the system play out in successive fusions of neighboring quasiparticles. If we have $n$ Fibonacci anyons and we track their statistics through their fusion channels, it is no surprise that for any resulting anyon type, the process of arriving to it was not unique. We represent each possible scenario with a diagram, known as a fushion path.
 
 \begin{example}\end{example} 
-Suppose we have three Fibonacci anyons. We can illustrate the following fusion paths to see every possible way we can fuse these anyons.\\
+Suppose we have three Fibonacci anyons. We can illustrate the following fusion paths to see every possible way we can fuse these anyons.
 
-\textbf{insert picture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{treebasis.png}
+	\caption{These tree diagrams are labelled according to the fusions rules of Fibonacci anyons.}
+\end{figure}
 
 
 These diagrams represent different states of the same anyonic system. If the resulting anyon type is $\tau$, we refer to the fusion tree as representing a ground state. We can use the fusion trees to characterize all possible ground states (degeneracy), and therefore, these trees represent an orthonormal basis of the ground-state manifold\cite{Trebst}. We refer to this as the fusion tree basis of the anyonic system. We can then utilize a combinatorial technique to count the number of ground states (given a fixed number of anyons). If we have $n$ anyons, and $F_n$ represents the number of ground states, we can see that last fusion must have been one of two possible fusions: $\tau\otimes \tau$ or $e \otimes \tau$. In the former scenario, the number of ways for this to happen is characterized by $F_{n-1}$ and in the latter scenario, the number of ways for this to happen is $F_{n-2}$. In general, we can see that the degeneracy of the ground states is exactly equal to the $n^{th}$ Fibonacci number.
 
-Thus far, we have implictly considered fusions to occur successively as outlined by our fusion tree basis. However, in a physical scenario, there is nothing stopping anyons from fusing in a different order. This aligns with out set up for associativity in our category. If we choose to represent each order of fushions by a fushion tree, then we can identify distinct fushion tree bases (corresponding to a labeling of the diagram) in the following way
-
-\textbf{insert picture}
+Thus far, we have implictly considered fusions to occur successively as outlined by our fusion tree basis. However, in a physical scenario, there is nothing stopping anyons from fusing in a different order. We can use our pentagon diagram above to guide our intuition into how we swap between fusion trees.
 
 Since both fusion trees represent orthonormal bases of the same ground state, they msut be related by a unitary transformation. We call such a transformation an $F$-move. $F$-moves take on the form of matrices whose entries can be specified by a system of equations that generalizes for any $n$ anyon systems. These equations are referred to as the pentagons and they are desugned to explicitly make use of the commutative diagram of the category we are working in. It is worth noting that for each application of an $F$-move, we only alter a component of the fushion tree, not the entire tree. Specifically, we view $F$ matrices as being defined on four anyons: three anyons that will be fused in the tree and one that will be the final result. The $F$ matrix denoted $F^{abc}_d$ defines an $F$ move that exchanges the order of fusion from $(a\otimes b)\otimes c$ to $a\otimes(b\otimes c)$ as depected below.
 
-\textbf{insert picture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{differentftb}
+	\caption{Both tree diagrams represent a different fusion order on the same anyon types.}
+\end{figure}
 
 In this sense, we can intuitivley decompose each tree basis into components affected by $F$-moves and components that are not. If we think of each fushion tree as being comprised of two sub-trees joined by one edge, this decomposition is straight forward: For each type of anyon ($e$ and $\tau$), the fusion tree basis for each subtrees (on fewer quasiparticles) can be discerned and then written as a tensor product (corresponding to the whole tree). We take the direct sum of both tensors (one for $e$ and one for $\tau$) to reflect all possible scenarios.
 
@@ -4064,11 +4155,19 @@ Now that we have established ways to characterize fusions of anyons, we can inte
 	A \textbf{braided monoidal category} is a monoidal category equipped with a "braiding," $\beta$, which is an isomorphism that satisfies the following commutative diagram:
 \end{definition}
 
-\textbf{insert picture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{hexdiag}
+	\caption{Hexagonal Commutative Diagram for Braiding Monoidal Categories}
+\end{figure}
 
 where $\alpha$ is the associator of the category. For more details on the general properties, see \cite{Joyal}. One idea worth emphasizing here is that in these categories, braiding and fusion are compatible with one another. The best way to think about this is much like the Reidmeister rules from earlier. We can treat tree diagrams as embeddings in three dimensional space, an manipulate the diagram in ways that preserve their structure (isotopy). We can pull fusions under or over braids in the following way:
 
-\textbf{insert picture}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fusethrubraid.png}
+	\caption{Compatibility of braiding and fusion.}
+\end{figure}
 
 %As we have seen in our prior discussion of representations of braids defined on the space of wave functions, we can view the action of $R$-matrices not just on our fusion tree basis but the concrete vector space of ground states. That is, since $R$-moves change tree bases, the $R$-matrices must transform orthonormal basis vectors corresponding to them in an identical way. In general, these spaces have a larger dimension than one, and we have nontrivial linear combinations. 
 
@@ -4108,7 +4207,11 @@ If we take our state space to be one dimensional, the $R$-matrices are complex n
 
 where we interpret our $F$ matrices as change of basis transformation on the underlying state space and $R$ represents an exchange of two anyons. A more geometrical interpretation for this action is to take two anyons, denoted by the type $\tau$, to fuse them together, then interchange them, and then to unfuse them (preserving the interchange). 
 
-\textbf{insert image}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{braid.png}
+	\caption{The process of braiding decomposed into fusion and anyon exchanges.}
+\end{figure}
 
 At this point, it should be noted that without more specificity it is quite difficult to explicitly compute these matrices. We will use a simple example to illustrate what the general approach would be.
 
@@ -4116,7 +4219,11 @@ At this point, it should be noted that without more specificity it is quite diff
 \end{example}
 Suppose that we have two adjacent $\tau$ anyons whose collective charge is $\tau$ after being fused. We label the intermediately fused anyons as by the markers $a,b,c$ successively, we can identify five valid choices: $\{e\tau e,\tau\tau e, e\tau\tau, \tau e\tau, \tau\tau\tau\}$. These states will form the basis of our vector space.
 
-\textbf{Insert Image}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{fivetrees.png}
+	\caption{These five trees represent all valid choices for labeling intermediate fusions.}
+\end{figure}
 
 If we use the $F$-move that fuses our anyons together, we end up with a new choice of the intermediate fusions: $\{e\tau e,\tau\tau e, e\tau\tau, \tau e\tau, \tau\tau\tau\}$. This transformation is represented by the following $F$-matrix:
 
@@ -4204,73 +4311,11 @@ where each factor in the product represents a single exchange of two specified a
 %\bibliographystyle{alpha}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{thebibliography}{9}
+
 \bibliographystyle{IEEEtran}
-
-\bibitem{Tung}
-
-\bibitem{Mendes}
-
-\bibitem{Kassel}
-
-\bibitem{Deshmukh}
-
-\bibitem{Trebst}
-
-\bibitem{Riverside}
-
-\bibitem{Rose3}
-
-\bibitem{Joyal}
-
-\bibitem{Hall}
-%A.~F. Blumberg and G.~L. Mellor.
-%\newblock A description of a three-dimensional coastal circulation model.
-%\newblock In N.~Heaps, editor, {\em Three Dimensional Coastal Ocean Models},
-  %pages 1--16. Amer. Geophys. Union, 1987.
-
-%\bibitem{Gill}
-%A.~Gill.
-%\newblock {\em Atmosphere - {O}cean {D}ynamics}.
-%\newblock Academic Press, 1982.
-
-%\bibitem{Chob}
-%P.~F. Choboter, R.~M. Samelson, and J.~S. Allen.
-%\newblock A {N}ew {S}olution of a {N}onlinear {M}odel of {U}pwelling.
-%\newblock {\em J. Phys Oceanogr.}, 35:532--544, 2005.
-
-%\bibitem{Lentz}
-%S.~J. Lentz and D.~C. Chapman.
-%\newblock The importance of non-linear cross-shelf momentum flux during
-  %wind-driven coastal upwelling.
-%\newblock {\em J. Phys. Oceanogr.}, 34:2444--2457, 2004.
-
-%\bibitem{Ped2}
-%J.~Pedlosky.
-%\newblock A {N}onlinear {M}odel of the {O}nset of {U}pwelling.
-%\newblock {\em J. Phys Oceanogr.}, 8:178--187, 1978.
-
-\end{thebibliography}
+\bibliography{ref}
 
 
-% Indents Appendix in Table of Contents
-\makeatletter
-\addtocontents{toc}{\let\protect\l@chapter\protect\l@section}
-\makeatother
 
-% Hack to make Appendices to appear in Table of Contents
-\addtocontents{toc}{%
-   \noindent APPENDICES
-}
-
-%\begin{appendices}
-%\chapter{Appendix A Title} \label{Appendix A}
-
-%Blah blah
-
-%\end{appendices}
-
-
-%\addcontentsline{toc}{chapter}{Bibliography}
 
 \end{document}
