@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Introduction to Representation Theory}{3}{0}{1}
+\beamer@sectionintoc {2}{$SO(2)$: The Rotation Group in Two Dimensions}{33}{0}{2}
+\beamer@sectionintoc {3}{$SO(3)$: The Rotation Group in Three Dimensions}{46}{0}{3}
+\beamer@sectionintoc {4}{Euclidean Groups}{68}{0}{4}
+\beamer@sectionintoc {5}{Lorentz and Poincar\'e Groups}{85}{0}{5}
+\beamer@sectionintoc {6}{Braid Group and Anyons}{98}{0}{6}

@@ -1,31 +1,5 @@
 \documentclass[10pt]{ucthesis}
 \usepackage[hyphens]{url}
-%\include{ucthesis}
-%\newif\ifpdf
-%\ifx\pdfoutput\undefined
-%    \pdffalse % we are not running PDFLaTeX
-%\else
-%\pdfoutput=1 % we are running PDFLaTeX
-%\pdftrue \fi
-
-%\ifpdf
-
-%    \usepackage[pdftex]{graphicx}
-    % Update title and author below...
-   % \usepackage[pdftex,plainpages=false,breaklinks=true,colorlinks=true,urlcolor=black,citecolor=black,%
-      %                                 linkcolor=black,bookmarks=true,bookmarksopen=true,%
-         %                              bookmarksopenlevel=3,pdfstartview=FitV,
-            %                           pdfauthor={YOUR NAME},
-               %                        pdftitle={YOUR THESIS TITLE},
-                  %                     pdfkeywords={thesis, masters, cal poly}
-                     %                  ]{hyperref}
-    %Options with pdfstartview are FitV, FitB and FitH
-    %\pdfcompresslevel=1
-
-%\else
-%    \usepackage{graphicx}
-%\fi
-
 \usepackage{booktabs} % To thicken table lines
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -35,12 +9,6 @@
 \usepackage{amsthm}
 \usepackage{algpseudocode}
 \usepackage{array}
-%\hypersetup{draft}
-%\usepackage[draft]{hyperref}
-%\usepackage{nohyperref}  % This makes hyperref commands do nothing without errors
-%\usepackage{url}  % This makes \url work
-%\usepackage[morefloats=125]{morefloats}
-
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{amssymb}
@@ -220,7 +188,7 @@
 %\titleformat*{\subparagraph}{\small%\bfseries}
 %}
 
-% \hypersetup{nolinks=true}
+
 \begin{document}
 %\hypersetup{nolinks=true}
 
@@ -1300,7 +1268,7 @@ where $\psi$ is the angle that the vector $(x,y)$ makes with the positive $e_1$-
 	\begin{aligned}
 		y' &= r\sin(\psi+\theta) = r\left(\cos(\psi)\sin(\theta) + \sin(\psi)\cos(\theta)\right) = x\sin(\theta) +y\cos(\theta)
 	\end{aligned}
-\end{equation}
+\end{equation}	
 
 We can see that the rotated coordinates are completely determined by the originial coordinates and the angle of rotation. With the use of matrix algebra, we can combine (2.1) and (2.2) into 
 
@@ -1545,7 +1513,7 @@ In the previous section, we illustrated many properties of $SO(2)$, including th
 \end{equation}
 
 Therefore, $v$ is an eigenvector of every rotation operator corresponding to eigenvalue $e^{-i\theta \lambda}$. Eigenvalues serve as a great tool for constructing degree one representations. Throughout the rest of this thesis, we will always start with this as our baseline.
-
+We 
 It can clearly be seen that for any two rotation operators, $U_{\theta_1}$ and $U_{\theta_2}$,  
 \begin{equation}
 	\begin{aligned}
@@ -1674,7 +1642,7 @@ Similar to $SO(2)$, the group $SO(3)$ represents all possible ways to take the p
 
 If we define $SO(3)$ to act on $\R^3$ in a similar way that $SO(2)$ acts on $\R^2$, we could not as easily uncover a formulation for every matrix. Instead, we use the characteristics of $SO(2)$ to guide our intuition for a way to understand the matrices that compose $SO(3)$. Firstly, any rotation should leave the magnitude of a vector in $\R^3$ unchanged. This leads us to conclude that the matrices must be orthogonal. Further, it will also follow that these matrices have determinant $1$, since all rotations can be reached continuously from the identity. With this information alone, we can deduce that the $SO(3)$ matrices form a group under matrix multiplication. The question of classifying these matrices is still open for us to answer. There are two main ways we can do so.
 
-In two dimensions, it is straightforward to define a convention for orientation and measurement of any rotation. However, when we get to three dimensions, we need to be more careful about how we describe these actions. Our first attempt to characterize these wil have us focus on embedding two dimensional rotations in three dimensional space. First, let us consider any $n\in\R^3$. We can treat this vector as an axis about which we rotate by taking the plane normal to it. One we have rotated vectors about this axis, we can measure the angle of rotation by projecting these vectors onto normal plane and calculating the angle just as we did in our two dimensional derivation in Chapter 2. We still take the convention that positive angle measure corresponds to a counter-clockwise rotation about in the normal plane. The orientation of $n$ is uniquely determined by two angles, $\theta$ and $\phi$, as defined by spherical coordinates in $\R^3$. For this discussion, we do not care about $||n||$, since any this value does not impact the direction the axis points. In this way, every possible rotation in $\R^3$ is characterized by one angle of counter-clockwise rotation and the two angles that determine the orientation about which we rotate (direction that $n$ points). In other words, the rotation, which we will refer to as $R_n(\psi) = R_{\theta,\phi}(\psi)$, identifies a rotation as displayed in the picture below.
+In two dimensions, it is straightforward to define a convention for orientation and measurement of any rotation. However, when we get to three dimensions, we need to be more careful about how we describe these actions. Our first attempt to characterize these wil have us focus on embedding two dimensional rotations in three dimensional space. First, let us consider any $n\in\R^3$. We can treat this vector as an axis about which we rotate by taking the plane normal to it. Once we have rotated vectors about this axis, we can measure the angle of rotation by projecting these vectors onto normal plane and calculating the angle just as we did in our two dimensional derivation in Chapter 2. We still take the convention that positive angle measure corresponds to a counter-clockwise rotation about in the normal plane. The orientation of $n$ is uniquely determined by two angles, $\theta$ and $\phi$, as defined by spherical coordinates in $\R^3$. For this discussion, we do not care about $||n||$, since any this value does not impact the direction the axis points. In this way, every possible rotation in $\R^3$ is characterized by one angle of counter-clockwise rotation and the two angles that determine the orientation about which we rotate (direction that $n$ points). In other words, the rotation, which we will refer to as $R_n(\psi) = R_{\theta,\phi}(\psi)$, identifies a rotation as displayed in the picture below.
 
 
 \begin{figure}{H}
@@ -2000,10 +1968,6 @@ In this way, we view every rotation in $SO(3)$ as the composition of three rotat
 				vector/.style={-stealth,black,very thick}]
 		\draw[axis,color=lightgray] (0,0,0) -- (0.7071,-0.7071,0) node[anchor=north]{$x$};
 		\draw[axis,color=black] (0,0,0) -- (0,0,1) node[anchor=south]{$x$};
-		%\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-		%\draw[axis,color=lightgray] (0,0,0) -- (-0.866,0.5,0) node[anchor=west]{$y$};
-		%\draw[axis,color=black] (0,0,0) -- (-0.183,-0.183,-0.96591) node[anchor=west]{$y$};
-		%\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
 
 		\draw[axis,color=cobalt] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=west]{$z'$}; %(-sqrt(2)/2,sqrt(2)/2,0)
 
@@ -3542,7 +3506,7 @@ In order to calculate the unitary, irreducible representations of the Poinecar\'
 
 If we assert that $\psi$ is an irreducible representation of $\overset{\sim}{P}$, then we see we see that any eigenvalue of $\psi_{\mathfrak{C}_1}$ need not be strictly positive. Let us denote this eigenvalue as $\lambda_1$. We make note of the ranges for the $\lambda_1$ and separate our tabulation into three cases. For the sake of this thesis, we will only compute the irreducible unitary representations for one of these cases. The rest require work with a more complicated Casimir element than we are used to.
 
-Our case of focus will be when $\lambda_1 > 0$. This means that the time component must be larger in magnitude to all of the spatial components combined. This corresponds to vectors that are time-like. To this end, we pick our starting vector to be $p_t \coloneq (\sqrt{\lambda_1},0,0,0)$. Taking our anticipated quotient, we can intuitively see that $\overset{\sim}{P}/T_4 \cong \overset{\sim}{L}_+$. We can also see that the largest possible subgroup of this quotient group that leaves time-like vectors invariant would need to be the subgroup isomorphic to $SO(3)$. Therefore, since our little group is isomorphic to $SO(3)$ we will see that every irreducible, unitary representation of $SO(3)$ gives rise to one in $\overset{\sim}{P}$. We recall that for any half or whole positive integer choice of $s$, then we can construct a basis of the subspace corresponding to the image of the little group under $\psi$ in the following way:
+Our case of focus will be when $\lambda_1 > 0$. This means that the time component must be larger in magnitude to all of the spatial components combined. This corresponds to vectors that are time-like. To this end, we pick our starting vector to be $v_0 \coloneq (\sqrt{\lambda_1},0,0,0)$. Taking our anticipated quotient, we can intuitively see that $\overset{\sim}{P}/T_4 \cong \overset{\sim}{L}_+$. We can also see that the largest possible subgroup of this quotient group that leaves time-like vectors invariant would need to be the subgroup isomorphic to $SO(3)$. Therefore, since our little group is isomorphic to $SO(3)$ we will see that every irreducible, unitary representation of $SO(3)$ gives rise to one in $\overset{\sim}{P}$. We recall that for any half or whole positive integer choice of $s$, then we can construct a basis of the subspace corresponding to the image of the little group under $\psi$ in the following way:
 
 \begin{equation}
 \begin{aligned}
@@ -3567,17 +3531,17 @@ In order to collect a bigger subspaces invariant under $\psi$, we deform our ini
 
 \begin{equation}
 \begin{aligned}
-	H_p((v_0)_m) \coloneq R(\alpha,\beta,0)L_z(\xi)(v_p)_m
+	v_p\coloneq H_p((v_0)_m)= R(\alpha,\beta,0)L_z(\xi)(v_0)_m
 \end{aligned}
 \end{equation}
 
-where ($\alpha$,$\beta$) are the cylindrical coordinates identifying the three dimensional components of the four-vector $p$. This transformation can be applied to change our reference vector to any other vector in $M$. We can generalize the above analysis on each subspace that arises from the little group corresponding to $p$. We recover the entire space by letting $p$ be arbitrary.
+where ($\alpha$,$\beta$) are the cylindrical coordinates identifying the three dimensional components of the four-vector $v_p$. This transformation can be applied to change our reference vector to any other vector in $M$. We can generalize the above analysis on each subspace that arises from the little group corresponding to $p$. We recover the entire space by letting $p$ be arbitrary.
 
 \begin{theorem} Time-like Unitary Irreducible Representations of $\overset{\sim}{P}$
 	The subspace generated by the vectors $\{(v_p)_m\}_{p,m}$ is invariant under $\overset{\sim}{P}$. The irreducible, unitary representations of elements of this group are characterized in the following way:
 $$\psi_{T_b} (v_p)_m = e^{-ib_0p_0}e^{-ib_1p_1}e^{-ib_2p_2}e^{-ib_3p_3}(v_p)_m$$
 $$\psi_\Lambda (v_p)_m = [\phi_s(H(p')\Lambda H(p))]_{m'm} (v_{p'})_{m'}$$
-where $p' = \Lambda p$.
+where $p' = \Lambda p$ and $\phi_s$ is the irreducible representation of $SO(3)$ defined by $s$.
 \end{theorem}
 
 This can be shown in a very similar manner to the methods used in the Euclidean Groups' calculations. 

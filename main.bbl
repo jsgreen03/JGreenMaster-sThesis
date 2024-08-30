@@ -1,0 +1,45 @@
+\begin{thebibliography}{1}
+
+\bibitem{Riverside}
+J.~Baez.
+\newblock The yang-baxter equation, 1992.
+
+\bibitem{Rose3}
+J.~Baez and M.~Stay.
+\newblock {\em Physics, topology, logic and computation: a Rosetta Stone}.
+\newblock Springer, 2011.
+
+\bibitem{Deshmukh}
+A.~Deshmukh.
+\newblock An introduction to anyons.
+
+\bibitem{Hall}
+B.~C. Hall and B.~C. Hall.
+\newblock {\em Lie groups, Lie algebras, and representations}.
+\newblock Springer, 2013.
+
+\bibitem{Joyal}
+A.~Joyal and R.~Street.
+\newblock Braided tensor categories.
+\newblock {\em Advances in Mathematics}, 102(1):20--78, 1993.
+
+\bibitem{Kassel}
+C.~Kassel and V.~Turaev.
+\newblock {\em Braid groups}, volume 247.
+\newblock Springer Science \& Business Media, 2008.
+
+\bibitem{Mendes}
+A.~Mendes.
+\newblock Matrix representations of the symmetric group, March 2024.
+
+\bibitem{Trebst}
+S.~Trebst, M.~Troyer, Z.~Wang, and A.~W. Ludwig.
+\newblock A short introduction to fibonacci anyon models.
+\newblock {\em Progress of Theoretical Physics Supplement}, 176:384--407, 2008.
+
+\bibitem{Tung}
+W.-K. Tung.
+\newblock {\em Group theory in physics}, volume~1.
+\newblock World Scientific, 1985.
+
+\end{thebibliography}

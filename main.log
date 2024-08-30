@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  28 AUG 2024 09:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  30 AUG 2024 00:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1071,13 +1071,13 @@ Writing index file main.idx
 \glo@main@file=\write6
 \openout6 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 92.
+Package glossaries Info: Writing glossary file main.glo on input line 60.
 \tindent=\skip105
 \c@definition=\count389
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 180.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 148.
 
-Package hyperref Info: Option `bookmarksopen' set `false' on input line 180.
-Package hyperref Info: Option `colorlinks' set `false' on input line 180.
+Package hyperref Info: Option `bookmarksopen' set `false' on input line 148.
+Package hyperref Info: Option `colorlinks' set `false' on input line 148.
 \c@qcounter=\count390
 (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
@@ -1087,24 +1087,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 224.
-LaTeX Font Info:    ... okay on input line 224.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 224.
-LaTeX Font Info:    ... okay on input line 224.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 224.
-LaTeX Font Info:    ... okay on input line 224.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 224.
-LaTeX Font Info:    ... okay on input line 224.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 224.
-LaTeX Font Info:    ... okay on input line 224.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 224.
-LaTeX Font Info:    ... okay on input line 224.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 224.
-LaTeX Font Info:    ... okay on input line 224.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 224.
-LaTeX Font Info:    ... okay on input line 224.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 224.
-LaTeX Font Info:    ... okay on input line 224.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 192.
+LaTeX Font Info:    ... okay on input line 192.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1167,7 +1167,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 224.
+Package hyperref Info: Link coloring OFF on input line 192.
 
 (./main.out) (./main.out)
 \@outlinefile=\write7
@@ -1175,18 +1175,12 @@ Package hyperref Info: Link coloring OFF on input line 224.
 
 
 \uppercase {Chapter} 1.
-
-LaTeX Warning: Citation `Tung' on page 1 undefined on input line 336.
-
-
-LaTeX Warning: Citation `Mendes' on page 1 undefined on input line 336.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 339
+LaTeX Font Info:    Trying to load font information for U+msa on input line 307
 .
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 339
+LaTeX Font Info:    Trying to load font information for U+msb on input line 307
 .
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1199,22 +1193,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 
  []
 
 
-Overfull \hbox (30.78929pt too wide) detected at line 405
+Overfull \hbox (30.78929pt too wide) detected at line 373
 [][][][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--407
+Underfull \hbox (badness 10000) in paragraph at lines 373--375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--422
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
 
  []
 
@@ -1229,7 +1223,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 420--422
 [5]
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 542--546
+Underfull \hbox (badness 10000) in paragraph at lines 510--514
 
  []
 
@@ -1238,17 +1232,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 542--546
 [7]
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 661--662
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 663--664
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 665--666
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
 
  []
 
@@ -1257,24 +1251,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 665--666
 [9]
 
 [10]
-Overfull \hbox (0.69853pt too wide) detected at line 752
+Overfull \hbox (0.69853pt too wide) detected at line 720
 []
  []
 
 
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 763--764
+Underfull \hbox (badness 10000) in paragraph at lines 731--732
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 769--770
+Underfull \hbox (badness 10000) in paragraph at lines 737--738
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 771--772
+Underfull \hbox (badness 10000) in paragraph at lines 739--740
 
  []
 
@@ -1282,15 +1276,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 771--772
 
 [12]
 
-LaTeX Warning: Citation `Mendes' on page 13 undefined on input line 802.
-
-
-LaTeX Warning: Citation `Tung' on page 13 undefined on input line 810.
-
-
-
 [13]
-Overfull \hbox (1.10458pt too wide) in paragraph at lines 828--829
+Overfull \hbox (1.10458pt too wide) in paragraph at lines 796--797
 \OT1/cmr/m/n/10 space. Let $\OML/cmm/m/it/10 ^^^[]$ \OT1/cmr/m/n/10 de-note $\O
 ML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g\OT1/cmr/m/n/10 )$, and le
 t $\OML/cmm/m/it/10 S$ \OT1/cmr/m/n/10 be de-fined such that $\OMS/cmsy/m/n/10 
@@ -1306,20 +1293,17 @@ h\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm
 [14]
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 891--892
+Underfull \hbox (badness 10000) in paragraph at lines 859--860
 
  []
 
 
 
 [16]
-Overfull \hbox (1.3324pt too wide) in paragraph at lines 941--942
+Overfull \hbox (1.3324pt too wide) in paragraph at lines 909--910
 []\OT1/cmr/bx/n/10 Corrolary 1.28. []\OT1/cmr/m/it/10 The num-ber of in-equiv-a
 -lent, uni-tary, ir-re-ducible rep-re-sen-ta-tions is bounded
  []
-
-
-LaTeX Warning: Citation `Tung' on page 17 undefined on input line 946.
 
 
 
@@ -1327,40 +1311,14 @@ LaTeX Warning: Citation `Tung' on page 17 undefined on input line 946.
 
 [18]
 
-LaTeX Warning: Citation `Mendes' on page 19 undefined on input line 976.
-
-
-LaTeX Warning: Citation `Tung' on page 19 undefined on input line 997.
-
-
-
 [19]
-
-LaTeX Warning: Citation `Tung' on page 20 undefined on input line 1015.
-
-
 
 [20]
 
-LaTeX Warning: Citation `Tung' on page 21 undefined on input line 1068.
-
-
-
 [21]
 
-LaTeX Warning: Citation `Tung' on page 22 undefined on input line 1088.
-
-
-
 [22]
-
-LaTeX Warning: Citation `Tung' on page 23 undefined on input line 1117.
-
-
-LaTeX Warning: Citation `Tung' on page 23 undefined on input line 1129.
-
-
-Overfull \hbox (36.67053pt too wide) in paragraph at lines 1129--1130
+Overfull \hbox (35.87057pt too wide) in paragraph at lines 1097--1098
 []\OT1/cmr/m/n/10 Since the left reg-u-lar rep-re-sen-ta-tion ($\OML/cmm/m/it/1
 0 ^^^$\OT1/cmr/m/n/10 ) has ir-re-ducible de-com-po-si-tion $\OML/cmm/m/it/10 ^
 ^^ \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T [] T[]$\OT1/cmr/m/n/10 ,
@@ -1372,24 +1330,17 @@ Overfull \hbox (36.67053pt too wide) in paragraph at lines 1129--1130
 
 [24]
 
-LaTeX Warning: Citation `Tung' on page 25 undefined on input line 1212.
-
-
-
 [25]
 
 [26]
 \uppercase {Chapter} 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1264.
+(hyperref)                removing `math shift' on input line 1232.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1264.
-
-
-LaTeX Warning: Citation `Tung' on page 27 undefined on input line 1266.
+(hyperref)                removing `math shift' on input line 1232.
 
 
 
@@ -1406,7 +1357,7 @@ LaTeX Warning: Citation `Tung' on page 27 undefined on input line 1266.
 [31]
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1513--1514
+Underfull \hbox (badness 10000) in paragraph at lines 1481--1482
 
  []
 
@@ -1415,14 +1366,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1513--1514
 [33]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1536.
+(hyperref)                removing `math shift' on input line 1504.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1536.
+(hyperref)                removing `math shift' on input line 1504.
 
 
-Overfull \hbox (2.97223pt too wide) in paragraph at lines 1547--1548
+Overfull \hbox (2.97223pt too wide) in paragraph at lines 1515--1518
 \OML/cmm/m/it/10 e[]$\OT1/cmr/m/n/10 . Eigen-val-ues serve as a great tool for 
 con-struct-ing de-gree one rep-re-sen-ta-tions. Through-
  []
@@ -1437,14 +1388,11 @@ con-struct-ing de-gree one rep-re-sen-ta-tions. Through-
 \uppercase {Chapter} 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1669.
+(hyperref)                removing `math shift' on input line 1637.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1669.
-
-
-LaTeX Warning: Citation `Tung' on page 37 undefined on input line 1671.
+(hyperref)                removing `math shift' on input line 1637.
 
 
 
@@ -1459,59 +1407,59 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (38.96367pt too wide) in paragraph at lines 1723--1864
+Overfull \hbox (38.96367pt too wide) in paragraph at lines 1691--1832
 [][] 
  []
 
 
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 1871--1872
+Underfull \hbox (badness 10000) in paragraph at lines 1839--1840
 
  []
 
 
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1901--1902
+Underfull \hbox (badness 10000) in paragraph at lines 1869--1870
 
  []
 
-<Figures/Rnpsi1.png, id=317, 616.10175pt x 435.7881pt>
+<Figures/Rnpsi1.png, id=423, 616.10175pt x 435.7881pt>
 File: Figures/Rnpsi1.png Graphic file (type png)
 <use Figures/Rnpsi1.png>
-Package pdftex.def Info: Figures/Rnpsi1.png  used on input line 1906.
+Package pdftex.def Info: Figures/Rnpsi1.png  used on input line 1874.
 (pdftex.def)             Requested size: 158.99156pt x 112.45773pt.
-<Figures/Rnpsi2.png, id=319, 614.295pt x 433.98135pt>
+<Figures/Rnpsi2.png, id=425, 614.295pt x 433.98135pt>
 File: Figures/Rnpsi2.png Graphic file (type png)
 <use Figures/Rnpsi2.png>
-Package pdftex.def Info: Figures/Rnpsi2.png  used on input line 1908.
+Package pdftex.def Info: Figures/Rnpsi2.png  used on input line 1876.
 (pdftex.def)             Requested size: 158.99156pt x 112.32259pt.
-<Figures/RRnR1.png, id=320, 614.295pt x 535.5207pt>
+<Figures/RRnR1.png, id=426, 614.295pt x 535.5207pt>
 File: Figures/RRnR1.png Graphic file (type png)
 <use Figures/RRnR1.png>
-Package pdftex.def Info: Figures/RRnR1.png  used on input line 1918.
+Package pdftex.def Info: Figures/RRnR1.png  used on input line 1886.
 (pdftex.def)             Requested size: 119.2467pt x 103.94809pt.
-<Figures/RRnR2.png, id=321, 614.295pt x 536.2434pt>
+<Figures/RRnR2.png, id=427, 614.295pt x 536.2434pt>
 File: Figures/RRnR2.png Graphic file (type png)
 <use Figures/RRnR2.png>
-Package pdftex.def Info: Figures/RRnR2.png  used on input line 1920.
+Package pdftex.def Info: Figures/RRnR2.png  used on input line 1888.
 (pdftex.def)             Requested size: 119.2467pt x 104.08836pt.
-<Figures/RRnR3.png, id=322, 481.3182pt x 357.37515pt>
+<Figures/RRnR3.png, id=428, 481.3182pt x 357.37515pt>
 File: Figures/RRnR3.png Graphic file (type png)
 <use Figures/RRnR3.png>
-Package pdftex.def Info: Figures/RRnR3.png  used on input line 1921.
+Package pdftex.def Info: Figures/RRnR3.png  used on input line 1889.
 (pdftex.def)             Requested size: 119.2467pt x 88.5365pt.
-<Figures/RRnR4.png, id=323, 614.295pt x 549.61336pt>
+<Figures/RRnR4.png, id=429, 614.295pt x 549.61336pt>
 File: Figures/RRnR4.png Graphic file (type png)
 <use Figures/RRnR4.png>
-Package pdftex.def Info: Figures/RRnR4.png  used on input line 1923.
+Package pdftex.def Info: Figures/RRnR4.png  used on input line 1891.
 (pdftex.def)             Requested size: 119.2467pt x 106.68356pt.
 
 
 [40 <./figures/Rnpsi1.png> <./figures/Rnpsi2.png> <./figures/RRnR1.png> <./figu
 res/RRnR2.png> <./figures/RRnR3.png> <./figures/RRnR4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1947--1948
+Underfull \hbox (badness 10000) in paragraph at lines 1915--1916
 
  []
 
@@ -1536,20 +1484,17 @@ Missing character: There is no ; in font nullfont!
 [42]
 
 [43]
-Overfull \hbox (69.52298pt too wide) detected at line 2153
+Overfull \hbox (69.52298pt too wide) detected at line 2117
 [][][][][]
  []
 
 
 
 [44]
-
-LaTeX Warning: Citation `Tung' on page 45 undefined on input line 2203.
-
-<Figures/pushzton.png, id=369, 614.295pt x 442.2924pt>
+<Figures/pushzton.png, id=476, 614.295pt x 442.2924pt>
 File: Figures/pushzton.png Graphic file (type png)
 <use Figures/pushzton.png>
-Package pdftex.def Info: Figures/pushzton.png  used on input line 2207.
+Package pdftex.def Info: Figures/pushzton.png  used on input line 2171.
 (pdftex.def)             Requested size: 278.23828pt x 200.33226pt.
 
 
@@ -1558,28 +1503,24 @@ Package pdftex.def Info: Figures/pushzton.png  used on input line 2207.
 [46 <./figures/pushzton.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2270.
+(hyperref)                removing `math shift' on input line 2234.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2270.
+(hyperref)                removing `math shift' on input line 2234.
 
 
 
 [47]
 
 [48]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 234
-8.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 231
+2.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
 [49]
-
-LaTeX Warning: Citation `Hall' on page 50 undefined on input line 2367.
-
-
 
 [50]
 
@@ -1594,7 +1535,7 @@ LaTeX Warning: Citation `Hall' on page 50 undefined on input line 2367.
 [55]
 
 [56]
-Overfull \hbox (56.06985pt too wide) detected at line 2644
+Overfull \hbox (56.06985pt too wide) detected at line 2608
 [][][][][]
  []
 
@@ -1603,19 +1544,16 @@ Overfull \hbox (56.06985pt too wide) detected at line 2644
 [57]
 \uppercase {Chapter} 4.
 
-LaTeX Warning: Citation `Tung' on page 58 undefined on input line 2650.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2616.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2652.
+(hyperref)                removing `subscript' on input line 2616.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2652.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2652.
+(hyperref)                removing `math shift' on input line 2616.
 
 
 
@@ -1627,55 +1565,44 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [60]
 
-LaTeX Warning: Citation `Tung' on page 61 undefined on input line 2740.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2714.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2750.
+(hyperref)                removing `subscript' on input line 2714.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2750.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2750.
+(hyperref)                removing `math shift' on input line 2714.
 
 
 
 [61]
 
-LaTeX Warning: Citation `Mendes' on page 62 undefined on input line 2778.
-
-
-
 [62]
 
 [63]
-
-LaTeX Warning: Citation `Tung' on page 64 undefined on input line 2870.
-
-
 
 [64]
 
 [65]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2938.
+(hyperref)                removing `math shift' on input line 2902.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2938.
+(hyperref)                removing `subscript' on input line 2902.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2938.
+(hyperref)                removing `math shift' on input line 2902.
 
 
 
 [66]
-Overfull \hbox (7.01807pt too wide) detected at line 3018
+Overfull \hbox (7.01807pt too wide) detected at line 2982
 [][][][][]
  []
 
@@ -1690,21 +1617,18 @@ Overfull \hbox (7.01807pt too wide) detected at line 3018
 [70]
 \uppercase {Chapter} 5.
 
-LaTeX Warning: Citation `Tung' on page 71 undefined on input line 3078.
-
-
 
 [71
 
 ]
 
 [72]
-Overfull \hbox (55.13582pt too wide) detected at line 3144
+Overfull \hbox (55.13582pt too wide) detected at line 3108
 [][][][][]
  []
 
 
-Overfull \hbox (29.64583pt too wide) detected at line 3188
+Overfull \hbox (29.64583pt too wide) detected at line 3152
 [][][][][]
  []
 
@@ -1715,21 +1639,14 @@ Overfull \hbox (29.64583pt too wide) detected at line 3188
 [74]
 
 [75]
-<Figures/Light cone-1.png, id=610, 332.08064pt x 277.15546pt>
+<Figures/Light cone-1.png, id=717, 332.08064pt x 277.15546pt>
 File: Figures/Light cone-1.png Graphic file (type png)
 <use Figures/Light cone-1.png>
-Package pdftex.def Info: Figures/Light cone-1.png  used on input line 3261.
+Package pdftex.def Info: Figures/Light cone-1.png  used on input line 3225.
 (pdftex.def)             Requested size: 278.23828pt x 232.2296pt.
 
 
 [76]
-
-LaTeX Warning: Citation `Tung' on page 77 undefined on input line 3267.
-
-
-LaTeX Warning: Citation `Tung' on page 77 undefined on input line 3273.
-
-
 
 [77 <./figures/Light cone-1.png>]
 
@@ -1746,16 +1663,7 @@ LaTeX Warning: Citation `Tung' on page 77 undefined on input line 3273.
 [83]
 \uppercase {Chapter} 6.
 
-LaTeX Warning: Citation `Kassel' on page 84 undefined on input line 3588.
-
-
-LaTeX Warning: Citation `Deshmukh' on page 84 undefined on input line 3588.
-
-
-LaTeX Warning: Citation `Trebst' on page 84 undefined on input line 3588.
-
-
-Overfull \hbox (0.39772pt too wide) in paragraph at lines 3596--3597
+Overfull \hbox (0.39772pt too wide) in paragraph at lines 3560--3561
 []\OT1/cmr/bx/n/10 Definition 6.1. []\OT1/cmr/m/it/10 The braid group, $\OML/cm
 m/m/it/10 B[]$\OT1/cmr/m/it/10 , is gen-er-ated by $\OML/cmm/m/it/10 n \OMS/cms
 y/m/n/10 ^^@ \OT1/cmr/m/n/10 1$ \OT1/cmr/m/it/10 gen-er-a-tors (de-noted $\OML/
@@ -1767,68 +1675,55 @@ cmm/m/it/10 ^^[[]; [] ; ^^[[]$\OT1/cmr/m/it/10 )
 [84
 
 ]
-<Figures/geobraid.png, id=683, 614.295pt x 450.9648pt>
+<Figures/geobraid.png, id=795, 614.295pt x 450.9648pt>
 File: Figures/geobraid.png Graphic file (type png)
 <use Figures/geobraid.png>
-Package pdftex.def Info: Figures/geobraid.png  used on input line 3618.
+Package pdftex.def Info: Figures/geobraid.png  used on input line 3582.
 (pdftex.def)             Requested size: 278.23828pt x 204.26033pt.
 
 
 [85 <./figures/geobraid.png>]
-<Figures/geobraidprod.png, id=692, 614.295pt x 626.21954pt>
+<Figures/geobraidprod.png, id=804, 614.295pt x 626.21954pt>
 File: Figures/geobraidprod.png Graphic file (type png)
 <use Figures/geobraidprod.png>
-Package pdftex.def Info: Figures/geobraidprod.png  used on input line 3638.
+Package pdftex.def Info: Figures/geobraidprod.png  used on input line 3602.
 (pdftex.def)             Requested size: 278.23828pt x 283.64037pt.
 
 
 [86 <./figures/geobraidprod.png>]
-<Figures/requiv.png, id=701, 614.295pt x 708.246pt>
+<Figures/requiv.png, id=813, 614.295pt x 708.246pt>
 File: Figures/requiv.png Graphic file (type png)
 <use Figures/requiv.png>
-Package pdftex.def Info: Figures/requiv.png  used on input line 3663.
+Package pdftex.def Info: Figures/requiv.png  used on input line 3627.
 (pdftex.def)             Requested size: 278.23828pt x 320.79349pt.
 
 
 [87]
-<Figures/reidmove2.png, id=707, 614.295pt x 195.129pt>
+<Figures/reidmove2.png, id=819, 614.295pt x 195.129pt>
 File: Figures/reidmove2.png Graphic file (type png)
 <use Figures/reidmove2.png>
-Package pdftex.def Info: Figures/reidmove2.png  used on input line 3673.
+Package pdftex.def Info: Figures/reidmove2.png  used on input line 3637.
 (pdftex.def)             Requested size: 278.23828pt x 88.38187pt.
 
 
 [88 <./figures/requiv.png>]
-<Figures/reidmove3.png, id=714, 614.295pt x 139.11975pt>
+<Figures/reidmove3.png, id=826, 614.295pt x 139.11975pt>
 File: Figures/reidmove3.png Graphic file (type png)
 <use Figures/reidmove3.png>
-Package pdftex.def Info: Figures/reidmove3.png  used on input line 3681.
+Package pdftex.def Info: Figures/reidmove3.png  used on input line 3645.
 (pdftex.def)             Requested size: 278.23828pt x 63.013pt.
 
 
 [89 <./figures/reidmove2.png> <./figures/reidmove3.png>]
-
-LaTeX Warning: Citation `Kassel' on page 90 undefined on input line 3699.
-
-
-LaTeX Warning: Citation `Kassel' on page 90 undefined on input line 3712.
-
-
-LaTeX Warning: Citation `Kassel' on page 90 undefined on input line 3720.
-
-
 
 [90]
 
 [91]
 
 [92]
-Underfull \hbox (badness 10000) in paragraph at lines 3803--3804
+Underfull \hbox (badness 10000) in paragraph at lines 3767--3768
 
  []
-
-
-LaTeX Warning: Citation `Kassel' on page 93 undefined on input line 3811.
 
 
 
@@ -1841,7 +1736,7 @@ LaTeX Warning: Citation `Kassel' on page 93 undefined on input line 3811.
 [96]
 
 [97]
-Overfull \hbox (32.67516pt too wide) detected at line 3964
+Overfull \hbox (32.67516pt too wide) detected at line 3928
 [][][][][]
  []
 
@@ -1851,130 +1746,99 @@ Overfull \hbox (32.67516pt too wide) detected at line 3964
 
 [99]
 
-LaTeX Warning: Citation `Riverside' on page 100 undefined on input line 4022.
-
-
-
 [100]
-Underfull \hbox (badness 10000) in paragraph at lines 4050--4051
+Underfull \hbox (badness 10000) in paragraph at lines 4014--4015
 
  []
 
 
 
 [101]
-<Figures/pent diag.png, id=810, 500.1084pt x 274.26465pt>
+<Figures/pent diag.png, id=926, 500.1084pt x 274.26465pt>
 File: Figures/pent diag.png Graphic file (type png)
 <use Figures/pent diag.png>
-Package pdftex.def Info: Figures/pent diag.png  used on input line 4078.
+Package pdftex.def Info: Figures/pent diag.png  used on input line 4042.
 (pdftex.def)             Requested size: 278.23828pt x 152.59114pt.
 
 
 [102]
 
-LaTeX Warning: Citation `Rose3' on page 103 undefined on input line 4083.
-
-
-
 [103 <./figures/pent diag.png>]
-<Figures/treebasis.png, id=824, 614.295pt x 135.1449pt>
+<Figures/treebasis.png, id=942, 614.295pt x 135.1449pt>
 File: Figures/treebasis.png Graphic file (type png)
 <use Figures/treebasis.png>
-Package pdftex.def Info: Figures/treebasis.png  used on input line 4102.
+Package pdftex.def Info: Figures/treebasis.png  used on input line 4066.
 (pdftex.def)             Requested size: 278.23828pt x 61.21263pt.
 
 
-LaTeX Warning: Citation `Trebst' on page 104 undefined on input line 4107.
-
-
-
 [104 <./figures/treebasis.png>]
-<Figures/differentftb.png, id=832, 614.295pt x 240.29774pt>
+<Figures/differentftb.png, id=951, 614.295pt x 240.29774pt>
 File: Figures/differentftb.png Graphic file (type png)
 <use Figures/differentftb.png>
-Package pdftex.def Info: Figures/differentftb.png  used on input line 4115.
+Package pdftex.def Info: Figures/differentftb.png  used on input line 4079.
 (pdftex.def)             Requested size: 278.23828pt x 108.84064pt.
 
 
 [105 <./figures/differentftb.png>]
-
-LaTeX Warning: Citation `Trebst' on page 106 undefined on input line 4125.
-
-<Figures/hexdiag.png, id=839, 555.39494pt x 242.46585pt>
+<Figures/hexdiag.png, id=959, 555.39494pt x 242.46585pt>
 File: Figures/hexdiag.png Graphic file (type png)
 <use Figures/hexdiag.png>
-Package pdftex.def Info: Figures/hexdiag.png  used on input line 4158.
+Package pdftex.def Info: Figures/hexdiag.png  used on input line 4122.
 (pdftex.def)             Requested size: 278.23828pt x 121.46939pt.
 
 
 [106]
-
-LaTeX Warning: Citation `Joyal' on page 107 undefined on input line 4162.
-
-<Figures/fusethrubraid.png, id=848, 614.295pt x 311.84505pt>
+<Figures/fusethrubraid.png, id=969, 614.295pt x 311.84505pt>
 File: Figures/fusethrubraid.png Graphic file (type png)
 <use Figures/fusethrubraid.png>
-Package pdftex.def Info: Figures/fusethrubraid.png  used on input line 4166.
+Package pdftex.def Info: Figures/fusethrubraid.png  used on input line 4130.
 (pdftex.def)             Requested size: 278.23828pt x 141.24733pt.
-
-LaTeX Warning: Citation `Trebst' on page 107 undefined on input line 4176.
-
 
 
 [107 <./figures/hexdiag.png> <./figures/fusethrubraid.png>]
-<Figures/braid.png, id=858, 614.295pt x 508.0581pt>
+<Figures/braid.png, id=981, 614.295pt x 508.0581pt>
 File: Figures/braid.png Graphic file (type png)
 <use Figures/braid.png>
-Package pdftex.def Info: Figures/braid.png  used on input line 4210.
+Package pdftex.def Info: Figures/braid.png  used on input line 4174.
 (pdftex.def)             Requested size: 278.23828pt x 230.12022pt.
 
 
 [108]
-<Figures/fivetrees.png, id=867, 614.295pt x 295.5843pt>
+<Figures/fivetrees.png, id=990, 614.295pt x 295.5843pt>
 File: Figures/fivetrees.png Graphic file (type png)
 <use Figures/fivetrees.png>
-Package pdftex.def Info: Figures/fivetrees.png  used on input line 4222.
+Package pdftex.def Info: Figures/fivetrees.png  used on input line 4186.
 (pdftex.def)             Requested size: 278.23828pt x 133.88217pt.
 
 
 [109 <./figures/braid.png> <./figures/fivetrees.png>]
 
-LaTeX Warning: Citation `Trebst' on page 110 undefined on input line 4236.
-
-
-
 [110]
 
-[111]
-No file main.bbl.
+[111] (./main.bbl)
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-(./main.aux)
+
+
+[112
+
+
+] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  893CFBA1194C39BEF64E3E950211B9AE;6687.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D089A73DAC660204966E1E4790ABBE56;6793.
  ) 
 Here is how much of TeX's memory you used:
- 34821 strings out of 475517
- 633090 string characters out of 5777237
+ 34874 strings out of 475517
+ 633715 string characters out of 5777237
  1954908 words of memory out of 5000000
- 56425 multiletter control sequences out of 15000+600000
+ 56464 multiletter control sequences out of 15000+600000
  570000 words of font info for 82 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  94i,20n,133p,2343b,1040s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2003,10 +1867,10 @@ onts/euler/eufm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msam7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb>
-Output written on main.pdf (111 pages, 12696836 bytes).
+Output written on main.pdf (112 pages, 12702765 bytes).
 PDF statistics:
- 1101 PDF objects out of 1200 (max. 8388607)
- 884 compressed objects within 9 object streams
- 456 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1233 PDF objects out of 1440 (max. 8388607)
+ 1013 compressed objects within 11 object streams
+ 467 named destinations out of 1000 (max. 500000)
+ 319 words of extra memory for PDF output out of 10000 (max. 10000000)
 
