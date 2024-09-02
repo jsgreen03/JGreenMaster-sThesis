@@ -1,0 +1,426 @@
+\chapter{The Euclidean Group in Two and Three Dimensions}\label{En}
+
+While we have discussed rotations extensively, there are many more physical phenomena that are not a result of this action. More specifically, this section will focus on actions that can be represented by compositions of physical rotations and translations. We call the group that takes combinations of these actions the Euclidean Group (in $n$ dimensional space). For the purposes of our study, we will focus on the two and three dimensional cases. While we have covered much of the group for the rotational component of this group, we will need to handle the addition of translations with care. This chapter follows the structure laid out in Wu-ki Tung's \textit{Group Theory in Physics}. \cite{Tung}
+
+\section{Construction and Properties of $E_2$}
+
+\begin{definition}
+	The $n$-dimensional \textbf{Euclidean Group, $E_n$,} is the group of all continuous, isometric, linear transformations on $\R^n$.
+\end{definition}
+
+For any transformation of this kind, all vectors, $x\in\R^n$, get mapped to $x'\in\R^n$ in the following way 
+$$x' = Rx + b$$
+for some fixed $R\in SO(n)$ and $b\in\R^n$. This gives us a natural decomposition of our transformation into a rotation (given by the matrix $R$) and a translation (by a vector, $b$).
+
+In two dimensions, our rotations are characterized by one angle and our translations are characterized by one vector in $\R^2$. Therefore, any element can be reference in $E_2$ by choosing $\theta$ and $b$ respectively. For any $g(\theta,b)\in E_2$, $x\overset{g(\theta,b)}{\mapsto}x'$ by through the following transformation:
+
+$$\begin{bmatrix}x'_1\\x'_2\end{bmatrix} = \begin{bmatrix}
+			\cos(\theta) & -\sin(\theta) \\
+			\sin(\theta) & \cos(\theta) 
+		\end{bmatrix} \begin{bmatrix}x_1\\x_2\end{bmatrix} + \begin{bmatrix}b_1\\b_2\end{bmatrix} $$
+
+One can see that through this lens, the composition of transformations in $E_2$ follows the general rule:
+
+$$g(\theta_2,b_2)g(\theta_1,b_1) = g(\theta_2+\theta_1,R(\theta_2)b_1 + b_2)$$
+
+We can construct an invertible matrix to represent each transformation if we take each vector in $\R^2$ to be embedded in $\R^3$ on the $z=1$ plane.
+
+$$\begin{bmatrix}x'_1\\x'_2 \\ 1\end{bmatrix} = \begin{bmatrix}
+			\cos(\theta) & -\sin(\theta) & b_1\\
+			\sin(\theta) & \cos(\theta) & b_2 \\
+			0&0&1
+		\end{bmatrix} \begin{bmatrix}x_1\\x_2\\1\end{bmatrix} $$
+
+\noindent Adopting this convetion, we can easily derive the subgroup of $E_2$ corresponding to pure rotations in terms of the generator who's exists we proved in Chapter 2. 
+
+$$J=\begin{bmatrix}
+			0 & -i & 0\\
+			i & 0 & 0 \\
+			0 & 0 & 0
+		\end{bmatrix}$$
+
+Turning our focus to the translations, we can perform a similar derivation. At first, we focus on the one dimensional case. For any one-dimensional translation, $T_b(x)\coloneq x + b$,  we can see that translating by a vector with arbitrarily small magnitutde should result in an arbitrarily small translation. Explicitly,
+
+$$T_{dx} = I -idxP$$
+
+\noindent where we will show $P$ to be the generator of translations in a similar calculation to what we did for the generator of $SO(2)$.
+
+We can write $T_x$ in terms of our generator by utilizing the following two equations:
+
+$$T_{x+dx} = T_x + dx \frac{d}{dx}T_x$$
+$$T_{x+dx} = T_{dx}T_x$$
+
+Solving this system gives us the same result as in $SO(2)$:
+
+$$T(x) = e^{-iPx}$$
+
+We can explicitly calculate $P$ by looking at how $T_{dx}$ should interact with it.
+
+$$x + dx = T_{dx}(x) = x -idx  P \Rightarrow P = i$$
+
+Generalizing to two dimensions requires we construct the same scheme twice (treating each component separately). Therefore, we get two generator matrices with respect to each component of the matrix specified to be the location for a component of the translation vector.
+
+$$P_x = \begin{bmatrix}
+			0 & 0 & i\\
+			0 & 0 & 0 \\
+			0 & 0 & 0
+		\end{bmatrix}, \hspace{3mm}P_y = \begin{bmatrix}
+			0 & 0 & 0\\
+			0 & 0 & i \\
+			0 & 0 & 0
+		\end{bmatrix}$$
+
+The physical properties of translations will allow us to create an abelian subgroup of $E_2$ that is restricted to pure translations. Any translation in this group can be written in terms of the generators in the following way:
+
+$$T_b = g(0,b) = e^{-ib_1P_x}e^{-ib_2P_y}$$
+
+Now that we have dealt with rotations and translations separately, we can begin to consider the two physical actions together. A useful observation we can make to this end deals with the relationship between rotations and translations: For any rotation by angle $\theta$, matrix algebra will show that:
+
+$$R(\theta)P_xR(\theta)^{-1} = [R(\theta)]_{11}P_x +  [R(\theta)]_{21}P_y$$
+$$R(\theta)P_yR(\theta)^{-1} = [R(\theta)]_{12}P_x +  [R(\theta)]_{22}P_xy$$
+
+With this in mind, it is not a far jump to conclude that for for any translation, $T_b$,
+
+$$R(\theta)T_bR(\theta)^{-1} = T_{R(\theta)b}$$
+
+This identity will is geometrically intuitive and will prove incredibly useful for calculations later. Most usefully, we can see a natural decomposition form for group elements in $E_2$.
+
+\begin{theorem}
+	For any $g(\theta,b)\in E_2$, there is a natural decomposition of the transformation into a pure rotation times a pure translation.
+$$g(\theta,b) = g(0,b)g(\theta,0)$$
+\end{theorem}
+
+\noindent\begin{proof}[\cite{Tung}]
+\begin{equation}
+\begin{aligned}
+g(\theta,b)R(\theta)^{-1} = g(\theta,b)g(-\theta,0) = g(\theta-\theta,b) = T_b 
+\end{aligned}
+\end{equation}
+\end{proof}
+
+Having discussed ways to generically refer to elements of $E_2$, we can begin to discuss the construction of its irreducible representations.
+
+\section{Irreducible Representations of $E_2$}
+
+Much like we did in the last chapter, we will consider the irreducible representations defined on the Lie algebra of its generators to gain insight into the underlying group. Let us begin by characterizing the Lie algebra. We will refer to this structure as $\mathfrak{e_2}$. Given our generators $J, P_x,P_y$, we can explicitly construct a generic element of the Lie algebra as a linear combination.
+
+$$\mathfrak{e_2} = \left\{i\begin{bmatrix}
+								0 & -a & b \\
+								a & 0 & c \\
+								0 & 0 & 0
+							 \end{bmatrix} \mid a,b,c \in \C\right\}$$
+
+Now that we have defined our space rigidly, we will begin analyzing the commutators of our generators. It can be easily shown through matrix algebra that the following commutator relations hold:
+
+\begin{equation}
+\begin{aligned}
+	[P_x,P_y] = 0
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	[J,P_x] = iP_y
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	[J,P_y] = -iP_x
+\end{aligned}
+\end{equation}
+
+The fact that the generators for translations commute with each other gives us a vantage point to analyze an abelian subgroup of $E_2$. Consider the subgroup of pure translations, $T_2 = \{ T_b \coloneq g(\theta,b)\in E_2 \mid \theta=0\}$. Based on our argument with the commutator of generators, this group is abelian. As a result, the quotient group $E_2/T_2$ is well-defined, and intuitively, it is isomorphic to $SO(2)$. Since irreducible representations on quotient groups are irreducible on whole groups \cite{Mendes}, it is clear that our analysis of $SO(2)$ will immediately show us the following irreducible representations of $E_2$.
+
+$$\phi_m:E_2\rightarrow \C$$
+$$g(\theta,b)\mapsto e^{im\theta}$$
+
+Now, if we look to encorporate the other generators, we can follow a similar process to how we constructed irreducible representations in $SO(3)$. We begin my constructing the raising and lowering generators in the following way:
+
+\begin{equation}
+\begin{aligned}
+	P_\pm \coloneq P_x \pm iP_y
+\end{aligned}
+\end{equation}
+
+ Then, matrix algebra will show that the new commutators on the generators follow the following equality:
+
+\begin{equation}
+\begin{aligned}
+	[J,P_\pm] = \pm P_\pm 
+\end{aligned}
+\end{equation}
+
+As we did in the previous chapter, we have to leave the comfort of the Lie algebra and journey into the universal enveloping algebra to find mutually commuting generators. We will denote the universal enveloping algebra of $E_2$ as $A_{\mathfrak{e_2}}$. All of the commutator identities we stated above will clearly translate to identical relations in our new space. As a reminder, when we discuss generators in this space, we will refer to them with our $\mathfrak{special}$ $\mathfrak{script}$. 
+
+In $A_{\mathfrak{e_2}}$, there is a Casimir element similar to that of $A_{\mathfrak{so}(3)}$. 
+\begin{equation}
+\begin{aligned}
+	\mathfrak{P}^2 = (\mathfrak{P}_x)^2 + (\mathfrak{P}_y)^2 = \mathfrak{P}_+\mathfrak{P}_- = \mathfrak{P}_-\mathfrak{P}_+
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	[\mathfrak{P}^2,J] =[\mathfrak{P}^2,\mathfrak{P}_\pm]  = 0
+\end{aligned}
+\end{equation}
+
+As is typical with Casimir elements, its image under any irreducible representation is a multiple of the identity. We will call this multiple $p$. Further, as we have done before, any eigenvector of one map can be used to generate (through its application) an eigenvector of a commuting map. Since $\mathfrak{J}$ is defined in the same way that that it is in $SO(2)$, its image under an irreducible representation has eigenvalues corresponding to the integers. Allowing $\psi$ to be an irreducible representation of $A_\mathfrak{e_2}$, we let $v_m$ be an eigenvector of $\phi_\mathfrak{J}$ corresponding to eigenvalue $m\in\Z$ Then the following equations characterize the irreducible representation:
+\begin{equation}
+\begin{aligned}
+	 \psi(\mathfrak{P}^2)v_m = pv_m
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	 \psi(\mathfrak{J})v_m = mv_m
+\end{aligned}
+\end{equation}
+
+We can also see that the raising and lowering generators naturally have the desired effect
+\begin{equation}
+\begin{aligned}
+	 \psi(\mathfrak{J}\mathfrak{P}_+)v_m = (m+1)\mathfrak{P}_+v_m
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	 \psi(\mathfrak{J}\mathfrak{P}_-)v_m = (m-1)\mathfrak{P}_-v_m
+\end{aligned}
+\end{equation}
+
+Given the way that $\mathfrak{P}^2$ was defined, we can see that $\psi(\mathfrak{P}^2)$ must be positive-definite. Therefore, its eigenvalues are non-zero. In the case where $p=0$, it corresponds to a pure rotation ($\psi(\mathfrak{P}^2) = 0$ and so translation does not occur). Therefore, this corresponds to the irreducible representation we calculated for the quotient group. 
+
+If $p>0$, we will define the sequence of eigenvectors $\{v_m\}_{m\in\Z}$ to be defined by the following way:
+
+\begin{equation}
+\begin{aligned}
+	 v_{m+1} \coloneq \frac{i}{p}\psi(\mathfrak{P}_+)v_m
+\end{aligned}
+\end{equation}
+
+As resulting and equivalent way of defining this sequence would be to use the lowering generator $v_{m-1} \coloneq \frac{-i}{p}\psi(\mathfrak{P}_-)v_m$. We will need to use both constructions to collect every vector. Since there is clearly no restriction on $m$, the vector space is infinite dimensional. As a result, we cannot explicitly write down a matrix for the image of any group element under any representation. However, as we began discussing in Section 1.6, we can make reference to matrix elements of our irreducible representations. 
+
+If we use the eigenbasis $\{v_m\}_{m\in\Z}$, then we can find every matrix element evaluated on our generators using the following formulas:
+
+\begin{equation}
+\begin{aligned}
+	 \langle \psi(\mathfrak{J})v_m , v_{m'} \rangle = \begin{cases}
+																m & \text{if }m' = m\\
+																0 & \text{else}
+															\end{cases}
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	 \langle \psi(\mathfrak{P}_\pm)v_m , v_{m'} \rangle = \begin{cases}
+																\mp ip & \text{if }m' = m \pm 1\\
+																0 & \text{else}	
+															\end{cases}
+\end{aligned}
+\end{equation}
+
+With this in mind, we can fully characterize the matrix elements of the irreducible representations of $E_2$.
+
+\begin{theorem}[\cite{Tung}]
+	The faithful, unitary, irreducible representations of $E_2$ are characterized by the following equation defined in terms of matrix elements. If $\psi_p$ is a representation corresponding to a $p>0$, then $[\psi_p(g)]_{mm'}$ corresponds to the matrix element specified by the choice of $v_m$, $v_{m'}$, and $g$. The representations, $\psi_p$ have the following form:
+$$[\psi_p(g(\theta,b))]_{mm'} = e^{i(m-m')\phi}J_{m-m'}(pr)e^{-im\theta}$$
+where $r$ and $\phi$ are the polar coordinates for the vector $b$.
+\end{theorem}
+\noindent\begin{proof} For any pure rotation, $R(\theta)$, we can see that
+
+\begin{equation}
+\begin{aligned}
+ \langle \psi(R(\theta))v_m , v_{m'} \rangle = \begin{cases}
+																e^{-im\theta} & \text{if }m' = m\\
+																0 & \text{else}
+															\end{cases}
+\end{aligned}
+\end{equation}
+
+For any pure translation (given by the polar coordinates $r$ and $\theta$), we can use the fact that
+
+\begin{equation}
+\begin{aligned}
+	T_{r,\phi} = R(\phi)^{-1}T_{r,0}R(\phi)
+\end{aligned}
+\end{equation}
+
+and the fact that $\phi$ is unitary to see that 
+
+\begin{equation}
+\begin{aligned}
+ \langle \psi(T_{r,\phi})v_m , v_{m'} \rangle = e^{i(m-m')\phi}\langle \psi(T_{r,0})v_m , v_{m'} \rangle
+\end{aligned}
+\end{equation}
+
+In this way, we reduce our problem to consider pure translations in only the positive $x$ direction corresponding to the generator $\mathfrak{P}_x$. We can see that for any pure translation in this direction in terms of the generator
+
+\begin{equation}
+\begin{aligned}
+	 T_{r,0} &= e^{-ir\mathfrak{P}_x}\\
+			&= e^{-ir\frac{\mathfrak{P}_++\mathfrak{P}_-}{2}} \\
+			&= \sum_{k,l} \frac{(-1)^k(iP_+)^k\frac{b}{2}^{k+l}(-iP)^l}{k!l!}
+\end{aligned}
+\end{equation}
+
+When we evaluate the matrix element of this expression at the indices corresponding to $V_m$ and $v_{m'}$, we see that in order for us to have a nonzero evaluation, the terms the powers of the raising and lower operators, $k$ and $l$, have to related to $m$ and $m'$ through the equation $k-l=m'-m$. Holding $k-l$ at that constant value and shifting the index to be over $n=k+l$, we can rewrite the sum as
+
+\begin{equation}
+\begin{aligned}
+ \langle \psi(T_{r,0})v_m , v_{m'} \rangle = \sum_n \frac{(-1)^\frac{n+m'-m}{2}(\frac{pb}{2})^n}{(\frac{n+m'-m}{2})!(\frac{n-m'+m}{2})!}
+\end{aligned}
+\end{equation}
+
+Since $n$ can take the value of any other integer, we have to split up the possible calculations for $n\geq m'-m$ and $n\leq m'-m$. If $n\geq m'-m$, we can further reindex the sum by setting $q=\frac{n+m'-m}{2}$ to obtain
+
+\begin{equation}
+\begin{aligned}
+ \langle \psi(T_{r,0})v_m , v_{m'} \rangle &= \left(\frac{pb}{2}\right)^{m-m'}\sum_n \frac{(-1)^q(\frac{pb}{2})^{2q}}{q!(q+m-m')!} &= J_{m-m'}(pb)
+\end{aligned}
+\end{equation}
+
+However if $n\leq m'-m$, then we reindex with the new variable $q =\frac{n-m'+m}{2}$ to obtain 
+
+\begin{equation}
+\begin{aligned}
+ \langle \psi(T_{r,0})v_m , v_{m'} \rangle &= \left(\frac{-pb}{2}\right)^{m-m'}\sum_n \frac{(-1)^q(\frac{pb}{2})^{2q}}{q!(q-m+m')!} &= J_{m-m'}(pb)
+\end{aligned}
+\end{equation}
+
+and therefore, when we combine every component of this generic transformation in $E_2$, we have achieved the desired result. \end{proof}
+
+\section{Construction of $E_3$ and its Irreducible Representations}
+
+$E_3$ consists of all compositions of rotations and translations in three dimensional space. We have already established most of the theory regarding rotations in $\R^3$ and the extension of our work with translations is not too difficult to make rigorous. Following our natrual inclination, it is justified to write any $g\in E_3$ as  $g = R(\alpha,\beta,\gamma)T_b$ for some rotation in $SO(3)$ and some translation in $T_3 = \{T_b \mid b\in\R^3\}$. We summarize the main results of our generators of $E_3$ with the following statements: If $\{J_x,J_y,J_z\}$ are the generators of $SO(3)$ and $\{P_x,P_y,P_z\}$ are the generators of $T_3$, then
+
+
+
+\begin{equation}
+\begin{aligned}
+	T_b = e^{-ib_1P_x}e^{-ib_2P_y}e^{-ib_3P_z}
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	R(\alpha,\beta,\gamma) = e^{-i\alpha J_z}e^{-i\beta J_y}e^{-i\gamma J_z}
+\end{aligned}
+\end{equation}	
+
+We imbed the action of a transformation in $E_3$ into $GL_4(\R)$ by adding an additional component to every vector in $\R^3$ (setting it to $1$) and taking a matrix of this form:
+
+\begin{equation}
+\begin{aligned}
+	x' =
+	\begin{bmatrix}
+		\underset{3\times 3}{R(\alpha,\beta,\gamma)} & \underset{3\times 1}{b}\\
+		\underset{1\times 3}{0} & 1
+	\end{bmatrix} x
+\end{aligned}
+\end{equation}
+
+giving our generators explicit matrix form in the way we expect.
+
+Therefore, it is straightforward to compute the following commutation relations:
+
+\begin{equation}
+\begin{aligned}
+	[P_k,P_l] = 0 \hspace{3mm} \forall k,l\in \{x,y,z\}
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	[J_k,J_l] = \begin{cases}
+					0 & \text{if } k = l\\
+					isign(klm)J_m & else
+					\end{cases}
+\end{aligned}
+\end{equation}
+where $m$ is the remaining label for the unused generator in the commutator.
+\begin{equation}
+\begin{aligned}
+	[P_k,J_l] = \begin{cases}
+					0 & \text{if } k = l\\
+					isign(klm)P_m & else \end{cases}
+\end{aligned}
+\end{equation}
+where $m$ is the unused label not in the commutator.
+
+It is worth nothing that the subgroup generated by translations is abelian and therefore forms an invariant subgroup of $E_3$ (as is expected). As a result of this, we explicitly argue that for any rotation $R\in SO(3)$ and translation $T_b\in T_3$,
+\begin{equation}
+\begin{aligned}
+	RT_bR^{-1} = T_{b'}
+\end{aligned}
+\end{equation}
+where $b' = Rb$. We arrive at the above by following the same technique established in $E_2$ above.
+
+Further, it is acceptable to decompose any element in $E_3$ as a composition of a pure rotation and a pure translation:
+
+\begin{equation}
+\begin{aligned}
+	g\in E_3 \Rightarrow g = R(\alpha,\beta,\gamma)T_b\text{ for some } b\in\R^3, R\in SO(3)
+\end{aligned}
+\end{equation}
+
+As we continue, we begin our descent into the familiar universal enveloping algebra of our Lie group, we identify each of the generators with its corresponding element. Now that we have more elements to work with, we can actually identifiy two useful Casimir elements in $A_\mathfrak{e_2}$: $\mathfrak{P^2}\coloneq (\mathfrak{P}_x)^2 + (\mathfrak{P}_y)^2 + (\mathfrak{P}_z)^2$ and $\mathfrak{J}* \mathfrak{P} \coloneq \mathfrak{J}_x\mathfrak{P}_x +\mathfrak{J}_y\mathfrak{P}_y + \mathfrak{J}_z\mathfrak{P}_z$.
+
+$\mathfrak{P^2}$ commutes with all the translational generators trivially, and it can be shown to commute with the rotational generators.
+$\mathfrak{J}*\mathfrak{P}$ can also be shown to commute with the rotational generators, and we will explicitly show that it commutes with the translational generators for the following reason:
+\begin{equation}
+\begin{aligned}
+ [\mathfrak{J}_x\mathfrak{P}_x+\mathfrak{J}_y\mathfrak{P}_y+\mathfrak{J}_z\mathfrak{P}_z, \mathfrak{P}_k] = [\mathfrak{J}_x,\mathfrak{P}_k]\mathfrak{P}_x + [\mathfrak{J}_y,\mathfrak{P}_k]\mathfrak{P}_y + [\mathfrak{J}_z,\mathfrak{P}_k]\mathfrak{P}_z = i\mathfrak{P}_k\mathfrak{P}_m-i\mathfrak{P}_m\mathfrak{P}_k = 0
+\end{aligned}
+\end{equation}
+where $k$ is a label in $\{x,y,z\}$ and $m$ is a label not equal to $k$ that is determined by the choice of $k$.
+
+Since $T_3$ is a nice abelian subgroup, we can look to the well defined quotient group $E_3/T_3$ for inspiration. As it turns out, this quotient group is isomorphic to $SO(3)$ and as a result, we can take the irreducible representations that we defined in terms of the half and whole non-negative integers.
+
+$$\psi_j: E_3 \rightarrow GL_{2j+1}(\C)$$
+$$g(R(\alpha,\beta,\gamma), T_b) \mapsto \phi_j(R(\alpha,\beta,\gamma))$$
+
+However, since pure translation get mapped to the identity, our image of Casimir elements through these maps will have eigenvalue of zero. In order to make use of the Casimir elements, we will need to use a new method for finding invariant subspaces. In order to accomplish this, we introduce a new definition.
+
+\begin{definition}
+	Let $G$ be a group, $N$ be a normal subgroup, $\phi$ be a representation of $G$, and $V$ be the underlying vector space of the representation. Then for any $v\in V$, the \textbf{little group} of $v$ is the subgroup of $G/N$ who's image under $\phi$ leave $v$ invariant.
+\end{definition}
+
+Using this new idea and the quotient group $E_3/T_3$, we can find representations for a non-zero eigenvalue of our Casimir elements. Let us consider the following set of mutually commuting elements of $A_\mathfrak{e_2}$, $\{\mathfrak{P^2},\mathfrak{JP},\mathfrak{P}_x,\mathfrak{P}_y,\mathfrak{P}_z\}$. Let $\psi$ be an irreducible representation. We will work to create a basis of simultaneous eigenvectors of these operators. First, we select a vector that we will use as a starting point. We choose the vector $p_0 \coloneq \mu e_z$, the length $\mu$ vector pointing in the direction of the $z$-axis. The little group of this vector under $\psi$ must be the group of all rotations about the $z$-axis, since these are the only elements of $E_3/T_3$ that leave the the vector unchanged. Therefore, the little group is isomorphic to $SO(2)$, which we have already documented the irreducible, unitary representations for. These irreducible representations are labeled by integers, which we denote by $\lambda$, corresponding to the eigenvalues of $\psi_{\mathfrak{J}_z}$. Further, this vector is an eigenvector of all three translation generators under $\psi$, where $\psi_{\mathfrak{P}_x}p_0 = \psi_{\mathfrak{P}_y}p_0 = 0$ and $\psi_{\mathfrak{P}_z}p_0 = \mu_z p_0$. Therefore, taking the Casimir elements image under the representation yields the following observations:
+
+\begin{equation}
+\begin{aligned}
+	\psi_{\mathfrak{JP}}p_0 &= (\psi_{\mathfrak{J_x}}\psi_{\mathfrak{P_x}} + \psi_{\mathfrak{J_y}}\psi_{\mathfrak{P_y}} + \psi_{\mathfrak{J_z}}\psi_{\mathfrak{P_z}})p_0 \\
+							&= \mu_z \psi_{\mathfrak{J_z}}p_0 \\
+							&= \mu_z\lambda p_0
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	\psi_{\mathfrak{P}^2}p_0 &= (\psi_{\mathfrak{P_x}}\psi_{\mathfrak{P_x}} + \psi_{\mathfrak{P_y}}\psi_{\mathfrak{P_y}} + \psi_{\mathfrak{P_z}}\psi_{\mathfrak{P_z}})p_0 \\
+							&= \mu_z^2p_0
+\end{aligned}
+\end{equation}
+
+Since these operators commute with all others in the image of the representation, these eigenvalues are valid for any vector in the space. Each choice of the scalar $\mu_z$ and the representation label for $SO(2)$ ($\lambda$) completely specifies our representation. In this way, we characterize some images under specific elements of $E_3$.
+
+\begin{equation}
+\begin{aligned}
+	\psi(R_z(\theta)) p_0 = e^{-i\lambda\theta}p_0
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	\psi(T_b(\theta)) p_0 = e^{-i\mu b_3}p_0
+\end{aligned}
+\end{equation}
+
+We can construct the rest of our vector space by using rotations that are not in the little group of our standard vector, $R(\alpha,\beta,0)$ for $\alpha$,$\beta$ in their respective ranges. When we do this, our generalized position vector takes on nontrivial $x$ and $y$ components to give us nontrivial eigenvalues for the image of corresponding translator generators. Regardless, the little group of our shifted vector is still isomorphic to $SO(2)$ and we can still use the same reasoning to make the following generalized conclusions. If $p$ is any vector pointing in the direction governed by the cylindrical angles $\phi$ and $\theta$,
+
+\begin{equation}
+\begin{aligned}
+	\psi(T_b) p = e^{-ib_1\mu_x}e^{-ib_2\mu_y}e^{-ib_3\mu_z}p
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	\psi(R(\alpha,\beta,\gamma)) p = e^{-i\lambda\xi}p'
+\end{aligned}
+\end{equation}
+where $p' = R(\alpha,\beta,\gamma)p$, the cylindrical angles of $p'$ are $\theta'$ and $\phi'$, and $\xi$ is the angle ascertained from the equation $R(0,0,\theta)=R(\phi',\theta',0)^{-1}R(\alpha,\beta,\gamma) R(\phi,\theta,0)$. This construction explicitly gives us our irreducible unitary representations as desired. We can construct the corresponding matrices explicitly using this formulation. All we need to do is fix our $\lambda$ and our eigenvalue of $P_z$.

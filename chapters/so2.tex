@@ -1,0 +1,404 @@
+\chapter{$SO(2)$: The Rotation Group in Two Dimensions}\label{so2}
+
+$SO(2)$ is a group whose elements correspond to the action of rotating vectors in two-dimensional space about some central point. Although its construction can be more generalized, we can glean the most important features of the group's structure are not altered in any meaningful way when care is exercise. That said, throughout this discussion, we will develop the structure of $SO(2)$ with the assumptions that rotations (elements) act on real-valued two-dimensional vectors emanating from the origin. The way we will distinguish rotations will be by the measure of the angle (traditionally denoted by $\theta$) rotated in the counter-clockwise direction. Consequently, $\theta$ will always be real-valued. Rotations will occur about the origin. Unless otherwise specified, we will always take $\{e_1,$ $e_2\}$ to be an orthonormal basis of $\R^2$. This chapter follows the structure laid out in Wu-Ki Tung's \textit{Group Theory in Physics}.\cite{Tung}
+
+\section{Construction and Properties}
+
+To begin, consider $\R^2$ as a the natural two-dimensional vector space. Let $(x,y)\in\R^2$. Then any rotation of this vector by some angle, $\theta$, in the manner described above will change the coordinates. If we refer to this new, rotated vector as $(x',y')$, we can visualize this action.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=1]
+	                %\draw[step=1cm ,color=gray] (-4,-4) grid (4,4);
+			\draw[thin,<->] (-4.1,0) -- (4.1,0) node[anchor=north west] {$e_1$};
+			\draw[thin,<->] (0,-4.1) -- (0,4.1) node[anchor=south west] {$e_2$};
+			\draw[fill=black] (0,0) coordinate (o);
+			\draw[thick, ->] (0,0) -- (2,3) coordinate (a) node[anchor=south west] {$(x,y)$};
+			\draw[thick, ->] (0,0) -- (-3,2) coordinate (b) node[anchor=south] {$(x',y')$};
+			\pic [draw, ->, angle eccentricity=0.7, angle radius=0.8cm, "$\theta$"]{angle=a--o--b};
+	\end{tikzpicture}
+	\caption{Rotation of a generic vector in $\R^2$ by angle $\theta$}
+\end{figure}
+
+For a more intuitive understanding of the action, we can turn our attention to the polar coordinates corresponding to these two vectors. Letting $r = \sqrt{x^2 + y^2}$, we can see that the polar form of these vectors can be written in the following way:
+\begin{center}
+	$\begin{aligned}
+		(x,y) &\leftrightarrow (r,\psi)\\
+		(x',y') &\leftrightarrow (r,\psi+\theta)
+	\end{aligned}$
+\end{center}
+where $\psi$ is the angle that the vector $(x,y)$ makes with the positive $e_1$-axis. Through use of trigonometric identities, we can observe the following equations hold true:
+\begin{equation}
+	\begin{aligned}
+		x' &= r\cos(\psi+\theta) = r\left(\cos(\psi)\cos(\theta) - \sin(\psi)\sin(\theta)\right) = x\cos(\theta) -y\sin(\theta)
+	\end{aligned}
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+		y' &= r\sin(\psi+\theta) = r\left(\cos(\psi)\sin(\theta) + \sin(\psi)\cos(\theta)\right) = x\sin(\theta) +y\cos(\theta)
+	\end{aligned}
+\end{equation}	
+
+We can see that the rotated coordinates are completely determined by the originial coordinates and the angle of rotation. With the use of matrix algebra, we can combine (2.1) and (2.2) into 
+
+\begin{equation}
+	\begin{aligned}
+		\begin{bmatrix}
+			x' \\
+			y'
+		\end{bmatrix} &=
+		\begin{bmatrix}
+			\cos(\theta) & -\sin(\theta) \\
+			\sin(\theta) & \cos(\theta)
+		\end{bmatrix}
+		\begin{bmatrix}
+			x \\
+			y
+		\end{bmatrix}
+	\end{aligned}
+\end{equation}
+
+While this matrix algebra is useful, its construction is somewhat ad-hoc. Questions about the well-defined nature of this relationship are bound to be raised. In order for us to make real use of these matrices, we must first establish a bona-fide connection between the abstract notion of a rotation and the concrete matrix that acts on vectors in $\R^2$ in the same way.
+
+We will define the group of rotations in two dimensions to be $G = \{g_\theta\}$ where $g_\theta$ represents the action of rotating vectors in $\R^2$ by angle $\theta$. It's main properties arise from physical observations, but we can give them axiomatic rigor. When rotating vectors in $\R^2$, we can see that the successive rotations by the angles $\theta_1$ and $\theta_2$ are identical to a singular rotation by the angle $\theta_1+\theta_2$. In this way, the group law must be defined in the following way: $g_{\theta_1}  g_{\theta_2} = g_{(\theta_1 + \theta_2)}$ for any $\theta_1,\theta_2\in\R$. Further, due to the abelian nature of $\R$, we can see that our group law will necessarily guarantee that $G$ is abelian:  $g_{\theta_1}  g_{\theta_2} = g_{(\theta_1 + \theta_2)}= g_{(\theta_2 + \theta_1)}= g_{\theta_2}  g_{\theta_1} \hspace{1mm}\forall \theta_1,\theta_2\in\R$. Finally, due to the physical symmetry of rotation in the path of a circle, it must be the case that $g_\theta = g_{\theta \pm 2\pi}$ for any $\theta \in \R$. The last property suggests that while $G$ is clearly an infinite group, the physical rotation corresponding to each of its elements is not unique. With these key ideas in mind we will establish the link between $G$ and the set of matrices defined in (2.3).
+
+\begin{theorem}
+	Let $G/(g_{2\pi})$ be the quotient group defined by taking equivalence classes of physical rotations of vectors in $\R^2$ by regarding rotations that differ by integer multiples of $2\pi$ as equivalent. Let $H$ be the group defined by taking the set of all matrices of the form defined in (2.3). together with the operation of matrix multiplication. Then the map $\phi$ (defined below) is an isomorphism of groups.
+$$\phi:G/(g_{2\pi})\rightarrow H$$
+$$[g_\theta] \overset{\phi}{\mapsto} \begin{bmatrix}
+			\cos(\theta) & -\sin(\theta) \\
+			\sin(\theta) & \cos(\theta)
+		\end{bmatrix}$$
+\end{theorem}
+\noindent\begin{proof} 
+
+(Homomorphism) Let $g_{\theta_1},g_{\theta_2},\in G$. Then 
+\begin{equation}
+	\begin{aligned}
+		\phi([g_{\theta_1+\theta_2]}) &= \begin{bmatrix}
+			\cos(\theta_1+\theta_2) & -\sin(\theta_1+\theta_2) \\
+			\sin(\theta_1+\theta_2) & \cos(\theta_1+\theta_2)
+		\end{bmatrix} \\
+		&\overset{\star}{=} \begin{bmatrix}
+			\cos(\theta_1) & -\sin(\theta_1) \\
+			\sin(\theta_1) & \cos(\theta_1)
+		\end{bmatrix}
+		\begin{bmatrix}
+			\cos(\theta_2) & -\sin(\theta_2) \\
+			\sin(\theta_2) & \cos(\theta_2)
+		\end{bmatrix}\\
+		&= \phi([g_{\theta_1}])\phi([g_{\theta_2}])
+	\end{aligned}
+\end{equation}
+where a more detailed expansion for the starred($\star$) equality can be found in Example (1.4).
+
+(Injective) Suppose $\phi([g_\theta]) = I_2$. Then $\cos(\theta) = 1$ and $\sin(\theta) = 0$. This means that $\theta = 2\pi n$ for $n\in\Z$. Therefore, $ker(\phi) = \{[0]\}$. Note: if we instead used the group of rotations itself as our domain, we would not have a trivial kernel, since all interger multiples of $2\pi$ would have rotations that get mapped to $I_2$. For one-to-one correspondence to occur, we need to focus our attention on the quotient group (which is physically acceptable).
+
+(Surjective) Let $\begin{bmatrix}
+			\cos(\theta) & -\sin(\theta) \\
+			\sin(\theta) & \cos(\theta)
+		\end{bmatrix}\in H$. Then clearly, $\theta$ is real-valued and $g_\theta\in G$ is a well-defined rotation. Then $[g_\theta]$ is the coset of $g_\theta$ and as a result, $[g_\theta] \overset{\phi}{\mapsto} \begin{bmatrix}
+			\cos(\theta) & -\sin(\theta) \\
+			\sin(\theta) & \cos(\theta)
+		\end{bmatrix}$. Therefore, $im(\phi) = H$.
+
+Thus, $\phi$ is an isomorphism of groups. \end{proof}
+
+
+Through this interpretation, we are justified in viewing any rotation, by angle $\theta$, as the result of a matrix multiplication. Although our map is defined on the quotient group, we can see that we lose no information for angle values outside of the range $[0,2\pi)$. That is, we can always use the equivalence of rotations in $G$ that are off by $\pm 2\pi n$ to do our algebra exclusively in the $[0,2\pi)$ range. We will refer to the matrices in $H$ as $R(\theta)$, or $R_\theta$ interchangeably, $\theta$ is the angle by which we rotate vectors of $\R^2$. 
+
+Due to the isomophic nature of $G/(g_{2\pi})$ and $H$, $H$ inherets most of the properties of $G$. It turns out that $H$ is abelian and periodic in $\theta$ (the latter was already known by using properties of trigonometric functions). We can observe some other interesting properties about $H$ through the lens of $G$.
+
+\begin{definition}
+	Let $M$ be an $n\times n$ matrix. $M$ is said to be an \textbf{orthogonal matrix} if $$MM^\intercal=I_n$$
+\end{definition}
+
+\begin{theorem}
+	For any $\theta$, $R(\theta)$ is an orthogonal matrix.
+\end{theorem}
+\noindent\begin{proof} It would not be difficult to use a matrix product argument. However, in the spirit of the isomorphism, we will use $\phi$ from Theorem (2.1) to articulate the argument. It is clear that for any $g_\theta \in G$, $g_\theta^{-1} = g_{-\theta}$. Therefore, $[g_\theta]^{-1} = [g_{-\theta}]$. So, for any $\theta$, 
+\begin{equation}
+	\begin{aligned}
+		I_2 &= \phi([g_\theta][g_\theta]^{-1})\\
+		 &= \phi([g_\theta][g_{-\theta}]) \\ 
+		 &= \phi([g_\theta])\phi([g_{-\theta}])\\
+		 &= \begin{bmatrix}
+			\cos(\theta) & \sin(\theta) \\
+			-\sin(\theta) & \cos(\theta)
+		\end{bmatrix}
+\begin{bmatrix}
+			\cos(\theta) & -\sin(\theta) \\
+			\sin(\theta) & \cos(\theta)
+		\end{bmatrix}\\
+		 &= R(\theta)R(\theta)^\intercal
+	\end{aligned}
+\end{equation}
+where the computation of $\phi([g_{-\theta}])$ uses the facts that cosine is an even function and sine is an odd function. Therefore, $R(\theta)^{-1} = R(\theta)^\intercal$. \end{proof}
+
+While not explicitly stated previously, rotations are practically understood to be an action that preserves a vector's magnitude. More rigorously put, if $(x,y)$ is rotated to the vector $(x',y')$, $x^2+y^2 = x^{\prime^2}+y^{\prime^2}$. The matrices in $H$ also satisfy this property. After a vector in $\R^2$ is multiplied by a matrix in $H$, its magnitude is preserved. This property is both a result of the orthogonal nature of these matrices and another property which we will explore below.
+
+\begin{definition}
+	Let $M$ be an $n\times n$ matrix. $M$ is said to be \textbf{special} if $$\det(M)=1$$
+\end{definition}
+
+\begin{theorem}
+	For any $\theta$, $R(\theta)$ is a special matrix.
+\end{theorem}
+\noindent\begin{proof}
+\begin{equation}
+	\begin{aligned}
+		\det(R(\theta)) &= \cos^2(\theta) - (-\sin^2(\theta)) &= 1 \hspace{1mm} 
+	\end{aligned}
+\end{equation}
+\end{proof}
+
+Given that elements of the group $H$ are special, orthogonal matrices that act as rotations on $\R^2$, it seems fitting that we give this group a more explicit name. We call this group $SO(2)$, and we will henceforth treat its elements as the rotations that we discussed in the construction of our group $G$. $SO(2)$ is our two-dimensional rotation group.
+
+Since $SO(2)$ is clearly an infinite group, it would be incredibly helpful to determine its generators (if any exist). As it turns out, $SO(2)$ has more structure than we have already covered which will be useful to determining if a generator exists.
+
+\begin{definition}
+	A \textbf{Lie Group} is a group that is a finite-dimensional smooth manifold in which the operations of multiplication and inversion are differentiable.
+\end{definition}
+
+It turns out that $SO(2)$ is actually a Lie Group. This comes from the idea that as we smoothly vary the parameter for $\theta$, the matrices $R(\theta)$ also vary smoothly (arising from the differentiability of the sine and cosine). If there were to be a generator for this group, it would have to be a generator that represents an arbitrarily small rotation.
+
+Consider then a rotation by angle $d\theta$ (arbitrarily small). The element in $SO(2)$ corresponding to this rotation would need to differ from the identity matrix by an arbitrarily small amount. In other words:
+
+\begin{equation}
+	\begin{aligned}
+		R(d\theta) \coloneq I_2 + (-i)d\theta  J
+	\end{aligned}
+\end{equation}  
+
+\noindent where $J$ is some fixed matrix, the factor of $-i$ is given as a convention, and the factor of $d\phi$ forces the change to $I_2$ to be arbitrarily small. It will turn out that $J$ will be the generator of our group. With this in mind, for any $\theta$, we can make the following observations:
+
+\begin{equation}
+	\begin{aligned}
+		R(\theta + d\theta) = R(\theta)R(d\theta) = R(\theta)\left(I_2 + (-i)d\phi * J\right) = R(\theta) - id\theta R(\theta)J
+	\end{aligned}
+\end{equation}  
+\begin{equation}
+	\begin{aligned}
+		R(\theta + d\theta) = R(\theta) + \frac{d}{d\theta}R(\theta)d\theta
+	\end{aligned}
+\end{equation}  
+
+Combining these two equations, we uncover the differential equation:
+
+\begin{equation}
+	\begin{aligned}
+		\frac{d}{d\theta}R(\theta) = - i R(\theta)J
+	\end{aligned}
+\end{equation}  
+
+This differential equation can be converted into an initial value problem using the following condition: $R(0) = I_2$. This initial value problem has the solution
+
+\begin{equation}
+	\begin{aligned}
+		R(\theta) = e^{-i\theta J} = \sum_{n=0}^\infty \frac{(-i\theta J)^n}{n!}
+	\end{aligned}
+\end{equation}  
+
+\noindent where we interpret our solution in the following way:
+
+\begin{equation}
+	\begin{aligned}
+		e^{-i\theta J} = \sum_{i=0}^\infty \frac{\left(-i\theta J\right)^n}{n!} = I_2 -i\theta J - \frac{\theta^2}{2} J^2 + \frac{i\theta^3}{3!}J^3 \hdots 
+	\end{aligned}
+\end{equation}  
+
+Given this formulation, we say that $J$ is the generator of $SO(2)$, since any rotation matrix can be written in terms of this exponential. We can explicitly compute this matrix given its relationship outlined in Equation (2.7). Letting $J = [j]_{ij}$,
+
+\begin{equation}
+	\begin{aligned}
+		\begin{bmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{bmatrix} + (-i)d\theta * \begin{bmatrix}
+			j_{11} & j_{12} \\
+			j_{21} & j_{22}
+		\end{bmatrix} = R(d\theta) = \begin{bmatrix}
+			\cos(d\theta) & -\sin(d\theta) \\
+			\sin(d\theta) & \cos(d\theta)
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 & -d\theta \\
+			d\theta & 1
+		\end{bmatrix}
+	\end{aligned}
+\end{equation}
+
+When comparing both sides entry by entry, we see that 
+
+\begin{equation}
+	\begin{aligned}
+		J = \begin{bmatrix}
+			0 & -i \\
+			i & 0
+		\end{bmatrix}
+	\end{aligned}
+\end{equation}
+
+This matrix turns out to have the property that its square is the identity, making expansion in (2.12) much simpler.
+
+\begin{equation}
+	\begin{aligned}
+		R(\theta) = \hdots = I_2 -i\theta J - \frac{\theta^2}{2} I_2 + \frac{i\theta^3}{3!}J \hdots = I_2 \cos(\theta) -iJ \sin(\theta) 
+	\end{aligned}
+\end{equation}
+
+In this fashion, we can express any rotation matrix in $SO(2)$ in terms of the generator. \\
+
+While this construction for rotation matrices is satisfactory, we can recast these concepts when considering these matrices as their corresponding linear operators. Letting $U_\theta$ be the linear operator corresponding to the matrix $R(\theta)$, we construct a generator for the group of rotation operators with the following assertion
+
+\begin{equation}
+	\begin{aligned}
+		U_{d\theta} \coloneq I + (-i)d\theta * J
+	\end{aligned}
+\end{equation}  
+
+\noindent where $J$ can be shown to be the generator of the group of operators. Tracing the steps, we see that 
+
+\begin{equation}
+	\begin{aligned}
+		U_\theta = e^{-i\theta J} = \sum_{i=0}^\infty \frac{(-i\theta J)^n}{n!}
+	\end{aligned}
+\end{equation}  
+
+%Unfortunately, since we do not have an explicit formula (or do we? J(v1,v2) = (iv1,-iv2) ? Ask Prof.)
+
+We will use this formulation extensively in the next section.
+
+
+\section{Irreducible Representations for $SO(2)$}
+
+In the previous section, we illustrated many properties of $SO(2)$, including the fact that is is abelian. According to Corrolary (1.24), this means that all irreducible representations must be degree one. Recalling that in order for a representation to be irreducible, the only invariant subspaces must be trivial, we naturally turn our attention to eigenvalues of our generator operator. Let $v$ be an eigenvector of $J$ corresponding to eigenvalue $\lambda$. Then for any rotation operator, $U_\theta$,
+
+
+\begin{equation}
+	\begin{aligned}
+		U_\theta (v) = \left(\sum_{i=0}^\infty \frac{(-i\theta J)^n}{n!}\right) (v) = \left(\sum_{i=0}^\infty \frac{(-i\theta \lambda)^n}{n!}\right)v = \left(e^{-i\theta \lambda}\right)v
+	\end{aligned}
+\end{equation}
+
+Therefore, $v$ is an eigenvector of every rotation operator corresponding to eigenvalue $e^{-i\theta \lambda}$. Eigenvalues serve as a great tool for constructing degree one representations. Throughout the rest of this thesis, we will always start with this as our baseline.
+We 
+It can clearly be seen that for any two rotation operators, $U_{\theta_1}$ and $U_{\theta_2}$,  
+\begin{equation}
+	\begin{aligned}
+		U_{\theta_1}(U_{\theta_2}(v)) = U_{\theta_1}(e^{-i\theta_2 \lambda}v) = e^{-i\theta_1 \lambda}e^{-i\theta_2 \lambda}v = e^{-i(\theta_1 + \theta_2) \lambda}v = U_{\theta_1+\theta_2}(v) 
+	\end{aligned}
+\end{equation}
+showing us the group operation of composition (and therefore, corresponding matrix multiplication) respect our eigenvalues. But in order for the representation to be a true homomorphism, we need $2\pi n \mapsto 1$ for any $n\in\Z$. This quickly forces a restriction on $\lambda$ in the following way:
+
+\begin{equation}
+	\begin{aligned}
+		e^{-i2\pi n\lambda} = 1 \Rightarrow \lambda \in \Z
+	\end{aligned}
+\end{equation}
+
+With this restriction in mind, we can define an irredcible representation for $SO(2)$ with each choice of integer in the following way:
+
+$$\begin{aligned}
+	\phi_m:SO(2)\rightarrow \C \\
+	U_\theta \mapsto e^{-i\theta m} \\
+\end{aligned}$$
+
+We can also show that these representations are unitary. Consider a one dimensional inner-product space one which the matrices $\phi_m$ are defined upon. Letting $x,y\in V$, consider the following argument:
+
+\begin{equation}
+	\begin{aligned}
+		\langle \phi_m(x) , \phi_m(y) \rangle &= \langle e^{-i\theta m}x , e^{-i\theta m}y \rangle \\
+												&= e^{-i\theta m}\overline{e^{-i\theta m}} \langle x , y \rangle\\
+												&=\langle x , y \rangle
+	\end{aligned}
+\end{equation}
+
+Therefore, $\phi_m$ is unitary for every $m\in\Z$. 
+
+%Now that we have our unitary, irreducible representations, we turn our attention to casting these representations into our orthonormality and completeness conditions. However, those conditions were defined over finite groups, and the sums that characterize those conditions are not well-defined. Further, elements of $SO(2)$ are characterized by a continuous variable, making the number of elements uncountable. Any kind of natural generalization of these condition would need to utilize integration in some meaningful way. However, as of yet, integration is not well-defined either, since we have done all of our work in a group theory setting.
+
+%We must exercise care when constructing our integration. When setting up the integration, we will do so in the context of a continuous parameterization of the group elements. However, we want to ensure that the value of the integral is the same for any parameterization we choose. That is to say, for any representation, $f$, and two nonequivalent parameterizations ($\theta$ and $\psi$) of the interval $[0,2\pi]$, we should have the following:
+
+%\begin{equation}
+%	\begin{aligned}
+	%	\int_G f(g) dg = \int_0^{2\pi}f(g)\rho_{g}(\theta)  d\theta
+	%\end{aligned}
+%\end{equation}
+
+%where $\rho_g(\theta)$ is a weight function. Therefore, we can think of $dg$ as being equivalent to $\rho_g(\theta)  d\theta$. More explicitly, any integration should respect the group multiplication law. That is, for any fixed $h\in G$, we should have
+
+%\begin{equation}
+	%\begin{aligned}
+		%\int_G f(g) dg = \int_G f(g) d(hg)
+	%\end{aligned}
+%\end{equation}
+
+%To this end, we will construction "group integration" in the following way:
+
+%\begin{definition}
+	%Let $g_\theta$ parameterize group elements in $G$ and let $\rho_{g}$ be a weight function corresponding to elements of this group. This parametrization of the group and weight function are said to provide an \textbf{invariant integration measure} if for any fixed $h\in G$, $$dg = d(hg)$$ or more explicitly, $$\rho_{g}[d\theta]_g = \rho_{hg}[d\theta]_{hg}$$
+%\end{definition}
+
+%If we choose the weight function to that satisfied the following equation
+
+%\begin{equation}
+	%\begin{aligned}
+		%\rho_{g}(\theta) = \frac{[d\theta]_e}{[d\theta]_g}
+%	\end{aligned}
+%\end{equation}
+ 
+%then we can see that the above condition is quickly satisfied by the following trick:
+
+
+%\begin{equation}
+	%\begin{aligned}
+	%	\rho_g =  \frac{[d\theta]_e}{[d\theta]_g} =  \frac{[d\theta]_e}{[d\theta]_{hg}}\frac{[d\theta]_{hg}}%{[d\theta]_g} = \rho_{hg}\frac{[d\theta]_{hg}}{[d\theta]_g}
+	%\end{aligned}
+%\end{equation}
+
+%If we take $\theta$ to be the parameterization of $[0,2\pi)$ that gives us the exact value of the rotation angle, then the relationship 
+
+%\textbf{Come back and fix this utter nonsense}\\
+
+%Now that we have well defined integration, it is sensible to discuss the orthonormality and completeness relations for our irreducible (unitary) representations of $SO(2)$.
+
+%\begin{theorem}
+	%The irreducible (unitary) representaions of $SO(2)$ satisfy the following conditions:
+%\begin{equation}
+	%\begin{aligned}
+		%\frac{1}{2\pi} \int_0^{2\pi} \phi_m(\theta) \phi_n^\dag(\theta) d\theta= \begin{cases}
+			%																1 & \text{if } m=n \\
+				%															0 & \text{else}
+					%													\end{cases}\hspace{2mm} \text{Orthonormality Relation}
+%	\end{aligned}
+%\end{equation}
+%\begin{equation}
+	%\begin{aligned}
+		%\sum_{n\in\Z} \phi_n(\theta) \phi_n^\dag(\theta') = \begin{cases}
+		%																	1 & \text{if } \phi=\phi' \\
+			%																0 & \text{else}
+				%														\end{cases} \hspace{2mm} \text{Completeness Relation}
+	%\end{aligned}
+%\end{equation}
+%\end{theorem}
+
+%We can see that the orthonormality condition is clearly true since $\{e^{im\theta}\}_{m\in\Z}$ is an orthogonal set in $C([0,2\pi])$ with each function having norm $2\pi$. The completeness condition \textbf{looks very wrong and should be double checked with professor.} \\
+
+
+Are these the only irreducible representations of $SO(2)$? So far, we have defined our irreducible representations in terms of integer values. What would happen if we were to replace these integers with other numbers? For example, consider the map $\phi_{\frac{1}{2}}: U_\theta \mapsto e^\frac{i\theta}{2}$. Unfortunately, the physical implications of this map would be problematic, seeing as $\phi_\frac{1}{2}(\theta + 2\pi) \neq  \phi_\frac{1}{2}(\theta)$. However, this mapping is still periodic, with period $4\pi$. If we relax our definition of a representation, this mapping can still be of use to us.
+
+\begin{definition}
+	A \textbf{multi-valued representation} is a multi-valued mapping of a group into $GL_n(\C)$ which is a group homomorphism in the sense that at least one of the outputs (from each input) may be used to satisfy the homomorphism property.
+\end{definition}
+
+In this sense, $\phi_{\frac{1}{2}}$ is a $2$-valued representation since $\phi_{\frac{1}{2}}(U_\theta) = e^\frac{\pm i\theta}{2}$ and $\phi_{\frac{1}{2}}(U_\theta U_\psi) =  e^\frac{\pm i(\theta + \psi)}{2} =  e^\frac{\pm i\theta}{2} e^\frac{\pm i\psi}{2} = \phi_{\frac{1}{2}}(U_\theta)\phi_{\frac{1}{2}}(U_\psi)$.
+
+Thus, for any $\frac{m}{n} \in \Q$, we can define an $m$-valued representation in the following way:
+
+$$\begin{aligned}
+	\phi_\frac{m}{n}:SO(2)\rightarrow \C \\
+	U_\theta \mapsto e^\frac{-i\theta m}{n} \\
+\end{aligned}$$
+
+As it turns out, $2$-valued representations actually play a significant role in applications to physics. We will see more of this come up in later sections.
