@@ -81,10 +81,6 @@
 	\textbf{Outline}
 	\begin{enumerate}
 		\item Introduction to Representation Theory
-		\item $SO(2)$: The Rotation Group in Two Dimensions
-		\item $SO(3)$: The Rotation Group in Three Dimensions
-		\item Euclidean Groups
-		\item Lorentz and Poincar\'e Groups
 		\item Braid Group and Anyons
 	\end{enumerate}
 \end{frame}
@@ -466,852 +462,16 @@ We further generalize our notion of representations:
 $2$-valued representations will be of interest to us.
 \vfill
 \end{frame}
-%
-%
-\section{$SO(2)$: The Rotation Group in Two Dimensions}
 
-\begin{frame}
-	\sectionpage
-\end{frame}
-
-\begin{frame}
-\vfill
-$SO(2)$ is a group whose elements correspond to the action of rotating vectors in two-dimensional space about some central point. 
-\vfill
-For our discussion, we will take vectors to be in $\R^2$, rotations occuring counterclockwise about the origin. 
-\vfill
-Angle measurement will be real-valued.
-\vfill
-We will take $\{e_1,e_2\}$ to be the standard basis of $\R^2$.
-\vfill
-\end{frame}
 %
-%
-\begin{frame}
-\vfill
-If we let $(x,y)\in\R^2$ be rotated by $\theta$ into $(x',y')$, we can visualize it in the following way:
-\vfill
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[scale=0.7]
-	                %\draw[step=1cm ,color=gray] (-4,-4) grid (4,4);
-			\draw[thin,<->] (-4.1,0) -- (4.1,0) node[anchor=north west] {$e_1$};
-			\draw[thin,<->] (0,-4.1) -- (0,4.1) node[anchor=south west] {$e_2$};
-			\draw[fill=black] (0,0) coordinate (o);
-			\draw[thick, ->] (0,0) -- (2,3) coordinate (a) node[anchor=south west] {$(x,y)$};
-			\draw[thick, ->] (0,0) -- (-3,2) coordinate (b) node[anchor=south] {$(x',y')$};
-			\pic [draw, ->, angle eccentricity=0.7, angle radius=0.8cm, "$\theta$"]{angle=a--o--b};
-	\end{tikzpicture}
-	\caption{Rotation of a generic vector in $\R^2$ by angle $\theta$}
-\end{figure}
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-If we identify each point with its polar coordinates, we can make a direct calculation for $(x',y')$:
-\vfill
-\begin{equation}
-	\begin{aligned}
-		x' &= x\cos(\theta) -y\sin(\theta)
-	\end{aligned}
-\end{equation}
-\begin{equation}
-	\begin{aligned}
-		y' &= x\sin(\theta) +y\cos(\theta)
-	\end{aligned}
-\end{equation}
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Or alternatively
-\vfill
-\begin{equation}
-	\begin{aligned}
-		\begin{bmatrix}
-			x' \\
-			y'
-		\end{bmatrix} &=
-		\begin{bmatrix}
-			\cos(\theta) & -\sin(\theta) \\
-			\sin(\theta) & \cos(\theta)
-		\end{bmatrix}
-		\begin{bmatrix}
-			x \\
-			y
-		\end{bmatrix}
-	\end{aligned}
-\end{equation}
-\vfill
-If we take all matrices of this form, we can verify that they form a group under matrix multiplication.
-\vfill
-We exercise care to ensure that we identify each rotation (modulo $2\pi$) with its corresponding matrix to show equivalence. The resulting group is $SO(2)$.
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-We can discuss some properties of $SO(2)$ matrices. Generally, we reference these matrices as $R(\theta)$
-\vfill
-\begin{theorem}
-	For any $R(\theta)\in SO(2)$, $R(\theta)$ is an orthogonal matrix.
-$$R(\theta)R(\theta)^\intercal=I_n$$
-\end{theorem}
-\vfill
-\begin{theorem}
-	For any $\theta$, $R(\theta)$ is a special matrix.
- $$\det(R(\theta))=1$$
-\end{theorem}
-\vfill
-Hence, the group is entitled the \textbf{special orthogonal group (in two dimensions)}
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-$SO(2)$ is also a special type of group called a Lie group.
-\vfill
-\begin{definition}
-	A \textbf{Lie Group} is a group that is a finite-dimensional smooth manifold in which the operations of multiplication and inversion are differentiable.
-\end{definition}
-\vfill
-Intuitively, varying the parameter of $\theta$ varies group elements smoothly. We can use this principle to construct a "generator" of sorts.
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-If we consider what the rotation matrix would be for an arbitrarily small angle, $d\theta$, we can write 
-\vfill
-\begin{equation}
-	\begin{aligned}
-		R(d\theta) \coloneq I_2 + (-i)d\theta  J
-	\end{aligned}
-\end{equation}  
-\vfill
-where the factor of $-i$ is conventionally use.
-\vfill
-$R(d\theta)$ differes from the identity matrix by a factor of $d\theta$.
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-This realization gives us two ways to calculate the instantaneous change after rotating by angle $\theta$.
-\vfill
-\begin{equation}
-	\begin{aligned}
-		R(\theta + d\theta) = R(\theta) - id\theta R(\theta)J
-	\end{aligned}
-\end{equation}  
-\begin{equation}
-	\begin{aligned}
-		R(\theta + d\theta) = R(\theta) + \frac{d}{d\theta}R(\theta)d\theta
-	\end{aligned}
-\end{equation}  
-\vfill
-Putting both equations gives us a differential equation solved by
-\vfill
-\begin{equation}
-	\begin{aligned}
-		R(\theta) = e^{-i\theta J} = \sum_{n=0}^\infty \frac{(-i\theta J)^n}{n!}
-	\end{aligned}
-\end{equation}  
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-We can explicitly solve our equation for $J$ by taking (4) explictly
-\vfill
-\begin{equation}
-	\begin{aligned}
-		\begin{bmatrix}
-			1 & 0 \\
-			0 & 1
-		\end{bmatrix} + (-i)d\theta * \begin{bmatrix}
-			j_{11} & j_{12} \\
-			j_{21} & j_{22}
-		\end{bmatrix} = R(d\theta) = \begin{bmatrix}
-			\cos(d\theta) & -\sin(d\theta) \\
-			\sin(d\theta) & \cos(d\theta)
-		\end{bmatrix} = 
-		\begin{bmatrix}
-			1 & -d\theta \\
-			d\theta & 1
-		\end{bmatrix}
-	\end{aligned}
-\end{equation}
-\vfill
-To get
-\vfill
-\begin{equation}
-	\begin{aligned}
-		J = \begin{bmatrix}
-			0 & -i \\
-			i & 0
-		\end{bmatrix}
-	\end{aligned}
-\end{equation}
-\vfill
-While $J$ is not in the group, it still is referred to as the generator of $SO(2)$ due to (7).
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Now that we have characterized the group $SO(2)$ we can find its irreducible representations. 
-\vfill
-$SO(2)$ is abelian, so all irreducible representations are degree one.
-\vfill
-We look to the invariant subspaces of our generator for motivation.
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-If $\lambda$ is an eigenvalue of $J$, then $e^{-i\theta\lambda}$ is an eigenvalue of $R(\theta)$.
-\vfill
-\begin{equation}
-	\begin{aligned}
-		R(\theta) (v) = \left(\sum_{i=0}^\infty \frac{(-i\theta J)^n}{n!}\right) (v) = \left(\sum_{i=0}^\infty \frac{(-i\theta \lambda)^n}{n!}\right)v = \left(e^{-i\theta \lambda}\right)v
-	\end{aligned}
-\end{equation}
-\vfill
-We place a restriction on our eigenvalue possibilities in order to appeal to the physical constraint:
-\begin{equation}
-	\begin{aligned}
-		e^{-i2\pi n\lambda} = 1 \Rightarrow \lambda \in \Z
-	\end{aligned}
-\end{equation}
-\vfill
-Making $\lambda\in\Z$.
-
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Therefore, we can define irreducible representations for $SO(2)$ in the following way:
-\vfill
-$$\begin{aligned}
-	\phi_m:SO(2)\rightarrow \C \\
-	R(\theta) \mapsto e^{-i\theta m} \\
-\end{aligned}$$
-\vfill
-These representations are also unitary:
-\vfill
-\begin{equation}
-	\begin{aligned}
-		\langle \phi_m(x) , \phi_m(y) \rangle &= \langle e^{-i\theta m}x , e^{-i\theta m}y \rangle \\
-												&= e^{-i\theta m}\overline{e^{-i\theta m}} \langle x , y \rangle\\
-												&=\langle x , y \rangle
-	\end{aligned}
-\end{equation}
-\vfill
-\end{frame}
-%
-%
-\section{$SO(3)$: The Rotation Group in Three Dimensions}
-\begin{frame}
-\sectionpage
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Elements of the group $SO(3)$ represents all possible ways to take the physical action or rotating a vector in three-dimensional space about some central point. 
-\vfill
-For our discussion, we will take vectors to be in $\R^3$.
-\vfill
-Angle measurement will be real-valued.
-\vfill
-We will take $\{e_1,e_2,e_3\}$ to be the standard basis of $\R^3$.
-\vfill
-There are two main ways to construct rotation matrices in $SO(3)$.
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-Method 1: Axis-Angle
-\vfill
-Let $n\in\R^3$. We will treat $n$ as an axis about which we rotate by angle $\psi$. $n$ is completely characterized by spherical coordinate angles, $\theta$ and $\phi$. We call denote rotation $R_n(\psi)$.
-\vfill
-\begin{figure}{H}
-	\centering
-	\tdplotsetmaincoords{60}{120}
-	\tdplotsetrotatedcoords{60}{45}{225}
-	\centering
-	\begin{tikzpicture}
-			[scale=1,
-				tdplot_main_coords,
-				axis/.style={->,black,thin},
-				vector/.style={-stealth,black,very thick}]
-	
-
-		%draw the axes
-		\draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
-		\draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
-		\draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
-	
-		\coordinate (O) at (0,0,0);
-		\tdplotsetcoord{P}{3}{45}{60}
-
-	%	\draw[thick,tdplot_rotated_coords,->](0,0,0)--(.5,0,0)node[anchor=west]{$x'$};
-		%\draw[thick,tdplot_rotated_coords,->](0,0,0)--(0,.5,0)node[anchor=west]{$y'$};
-		%\draw[thick,tdplot_rotated_coords,->](0,0,0)--(0,0,5)node[anchor=west]{$z'$};
-		\draw[dashed,color=red] (O)--(Pxy);
-		\draw[dashed,color=red] (P)--(Pxy);
-		%x =  y = z=2.09 r = 2.15218
-	\tdplotsetrotatedcoords{60}{45}{225}
-		\tdplotdrawarc[->,tdplot_rotated_coords,color=blue, very thick]{(0,0,0)}{0.5}{0}{360}{anchor=south west}{$\psi$};
-		\tdplotdrawarc[->]{(0,0,0)}{2.15218}{0}{60}{anchor=north}{$\theta$};
-		\tdplotsetrotatedcoords{-30}{-90}{0}
-		\tdplotdrawarc[->,tdplot_rotated_coords]{(0,0,0)}{2}{0}{45}{anchor=north east}{$\phi$};
-		\draw[->, very thick] (O) -- (P) node[anchor=south]{$n$} ;			
-	\end{tikzpicture}
-	\caption{Generic rotation in $SO(3)$ characterized by $R_n(\psi)$}		
-\end{figure}
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-There is a redundancy in this construction illustrated below
-\vfill
-\begin{figure}[H]
-	\begin{tabular}{ccccc}
-		\tdplotsetmaincoords{60}{120}
-	
-				\begin{tikzpicture}
-						[scale=0.7,
-							tdplot_main_coords,
-							axis/.style={->,black,thin},
-							vector/.style={-stealth,black,very thick}]
-				
-				
-					\coordinate (O) at (0,0,0);
-					\coordinate (r1) at (1.414,0,1);
-					\coordinate (r2) at (0,-1.414,1);
-					\coordinate (r3) at (-1.414,-0,1);
-					\coordinate (r4) at (0,1.414,1);
-					\coordinate (r5) at (1.414,0,-1);
-					\coordinate (r6) at (0,-1.414,-1);
-					\coordinate (r7) at (-1.414,0,-1);
-					\coordinate (r8) at (0,1.414,-1);
-		
-		
-					\draw[axis,color=gray] (0,0,0) -- (0,0,-2) node[anchor=west]{$-n$};
-					
-					\draw[color=gray] (r1)--(r2);
-					\draw[color=gray] (r2)--(r3);
-					\draw[color=gray] (r3)--(r4);
-					\draw[color=gray] (r4)--(r1);
-					\draw[color=gray] (r1)--(r5);
-					\draw[color=gray] (r2)--(r6);
-					\draw[color=gray] (r3)--(r7);
-					\draw[color=gray] (r4)--(r8);
-					\draw[color=gray] (r5)--(r6);
-					\draw[color=gray] (r6)--(r7);
-					\draw[color=gray] (r7)--(r8);
-					\draw[color=gray] (r8)--(r5);
-		
-					
-		
-				\end{tikzpicture}
-		&
-	\begin{LARGE}
-	$\overset{R_{-n}(2\pi-\psi)}{\leftarrow}$
-	\end{LARGE}
-	&
-	\tdplotsetmaincoords{60}{120}
-		%\tdplotsetrotatedcoords{60}{45}{225}
-				\begin{tikzpicture}
-						[scale=0.7,
-							tdplot_main_coords,
-							axis/.style={->,black,thin},
-							vector/.style={-stealth,black,very thick}]
-				
-				
-					\coordinate (O) at (0,0,0);
-					\coordinate (r1) at (1,1,1);
-					\coordinate (r2) at (-1,1,1);
-					\coordinate (r3) at (-1,-1,1);
-					\coordinate (r4) at (1,-1,1);
-					\coordinate (r5) at (1,1,-1);
-					\coordinate (r6) at (-1,1,-1);
-					\coordinate (r7) at (-1,-1,-1);
-					\coordinate (r8) at (1,-1,-1);
-		
-		
-					\draw[axis,color=black] (0,0,0) -- (0,0,2) node[anchor=west]{$n$};
-					\draw[axis,color=gray] (0,0,0) -- (0,0,-2) node[anchor=west]{$-n$};
-					\draw[color=gray] (r1)--(r2);
-					\draw[color=gray] (r2)--(r3);
-					\draw[color=gray] (r3)--(r4);
-					\draw[color=gray] (r4)--(r1);
-					\draw[color=gray] (r1)--(r5);
-					\draw[color=gray] (r2)--(r6);
-					\draw[color=gray] (r3)--(r7);
-					\draw[color=gray] (r4)--(r8);
-					\draw[color=gray] (r5)--(r6);
-					\draw[color=gray] (r6)--(r7);
-					\draw[color=gray] (r7)--(r8);
-					\draw[color=gray] (r8)--(r5);
-	
-					\tdplotsetrotatedcoords{225}{180}{0}
-	
-					\coordinate (Shift1) at (0,0,1);
-					\tdplotsetrotatedcoordsorigin{(Shift1)};
-					\tdplotdrawarc[->,tdplot_rotated_coords,color= blue, thick]{(0,0,0)}{1.414}{0}{45}{anchor=south}{$\psi$};
-	
-					\coordinate (Shift2) at (0,0,-1);
-					\tdplotsetrotatedcoordsorigin{(Shift2)};
-					\tdplotdrawarc[->,tdplot_rotated_coords,color= bluegray, thick]{(0,0,0)}{1.414}{0}{-315}{anchor=north}{$2\pi-\psi$};
-					\draw[dashed, color=black] (1.414,0,-1.5) -- (1.414,0,2);
-		
-	
-					
-		
-				\end{tikzpicture}	
-	
-	
-	&
-	\begin{LARGE}
-	$\overset{R_n(\psi)}{\rightarrow}$
-	\end{LARGE}
-	&
-	\tdplotsetmaincoords{60}{120}
-		%\tdplotsetrotatedcoords{60}{45}{225}
-				\begin{tikzpicture}
-						[scale=0.7,
-							tdplot_main_coords,
-							axis/.style={->,black,thin},
-							vector/.style={-stealth,black,very thick}]
-				
-				
-					\coordinate (O) at (0,0,0);
-					\coordinate (r1) at (1.414,0,1);
-					\coordinate (r2) at (0,-1.414,1);
-					\coordinate (r3) at (-1.414,-0,1);
-					\coordinate (r4) at (0,1.414,1);
-					\coordinate (r5) at (1.414,0,-1);
-					\coordinate (r6) at (0,-1.414,-1);
-					\coordinate (r7) at (-1.414,0,-1);
-					\coordinate (r8) at (0,1.414,-1);
-		
-		
-					\draw[axis,color=black] (0,0,0) -- (0,0,2) node[anchor=west]{$n$};
-					\draw[color=gray] (r1)--(r2);
-					\draw[color=gray] (r2)--(r3);
-					\draw[color=gray] (r3)--(r4);
-					\draw[color=gray] (r4)--(r1);
-					\draw[color=gray] (r1)--(r5);
-					\draw[color=gray] (r2)--(r6);
-					\draw[color=gray] (r3)--(r7);
-					\draw[color=gray] (r4)--(r8);
-					\draw[color=gray] (r5)--(r6);
-					\draw[color=gray] (r6)--(r7);
-					\draw[color=gray] (r7)--(r8);
-					\draw[color=gray] (r8)--(r5);
-		
-					
-		
-				\end{tikzpicture}
-	
-	
-	\end{tabular}
-	\caption{Identifying equivalent rotations about vectors pointing in opposite directions.}
-\end{figure}
-\vfill
-As a result, we restrict our parameters $\theta,\phi,\psi$ to 
-$$0\leq\psi\leq\pi, \hspace{3mm} 0\leq\theta\leq2\pi, \hspace{3mm} 0\leq\phi\leq\pi$$
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Using this convention we can evaluate a geometric identity through the lens of $SO(3)$ matrices.
-\vfill
-\begin{theorem}
-	Let $n, n'\in\R^3$ and $\psi\in[0,\pi]$. Let $R\in SO(3)$ be a rotation that takes $n$ and points it in the direction of $n'$. Then, following identity holds:
-$$R_{n}(\psi) = R^{-1}R_{n'}(\psi)R$$
-\end{theorem}
-\vfill
-We can assess the validity of this idea from the following successive images
-\vfill
-\end{frame}
 %
 
 \begin{frame}
-\vfill
-\begin{figure}[H]
-	\centering
-	\begin{tabular}{cc}
-		\includegraphics[width=0.2\textwidth]{Rnpsi1.png}
-&
-		\includegraphics[width=0.2\textwidth]{Rnpsi2.png}
-	\end{tabular}
-	\caption{Theorem 29: $R_n(\psi)$}
-\vfill
-\end{figure}
-\vfill
-
-\begin{figure}[H]
-	\centering
-
-	\begin{tabular}{cccc}
-		\includegraphics[width=0.2\textwidth]{RRnR1.png}
-		&
-		\includegraphics[width=0.2\textwidth]{RRnR2.png}
-		&
-		\includegraphics[width=0.2\textwidth]{RRnR3.png}
-		&
-		\includegraphics[width=0.2\textwidth]{RRnR4.png}
-
-	\end{tabular}
-	\caption{Theorem 29: $R^{-1}R_{n'}(\psi)R$}
-\end{figure}
-\vfill
+	\begin{block}{Strategy 1}
+		Look for eigenvalues of generators (one-dimensional representations)
+	\end{block}
 \end{frame}
-
 \begin{frame}
-\vfill
-A direct consecuence of this is 
-\vfill
-\begin{theorem}
-	All rotations (about any axis) by a fixed angle $\psi$ share a conjugacy class (denoted $C_\psi$).
-\end{theorem}
-\vfill
-We can now use our first method of classifying rotations in $SO(3)$ to help build a new way to classify them
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Method $2$: Euler Angles
-\vfill
-\begin{definition}
-	Let $(x,y,z)$ be the fixed frame and let $(x',y',z')$ be any rotated frame. Then this rotation's \textbf{Euler Angles} decompose the rotation in the following way:
-$$R(\alpha,\beta,\gamma) \coloneq R_{z'}(\gamma)R_n(\beta)R_z(\alpha)$$
-where $n$ points in the direction defined by the intersection of the $xy$ and $x'y'$ planes (or equivalently, the $z\times z'$ direction). Note: we use the subscript $z$ and $z'$ as a shorthand to mean the $z$-axis and $z'$-axis.
-\end{definition}
-\vfill
-We can see this idetification in the following successive images:
-\end{frame}
-
-\begin{frame}
-\vfill
-\begin{columns}[T]
-\begin{column}{0.3\textwidth}
-	\begin{figure}[H]
-		\centering
-		\tdplotsetmaincoords{60}{200}
-		\tdplotsetrotatedcoords{60}{45}{225}
-		\begin{tikzpicture}
-				[scale=1,
-					tdplot_main_coords,
-					axis/.style={->,black,thin},
-					vector/.style={-stealth,black,very thick}]
-			\draw[axis,color=gray] (0,0,0) -- (1,0,0) node[anchor=south]{$x$};
-			\draw[axis,color=gray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-			\draw[axis] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
-			\draw[axis,color=blue] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=south west]{$z'$}; 
-			\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
-			\draw[axis,color=red] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$n$};
-			\tdplotdrawarc[->]{(0,0,0)}{1.2}{0}{315}{anchor=north}{$\alpha$};
-		\end{tikzpicture}
-		\caption{Euler Angles: Rotating Fixed Frame about $z$-axis by $\alpha$}
-	\end{figure}
-\begin{figure}[H]
-	\centering
-	\tdplotsetmaincoords{60}{200}
-	\tdplotsetrotatedcoords{45}{90}{90}
-	
-	\begin{tikzpicture}
-			[scale=1,
-				tdplot_main_coords,
-				axis/.style={->,black,thin},
-				vector/.style={-stealth,black,very thick}]
-		\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=north]{$x$};
-		\draw[axis,color=black] (0,0,0) -- (-0.5,-0.5,0.70711) node[anchor=south]{$x'$};
-		\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-		\draw[axis,color=wildwatermelon] (0,0,0) -- (0.5,0.5,0.70711) node[anchor=south east]{$y'$};
-		\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
-		\draw[axis,color=cobalt] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$}; 
-		\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
-	
-	
-		\tdplotdrawarc[->,color=lightgray]{(0,0,0)}{1.2}{0}{315}{anchor=north west}{$\alpha$};
-		\tdplotdrawarc[<-,tdplot_rotated_coords,color=classicrose]{(0,0,0)}{1.2}{0}{90}{anchor=north west}{$\beta$};
-		\tdplotsetrotatedcoords{135}{90}{180}
-		\tdplotdrawarc[->,tdplot_rotated_coords,color=columbiablue]{(0,0,0)}{1.2}{0}{315}{anchor=south}{$\gamma$};
-	
-	\end{tikzpicture}
-	\caption{Euler Angles: Rotated Frame}
-\end{figure}
-
-\end{column}
-	
-\begin{column}{0.3\textwidth}
-	\begin{figure}[H]
-		\centering
-		\tdplotsetmaincoords{60}{200}
-		\tdplotsetrotatedcoords{45}{90}{90}
-		\begin{tikzpicture}
-				[scale=1,
-					tdplot_main_coords,
-					axis/.style={->,black,thin},
-					vector/.style={-stealth,black,very thick}]
-			\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=south]{$x$};
-			\draw[axis,color=black] (0,0,0) -- (0.7071,-0.7071,0) node[anchor=north]{$x$};
-			\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-			\draw[axis,color=black] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
-			\draw[axis,color=blue] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$};
-			\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
-			\draw[axis,color=wildwatermelon] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$y$};
-			\tdplotdrawarc[->,color=gray]{(0,0,0)}{1.2}{0}{315}{anchor=south east}{$\alpha$};
-			\tdplotdrawarc[<-,tdplot_rotated_coords,color=red]{(0,0,0)}{1.2}{0}{90}{anchor=south west}{$\beta$};
-		\end{tikzpicture} 
-		\caption{Euler Angles: Rotating Intermediate Frame about new $y$-axis by $\beta$}
-	\end{figure}
-\begin{figure}[H]
-	\centering
-	\tdplotsetmaincoords{60}{200}
-	\tdplotsetrotatedcoords{45}{90}{90}
-	\begin{tikzpicture}
-			[scale=1,
-				tdplot_main_coords,
-				axis/.style={->,black,thin},
-				vector/.style={-stealth,black,very thick}]
-		\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=north]{$x$};
-		\draw[axis,color=black] (0,0,0) -- (-0.5,-0.5,0.70711) node[anchor=south]{$x'$};
-		\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
-		\draw[axis,color=black] (0,0,0) -- (0.5,0.5,0.70711) node[anchor=north east]{$y'$};
-		\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
-		\draw[axis,color=black] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$}; 
-		\draw[axis,color=red] (0,0,0) -- (0.707106781186548,0.707106781186548,0) node[anchor=north]{$n$}; 
-	
-		\coordinate (p1) at (1.1,1.1,0);
-		\coordinate (p2) at (-1.1,1.1,0);
-		\coordinate (p3) at (-1.1,-1.1,0);
-		\coordinate (p4) at (1.1,-1.1,0);
-		\coordinate (p5) at  (1.1,1.1,1);
-		\coordinate (p6) at (1.1,1.1,-1);
-		\coordinate (p7) at (-1.1,-1.1,-1);
-		\coordinate (p8) at (-1.1,-1.1,1);
-	
-	
-	
-		\draw[color=lightgray] (p1) -- (p2);
-		\draw[color=lightgray] (p2) -- (p3);
-		\draw[color=lightgray] (p3) -- (p4);
-		\draw[color=lightgray] (p4) -- (p1);
-		\draw[color=black] (p5) -- (p6);
-		\draw[color=black] (p6) -- (p7);
-		\draw[color=black] (p7) -- (p8);
-		\draw[color=black] (p8) -- (p5);
-		\draw[dashed,color=red,very thin] (1.1,1.1,0)--(-1.1,-1.1,0);
-	
-	\end{tikzpicture}
-
-	\caption{Euler Angles: Identifying $n$}
-
-\end{figure} 
-\end{column}
-	
-\begin{column}{0.3\textwidth}
-	\begin{figure}[H]
-		\centering
-		\tdplotsetmaincoords{60}{200}
-		\tdplotsetrotatedcoords{45}{90}{90}
-		\begin{tikzpicture}
-				[scale=1,
-					tdplot_main_coords,
-					axis/.style={->,black,thin},
-					vector/.style={-stealth,black,very thick}]
-			\draw[axis,color=lightgray] (0,0,0) -- (0.7071,-0.7071,0) node[anchor=north]{$x$};
-			\draw[axis,color=black] (0,0,0) -- (0,0,1) node[anchor=south]{$x$};
-	
-			\draw[axis,color=cobalt] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=west]{$z'$}; %(-sqrt(2)/2,sqrt(2)/2,0)
-	
-			\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
-			\draw[axis,color=wildwatermelon] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$y$};
-	
-			\tdplotdrawarc[->,color=lightgray]{(0,0,0)}{1.2}{0}{315}{anchor=south east}{$\alpha$};
-			\tdplotdrawarc[<-,tdplot_rotated_coords,color=classicrose]{(0,0,0)}{1.2}{0}{90}{anchor=south west}{$\beta$};
-			\tdplotsetrotatedcoords{135}{90}{180}
-			\tdplotdrawarc[->,tdplot_rotated_coords,color=cobalt]{(0,0,0)}{1.2}{0}{315}{anchor=south}{$\gamma$};
-		\end{tikzpicture}
-		\caption{Euler Angles: Rotating Intermediate Frame about new $z$-axis by $\gamma$}
-	\end{figure}
-\end{column}
-\end{columns}
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-These rotations illustrate the following identities
-\vfill
-\begin{equation}
-	\begin{aligned}
-		R_{z'}(\gamma) = R_n(\beta)R_z(\gamma)R_n(\beta)^{-1}
-	\end{aligned}
-\end{equation}
-\begin{equation}
-	\begin{aligned}
-		R_n(\beta) = R_z(\alpha)R_y(\beta)R_z(\alpha)^{-1}
-	\end{aligned}
-\end{equation}
-\vfill
-Leading to the conclusion that every rotation in $SO(3)$ is characterized by:
-\vfill
-\begin{equation}
-	\begin{aligned}
-		R(\alpha,\beta,\gamma) = R_z(\alpha)R_y(\beta)R_z(\gamma)
-	\end{aligned}
-\end{equation}
-\vfill
-\end{frame}
-
-
-
-\begin{frame}
-\vfill
-We can use our knowledge of $\R^3$ to immediately build rotation matrices about the coordinate axes
-\vfill
-\begin{center}
-\begin{tabular}{ccc}
-		$R_z(\theta) = \begin{bmatrix}
-						\cos(\theta) & -\sin(\theta) & 0 \\
-						\sin(\theta) & \cos(\theta) & 0 \\
-						0 & 0 & 1 \\
-						\end{bmatrix}$
-&
-		$R_y(\theta) = \begin{bmatrix}
-						\cos(\theta) & 0& \sin(\theta) \\
-						0 & 1 & 0 \\
-						-\sin(\theta) &0& \cos(\theta) \\
-						\end{bmatrix}$
-\end{tabular}
-\end{center} \hspace{2mm}
-		$$R_x(\theta) = \begin{bmatrix}
-						1 & 0 & 0 \\
-						0 & \cos(\theta) & -\sin(\theta) \\
-						0 & \sin(\theta) & \cos(\theta) \\
-						\end{bmatrix}$$
-
-
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Putting it all together, a general rotation matrix, $R(\alpha,\beta,\gamma)$,  takes in the following form:
-$$\begin{bmatrix}
-	\cos(\alpha)\cos(\beta)\cos(\gamma) - \sin(\alpha)\sin(\gamma)& -\cos(\alpha)\cos(\beta)\sin(\gamma) -\sin(\alpha)\cos(\gamma)&  \cos(\alpha)\sin(\beta)\\
-	\sin(\alpha)\cos(\beta)\cos(\gamma) + \cos(\alpha)\sin(\gamma)& -\sin(\alpha)\cos(\beta)\sin(\gamma) +\cos(\alpha)\cos(\gamma)  &  \sin(\alpha)\sin(\beta) \\
-	-\sin(\beta)\cos(\gamma) & \sin(\beta)\sin(\gamma) & \cos(\beta)\\
-	\end{bmatrix}$$
-\vfill
-\end{frame}
-
-
-\begin{frame}
-\vfill
-Now that we have characterized the matrices in this group, we want to search for generators.
-\vfill
-We can find generators of rotations about a fixed axis in the same way as we did in $SO(2)$.
-\vfill
-\begin{center}
-\begin{tabular}{ccc}
-		$		J_x = \begin{bmatrix}
-					0 & 0 & 0 \\
-					0 & 0 & -i \\
-					0 & i & 0
-					\end{bmatrix}$
-&
-		$		J_y = \begin{bmatrix}
-					0 & 0 & i \\
-					0 & 0 & 0 \\
-					-i & 0 & 0
-					\end{bmatrix}$
-\end{tabular}
-		$$J_z = \begin{bmatrix}
-					0 & -i & 0 \\
-					i & 0 & 0 \\
-					0 & 0 & 0
-					\end{bmatrix}$$
-\end{center}
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-\begin{theorem}
-	 For any arbitrary direction, $n=(n_1,n_2,n_3)\in\R^3$, the generator, $J_n$, can be written in the following way:
-$$J_n = n_1J_x + n_2J_y + n_3J_z$$
-\end{theorem}
-\vfill
-As a result, we can write any rotation in the following equivalent ways depending on our convention:
-\begin{equation}
-	\begin{aligned}
-		R_n(\psi) = e^{-i\psi n_1J_x}e^{-i\psi n_2J_y}e^{-i\psi n_3J_z}
-	\end{aligned}
-\end{equation} 
-\begin{equation}
-	\begin{aligned}
-		R(\alpha,\beta,\gamma) = e^{-i\alpha J_z}e^{-i\beta J_y}e^{-i\gamma J_z}
-	\end{aligned}
-\end{equation} 
-\end{frame}
-
-
-\begin{frame}
-\vfill
-In order to find invariant subspaces, we seek eigenvectors of all our generators.
-\vfill
-\begin{block}{General Strategy}
-Find a set of generators that commute, and therefore, have matching eigenvalues and matching eigenvectors.
-\end{block}
-\vfill
-Unfortunately, none of our generators commute.
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-\begin{definition}
-	The \textbf{commutator} of two matrices $A$ and $B$ is defined by to be 
-$$[A,B]=AB-BA$$
-\end{definition}
-\vfill
-\begin{theorem}
-	Let $J_k,J_l \in \{J_x,J_y,J_z\}$. Consider the word $xyz$, and all 6 rearrangements of it (identifying each rearrangement with a permutation in $S_3$). Then 
-$$[J_k , J_l] = \begin{cases}
-					0 & \text{if }k = l \\
-					isign(klm)J_m& \text{else}
-					\end{cases}$$
-where $m$ is the label of the remaining generator in $\{J_x,J_y,J_z\}$.
-\end{theorem}
-\vfill
-\end{frame}
-
-
-\begin{frame}
-\vfill
 \begin{definition}
 	A \textbf{Lie Algebra} is a vector space, $\mathfrak{g}$, together with a bilinear operation, [ . , . ] that satisfies the the following identities:
 \begin{itemize}
@@ -1319,790 +479,1661 @@ where $m$ is the label of the remaining generator in $\{J_x,J_y,J_z\}$.
 	\item $[x,[y,z]] + [y,[z,x]] + [z[y,x]]= 0 $ $\forall x,y,z\in\mathfrak{g}$
 \end{itemize}
 \end{definition}
-\vfill
-$$\mathfrak{so}(3) := \{a_1J_x + a_2J_y + a_3Jz \mid a_1,a_2,a_3\in\C\}$$
-\vfill
-Does not solve our problem $\hdots$ yet.
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
 	\begin{definition}
 		The \textbf{universal enveloping algebra} of a Lie algebra is the largest embedding of Lie algebra into an algebra. 
 	\end{definition}
-\vfill
-This space is constructed as a tensor space with the commutator relations of the Lie algebra quotiented out.
-\vfill
-\begin{definition}
-	A \textbf{Casimir element} of a Lie algebra, $A$, is any element in the center of the universal enveloping algebra of $A$.
-\end{definition}
-\vfill
+	\begin{block}{Strategy 2}
+	\begin{itemize}
+	\item Embed into Lie Algebra
+	\item Embed to Universal Enveloping Algebra
+	\item Find a set of mutually commuting generators of above
+	\item Create representation on those generators
+	\end{itemize}
+\end{block}
 \end{frame}
-
 \begin{frame}
-\vfill
-Our Casimir element is one of physical significane (angular-momentum operator)
-$$\mathfrak{J^2} \coloneq (\mathfrak{J}_x \otimes \mathfrak{J}_x) \oplus (\mathfrak{J}_y \otimes \mathfrak{J}_y) \oplus (\mathfrak{J}_z \otimes \mathfrak{J}_z) = \mathfrak{J}_x^2 + \mathfrak{J}_y^2 + \mathfrak{J}_z^2$$
-\vfill
-Since $\mathfrak{J^2}$ commutes with the generators, so does its image through an irreducible representation.
-\vfill
-Schur's Theorem: 
-\begin{equation}
-	\begin{aligned}\phi_{\mathfrak{J^2}} = \lambda I_n 	\end{aligned}
-\end{equation} 
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Choose generators (by convention) $\{\mathfrak{J^2}, \mathfrak{J}_z\}$
-\vfill
-Define raising and lowering generators:
-\begin{equation}
-	\begin{aligned}
-		\mathfrak{J}_\pm = \mathfrak{J}_x \pm i\mathfrak{J}_y
-	\end{aligned}
-\end{equation} 
-\vfill
-New commutator relationships:
-\begin{equation}
-	\begin{aligned}
-		[\mathfrak{J}_z,\mathfrak{J}_+] = \mathfrak{J}_+
-	\end{aligned}
-\end{equation} 
-\begin{equation}
-	\begin{aligned}
-		[\mathfrak{J}_z,\mathfrak{J}_-] = -\mathfrak{J}_-
-	\end{aligned}
-\end{equation} 
-\begin{equation}
-	\begin{aligned}
-		[\mathfrak{J}_+,\mathfrak{J}_-] = 2\mathfrak{J}_z
-	\end{aligned}
-\end{equation} 
-\begin{equation}
-	\begin{aligned}
-		\mathfrak{J}^2 = (\mathfrak{J}_z)^2  -\mathfrak{J}_z +\mathfrak{J}_+\mathfrak{J}_- = (\mathfrak{J}_z)^2 +\mathfrak{J}_z+ \mathfrak{J}_-\mathfrak{J}_+
-	\end{aligned}
-\end{equation} 
-\end{frame}
-
-\begin{frame}
-\vfill 
-For any eigenvector $v_m$ of $\phi_{\mathfrak{J}_z}$, corresponging to eigenvalue $m$.
-\begin{equation}
-	\begin{aligned}
-		\phi_{\mathfrak{J}_z\mathfrak{J}_+}(v_m) = (m + 1)\phi_{\mathfrak{J}_+}(v_m)
-	\end{aligned}
-\end{equation} 
-\begin{equation}
-	\begin{aligned}
-		\phi_{\mathfrak{J}_z\mathfrak{J}_-}(v_m) = (m -1)\phi_{\mathfrak{J}_-}(v_m)
-	\end{aligned}
-\end{equation} 
-\vfill
-We can construct an eigenbasis of our vectorspace by repeated applications of the raising and lowering generators.
-\vfill
-This process will eventually terminate for finite degree representation.
-\vfill
-If $k$ is the last nonzero power of $\phi_{\mathfrak{J}_+}$ to $v_0$, and $s$ is the eigenvalue of $\phi_{\mathfrak{J}_+}v_{k-1}$ to the map $\phi_{\mathfrak{J}_z}$, then
-\begin{equation}
-	\begin{aligned}
-		\phi_{\mathfrak{J^2}}\phi_{\mathfrak{J}_+}^k(v_{k-1})= s(s + 1) \phi_{J_+}^kv_{k-1}
-	\end{aligned}
-\end{equation}
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-\begin{theorem}
-	The irreducible representations of the $A_{\mathfrak{so}(3)}$ are characterized by eigenvalues that take on positive integer and positive half-integers. If $\lambda$ is one such eigenvalue, then we can construct our eigenvectors, $\{v_m\}_{m=-\lambda}^\lambda$, corresponding to $\phi_{\mathfrak{J}_z}$ with eigenvalue $m$, using the raising or lowering operators. This gives us a degree $2s +1$ representation characterized by the following relationships:
-$$\phi_{\mathfrak{J}^2}(v_m) = s(s+1)v_m$$
-$$\phi_{\mathfrak{J}_z}(v_m) =  mv_m$$ 
-$$v_{m+1} =  \frac{1}{\sqrt{\lambda(\lambda+1) - m(m\pm 1)}}\phi_{\mathfrak{J}_\pm}(v_m)$$
-\end{theorem}
-\vfill
-\begin{equation}
-\begin{aligned}
-	\phi_j(R(\alpha,\beta,\gamma)) &= e^{-i\alpha\phi_{\mathfrak{J}_z}}e^{-i\beta\phi_{\mathfrak{J}_y}}e^{-i\gamma\phi_{\mathfrak{J}_z}}	
-\end{aligned}
-\end{equation}
-\vfill
-\end{frame}
-
-\section{Euclidean Groups}
-\begin{frame}
-\sectionpage
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-\begin{definition}
-	The $n$-dimensional \textbf{Euclidean Group, $E_n$,} is the group of all continuous, isometric, linear transformations on $\R^n$.
-\end{definition}
-\vfill
-For any transformation of this kind, all vectors, $x\in\R^n$, get mapped to $x'\in\R^n$ in the following way 
-$$x' = Rx + b$$
-for some fixed $R\in SO(n)$ and $b\in\R^n$.
-\vfill
-If we focus on $E_2$, we can construct an invertible matrix to represent each transformation
-
-\begin{equation}
-\begin{aligned}\begin{bmatrix}x'_1\\x'_2 \\ 1\end{bmatrix} = \begin{bmatrix}
-			\cos(\theta) & -\sin(\theta) & b_1\\
-			\sin(\theta) & \cos(\theta) & b_2 \\
-			0&0&1
-		\end{bmatrix} \begin{bmatrix}x_1\\x_2\\1\end{bmatrix}\end{aligned}
-\end{equation}
-
-\end{frame}
-
-\begin{frame}
-\vfill
-We can derive the generators of $E_2$ in the same way as we did for $SO(2)$ and $SO(3)$.
-\vfill
-Our rotational generator is the same as in $SO(2)$
-\begin{equation}
-\begin{aligned}
-J=\begin{bmatrix}
-			0 & -i & 0\\
-			i & 0 & 0 \\
-			0 & 0 & 0
-		\end{bmatrix}
-\end{aligned}
-\end{equation}
-\vfill
-Further, we can use the same process to derive the generators for translations in two directions.\vfill
-\end{frame}
-
-
-%
-%
-\begin{frame}
-If we denote $T_n$ to be the group of translations in $n$-dimensions.
-\vfill
-Starting with $T_1$, we let $T_b\in T_1$ where $b\in \R$
-\begin{equation}
-\begin{aligned}
-T_{dx} = I -idxP
-\end{aligned}
-\end{equation}
-where $P$ is our generator.
-\vfill
-We construct our system of equations:
-\begin{equation}\begin{aligned}T_{x+dx} = T_x + dx \frac{d}{dx}T_x\end{aligned}\end{equation}
-\begin{equation}\begin{aligned}T_{x+dx} = T_{dx}T_x\end{aligned}\end{equation}
-\vfill
-\end{frame}
-%%
-\begin{frame}
-\vfill
-We conclude with 
-\begin{equation}\begin{aligned}T(x) = e^{-iPx}\end{aligned}\end{equation}
-\vfill
-As we generalize to $E_2$,
-\begin{equation}\begin{aligned}P_x = \begin{bmatrix}
-			0 & 0 & i\\
-			0 & 0 & 0 \\
-			0 & 0 & 0
-		\end{bmatrix}, \hspace{3mm}P_y = \begin{bmatrix}
-			0 & 0 & 0\\
-			0 & 0 & i \\
-			0 & 0 & 0
-		\end{bmatrix}\end{aligned}\end{equation}
-\vfill
-and therefore for any $b\in\R^2$, 
-\begin{equation}\begin{aligned}T_b = e^{-ib_1P_x}e^{-ib_2P_y}\end{aligned}\end{equation}
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Some useful properties of $E_2$ include
-\vfill
-\begin{theorem}
-	For any $\theta$,$b$
-	$$R(\theta)T_bR(\theta)^{-1} = T_{R(\theta)b}$$
-\end{theorem}
-\vfill
-\begin{theorem}
-	For any $g(\theta,b)\in E_2$, there is a natural decomposition of the transformation into a pure rotation times a pure translation.
-$$g(\theta,b) = g(0,b)g(\theta,0)$$
-\end{theorem}
-\vfill
-\end{frame}
-
-
-\begin{frame}
-When discussing the search for irreducible representations, we follow the same path.
-\vfill
-Our commutator relationships:
-\begin{equation}
-\begin{aligned}
-	[P_x,P_y] = 0
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	[J,P_x] = iP_y
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	[J,P_y] = -iP_x
-\end{aligned}
-\end{equation}
-\vfill
-Our raising and lowering generators:
-\begin{equation}
-\begin{aligned}
-	P_\pm \coloneq P_x \pm iP_y
-\end{aligned}
-\end{equation}
-\vfill
-And journeying into the universal enveloping algebra, the Casimir element:
-\begin{equation}
-\begin{aligned}
-	\mathfrak{P}^2 = (\mathfrak{P}_x)^2 + (\mathfrak{P}_y)^2 = \mathfrak{P}_+\mathfrak{P}_- = \mathfrak{P}_-\mathfrak{P}_+
-\end{aligned}
-\end{equation}
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-If we let $\psi$ be our irreducible representation of our universal enveloping algebra,
-\begin{equation}
-\begin{aligned}
-	 \psi(\mathfrak{P}^2)v_m = pv_m,\hspace{3mm} p>0
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	 \psi(\mathfrak{J})v_m = mv_m, \hspace{3mm} m\in\Z
-\end{aligned}
-\end{equation}
-\vfill 
-Unfortunately, there is no termination in the construction of our basis, so we must resort to characterizing our representations by discussing their matrix elements.
-\vfill
-\end{frame}
-
-
-\begin{frame}
-\vfill
-\begin{theorem}
-	The faithful, unitary, irreducible representations of $E_2$ are characterized by the following equation defined in terms of matrix elements. If $\psi_p$ is a representation corresponding to a $p>0$, then $[\psi_p(g)]_{mm'}$ corresponds to the matrix element specified by the choice of $v_m$, $v_{m'}$, and $g$. The representations, $\psi_p$ have the following form:
-$$[\psi_p(g(\theta,b))]_{mm'} = e^{i(m-m')\phi}J_{m-m'}(pr)e^{-im\theta}$$
-where $r$ and $\phi$ are the polar coordinates for the vector $b$.
-\end{theorem}
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Regarding $E_3$, we can decompose any transformation as 
-\begin{equation}
-\begin{aligned}
-	x' =
-	\begin{bmatrix}
-		\underset{3\times 3}{R(\alpha,\beta,\gamma)} & \underset{3\times 1}{b}\\
-		\underset{1\times 3}{0} & 1
-	\end{bmatrix} x
-\end{aligned}
-\end{equation}
-\vfill
-Our generators $\{J_x,J_y,J_z,P_x,P_y,P_z\}$ as defined in $SO(3)$ and implicitly $T_3$ satisfy
-\begin{equation}
-\begin{aligned}
-	T_b = e^{-ib_1P_x}e^{-ib_2P_y}e^{-ib_3P_z}
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	R(\alpha,\beta,\gamma) = e^{-i\alpha J_z}e^{-i\beta J_y}e^{-i\gamma J_z}
-\end{aligned}
-\end{equation}	
-\vfill
-\end{frame}
-
-\begin{frame}
-\vfill
-Our commutator relations:
-\vfill
-\begin{equation}
-\begin{aligned}
-	[P_k,P_l] = 0 \hspace{3mm} \forall k,l\in \{x,y,z\}
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	[J_k,J_l] = \begin{cases}
-					0 & \text{if } k = l\\
-					isign(klm)J_m & else
-					\end{cases}
-\end{aligned}
-\end{equation}
-where $m$ is the remaining label for the unused generator in the commutator.
-\begin{equation}
-\begin{aligned}
-	[P_k,J_l] = \begin{cases}
-					0 & \text{if } k = l\\
-					isign(klm)P_m & else \end{cases}
-\end{aligned}
-\end{equation}
-\vfill
-\end{frame}
-%
-%
-\begin{frame}
-\vfill
-Useful Identities:
-\vfill
-\begin{theorem}
-For any $R\in SO(3)$, $T_b\in T_3$,
-$$RT_bR^{-1} = T_{b'}$$
-\end{theorem}
-\vfill
-\begin{theorem}
-For any $g\in E_3$, $$g = R(\alpha,\beta,\gamma)T_b\text{ for some } b\in\R^3, R\in SO(3)$$
-\end{theorem}
-\vfill
-\end{frame}
-
-\begin{frame}
-\vfill
-In the universal enveloping algebra, we actually have two Casimir operators:
-\begin{equation}\begin{aligned}\mathfrak{P^2}\coloneq (\mathfrak{P}_x)^2 + (\mathfrak{P}_y)^2 + (\mathfrak{P}_z)^2\end{aligned}\end{equation} \begin{equation}\begin{aligned}\mathfrak{J}* \mathfrak{P} \coloneq \mathfrak{J}_x\mathfrak{P}_x +\mathfrak{J}_y\mathfrak{P}_y + \mathfrak{J}_z\mathfrak{P}_z\end{aligned}\end{equation}
-\vfill
-Constructing our irreducible representations as we have done previously will result in a trivial case. Eigenvalues are no longer going to help us.
-\vfill
-\begin{definition}
+	\begin{definition}
 	Let $G$ be a group, $N$ be a normal subgroup, $\phi$ be a representation of $G$, and $V$ be the underlying vector space of the representation. Then for any $v\in V$, the \textbf{little group} of $v$ is the subgroup of $G/N$ who's image under $\phi$ leave $v$ invariant.
 \end{definition}
-\vfill
+	\begin{block}{Strategy 3}
+	\begin{itemize}
+		\item Find a nice normal subgroup, quotient out
+		\item Pick a nonzero starting vector
+		\item Find representations of the little group of said vector
+		\item Transform vector to recover remaining vectors, repeat process for general representation
+		\item We are left with the smallest invariant subspace (generated by one vector)
+	\end{itemize}
+	\end{block}
 \end{frame}
+%\begin{frame}
+%\vfill
+%$SO(2)$ is a group whose elements correspond to the action of rotating vectors in two-dimensional space about some central point. 
+%\vfill
+%For our discussion, we will take vectors to be in $\R^2$, rotations occuring counterclockwise about the origin. 
+%\vfill
+%Angle measurement will be real-valued.
+%\vfill
+%We will take $\{e_1,e_2\}$ to be the standard basis of $\R^2$.
+%\vfill
+%\end{frame}
 %
 %
-\begin{frame}
-\vfill
-\begin{block}{Strategy}
-\begin{itemize}
-	\item Find a nice normal subgroup, quotient out ($T_3$)
-	\item Pick a nonzero starting vector
-	\item Find representations of the little group of said vector
-	\item Transform vector to recover remaining vectors, repeat process for general representation
-	\item We are left with the smallest invariant subspace (generated by one vector)
-\end{itemize}
-\end{block}
-\vfill
-Let our starting choice in this case be $p_0 = \mu_ze_z$.
-\end{frame}
-
-
-\begin{frame}
-\vfill
-The only rotations that leave $p_0$ unaffected are about the $z-axis$. The little group of $p_0$ is isomorphic to $SO(2)$.
-\vfill
-The irreducible representations of $SO(2)$ are indexed by $\lambda\in\Z$.
-\begin{equation}
-\begin{aligned}\psi_{\mathfrak{J}_z}p_0 = \lambda p_0
-\end{aligned}\end{equation}
-\vfill
-Further, we have the following relationships between our other generators:
-\begin{equation}
-\begin{aligned}\psi_{\mathfrak{P}_x}p_0 = \psi_{\mathfrak{P}_y}p_0 = 0
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-\psi_{\mathfrak{P}_z}p_0 = \mu_z p_0
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	\psi_{\mathfrak{JP}}p_0 = \mu_z\lambda p_0
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	\psi_{\mathfrak{P}^2}p_0 = \mu_z^2p_0
-\end{aligned}
-\end{equation}
-\vfill
-\end{frame}
+%\begin{frame}
+%\vfill
+%If we let $(x,y)\in\R^2$ be rotated by $\theta$ into $(x',y')$, we can visualize it in the following way:
+%\vfill
+%\begin{figure}[H]
+%	\centering
+%	\begin{tikzpicture}[scale=0.7]
+%	                %\draw[step=1cm ,color=gray] (-4,-4) grid (4,4);
+%			\draw[thin,<->] (-4.1,0) -- (4.1,0) node[anchor=north west] {$e_1$};
+%			\draw[thin,<->] (0,-4.1) -- (0,4.1) node[anchor=south west] {$e_2$};
+%			\draw[fill=black] (0,0) coordinate (o);
+%			\draw[thick, ->] (0,0) -- (2,3) coordinate (a) node[anchor=south west] {$(x,y)$};
+%			\draw[thick, ->] (0,0) -- (-3,2) coordinate (b) node[anchor=south] {$(x',y')$};
+%			\pic [draw, ->, angle eccentricity=0.7, angle radius=0.8cm, "$\theta$"]{angle=a--o--b};
+%	\end{tikzpicture}
+%	\caption{Rotation of a generic vector in $\R^2$ by angle $\theta$}
+%\end{figure}
+%\vfill
+%\end{frame}
 %
 %
-\begin{frame}
-\vfill
-We then conclude that
-\vfill
-\begin{equation}
-\begin{aligned}
-	\psi(R_z(\theta)) p_0 = e^{-i\lambda\theta}p_0
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	\psi(T_b) p_0 = e^{-i\mu b_3}p_0
-\end{aligned}
-\end{equation}
-\vfill
-Now that we know the value our representation can take on this vector, let us rotate this vector $p_0$ by the rotation $R(\alpha,\beta,0)$ to $p$. 
-\vfill
-We can repeat this process, finding the eigenvalues corresponding to our generators.
-\end{frame}
-
-\begin{frame}
-\vfill
-\begin{theorem}
-The irreducible unitary representations are characterized by $\lambda\in\Z$ and the following equations:
-\begin{equation}
-\begin{aligned}
-	\psi(T_b) p = e^{-ib_1\mu_x}e^{-ib_2\mu_y}e^{-ib_3\mu_z}p
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	\psi(R(\alpha,\beta,\gamma)) p = e^{-i\lambda\xi}p'
-\end{aligned}
-\end{equation}
-where $p' = R(\alpha,\beta,\gamma)p$, the cylindrical angles of $p'$ are $\theta'$ and $\phi'$, and $\xi$ is the angle ascertained from the equation $R(0,0,\xi)=R(\phi',\theta',0)^{-1}R(\alpha,\beta,\gamma) R(\phi,\theta,0)$. 
-\end{theorem}
-\vfill
-\end{frame}
-%
-\section{Lorentz and Poincar\'e Groups}
-\begin{frame}
-\sectionpage
-\end{frame}
-
-\begin{frame}
-\vfill
-The coming spaces we will study are non-Euclidean
-\vfill
-\begin{definition}
-	An \textbf{event} is an ordered triple together with an additional parameter, meant to represent time. An event is conventionally indexed by the integers $\mu = 0,1,2,3$. Referring to an event as $x$ references the event a four (component) vector, and specifying $x^{\mu=0}$ gives us $ct$ where $c$ is the speed of light and $t$ is a time. 
-\end{definition}
-\vfill
-\begin{definition}
-	The \textbf{length} of an event is defined by the following equation:
-$$\mid x\mid^2 \coloneq (x^1)^2+(x^2)^2+(x^3)^2 - (x^0)^2 = (x^1)^2+(x^2)^2+(x^3)^2 - c^2t^2$$
-\end{definition}
-\end{frame}
+%\begin{frame}
+%\vfill
+%If we identify each point with its polar coordinates, we can make a direct calculation for $(x',y')$:
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		x' &= x\cos(\theta) -y\sin(\theta)
+%	\end{aligned}
+%\end{equation}
+%\begin{equation}
+%	\begin{aligned}
+%		y' &= x\sin(\theta) +y\cos(\theta)
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%\end{frame}
 %
 %
-\begin{frame}
-\vfill
-$$\begin{array}{c@{\hskip 1cm}c}
-
-	\underset{\text{Euclidean Norm}}{||x||^2} = x^\intercal\begin{bmatrix}
-													1 & 0 & 0 & 0\\
-													 0 & 1 & 0 & 0\\
-													0 & 0 & 1 & 0\\
-													0 & 0 & 0 & 1
-												\end{bmatrix}x
-
-&
-	\underset{\text{Length}}{|x|^2} = x^\intercal\begin{bmatrix}
-													-1 & 0 & 0 & 0\\
-													 0 & 1 & 0 & 0\\
-													0 & 0 & 1 & 0\\
-													0 & 0 & 0 & 1
-												\end{bmatrix}x
-
-\end{array}$$
-\vfill
-\begin{definition}
-	A \textbf{Homogeneous Lorentz Transformation} is a continuous, length-preserving, linear transformation defined on our space-time vector space. By convention, we refer to such maps with the variable $\Lambda$. A \textbf{Proper Homogeneous Lorentz Transformation} has a positive entry in the $00^{th}$ component of its matrix.
-\end{definition}
-\vfill
-
-\end{frame}
-
-\begin{frame}
-\vfill
-Some Proper Homogeneous Lorentz Transformation examples:
-\vfill
-Let $R\in SO(3)$, then one example could be
-\begin{equation}
-\begin{aligned}
-\begin{bmatrix}
-	1&0&0&0\\
-	0&[R]_{11}&[R]_{12}&[R]_{13}\\
-	0&[R]_{21}&[R]_{22}&[R]_{23}\\
-	0&[R]_{31}&[R]_{32}&[R]_{33}
-\end{bmatrix}
-\end{aligned}
-\end{equation}
-\vfill
-Another kind is referred to as a Lorentz Boost
-\begin{equation}
-\begin{aligned}
-	\Lambda_x = \begin{bmatrix}
-						\cosh(\xi) & \sinh(\xi) & 0 & 0 \\
-						\sinh(\xi) & \cosh(\xi) & 0 & 0 \\
-						0&0&1&0\\
-						0&0&0&1
-					\end{bmatrix}
-\end{aligned}
-\end{equation}
-\vfill
-\end{frame}
+%\begin{frame}
+%\vfill
+%Or alternatively
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		\begin{bmatrix}
+%			x' \\
+%			y'
+%		\end{bmatrix} &=
+%		\begin{bmatrix}
+%			\cos(\theta) & -\sin(\theta) \\
+%			\sin(\theta) & \cos(\theta)
+%		\end{bmatrix}
+%		\begin{bmatrix}
+%			x \\
+%			y
+%		\end{bmatrix}
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%If we take all matrices of this form, we can verify that they form a group under matrix multiplication.
+%\vfill
+%We exercise care to ensure that we identify each rotation (modulo $2\pi$) with its corresponding matrix to show equivalence. The resulting group is $SO(2)$.
+%\end{frame}
 %
 %
-\begin{frame}
-\vfill
-\begin{definition}
-	The set of all proper, homogeneous, Lorentz transformations forms the \textbf{Lorentz Group} (under matrix multiplication). This group is denoted $\overset{\sim}{L}_+$.
-\end{definition}
-\vfill
-\begin{definition}
-	The four dimensional vector space on which length of events (elements of the space) is defined as in Definition (5.2) is referred to as \textbf{Minkowski Space}. Elements of the Minkowski Space are defined to transform under Lorentz transformations in the way we expect vectors in $\R^4$ to be transformed under matrices in $GL_4(\R)$. We call the elements of the Minkowski Space four-vectors or Lorentz-vectors. We will denote the Minkowski Space by $M$.
-\end{definition}
-\vfill
-We can define a linear functional on this space that acts like an inner product on this space
-\begin{equation}
-\begin{aligned}
-	x\dot y \coloneq -x^0y^0 + x^1y^1 + x^2y^2 + x^3y^3
-\end{aligned}
-\end{equation}
-\end{frame}
-
-\begin{frame}
-\vfill
-The equation $|x|^2 = ||(x^1,x^2,x^3)||^2 - c^2t^2= 0 $ decomposes Minkowski Space in the following way:
-\vfill
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{Light cone-1}
-	\caption{Decomposition of Minkowski Space based on length}
-\end{figure}
-\vfill
-\end{frame}
+%\begin{frame}
+%\vfill
+%We can discuss some properties of $SO(2)$ matrices. Generally, we reference these matrices as $R(\theta)$
+%\vfill
+%\begin{theorem}
+%	For any $R(\theta)\in SO(2)$, $R(\theta)$ is an orthogonal matrix.
+%$$R(\theta)R(\theta)^\intercal=I_n$$
+%\end{theorem}
+%\vfill
+%\begin{theorem}
+%	For any $\theta$, $R(\theta)$ is a special matrix.
+% $$\det(R(\theta))=1$$
+%\end{theorem}
+%\vfill
+%Hence, the group is entitled the \textbf{special orthogonal group (in two dimensions)}
+%\end{frame}
 %
 %
-\begin{frame}
-\vfill
-Useful Identity in $\overset{\sim}{L}_+$:
-\begin{theorem}
-	Any $\Lambda \in \overset{\sim}{L}_+$ can be uniquely written in the following way:
-$$\Lambda = R(\theta,\phi,0)L_z(\xi)R(\alpha,\beta,\gamma)^{-1}$$
-where $L_z(\xi)$ is a Lorentz boost along the $z$-axis by angle $\xi$ and the parameters for the Euler angles of the rotations from $SO(3)$ are defined as expected.
-\end{theorem}
-\vfill
-Putting the Lorentz group together with $T_4$ gives us a new structure to study:
-\vfill
-\begin{definition}
-	The set of all compositions of translations proper homogeneous Lorentz transformations is called the \textbf{Poincar\'e Group}, denoted $\overset{\sim}{P}$
-\end{definition}
-\end{frame}
-
-\begin{frame}
-\vfill
-All transformations in the Poincar\'e group can be written as
-\begin{equation}
-\begin{aligned}
-\begin{bmatrix}
-	\underset{4\times 4}{\Lambda} & \underset{4\times 1}{b}\\
-	\underset{1\times 4}{0} & \underset{1\times 1}{1}
-\end{bmatrix}
-\end{aligned}
-\end{equation}
-\vfill
-Some Useful Identities:
-\vfill
-\begin{theorem}
-For any $g(\Lambda,b)\in\overset{\sim}{P}$
-\begin{equation}
-\begin{aligned}
-g(\Lambda,b)=T_b\Lambda
- \end{aligned}
-\end{equation}
-\end{theorem}
-\vfill
-\begin{theorem}
-For any $\Lambda \in\overset{\sim}{L}_+$ and $T_b\in T_4$,
-\begin{equation}
-\begin{aligned}
-	\Lambda T_b \Lambda^{-1} = T_{\Lambda b}
-\end{aligned}
-\end{equation}
-\end{theorem}
-\end{frame}
+%\begin{frame}
+%\vfill
+%$SO(2)$ is also a special type of group called a Lie group.
+%\vfill
+%\begin{definition}
+%	A \textbf{Lie Group} is a group that is a finite-dimensional smooth manifold in which the operations of multiplication and inversion are differentiable.
+%\end{definition}
+%\vfill
+%Intuitively, varying the parameter of $\theta$ varies group elements smoothly. We can use this principle to construct a "generator" of sorts.
+%\vfill
+%\end{frame}
 %
 %
-\begin{frame}
-\vfill
-In the pursuit of generators, we find the natural choices
-\vfill
-\begin{center}
-\begin{tabular}{cc}
-	$P_t = \begin{bmatrix}
-				0 & 0 & 0 & 0 & i \\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ &
-	$P_x = \begin{bmatrix}
-				0 & 0 & 0 & 0 & 0 \\
-				0 & 0 & 0 & 0 & i\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ \\
-	$P_y = \begin{bmatrix}
-				0 & 0 & 0 & 0 & 0 \\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & i\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ &
-	$P_z = \begin{bmatrix}
-				0 & 0 & 0 & 0 & 0 \\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & i\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$
-\end{tabular}
-\end{center}
-\vfill
-\end{frame}
-
-
-\begin{frame}
-\vfill
-\begin{center}
-\begin{tabular}{ccc}
-	$J_x = \begin{bmatrix}
-				0 & 0 & 0 & 0 & 0 \\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & -i & 0\\
-				0 & 0 & i & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ &
-	$J_y = \begin{bmatrix}
-				0 & 0 & 0 & 0 & 0 \\
-				0 & 0 & 0 & i & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & -i & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ &
-	$J_z = \begin{bmatrix}
-				0 & 0 & 0 & 0 & 0 \\
-				0 & 0 & -i & 0 & 0\\
-				0 & i & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ 
-\end{tabular}
-\end{center}
-\vfill
-And where $K_\mu$ is the generator for the Lorentz Boost along the $\mu$-axis.
-\begin{center}
-\begin{tabular}{ccc}
-	$K_x = \begin{bmatrix}
-				0 & i & 0 & 0 & 0 \\
-				i & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ &
-	$K_y = \begin{bmatrix}
-				0 & 0 & i & 0 & 0 \\
-				0 & 0 & 0 & 0 & 0\\
-				i & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ &
-	$K_z = \begin{bmatrix}
-				0 & 0 & 0 & i & 0 \\
-				0 & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-				i & 0 & 0 & 0 & 0\\
-				0 & 0 & 0 & 0 & 0\\
-			\end{bmatrix}$ 
-\end{tabular}
-\end{center}
-\vfill
-\end{frame}
-
-%
-\begin{frame}
-\vfill
-\begin{equation}
-\begin{aligned}
-	\Lambda (\omega) = e^{-i\omega_1J_x}e^{-i\omega_2J_y}e^{-i\omega_3J_x}e^{-i\omega_4K_x}e^{-i\omega_5K_y}e^{-i\omega_6K_z}
-\end{aligned}
-\end{equation}
-\vfill
-Too many commutator relationships to be concise.
-\vfill
-We define one Casimir operator to be as excpected 
-\begin{equation}
-\begin{aligned}
-	\mathfrak{C}_1 \coloneq \mathfrak{P}_t^2 -  \mathfrak{P}_x^2 -\mathfrak{P}_y^2- \mathfrak{P}_z^2
-\end{aligned}
-\end{equation}
-If $\psi$ is an irreducible representation, then we want to treat the eigenvalue of $\psi_{\mathfrak{C}_1}$ by cases in order to calculate every unitary irreducible representaion. If the eigenvalue is $\lambda$, we will calculate the representations in the case when $\lambda >0$. 
-\vfill
-\end{frame}
-
-
-\begin{frame}
-\vfill
-In this case, vectors must be time-like.
-\vfill
-Choosing starting vector $v_0\colon (\sqrt(\lambda),0,0,0)$. Our quotient group will be  $\overset{\sim}{P}/T_4 $. Little group: $SO(3)$.
-\vfill
-Representations are indicated by $s$, a half or whole integer (from $SO(3)$).  Explicitly,
-\begin{equation}
-\begin{aligned}
-	\psi_{\mathfrak{J}^2} (v_0)_m = s(s+1)(v_0)_m
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	\psi_{\mathfrak{J}_z} (v_0)_m = m(v_0)_m
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	\psi_{\mathfrak{P}_\mu} (v_0)_m = \begin{cases}
-										\sqrt{\lambda_1} & \text{if } \mu=t\\
-										0 & \text{else}
-										\end{cases}
-\end{aligned}
-\end{equation}
-where $\alpha,\beta$ are the cylindrical angles of the 
-\end{frame}
+%\begin{frame}
+%\vfill
+%If we consider what the rotation matrix would be for an arbitrarily small angle, $d\theta$, we can write 
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		R(d\theta) \coloneq I_2 + (-i)d\theta  J
+%	\end{aligned}
+%\end{equation}  
+%\vfill
+%where the factor of $-i$ is conventionally use.
+%\vfill
+%$R(d\theta)$ differes from the identity matrix by a factor of $d\theta$.
+%\end{frame}
 %
 %
-\begin{frame}
-\vfill
-We transform this starting vector with Lorentz transformations:
-\begin{equation}
-\begin{aligned}
-	v_p\coloneq H_p((v_0)_m) = R(\alpha,\beta,0)L_z(\xi)(v_0)_m
-\end{aligned}
-\end{equation}
-where $\alpha,\beta$ are the cylindrical angles of the vector $v_p$.
-\vfill
-\begin{theorem} Time-like Unitary Irreducible Representations of $\overset{\sim}{P}$
-	The subspace generated by the vectors $\{(v_p)_m\}_{p,m}$ is invariant under $\overset{\sim}{P}$. The irreducible, unitary representations of elements of this group are characterized in the following way:
-$$\psi_{T_b} (v_p)_m = e^{-ib_0p_0}e^{-ib_1p_1}e^{-ib_2p_2}e^{-ib_3p_3}(v_p)_m$$
-$$\psi_\Lambda (v_p)_m = [\phi_s(H(p')\Lambda H(p))]_{m'm} (v_{p'})_{m'}$$
-where $p' = \Lambda p$ and $\phi_s$ is the irreducible representation of $SO(3)$ defined by $s$.
-\end{theorem}
-\end{frame}
+%\begin{frame}
+%\vfill
+%This realization gives us two ways to calculate the instantaneous change after rotating by angle $\theta$.
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		R(\theta + d\theta) = R(\theta) - id\theta R(\theta)J
+%	\end{aligned}
+%\end{equation}  
+%\begin{equation}
+%	\begin{aligned}
+%		R(\theta + d\theta) = R(\theta) + \frac{d}{d\theta}R(\theta)d\theta
+%	\end{aligned}
+%\end{equation}  
+%\vfill
+%Putting both equations gives us a differential equation solved by
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		R(\theta) = e^{-i\theta J} = \sum_{n=0}^\infty \frac{(-i\theta J)^n}{n!}
+%	\end{aligned}
+%\end{equation}  
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%We can explicitly solve our equation for $J$ by taking (4) explictly
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		\begin{bmatrix}
+%			1 & 0 \\
+%			0 & 1
+%		\end{bmatrix} + (-i)d\theta * \begin{bmatrix}
+%			j_{11} & j_{12} \\
+%			j_{21} & j_{22}
+%		\end{bmatrix} = R(d\theta) = \begin{bmatrix}
+%			\cos(d\theta) & -\sin(d\theta) \\
+%			\sin(d\theta) & \cos(d\theta)
+%		\end{bmatrix} = 
+%		\begin{bmatrix}
+%			1 & -d\theta \\
+%			d\theta & 1
+%		\end{bmatrix}
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%To get
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		J = \begin{bmatrix}
+%			0 & -i \\
+%			i & 0
+%		\end{bmatrix}
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%While $J$ is not in the group, it still is referred to as the generator of $SO(2)$ due to (7).
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Now that we have characterized the group $SO(2)$ we can find its irreducible representations. 
+%\vfill
+%$SO(2)$ is abelian, so all irreducible representations are degree one.
+%\vfill
+%We look to the invariant subspaces of our generator for motivation.
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%If $\lambda$ is an eigenvalue of $J$, then $e^{-i\theta\lambda}$ is an eigenvalue of $R(\theta)$.
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		R(\theta) (v) = \left(\sum_{i=0}^\infty \frac{(-i\theta J)^n}{n!}\right) (v) = \left(\sum_{i=0}^\infty \frac{(-i\theta \lambda)^n}{n!}\right)v = \left(e^{-i\theta \lambda}\right)v
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%We place a restriction on our eigenvalue possibilities in order to appeal to the physical constraint:
+%\begin{equation}
+%	\begin{aligned}
+%		e^{-i2\pi n\lambda} = 1 \Rightarrow \lambda \in \Z
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%Making $\lambda\in\Z$.
+%
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Therefore, we can define irreducible representations for $SO(2)$ in the following way:
+%\vfill
+%$$\begin{aligned}
+%	\phi_m:SO(2)\rightarrow \C \\
+%	R(\theta) \mapsto e^{-i\theta m} \\
+%\end{aligned}$$
+%\vfill
+%These representations are also unitary:
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		\langle \phi_m(x) , \phi_m(y) \rangle &= \langle e^{-i\theta m}x , e^{-i\theta m}y \rangle \\
+%												&= e^{-i\theta m}\overline{e^{-i\theta m}} \langle x , y \rangle\\
+%												&=\langle x , y \rangle
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%\end{frame}
+%
+%
+%\section{$SO(3)$: The Rotation Group in Three Dimensions}
+%\begin{frame}
+%\sectionpage
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Elements of the group $SO(3)$ represents all possible ways to take the physical action or rotating a vector in three-dimensional space about some central point. 
+%\vfill
+%For our discussion, we will take vectors to be in $\R^3$.
+%\vfill
+%Angle measurement will be real-valued.
+%\vfill
+%We will take $\{e_1,e_2,e_3\}$ to be the standard basis of $\R^3$.
+%\vfill
+%There are two main ways to construct rotation matrices in $SO(3)$.
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%Method 1: Axis-Angle
+%\vfill
+%Let $n\in\R^3$. We will treat $n$ as an axis about which we rotate by angle $\psi$. $n$ is completely characterized by spherical coordinate angles, $\theta$ and $\phi$. We call denote rotation $R_n(\psi)$.
+%\vfill
+%\begin{figure}{H}
+%	\centering
+%	\tdplotsetmaincoords{60}{120}
+%	\tdplotsetrotatedcoords{60}{45}{225}
+%	\centering
+%	\begin{tikzpicture}
+%			[scale=1,
+%				tdplot_main_coords,
+%				axis/.style={->,black,thin},
+%				vector/.style={-stealth,black,very thick}]
+%	
+%
+%		%draw the axes
+%		\draw[axis] (0,0,0) -- (3,0,0) node[anchor=west]{$x$};
+%		\draw[axis] (0,0,0) -- (0,3,0) node[anchor=west]{$y$};
+%		\draw[axis] (0,0,0) -- (0,0,3) node[anchor=west]{$z$};
+%	
+%		\coordinate (O) at (0,0,0);
+%		\tdplotsetcoord{P}{3}{45}{60}
+%
+%	%	\draw[thick,tdplot_rotated_coords,->](0,0,0)--(.5,0,0)node[anchor=west]{$x'$};
+%		%\draw[thick,tdplot_rotated_coords,->](0,0,0)--(0,.5,0)node[anchor=west]{$y'$};
+%		%\draw[thick,tdplot_rotated_coords,->](0,0,0)--(0,0,5)node[anchor=west]{$z'$};
+%		\draw[dashed,color=red] (O)--(Pxy);
+%		\draw[dashed,color=red] (P)--(Pxy);
+%		%x =  y = z=2.09 r = 2.15218
+%	\tdplotsetrotatedcoords{60}{45}{225}
+%		\tdplotdrawarc[->,tdplot_rotated_coords,color=blue, very thick]{(0,0,0)}{0.5}{0}{360}{anchor=south west}{$\psi$};
+%		\tdplotdrawarc[->]{(0,0,0)}{2.15218}{0}{60}{anchor=north}{$\theta$};
+%		\tdplotsetrotatedcoords{-30}{-90}{0}
+%		\tdplotdrawarc[->,tdplot_rotated_coords]{(0,0,0)}{2}{0}{45}{anchor=north east}{$\phi$};
+%		\draw[->, very thick] (O) -- (P) node[anchor=south]{$n$} ;			
+%	\end{tikzpicture}
+%	\caption{Generic rotation in $SO(3)$ characterized by $R_n(\psi)$}		
+%\end{figure}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%There is a redundancy in this construction illustrated below
+%\vfill
+%\begin{figure}[H]
+%	\begin{tabular}{ccccc}
+%		\tdplotsetmaincoords{60}{120}
+%	
+%				\begin{tikzpicture}
+%						[scale=0.7,
+%							tdplot_main_coords,
+%							axis/.style={->,black,thin},
+%							vector/.style={-stealth,black,very thick}]
+%				
+%				
+%					\coordinate (O) at (0,0,0);
+%					\coordinate (r1) at (1.414,0,1);
+%					\coordinate (r2) at (0,-1.414,1);
+%					\coordinate (r3) at (-1.414,-0,1);
+%					\coordinate (r4) at (0,1.414,1);
+%					\coordinate (r5) at (1.414,0,-1);
+%					\coordinate (r6) at (0,-1.414,-1);
+%					\coordinate (r7) at (-1.414,0,-1);
+%					\coordinate (r8) at (0,1.414,-1);
+%		
+%		
+%					\draw[axis,color=gray] (0,0,0) -- (0,0,-2) node[anchor=west]{$-n$};
+%					
+%					\draw[color=gray] (r1)--(r2);
+%					\draw[color=gray] (r2)--(r3);
+%					\draw[color=gray] (r3)--(r4);
+%					\draw[color=gray] (r4)--(r1);
+%					\draw[color=gray] (r1)--(r5);
+%					\draw[color=gray] (r2)--(r6);
+%					\draw[color=gray] (r3)--(r7);
+%					\draw[color=gray] (r4)--(r8);
+%					\draw[color=gray] (r5)--(r6);
+%					\draw[color=gray] (r6)--(r7);
+%					\draw[color=gray] (r7)--(r8);
+%					\draw[color=gray] (r8)--(r5);
+%		
+%					
+%		
+%				\end{tikzpicture}
+%		&
+%	\begin{LARGE}
+%	$\overset{R_{-n}(2\pi-\psi)}{\leftarrow}$
+%	\end{LARGE}
+%	&
+%	\tdplotsetmaincoords{60}{120}
+%		%\tdplotsetrotatedcoords{60}{45}{225}
+%				\begin{tikzpicture}
+%						[scale=0.7,
+%							tdplot_main_coords,
+%							axis/.style={->,black,thin},
+%							vector/.style={-stealth,black,very thick}]
+%				
+%				
+%					\coordinate (O) at (0,0,0);
+%					\coordinate (r1) at (1,1,1);
+%					\coordinate (r2) at (-1,1,1);
+%					\coordinate (r3) at (-1,-1,1);
+%					\coordinate (r4) at (1,-1,1);
+%					\coordinate (r5) at (1,1,-1);
+%					\coordinate (r6) at (-1,1,-1);
+%					\coordinate (r7) at (-1,-1,-1);
+%					\coordinate (r8) at (1,-1,-1);
+%		
+%		
+%					\draw[axis,color=black] (0,0,0) -- (0,0,2) node[anchor=west]{$n$};
+%					\draw[axis,color=gray] (0,0,0) -- (0,0,-2) node[anchor=west]{$-n$};
+%					\draw[color=gray] (r1)--(r2);
+%					\draw[color=gray] (r2)--(r3);
+%					\draw[color=gray] (r3)--(r4);
+%					\draw[color=gray] (r4)--(r1);
+%					\draw[color=gray] (r1)--(r5);
+%					\draw[color=gray] (r2)--(r6);
+%					\draw[color=gray] (r3)--(r7);
+%					\draw[color=gray] (r4)--(r8);
+%					\draw[color=gray] (r5)--(r6);
+%					\draw[color=gray] (r6)--(r7);
+%					\draw[color=gray] (r7)--(r8);
+%					\draw[color=gray] (r8)--(r5);
+%	
+%					\tdplotsetrotatedcoords{225}{180}{0}
+%	
+%					\coordinate (Shift1) at (0,0,1);
+%					\tdplotsetrotatedcoordsorigin{(Shift1)};
+%					\tdplotdrawarc[->,tdplot_rotated_coords,color= blue, thick]{(0,0,0)}{1.414}{0}{45}{anchor=south}{$\psi$};
+%	
+%					\coordinate (Shift2) at (0,0,-1);
+%					\tdplotsetrotatedcoordsorigin{(Shift2)};
+%					\tdplotdrawarc[->,tdplot_rotated_coords,color= bluegray, thick]{(0,0,0)}{1.414}{0}{-315}{anchor=north}{$2\pi-\psi$};
+%					\draw[dashed, color=black] (1.414,0,-1.5) -- (1.414,0,2);
+%		
+%	
+%					
+%		
+%				\end{tikzpicture}	
+%	
+%	
+%	&
+%	\begin{LARGE}
+%	$\overset{R_n(\psi)}{\rightarrow}$
+%	\end{LARGE}
+%	&
+%	\tdplotsetmaincoords{60}{120}
+%		%\tdplotsetrotatedcoords{60}{45}{225}
+%				\begin{tikzpicture}
+%						[scale=0.7,
+%							tdplot_main_coords,
+%							axis/.style={->,black,thin},
+%							vector/.style={-stealth,black,very thick}]
+%				
+%				
+%					\coordinate (O) at (0,0,0);
+%					\coordinate (r1) at (1.414,0,1);
+%					\coordinate (r2) at (0,-1.414,1);
+%					\coordinate (r3) at (-1.414,-0,1);
+%					\coordinate (r4) at (0,1.414,1);
+%					\coordinate (r5) at (1.414,0,-1);
+%					\coordinate (r6) at (0,-1.414,-1);
+%					\coordinate (r7) at (-1.414,0,-1);
+%					\coordinate (r8) at (0,1.414,-1);
+%		
+%		
+%					\draw[axis,color=black] (0,0,0) -- (0,0,2) node[anchor=west]{$n$};
+%					\draw[color=gray] (r1)--(r2);
+%					\draw[color=gray] (r2)--(r3);
+%					\draw[color=gray] (r3)--(r4);
+%					\draw[color=gray] (r4)--(r1);
+%					\draw[color=gray] (r1)--(r5);
+%					\draw[color=gray] (r2)--(r6);
+%					\draw[color=gray] (r3)--(r7);
+%					\draw[color=gray] (r4)--(r8);
+%					\draw[color=gray] (r5)--(r6);
+%					\draw[color=gray] (r6)--(r7);
+%					\draw[color=gray] (r7)--(r8);
+%					\draw[color=gray] (r8)--(r5);
+%		
+%					
+%		
+%				\end{tikzpicture}
+%	
+%	
+%	\end{tabular}
+%	\caption{Identifying equivalent rotations about vectors pointing in opposite directions.}
+%\end{figure}
+%\vfill
+%As a result, we restrict our parameters $\theta,\phi,\psi$ to 
+%$$0\leq\psi\leq\pi, \hspace{3mm} 0\leq\theta\leq2\pi, \hspace{3mm} 0\leq\phi\leq\pi$$
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Using this convention we can evaluate a geometric identity through the lens of $SO(3)$ matrices.
+%\vfill
+%\begin{theorem}
+%	Let $n, n'\in\R^3$ and $\psi\in[0,\pi]$. Let $R\in SO(3)$ be a rotation that takes $n$ and points it in the direction of $n'$. Then, following identity holds:
+%$$R_{n}(\psi) = R^{-1}R_{n'}(\psi)R$$
+%\end{theorem}
+%\vfill
+%We can assess the validity of this idea from the following successive images
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{figure}[H]
+%	\centering
+%	\begin{tabular}{cc}
+%		\includegraphics[width=0.2\textwidth]{Rnpsi1.png}
+%&
+%		\includegraphics[width=0.2\textwidth]{Rnpsi2.png}
+%	\end{tabular}
+%	\caption{Theorem 29: $R_n(\psi)$}
+%\vfill
+%\end{figure}
+%\vfill
+%
+%\begin{figure}[H]
+%	\centering
+%
+%	\begin{tabular}{cccc}
+%		\includegraphics[width=0.2\textwidth]{RRnR1.png}
+%		&
+%		\includegraphics[width=0.2\textwidth]{RRnR2.png}
+%		&
+%		\includegraphics[width=0.2\textwidth]{RRnR3.png}
+%		&
+%		\includegraphics[width=0.2\textwidth]{RRnR4.png}
+%
+%	\end{tabular}
+%	\caption{Theorem 29: $R^{-1}R_{n'}(\psi)R$}
+%\end{figure}
+%\vfill
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%A direct consecuence of this is 
+%\vfill
+%\begin{theorem}
+%	All rotations (about any axis) by a fixed angle $\psi$ share a conjugacy class (denoted $C_\psi$).
+%\end{theorem}
+%\vfill
+%We can now use our first method of classifying rotations in $SO(3)$ to help build a new way to classify them
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Method $2$: Euler Angles
+%\vfill
+%\begin{definition}
+%	Let $(x,y,z)$ be the fixed frame and let $(x',y',z')$ be any rotated frame. Then this rotation's \textbf{Euler Angles} decompose the rotation in the following way:
+%$$R(\alpha,\beta,\gamma) \coloneq R_{z'}(\gamma)R_n(\beta)R_z(\alpha)$$
+%where $n$ points in the direction defined by the intersection of the $xy$ and $x'y'$ planes (or equivalently, the $z\times z'$ direction). Note: we use the subscript $z$ and $z'$ as a shorthand to mean the $z$-axis and $z'$-axis.
+%\end{definition}
+%\vfill
+%We can see this idetification in the following successive images:
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%\begin{columns}[T]
+%\begin{column}{0.3\textwidth}
+%	\begin{figure}[H]
+%		\centering
+%		\tdplotsetmaincoords{60}{200}
+%		\tdplotsetrotatedcoords{60}{45}{225}
+%		\begin{tikzpicture}
+%				[scale=1,
+%					tdplot_main_coords,
+%					axis/.style={->,black,thin},
+%					vector/.style={-stealth,black,very thick}]
+%			\draw[axis,color=gray] (0,0,0) -- (1,0,0) node[anchor=south]{$x$};
+%			\draw[axis,color=gray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
+%			\draw[axis] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
+%			\draw[axis,color=blue] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=south west]{$z'$}; 
+%			\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
+%			\draw[axis,color=red] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$n$};
+%			\tdplotdrawarc[->]{(0,0,0)}{1.2}{0}{315}{anchor=north}{$\alpha$};
+%		\end{tikzpicture}
+%		\caption{Euler Angles: Rotating Fixed Frame about $z$-axis by $\alpha$}
+%	\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\tdplotsetmaincoords{60}{200}
+%	\tdplotsetrotatedcoords{45}{90}{90}
+%	
+%	\begin{tikzpicture}
+%			[scale=1,
+%				tdplot_main_coords,
+%				axis/.style={->,black,thin},
+%				vector/.style={-stealth,black,very thick}]
+%		\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=north]{$x$};
+%		\draw[axis,color=black] (0,0,0) -- (-0.5,-0.5,0.70711) node[anchor=south]{$x'$};
+%		\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
+%		\draw[axis,color=wildwatermelon] (0,0,0) -- (0.5,0.5,0.70711) node[anchor=south east]{$y'$};
+%		\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
+%		\draw[axis,color=cobalt] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$}; 
+%		\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
+%	
+%	
+%		\tdplotdrawarc[->,color=lightgray]{(0,0,0)}{1.2}{0}{315}{anchor=north west}{$\alpha$};
+%		\tdplotdrawarc[<-,tdplot_rotated_coords,color=classicrose]{(0,0,0)}{1.2}{0}{90}{anchor=north west}{$\beta$};
+%		\tdplotsetrotatedcoords{135}{90}{180}
+%		\tdplotdrawarc[->,tdplot_rotated_coords,color=columbiablue]{(0,0,0)}{1.2}{0}{315}{anchor=south}{$\gamma$};
+%	
+%	\end{tikzpicture}
+%	\caption{Euler Angles: Rotated Frame}
+%\end{figure}
+%
+%\end{column}
+%	
+%\begin{column}{0.3\textwidth}
+%	\begin{figure}[H]
+%		\centering
+%		\tdplotsetmaincoords{60}{200}
+%		\tdplotsetrotatedcoords{45}{90}{90}
+%		\begin{tikzpicture}
+%				[scale=1,
+%					tdplot_main_coords,
+%					axis/.style={->,black,thin},
+%					vector/.style={-stealth,black,very thick}]
+%			\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=south]{$x$};
+%			\draw[axis,color=black] (0,0,0) -- (0.7071,-0.7071,0) node[anchor=north]{$x$};
+%			\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
+%			\draw[axis,color=black] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
+%			\draw[axis,color=blue] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$};
+%			\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
+%			\draw[axis,color=wildwatermelon] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$y$};
+%			\tdplotdrawarc[->,color=gray]{(0,0,0)}{1.2}{0}{315}{anchor=south east}{$\alpha$};
+%			\tdplotdrawarc[<-,tdplot_rotated_coords,color=red]{(0,0,0)}{1.2}{0}{90}{anchor=south west}{$\beta$};
+%		\end{tikzpicture} 
+%		\caption{Euler Angles: Rotating Intermediate Frame about new $y$-axis by $\beta$}
+%	\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\tdplotsetmaincoords{60}{200}
+%	\tdplotsetrotatedcoords{45}{90}{90}
+%	\begin{tikzpicture}
+%			[scale=1,
+%				tdplot_main_coords,
+%				axis/.style={->,black,thin},
+%				vector/.style={-stealth,black,very thick}]
+%		\draw[axis,color=lightgray] (0,0,0) -- (1,0,0) node[anchor=north]{$x$};
+%		\draw[axis,color=black] (0,0,0) -- (-0.5,-0.5,0.70711) node[anchor=south]{$x'$};
+%		\draw[axis,color=lightgray] (0,0,0) -- (0,1,0) node[anchor=west]{$y$};
+%		\draw[axis,color=black] (0,0,0) -- (0.5,0.5,0.70711) node[anchor=north east]{$y'$};
+%		\draw[axis,color=lightgray] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
+%		\draw[axis,color=black] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=east]{$z'$}; 
+%		\draw[axis,color=red] (0,0,0) -- (0.707106781186548,0.707106781186548,0) node[anchor=north]{$n$}; 
+%	
+%		\coordinate (p1) at (1.1,1.1,0);
+%		\coordinate (p2) at (-1.1,1.1,0);
+%		\coordinate (p3) at (-1.1,-1.1,0);
+%		\coordinate (p4) at (1.1,-1.1,0);
+%		\coordinate (p5) at  (1.1,1.1,1);
+%		\coordinate (p6) at (1.1,1.1,-1);
+%		\coordinate (p7) at (-1.1,-1.1,-1);
+%		\coordinate (p8) at (-1.1,-1.1,1);
+%	
+%	
+%	
+%		\draw[color=lightgray] (p1) -- (p2);
+%		\draw[color=lightgray] (p2) -- (p3);
+%		\draw[color=lightgray] (p3) -- (p4);
+%		\draw[color=lightgray] (p4) -- (p1);
+%		\draw[color=black] (p5) -- (p6);
+%		\draw[color=black] (p6) -- (p7);
+%		\draw[color=black] (p7) -- (p8);
+%		\draw[color=black] (p8) -- (p5);
+%		\draw[dashed,color=red,very thin] (1.1,1.1,0)--(-1.1,-1.1,0);
+%	
+%	\end{tikzpicture}
+%
+%	\caption{Euler Angles: Identifying $n$}
+%
+%\end{figure} 
+%\end{column}
+%	
+%\begin{column}{0.3\textwidth}
+%	\begin{figure}[H]
+%		\centering
+%		\tdplotsetmaincoords{60}{200}
+%		\tdplotsetrotatedcoords{45}{90}{90}
+%		\begin{tikzpicture}
+%				[scale=1,
+%					tdplot_main_coords,
+%					axis/.style={->,black,thin},
+%					vector/.style={-stealth,black,very thick}]
+%			\draw[axis,color=lightgray] (0,0,0) -- (0.7071,-0.7071,0) node[anchor=north]{$x$};
+%			\draw[axis,color=black] (0,0,0) -- (0,0,1) node[anchor=south]{$x$};
+%	
+%			\draw[axis,color=cobalt] (0,0,0) -- (-0.707106781186548,0.707106781186548,0) node[anchor=west]{$z'$}; %(-sqrt(2)/2,sqrt(2)/2,0)
+%	
+%			\tdplotcrossprod(-0.707106781186548,0.707106781186548,0)(0,0,1);
+%			\draw[axis,color=wildwatermelon] (0,0,0)--(\tdplotresx,\tdplotresy,\tdplotresz) node[anchor=south]{$y$};
+%	
+%			\tdplotdrawarc[->,color=lightgray]{(0,0,0)}{1.2}{0}{315}{anchor=south east}{$\alpha$};
+%			\tdplotdrawarc[<-,tdplot_rotated_coords,color=classicrose]{(0,0,0)}{1.2}{0}{90}{anchor=south west}{$\beta$};
+%			\tdplotsetrotatedcoords{135}{90}{180}
+%			\tdplotdrawarc[->,tdplot_rotated_coords,color=cobalt]{(0,0,0)}{1.2}{0}{315}{anchor=south}{$\gamma$};
+%		\end{tikzpicture}
+%		\caption{Euler Angles: Rotating Intermediate Frame about new $z$-axis by $\gamma$}
+%	\end{figure}
+%\end{column}
+%\end{columns}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%These rotations illustrate the following identities
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		R_{z'}(\gamma) = R_n(\beta)R_z(\gamma)R_n(\beta)^{-1}
+%	\end{aligned}
+%\end{equation}
+%\begin{equation}
+%	\begin{aligned}
+%		R_n(\beta) = R_z(\alpha)R_y(\beta)R_z(\alpha)^{-1}
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%Leading to the conclusion that every rotation in $SO(3)$ is characterized by:
+%\vfill
+%\begin{equation}
+%	\begin{aligned}
+%		R(\alpha,\beta,\gamma) = R_z(\alpha)R_y(\beta)R_z(\gamma)
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\vfill
+%We can use our knowledge of $\R^3$ to immediately build rotation matrices about the coordinate axes
+%\vfill
+%\begin{center}
+%\begin{tabular}{ccc}
+%		$R_z(\theta) = \begin{bmatrix}
+%						\cos(\theta) & -\sin(\theta) & 0 \\
+%						\sin(\theta) & \cos(\theta) & 0 \\
+%						0 & 0 & 1 \\
+%						\end{bmatrix}$
+%&
+%		$R_y(\theta) = \begin{bmatrix}
+%						\cos(\theta) & 0& \sin(\theta) \\
+%						0 & 1 & 0 \\
+%						-\sin(\theta) &0& \cos(\theta) \\
+%						\end{bmatrix}$
+%\end{tabular}
+%\end{center} \hspace{2mm}
+%		$$R_x(\theta) = \begin{bmatrix}
+%						1 & 0 & 0 \\
+%						0 & \cos(\theta) & -\sin(\theta) \\
+%						0 & \sin(\theta) & \cos(\theta) \\
+%						\end{bmatrix}$$
+%
+%
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Putting it all together, a general rotation matrix, $R(\alpha,\beta,\gamma)$,  takes in the following form:
+%$$\begin{bmatrix}
+%	\cos(\alpha)\cos(\beta)\cos(\gamma) - \sin(\alpha)\sin(\gamma)& -\cos(\alpha)\cos(\beta)\sin(\gamma) -\sin(\alpha)\cos(\gamma)&  \cos(\alpha)\sin(\beta)\\
+%	\sin(\alpha)\cos(\beta)\cos(\gamma) + \cos(\alpha)\sin(\gamma)& -\sin(\alpha)\cos(\beta)\sin(\gamma) +\cos(\alpha)\cos(\gamma)  &  \sin(\alpha)\sin(\beta) \\
+%	-\sin(\beta)\cos(\gamma) & \sin(\beta)\sin(\gamma) & \cos(\beta)\\
+%	\end{bmatrix}$$
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Now that we have characterized the matrices in this group, we want to search for generators.
+%\vfill
+%We can find generators of rotations about a fixed axis in the same way as we did in $SO(2)$.
+%\vfill
+%\begin{center}
+%\begin{tabular}{ccc}
+%		$		J_x = \begin{bmatrix}
+%					0 & 0 & 0 \\
+%					0 & 0 & -i \\
+%					0 & i & 0
+%					\end{bmatrix}$
+%&
+%		$		J_y = \begin{bmatrix}
+%					0 & 0 & i \\
+%					0 & 0 & 0 \\
+%					-i & 0 & 0
+%					\end{bmatrix}$
+%\end{tabular}
+%		$$J_z = \begin{bmatrix}
+%					0 & -i & 0 \\
+%					i & 0 & 0 \\
+%					0 & 0 & 0
+%					\end{bmatrix}$$
+%\end{center}
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{theorem}
+%	 For any arbitrary direction, $n=(n_1,n_2,n_3)\in\R^3$, the generator, $J_n$, can be written in the following way:
+%$$J_n = n_1J_x + n_2J_y + n_3J_z$$
+%\end{theorem}
+%\vfill
+%As a result, we can write any rotation in the following equivalent ways depending on our convention:
+%\begin{equation}
+%	\begin{aligned}
+%		R_n(\psi) = e^{-i\psi n_1J_x}e^{-i\psi n_2J_y}e^{-i\psi n_3J_z}
+%	\end{aligned}
+%\end{equation} 
+%\begin{equation}
+%	\begin{aligned}
+%		R(\alpha,\beta,\gamma) = e^{-i\alpha J_z}e^{-i\beta J_y}e^{-i\gamma J_z}
+%	\end{aligned}
+%\end{equation} 
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%In order to find invariant subspaces, we seek eigenvectors of all our generators.
+%\vfill
+%\begin{block}{General Strategy}
+%Find a set of generators that commute, and therefore, have matching eigenvalues and matching eigenvectors.
+%\end{block}
+%\vfill
+%Unfortunately, none of our generators commute.
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{definition}
+%	The \textbf{commutator} of two matrices $A$ and $B$ is defined by to be 
+%$$[A,B]=AB-BA$$
+%\end{definition}
+%\vfill
+%\begin{theorem}
+%	Let $J_k,J_l \in \{J_x,J_y,J_z\}$. Consider the word $xyz$, and all 6 rearrangements of it (identifying each rearrangement with a permutation in $S_3$). Then 
+%$$[J_k , J_l] = \begin{cases}
+%					0 & \text{if }k = l \\
+%					isign(klm)J_m& \text{else}
+%					\end{cases}$$
+%where $m$ is the label of the remaining generator in $\{J_x,J_y,J_z\}$.
+%\end{theorem}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{definition}
+%	A \textbf{Lie Algebra} is a vector space, $\mathfrak{g}$, together with a bilinear operation, [ . , . ] that satisfies the the following identities:
+%\begin{itemize}
+%	\item$ [x,x] = 0$  $\forall x\in\mathfrak{g}$
+%	\item $[x,[y,z]] + [y,[z,x]] + [z[y,x]]= 0 $ $\forall x,y,z\in\mathfrak{g}$
+%\end{itemize}
+%\end{definition}
+%\vfill
+%$$\mathfrak{so}(3) := \{a_1J_x + a_2J_y + a_3Jz \mid a_1,a_2,a_3\in\C\}$$
+%\vfill
+%Does not solve our problem $\hdots$ yet.
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%	\begin{definition}
+%		The \textbf{universal enveloping algebra} of a Lie algebra is the largest embedding of Lie algebra into an algebra. 
+%	\end{definition}
+%\vfill
+%This space is constructed as a tensor space with the commutator relations of the Lie algebra quotiented out.
+%\vfill
+%\begin{definition}
+%	A \textbf{Casimir element} of a Lie algebra, $A$, is any element in the center of the universal enveloping algebra of $A$.
+%\end{definition}
+%\vfill
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%Our Casimir element is one of physical significane (angular-momentum operator)
+%$$\mathfrak{J^2} \coloneq (\mathfrak{J}_x \otimes \mathfrak{J}_x) \oplus (\mathfrak{J}_y \otimes \mathfrak{J}_y) \oplus (\mathfrak{J}_z \otimes \mathfrak{J}_z) = \mathfrak{J}_x^2 + \mathfrak{J}_y^2 + \mathfrak{J}_z^2$$
+%\vfill
+%Since $\mathfrak{J^2}$ commutes with the generators, so does its image through an irreducible representation.
+%\vfill
+%Schur's Theorem: 
+%\begin{equation}
+%	\begin{aligned}\phi_{\mathfrak{J^2}} = \lambda I_n 	\end{aligned}
+%\end{equation} 
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Choose generators (by convention) $\{\mathfrak{J^2}, \mathfrak{J}_z\}$
+%\vfill
+%Define raising and lowering generators:
+%\begin{equation}
+%	\begin{aligned}
+%		\mathfrak{J}_\pm = \mathfrak{J}_x \pm i\mathfrak{J}_y
+%	\end{aligned}
+%\end{equation} 
+%\vfill
+%New commutator relationships:
+%\begin{equation}
+%	\begin{aligned}
+%		[\mathfrak{J}_z,\mathfrak{J}_+] = \mathfrak{J}_+
+%	\end{aligned}
+%\end{equation} 
+%\begin{equation}
+%	\begin{aligned}
+%		[\mathfrak{J}_z,\mathfrak{J}_-] = -\mathfrak{J}_-
+%	\end{aligned}
+%\end{equation} 
+%\begin{equation}
+%	\begin{aligned}
+%		[\mathfrak{J}_+,\mathfrak{J}_-] = 2\mathfrak{J}_z
+%	\end{aligned}
+%\end{equation} 
+%\begin{equation}
+%	\begin{aligned}
+%		\mathfrak{J}^2 = (\mathfrak{J}_z)^2  -\mathfrak{J}_z +\mathfrak{J}_+\mathfrak{J}_- = (\mathfrak{J}_z)^2 +\mathfrak{J}_z+ \mathfrak{J}_-\mathfrak{J}_+
+%	\end{aligned}
+%\end{equation} 
+%\end{frame}
+%
+%\begin{frame}
+%\vfill 
+%For any eigenvector $v_m$ of $\phi_{\mathfrak{J}_z}$, corresponging to eigenvalue $m$.
+%\begin{equation}
+%	\begin{aligned}
+%		\phi_{\mathfrak{J}_z\mathfrak{J}_+}(v_m) = (m + 1)\phi_{\mathfrak{J}_+}(v_m)
+%	\end{aligned}
+%\end{equation} 
+%\begin{equation}
+%	\begin{aligned}
+%		\phi_{\mathfrak{J}_z\mathfrak{J}_-}(v_m) = (m -1)\phi_{\mathfrak{J}_-}(v_m)
+%	\end{aligned}
+%\end{equation} 
+%\vfill
+%We can construct an eigenbasis of our vectorspace by repeated applications of the raising and lowering generators.
+%\vfill
+%This process will eventually terminate for finite degree representation.
+%\vfill
+%If $k$ is the last nonzero power of $\phi_{\mathfrak{J}_+}$ to $v_0$, and $s$ is the eigenvalue of $\phi_{\mathfrak{J}_+}v_{k-1}$ to the map $\phi_{\mathfrak{J}_z}$, then
+%\begin{equation}
+%	\begin{aligned}
+%		\phi_{\mathfrak{J^2}}\phi_{\mathfrak{J}_+}^k(v_{k-1})= s(s + 1) \phi_{J_+}^kv_{k-1}
+%	\end{aligned}
+%\end{equation}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{theorem}
+%	The irreducible representations of the $A_{\mathfrak{so}(3)}$ are characterized by eigenvalues that take on positive integer and positive half-integers. If $\lambda$ is one such eigenvalue, then we can construct our eigenvectors, $\{v_m\}_{m=-\lambda}^\lambda$, corresponding to $\phi_{\mathfrak{J}_z}$ with eigenvalue $m$, using the raising or lowering operators. This gives us a degree $2s +1$ representation characterized by the following relationships:
+%$$\phi_{\mathfrak{J}^2}(v_m) = s(s+1)v_m$$
+%$$\phi_{\mathfrak{J}_z}(v_m) =  mv_m$$ 
+%$$v_{m+1} =  \frac{1}{\sqrt{\lambda(\lambda+1) - m(m\pm 1)}}\phi_{\mathfrak{J}_\pm}(v_m)$$
+%\end{theorem}
+%\vfill
+%\begin{equation}
+%\begin{aligned}
+%	\phi_j(R(\alpha,\beta,\gamma)) &= e^{-i\alpha\phi_{\mathfrak{J}_z}}e^{-i\beta\phi_{\mathfrak{J}_y}}e^{-i\gamma\phi_{\mathfrak{J}_z}}	
+%\end{aligned}
+%\end{equation}
+%\vfill
+%\end{frame}
+%
+%\section{Euclidean Groups}
+%\begin{frame}
+%\sectionpage
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{definition}
+%	The $n$-dimensional \textbf{Euclidean Group, $E_n$,} is the group of all continuous, isometric, linear transformations on $\R^n$.
+%\end{definition}
+%\vfill
+%For any transformation of this kind, all vectors, $x\in\R^n$, get mapped to $x'\in\R^n$ in the following way 
+%$$x' = Rx + b$$
+%for some fixed $R\in SO(n)$ and $b\in\R^n$.
+%\vfill
+%If we focus on $E_2$, we can construct an invertible matrix to represent each transformation
+%
+%\begin{equation}
+%\begin{aligned}\begin{bmatrix}x'_1\\x'_2 \\ 1\end{bmatrix} = \begin{bmatrix}
+%			\cos(\theta) & -\sin(\theta) & b_1\\
+%			\sin(\theta) & \cos(\theta) & b_2 \\
+%			0&0&1
+%		\end{bmatrix} \begin{bmatrix}x_1\\x_2\\1\end{bmatrix}\end{aligned}
+%\end{equation}
+%
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%We can derive the generators of $E_2$ in the same way as we did for $SO(2)$ and $SO(3)$.
+%\vfill
+%Our rotational generator is the same as in $SO(2)$
+%\begin{equation}
+%\begin{aligned}
+%J=\begin{bmatrix}
+%			0 & -i & 0\\
+%			i & 0 & 0 \\
+%			0 & 0 & 0
+%		\end{bmatrix}
+%\end{aligned}
+%\end{equation}
+%\vfill
+%Further, we can use the same process to derive the generators for translations in two directions.\vfill
+%\end{frame}
+%
+%
+%
+%
+%\begin{frame}
+%If we denote $T_n$ to be the group of translations in $n$-dimensions.
+%\vfill
+%Starting with $T_1$, we let $T_b\in T_1$ where $b\in \R$
+%\begin{equation}
+%\begin{aligned}
+%T_{dx} = I -idxP
+%\end{aligned}
+%\end{equation}
+%where $P$ is our generator.
+%\vfill
+%We construct our system of equations:
+%\begin{equation}\begin{aligned}T_{x+dx} = T_x + dx \frac{d}{dx}T_x\end{aligned}\end{equation}
+%\begin{equation}\begin{aligned}T_{x+dx} = T_{dx}T_x\end{aligned}\end{equation}
+%\vfill
+%\end{frame}
+%%
+%\begin{frame}
+%\vfill
+%We conclude with 
+%\begin{equation}\begin{aligned}T(x) = e^{-iPx}\end{aligned}\end{equation}
+%\vfill
+%As we generalize to $E_2$,
+%\begin{equation}\begin{aligned}P_x = \begin{bmatrix}
+%			0 & 0 & i\\
+%			0 & 0 & 0 \\
+%			0 & 0 & 0
+%		\end{bmatrix}, \hspace{3mm}P_y = \begin{bmatrix}
+%			0 & 0 & 0\\
+%			0 & 0 & i \\
+%			0 & 0 & 0
+%		\end{bmatrix}\end{aligned}\end{equation}
+%\vfill
+%and therefore for any $b\in\R^2$, 
+%\begin{equation}\begin{aligned}T_b = e^{-ib_1P_x}e^{-ib_2P_y}\end{aligned}\end{equation}
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Some useful properties of $E_2$ include
+%\vfill
+%\begin{theorem}
+%	For any $\theta$,$b$
+%	$$R(\theta)T_bR(\theta)^{-1} = T_{R(\theta)b}$$
+%\end{theorem}
+%\vfill
+%\begin{theorem}
+%	For any $g(\theta,b)\in E_2$, there is a natural decomposition of the transformation into a pure rotation times a pure translation.
+%$$g(\theta,b) = g(0,b)g(\theta,0)$$
+%\end{theorem}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%When discussing the search for irreducible representations, we follow the same path.
+%\vfill
+%Our commutator relationships:
+%\begin{equation}
+%\begin{aligned}
+%	[P_x,P_y] = 0
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	[J,P_x] = iP_y
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	[J,P_y] = -iP_x
+%\end{aligned}
+%\end{equation}
+%\vfill
+%Our raising and lowering generators:
+%\begin{equation}
+%\begin{aligned}
+%	P_\pm \coloneq P_x \pm iP_y
+%\end{aligned}
+%\end{equation}
+%\vfill
+%And journeying into the universal enveloping algebra, the Casimir element:
+%\begin{equation}
+%\begin{aligned}
+%	\mathfrak{P}^2 = (\mathfrak{P}_x)^2 + (\mathfrak{P}_y)^2 = \mathfrak{P}_+\mathfrak{P}_- = \mathfrak{P}_-\mathfrak{P}_+
+%\end{aligned}
+%\end{equation}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%If we let $\psi$ be our irreducible representation of our universal enveloping algebra,
+%\begin{equation}
+%\begin{aligned}
+%	 \psi(\mathfrak{P}^2)v_m = pv_m,\hspace{3mm} p>0
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	 \psi(\mathfrak{J})v_m = mv_m, \hspace{3mm} m\in\Z
+%\end{aligned}
+%\end{equation}
+%\vfill 
+%Unfortunately, there is no termination in the construction of our basis, so we must resort to characterizing our representations by discussing their matrix elements.
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{theorem}
+%	The faithful, unitary, irreducible representations of $E_2$ are characterized by the following equation defined in terms of matrix elements. If $\psi_p$ is a representation corresponding to a $p>0$, then $[\psi_p(g)]_{mm'}$ corresponds to the matrix element specified by the choice of $v_m$, $v_{m'}$, and $g$. The representations, $\psi_p$ have the following form:
+%$$[\psi_p(g(\theta,b))]_{mm'} = e^{i(m-m')\phi}J_{m-m'}(pr)e^{-im\theta}$$
+%where $r$ and $\phi$ are the polar coordinates for the vector $b$.
+%\end{theorem}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Regarding $E_3$, we can decompose any transformation as 
+%\begin{equation}
+%\begin{aligned}
+%	x' =
+%	\begin{bmatrix}
+%		\underset{3\times 3}{R(\alpha,\beta,\gamma)} & \underset{3\times 1}{b}\\
+%		\underset{1\times 3}{0} & 1
+%	\end{bmatrix} x
+%\end{aligned}
+%\end{equation}
+%\vfill
+%Our generators $\{J_x,J_y,J_z,P_x,P_y,P_z\}$ as defined in $SO(3)$ and implicitly $T_3$ satisfy
+%\begin{equation}
+%\begin{aligned}
+%	T_b = e^{-ib_1P_x}e^{-ib_2P_y}e^{-ib_3P_z}
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	R(\alpha,\beta,\gamma) = e^{-i\alpha J_z}e^{-i\beta J_y}e^{-i\gamma J_z}
+%\end{aligned}
+%\end{equation}	
+%\vfill
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%Our commutator relations:
+%\vfill
+%\begin{equation}
+%\begin{aligned}
+%	[P_k,P_l] = 0 \hspace{3mm} \forall k,l\in \{x,y,z\}
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	[J_k,J_l] = \begin{cases}
+%					0 & \text{if } k = l\\
+%					isign(klm)J_m & else
+%					\end{cases}
+%\end{aligned}
+%\end{equation}
+%where $m$ is the remaining label for the unused generator in the commutator.
+%\begin{equation}
+%\begin{aligned}
+%	[P_k,J_l] = \begin{cases}
+%					0 & \text{if } k = l\\
+%					isign(klm)P_m & else \end{cases}
+%\end{aligned}
+%\end{equation}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Useful Identities:
+%\vfill
+%\begin{theorem}
+%For any $R\in SO(3)$, $T_b\in T_3$,
+%$$RT_bR^{-1} = T_{b'}$$
+%\end{theorem}
+%\vfill
+%\begin{theorem}
+%For any $g\in E_3$, $$g = R(\alpha,\beta,\gamma)T_b\text{ for some } b\in\R^3, R\in SO(3)$$
+%\end{theorem}
+%\vfill
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%In the universal enveloping algebra, we actually have two Casimir operators:
+%\begin{equation}\begin{aligned}\mathfrak{P^2}\coloneq (\mathfrak{P}_x)^2 + (\mathfrak{P}_y)^2 + (\mathfrak{P}_z)^2\end{aligned}\end{equation} \begin{equation}\begin{aligned}\mathfrak{J}* \mathfrak{P} \coloneq \mathfrak{J}_x\mathfrak{P}_x +\mathfrak{J}_y\mathfrak{P}_y + \mathfrak{J}_z\mathfrak{P}_z\end{aligned}\end{equation}
+%\vfill
+%Constructing our irreducible representations as we have done previously will result in a trivial case. Eigenvalues are no longer going to help us.
+%\vfill
+%\begin{definition}
+%	Let $G$ be a group, $N$ be a normal subgroup, $\phi$ be a representation of $G$, and $V$ be the underlying vector space of the representation. Then for any $v\in V$, the \textbf{little group} of $v$ is the subgroup of $G/N$ who's image under $\phi$ leave $v$ invariant.
+%\end{definition}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{block}{Strategy}
+%\begin{itemize}
+%	\item Find a nice normal subgroup, quotient out ($T_3$)
+%	\item Pick a nonzero starting vector
+%	\item Find representations of the little group of said vector
+%	\item Transform vector to recover remaining vectors, repeat process for general representation
+%	\item We are left with the smallest invariant subspace (generated by one vector)
+%\end{itemize}
+%\end{block}
+%\vfill
+%Let our starting choice in this case be $p_0 = \mu_ze_z$.
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%The only rotations that leave $p_0$ unaffected are about the $z-axis$. The little group of $p_0$ is isomorphic to $SO(2)$.
+%\vfill
+%The irreducible representations of $SO(2)$ are indexed by $\lambda\in\Z$.
+%\begin{equation}
+%\begin{aligned}\psi_{\mathfrak{J}_z}p_0 = \lambda p_0
+%\end{aligned}\end{equation}
+%\vfill
+%Further, we have the following relationships between our other generators:
+%\begin{equation}
+%\begin{aligned}\psi_{\mathfrak{P}_x}p_0 = \psi_{\mathfrak{P}_y}p_0 = 0
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%\psi_{\mathfrak{P}_z}p_0 = \mu_z p_0
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	\psi_{\mathfrak{JP}}p_0 = \mu_z\lambda p_0
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	\psi_{\mathfrak{P}^2}p_0 = \mu_z^2p_0
+%\end{aligned}
+%\end{equation}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%We then conclude that
+%\vfill
+%\begin{equation}
+%\begin{aligned}
+%	\psi(R_z(\theta)) p_0 = e^{-i\lambda\theta}p_0
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	\psi(T_b) p_0 = e^{-i\mu b_3}p_0
+%\end{aligned}
+%\end{equation}
+%\vfill
+%Now that we know the value our representation can take on this vector, let us rotate this vector $p_0$ by the rotation $R(\alpha,\beta,0)$ to $p$. 
+%\vfill
+%We can repeat this process, finding the eigenvalues corresponding to our generators.
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%\begin{theorem}
+%The irreducible unitary representations are characterized by $\lambda\in\Z$ and the following equations:
+%\begin{equation}
+%\begin{aligned}
+%	\psi(T_b) p = e^{-ib_1\mu_x}e^{-ib_2\mu_y}e^{-ib_3\mu_z}p
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	\psi(R(\alpha,\beta,\gamma)) p = e^{-i\lambda\xi}p'
+%\end{aligned}
+%\end{equation}
+%where $p' = R(\alpha,\beta,\gamma)p$, the cylindrical angles of $p'$ are $\theta'$ and $\phi'$, and $\xi$ is the angle ascertained from the equation $R(0,0,\xi)=R(\phi',\theta',0)^{-1}R(\alpha,\beta,\gamma) R(\phi,\theta,0)$. 
+%\end{theorem}
+%\vfill
+%\end{frame}
+%
+%\section{Lorentz and Poincar\'e Groups}
+%\begin{frame}
+%\sectionpage
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%The coming spaces we will study are non-Euclidean
+%\vfill
+%\begin{definition}
+%	An \textbf{event} is an ordered triple together with an additional parameter, meant to represent time. An event is conventionally indexed by the integers $\mu = 0,1,2,3$. Referring to an event as $x$ references the event a four (component) vector, and specifying $x^{\mu=0}$ gives us $ct$ where $c$ is the speed of light and $t$ is a time. 
+%\end{definition}
+%\vfill
+%\begin{definition}
+%	The \textbf{length} of an event is defined by the following equation:
+%$$\mid x\mid^2 \coloneq (x^1)^2+(x^2)^2+(x^3)^2 - (x^0)^2 = (x^1)^2+(x^2)^2+(x^3)^2 - c^2t^2$$
+%\end{definition}
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%$$\begin{array}{c@{\hskip 1cm}c}
+%
+%	\underset{\text{Euclidean Norm}}{||x||^2} = x^\intercal\begin{bmatrix}
+%													1 & 0 & 0 & 0\\
+%													 0 & 1 & 0 & 0\\
+%													0 & 0 & 1 & 0\\
+%													0 & 0 & 0 & 1
+%												\end{bmatrix}x
+%
+%&
+%	\underset{\text{Length}}{|x|^2} = x^\intercal\begin{bmatrix}
+%													-1 & 0 & 0 & 0\\
+%													 0 & 1 & 0 & 0\\
+%													0 & 0 & 1 & 0\\
+%													0 & 0 & 0 & 1
+%												\end{bmatrix}x
+%
+%\end{array}$$
+%\vfill
+%\begin{definition}
+%	A \textbf{Homogeneous Lorentz Transformation} is a continuous, length-preserving, linear transformation defined on our space-time vector space. By convention, we refer to such maps with the variable $\Lambda$. A \textbf{Proper Homogeneous Lorentz Transformation} has a positive entry in the $00^{th}$ component of its matrix.
+%\end{definition}
+%\vfill
+%
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%Some Proper Homogeneous Lorentz Transformation examples:
+%\vfill
+%Let $R\in SO(3)$, then one example could be
+%\begin{equation}
+%\begin{aligned}
+%\begin{bmatrix}
+%	1&0&0&0\\
+%	0&[R]_{11}&[R]_{12}&[R]_{13}\\
+%	0&[R]_{21}&[R]_{22}&[R]_{23}\\
+%	0&[R]_{31}&[R]_{32}&[R]_{33}
+%\end{bmatrix}
+%\end{aligned}
+%\end{equation}
+%\vfill
+%Another kind is referred to as a Lorentz Boost
+%\begin{equation}
+%\begin{aligned}
+%	\Lambda_x = \begin{bmatrix}
+%						\cosh(\xi) & \sinh(\xi) & 0 & 0 \\
+%						\sinh(\xi) & \cosh(\xi) & 0 & 0 \\
+%						0&0&1&0\\
+%						0&0&0&1
+%					\end{bmatrix}
+%\end{aligned}
+%\end{equation}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{definition}
+%	The set of all proper, homogeneous, Lorentz transformations forms the \textbf{Lorentz Group} (under matrix multiplication). This group is denoted $\overset{\sim}{L}_+$.
+%\end{definition}
+%\vfill
+%\begin{definition}
+%	The four dimensional vector space on which length of events (elements of the space) is defined as in Definition (5.2) is referred to as \textbf{Minkowski Space}. Elements of the Minkowski Space are defined to transform under Lorentz transformations in the way we expect vectors in $\R^4$ to be transformed under matrices in $GL_4(\R)$. We call the elements of the Minkowski Space four-vectors or Lorentz-vectors. We will denote the Minkowski Space by $M$.
+%\end{definition}
+%\vfill
+%We can define a linear functional on this space that acts like an inner product on this space
+%\begin{equation}
+%\begin{aligned}
+%	x\dot y \coloneq -x^0y^0 + x^1y^1 + x^2y^2 + x^3y^3
+%\end{aligned}
+%\end{equation}
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%The equation $|x|^2 = ||(x^1,x^2,x^3)||^2 - c^2t^2= 0 $ decomposes Minkowski Space in the following way:
+%\vfill
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{Light cone-1}
+%	\caption{Decomposition of Minkowski Space based on length}
+%\end{figure}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%Useful Identity in $\overset{\sim}{L}_+$:
+%\begin{theorem}
+%	Any $\Lambda \in \overset{\sim}{L}_+$ can be uniquely written in the following way:
+%$$\Lambda = R(\theta,\phi,0)L_z(\xi)R(\alpha,\beta,\gamma)^{-1}$$
+%where $L_z(\xi)$ is a Lorentz boost along the $z$-axis by angle $\xi$ and the parameters for the Euler angles of the rotations from $SO(3)$ are defined as expected.
+%\end{theorem}
+%\vfill
+%Putting the Lorentz group together with $T_4$ gives us a new structure to study:
+%\vfill
+%\begin{definition}
+%	The set of all compositions of translations proper homogeneous Lorentz transformations is called the \textbf{Poincar\'e Group}, denoted $\overset{\sim}{P}$
+%\end{definition}
+%\end{frame}
+%
+%\begin{frame}
+%\vfill
+%All transformations in the Poincar\'e group can be written as
+%\begin{equation}
+%\begin{aligned}
+%\begin{bmatrix}
+%	\underset{4\times 4}{\Lambda} & \underset{4\times 1}{b}\\
+%	\underset{1\times 4}{0} & \underset{1\times 1}{1}
+%\end{bmatrix}
+%\end{aligned}
+%\end{equation}
+%\vfill
+%Some Useful Identities:
+%\vfill
+%\begin{theorem}
+%For any $g(\Lambda,b)\in\overset{\sim}{P}$
+%\begin{equation}
+%\begin{aligned}
+%g(\Lambda,b)=T_b\Lambda
+% \end{aligned}
+%\end{equation}
+%\end{theorem}
+%\vfill
+%\begin{theorem}
+%For any $\Lambda \in\overset{\sim}{L}_+$ and $T_b\in T_4$,
+%\begin{equation}
+%\begin{aligned}
+%	\Lambda T_b \Lambda^{-1} = T_{\Lambda b}
+%\end{aligned}
+%\end{equation}
+%\end{theorem}
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%In the pursuit of generators, we find the natural choices
+%\vfill
+%\begin{center}
+%\begin{tabular}{cc}
+%	$P_t = \begin{bmatrix}
+%				0 & 0 & 0 & 0 & i \\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$ &
+%	$P_x = \begin{bmatrix}
+%				0 & 0 & 0 & 0 & 0 \\
+%				0 & 0 & 0 & 0 & i\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$ \\
+%	$P_y = \begin{bmatrix}
+%				0 & 0 & 0 & 0 & 0 \\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & i\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$ &
+%	$P_z = \begin{bmatrix}
+%				0 & 0 & 0 & 0 & 0 \\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & i\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$
+%\end{tabular}
+%\end{center}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{center}
+%\begin{tabular}{ccc}
+%	$J_x = \begin{bmatrix}
+%				0 & 0 & 0 & 0 & 0 \\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & -i & 0\\
+%				0 & 0 & i & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$ &
+%	$J_y = \begin{bmatrix}
+%				0 & 0 & 0 & 0 & 0 \\
+%				0 & 0 & 0 & i & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & -i & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$ &
+%	$J_z = \begin{bmatrix}
+%				0 & 0 & 0 & 0 & 0 \\
+%				0 & 0 & -i & 0 & 0\\
+%				0 & i & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$ 
+%\end{tabular}
+%\end{center}
+%\vfill
+%And where $K_\mu$ is the generator for the Lorentz Boost along the $\mu$-axis.
+%\begin{center}
+%\begin{tabular}{ccc}
+%	$K_x = \begin{bmatrix}
+%				0 & i & 0 & 0 & 0 \\
+%				i & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$ &
+%	$K_y = \begin{bmatrix}
+%				0 & 0 & i & 0 & 0 \\
+%				0 & 0 & 0 & 0 & 0\\
+%				i & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$ &
+%	$K_z = \begin{bmatrix}
+%				0 & 0 & 0 & i & 0 \\
+%				0 & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%				i & 0 & 0 & 0 & 0\\
+%				0 & 0 & 0 & 0 & 0\\
+%			\end{bmatrix}$ 
+%\end{tabular}
+%\end{center}
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%\begin{equation}
+%\begin{aligned}
+%	\Lambda (\omega) = e^{-i\omega_1J_x}e^{-i\omega_2J_y}e^{-i\omega_3J_x}e^{-i\omega_4K_x}e^{-i\omega_5K_y}e^{-i\omega_6K_z}
+%\end{aligned}
+%\end{equation}
+%\vfill
+%Too many commutator relationships to be concise.
+%\vfill
+%We define one Casimir operator to be as excpected 
+%\begin{equation}
+%\begin{aligned}
+%	\mathfrak{C}_1 \coloneq \mathfrak{P}_t^2 -  \mathfrak{P}_x^2 -\mathfrak{P}_y^2- \mathfrak{P}_z^2
+%\end{aligned}
+%\end{equation}
+%If $\psi$ is an irreducible representation, then we want to treat the eigenvalue of $\psi_{\mathfrak{C}_1}$ by cases in order to calculate every unitary irreducible representaion. If the eigenvalue is $\lambda$, we will calculate the representations in the case when $\lambda >0$. 
+%\vfill
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%In this case, vectors must be time-like.
+%\vfill
+%Choosing starting vector $v_0\colon (\sqrt(\lambda),0,0,0)$. Our quotient group will be  $\overset{\sim}{P}/T_4 $. Little group: $SO(3)$.
+%\vfill
+%Representations are indicated by $s$, a half or whole integer (from $SO(3)$).  Explicitly,
+%\begin{equation}
+%\begin{aligned}
+%	\psi_{\mathfrak{J}^2} (v_0)_m = s(s+1)(v_0)_m
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	\psi_{\mathfrak{J}_z} (v_0)_m = m(v_0)_m
+%\end{aligned}
+%\end{equation}
+%\begin{equation}
+%\begin{aligned}
+%	\psi_{\mathfrak{P}_\mu} (v_0)_m = \begin{cases}
+%										\sqrt{\lambda_1} & \text{if } \mu=t\\
+%										0 & \text{else}
+%										\end{cases}
+%\end{aligned}
+%\end{equation}
+%where $\alpha,\beta$ are the cylindrical angles of the 
+%\end{frame}
+%
+%
+%\begin{frame}
+%\vfill
+%We transform this starting vector with Lorentz transformations:
+%\begin{equation}
+%\begin{aligned}
+%	v_p\coloneq H_p((v_0)_m) = R(\alpha,\beta,0)L_z(\xi)(v_0)_m
+%\end{aligned}
+%\end{equation}
+%where $\alpha,\beta$ are the cylindrical angles of the vector $v_p$.
+%\vfill
+%\begin{theorem} Time-like Unitary Irreducible Representations of $\overset{\sim}{P}$
+%	The subspace generated by the vectors $\{(v_p)_m\}_{p,m}$ is invariant under $\overset{\sim}{P}$. The irreducible, unitary representations of elements of this group are characterized in the following way:
+%$$\psi_{T_b} (v_p)_m = e^{-ib_0p_0}e^{-ib_1p_1}e^{-ib_2p_2}e^{-ib_3p_3}(v_p)_m$$
+%$$\psi_\Lambda (v_p)_m = [\phi_s(H(p')\Lambda H(p))]_{m'm} (v_{p'})_{m'}$$
+%where $p' = \Lambda p$ and $\phi_s$ is the irreducible representation of $SO(3)$ defined by $s$.
+%\end{theorem}
+%\end{frame}
 
 \section{Braid Group and Anyons}
 \begin{frame}
