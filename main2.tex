@@ -1,4 +1,4 @@
-\documentclass[10pt]{ucthesis}
+\documentclass[12pt]{ucthesis}
 
 \usepackage{etex}
 \usepackage[morefloats=125]{morefloats}
@@ -9,13 +9,14 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{enumitem}
-\usepackage[letterpaper]{geometry}	
+\usepackage{enumitem} 
+\usepackage[letterpaper]{geometry}
 \usepackage[overload]{textcase}
 \usepackage{color}
 \usepackage[nonumberlist,toc]{glossaries}
 \usepackage{wrapfig}
 \usepackage{longtable}
+\usepackage{morefloats}
 \usepackage{float}
 \usepackage{listings}
 \usepackage{makecell}
@@ -26,44 +27,23 @@
 \usepackage{cleveref}
 \usepackage{ifthen}
 
-\usepackage{booktabs} % To thicken table lines
-\usepackage{mathtools}
-\usepackage[overload]{textcase}
-\usepackage{algpseudocode}
-\usepackage{array}
-\usepackage{tikz}
-\usepackage{tikz-3dplot}
-\usetikzlibrary{angles,quotes}
-\usepackage{amsfonts}
-
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newtheorem{definition}{Definition}[chapter]
-\newtheorem{theorem}[definition]{Theorem}
+% Add definitions, etc.
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
 \newtheorem{example}[definition]{Example}
-\newtheorem{algo}[definition]{Algorithm}
-\newtheorem{lemma}[definition]{Lemma}
-\newtheorem{assumption}[definition]{Assumption}
-\newtheorem{remark}[definition]{Remark}
-\newtheorem{corrolary}[definition]{Corrolary}
 
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 
-\definecolor{britishracinggreen}{rgb}{0.0, 0.26, 0.15}
-\definecolor{bluegray}{rgb}{0.4, 0.6, 0.8}
-\definecolor{lightgray}{rgb}{0.83, 0.83, 0.83}
-\definecolor{pastelred}{rgb}{1.0, 0.41, 0.38}
-\definecolor{wildwatermelon}{rgb}{0.99, 0.42, 0.52}
-\definecolor{classicrose}{rgb}{0.98, 0.8, 0.91}
-\definecolor{cobalt}{rgb}{0.0, 0.28, 0.67}
-\definecolor{columbiablue}{rgb}{0.61, 0.87, 1.0}
-
-
+\newcommand{\dif}{\mathrm{d}} % For the differential operator, d
 
 % Added to avoid windows and orphans
 \usepackage[all]{nowidow}
@@ -141,13 +121,13 @@
 \newcounter{qcounter}
 \providecommand{\keywords}[1]{\textbf{\textit{Keywords:}} #1}
 
+
 \begin{document}
 
-\makeatletter
-\input{frontmatter2}
-\maketitle
-\makeatother
+% Declarations for Front Matter
+\input{frontmatter}
 
+\maketitle
 
 \begin{frontmatter}
 
@@ -161,9 +141,13 @@
 \input{abstract}
 \end{abstract}
 
+\begin{acknowledgements}
+\input{acknowledgements}
+\end{acknowledgements}
 
 \tableofcontents
 
+%\listoftables
 
 \listoffigures
 
@@ -175,23 +159,27 @@
 \end{frontmatter}
 
 \pagestyle{plain}
+
 \renewcommand{\baselinestretch}{1.66}
 
+\input{chapters/introduction.tex}
+\input{chapters/classical.tex}
+\input{chapters/modern.tex}
 
-\input{chapters/rep.tex}
-%\input{chapters/so2.tex}
-%\input{chapters/so3.tex}
-%\input{chapters/En.tex}
-%\input{chapters/lorentz.tex}
-%\input{chapters/braids.tex}
+\nocite{*}
+\bibliography{bibliography}
 
+% Indents Appendix in Table of Contents
+\makeatletter
+\addtocontents{toc}{\let\protect\l@chapter\protect\l@section}
+\makeatother
 
-
-
-\bibliographystyle{abbrv}
-\bibliography{ref}
-
-
-
+% Hack to make Appendices to appear in Table of Contents
+\addtocontents{toc}{%
+   \noindent APPENDICES
+}
+\begin{appendices}
+\input{appendix-outline}
+\end{appendices}
 
 \end{document}
