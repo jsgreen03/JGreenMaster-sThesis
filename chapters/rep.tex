@@ -1,8 +1,8 @@
 \chapter{Representation Theory}\label{rep}
 
-\section{Introduction to Representations}
+\section{Construction and Basic Properties}
 
-Over the course of this chapter, we will develop the theory and utility of representations. At a glance, representations give us the ability to dial back the complexity of a mysterious group by viewing its elements as matrices. Thanks to the rigorous development and study of linear algebra, groups of matrices are well-understood structures. Representations allow us to unravel the mystery of an unknown group structure and reveal a group's fundamental properties as results of linear algebra techniques. This chapter follows the structure of both Wu-Ki Tung's \textit{Group Theory in Physics} and Anthony Mendes' ``Matrix Representations of the Symmetric Group" Lecture Notes. \cite{Tung,Mendes}
+Over the course of this chapter, we will develop the theory and utility of representations. This chapter follows the structure of both Wu-Ki Tung's \textit{Group Theory in Physics} and Anthony Mendes' ``Matrix Representations of the Symmetric Group" Lecture Notes. \cite{Tung,Mendes}
 
 \begin{definition}
 	(First Definition) A \textbf{representation} of degree n is a group homomorphism that maps a group into $GL_n(\mathbb{C})$
@@ -93,13 +93,13 @@ By construction of $G$, if $g\in G$, then $g = e^{\frac{2\pi im }{n}}$ where $m,
 Alternatively, we can formulate the definition of a representation in a different context, illuminating a useful interpretation that will be used extensively throughout this paper.
 
 \begin{definition}
-	(Second Definition) Let $G$ be a group, let $V$ be a linear vector space, and let $\mathcal{L}(V)$ be the group of linear operators on V together with the operation of composition. A \textbf{representation} of $G$ is a group homomorphism that maps $G$ into $\mathcal{L}(V)$.
-	$$\phi : G \rightarrow \mathcal{L}(V)$$
+	(Second Definition) Let $G$ be a group, let $V$ be a linear vector space, and let $GL(V)$ be the group of invertible linear operators on V together with the operation of composition. A \textbf{representation} of $G$ is a group homomorphism that maps $G$ into $GL(V)$.
+	$$\phi : G \rightarrow GL(V)$$
 The degree of the representation is the dimension of $V$.
 \end{definition}
 
 \begin{remark}
-	In the case where we have a finite dimensional vector space, we can make an interesting observation. Suppose $V$ is finite dimensional and $G$ is a group. It is easy to identify both definitions of representations with one another. Let $\{e_i\}_{i=1}^n$ be a basis for $V$. Let $\phi : G \rightarrow \mathcal{L}(V)$ be a representation of $G$. Then $\forall g \in G$, $U_g\coloneq\phi(g)$ is a linear operator on $V$. $U_g$ has a corresponding matrix, $M(U_g)$, with coefficients defined by the image of our basis vectors of $V$.
+	In the case where we have a finite dimensional vector space, we can make an interesting observation. Suppose $V$ is finite dimensional and $G$ is a group. It is easy to identify both definitions of representations with one another. Let $\{e_i\}_{i=1}^n$ be a basis for $V$. Let $\phi : G \rightarrow GL(V)$ be a representation of $G$. Then $\forall g \in G$, $U_g\coloneq\phi(g)$ is a linear operator on $V$. $U_g$ has a corresponding matrix, $M(U_g)$, with coefficients defined by the image of our basis vectors of $V$.
 $$M(U_g) = \begin{array}{c c}
 			U_g(e_1) \hspace{2mm} U_g(e_2) \hspace{2mm} \hdots \hspace{2mm}  U_g(e_n) & \\
 			\begin{bmatrix}
@@ -133,7 +133,7 @@ satisfy the criteria to be considered a representation (by the first definition)
 \begin{example}\end{example}
 	Let $G$ be the group defined by the complex unit circle and the operation of multiplication and let $V = \mathbb{C}$ 
 	\begin{center}
-		 \begin{tabular}{l}$\phi:G\rightarrow \mathcal{L}(V)$\\
+		 \begin{tabular}{l}$\phi:G\rightarrow GL(V)$\\
 				$\hspace{4mm}e^{i\theta}\mapsto U_{e^{i\theta}}$
 		\end{tabular}
 	\end{center}
@@ -468,7 +468,7 @@ If $ker(M)$ is the whole space or $im(M) = \{0\}$, then clearly, $M=0$. However,
 	Let $\phi$ be an irreducible representation and $M$ be a matrix/operator such that $M\phi(g)=\phi(g)M \hspace{1.5mm}\forall g \in G$. Then $M$ is a mulptiple of the identity matrix/map.
 \end{corrolary}
 
-\begin{proof}[\cite{Mendes}]Let $\lambda$ be an eigenvalue of $M$. Then $M - \lambda I$ is not invertible. Following from Schur's Theorem, we see that $\forall g \in G$
+\begin{proof}\cite{Mendes} Let $\lambda$ be an eigenvalue of $M$. Then $M - \lambda I$ is not invertible. Following from Schur's Theorem, we see that $\forall g \in G$
 $$(M-\lambda I)\phi(g) = \phi(g) (M-\lambda I)$$
 Therefore, it must be the case that $M-\lambda I = 0$ \end{proof}
 
@@ -476,14 +476,14 @@ Therefore, it must be the case that $M-\lambda I = 0$ \end{proof}
 	If $G$ is an abelian group, then any irreducible representation of $G$ is can be viewed as a degree one representation.
 \end{corrolary}
 
-\begin{proof}[\cite{Tung}]Let $\phi$ be an irreducible representation of $G$. Let $g \in G$. Then, $\forall h \in G$, $\phi(g)\phi(h) = \phi(h)\phi(g)$. Schur's Theorem tells us that $\phi(g) = \lambda_g I$ for some $\lambda_g \in \C$. Since $g$ is arbitrary, this argument forces every matrix in the representation to be a scalar multiple of the identity matrix. We can take the degree one representation to be the first entry of each matrix.  \end{proof}
+\begin{proof}\cite{Tung} Let $\phi$ be an irreducible representation of $G$. Let $g \in G$. Then, $\forall h \in G$, $\phi(g)\phi(h) = \phi(h)\phi(g)$. Schur's Theorem tells us that $\phi(g) = \lambda_g I$ for some $\lambda_g \in \C$. Since $g$ is arbitrary, this argument forces every matrix in the representation to be a scalar multiple of the identity matrix. We can take the degree one representation to be the first entry of each matrix.  \end{proof}
 
 \section{Unitary Representations}
 
 While irreducible representations are of great importance to us, we can also deepened our understanding of a representation when our underlying vector space has an inner-product structure. In this case, we can further characterize our representations. 
 
 \begin{definition}
-	Let $V$ be an inner-product space. Let $U \in \mathcal{L}(V)$. $U$ is said to be \textbf{unitary} if $U$ is surjective and $\forall x,y \in V$, $\langle x , y \rangle = \langle U(x) , U(y) \rangle$.
+	Let $V$ be an inner-product space. Let $U \in GL(V)$. $U$ is said to be \textbf{unitary} if $U$ is surjective and $\forall x,y \in V$, $\langle x , y \rangle = \langle U(x) , U(y) \rangle$.
 \end{definition}
 
 \begin{definition}
@@ -616,7 +616,7 @@ $$\sum_{\phi \in \Phi}n^2_\phi \leq |G|$$
 where $\Phi = \{\phi \mid \phi$ is a unitary, irreducible representation of $G\}$
 \end{corrolary}
 
-\begin{proof}[\cite{Tung}] Consider the entry of each matrix of a given representation $\phi$ for every $g \in G$ as denoted $[\phi_g]_{ij}$. We can create vectors in a $|G|$-dimensional vector space in the following way:
+\begin{proof}\cite{Tung}  Consider the entry of each matrix of a given representation $\phi$ for every $g \in G$ as denoted $[\phi_g]_{ij}$. We can create vectors in a $|G|$-dimensional vector space in the following way:
 $$\sqrt{\frac{n_\phi}{|G|}}\left([\phi_{g_1}]_{ij},\hspace{1mm} [\phi_{g_2}]_{ij}, \hspace{1mm}\hdots \hspace{1mm},\hspace{1mm} [\phi_{g_{|G|}}]_{ij}\right)$$
 where each choice of $i$ and $j$ gives us a new vector. Since there are $n_\phi$ choices for both $i$ and $j$, it follows that for a fixed $\phi$, there are $n_\phi^2$ choices of vectors in this space. Thus, we can make $\phi$ arbitrarily to see that the number of vectors that can be formed in this way is identically $\sum_{\phi \in \Phi}n^2_\phi$. The orthonormality condition gives us the pairwise orthogonality of these vectors in $\phi$, $i$, and $j$. Since orthogonal vectors are linearly independent, and the number of linearly independent vectors in a vector space must be at most as large as its dimension, we conclude that $\sum_{\phi \in \Phi}n^2_\phi \leq |G|$.  \end{proof}
 
@@ -646,7 +646,7 @@ Conjugacy classes are especially relevant in the contexts of representation theo
 $$\chi^\phi(g) = \chi^\phi(h) \hspace{1mm}\forall h \in C_g$$
 For future reference, we will denote $\chi^\phi_{C_g}$ to be the character of the representation $\phi$ on the conjugacy class $C_g$
 \end{theorem}
-\begin{proof}[\cite{Mendes}] Since $h\in C_g$, $\exists k\in G$ such that $g = khk^{-1}$. So 
+\begin{proof}\cite{Mendes}  Since $h\in C_g$, $\exists k\in G$ such that $g = khk^{-1}$. So 
 
 \begin{equation}
 	\begin{aligned}
@@ -667,7 +667,7 @@ We can use the character of representations to develop a similar set of conditio
 $$\sum_{g\in C} \phi(g) =\frac{|C|}{n_\phi} \chi^\phi_C I_{n_\phi}$$
 where $\chi^\phi_C$ is the character of $\phi$ on the conjugacy class $C$.
 \end{theorem}
-\begin{proof}[\cite{Tung}] Let $A\coloneq \sum_{g\in C} \phi(g)$. It is easy to see that for any $h\in G$, $\phi(h)A\phi(h)^{-1} = A$ due to the nature of conjugacy classes. Therefore, by \textbf{Schur's Theorem}, $A = \lambda I_{n_\phi}$ for some $\lambda \in \C$. Taking the trace of both sides of this equation, we get 
+\begin{proof}\cite{Tung}  Let $A\coloneq \sum_{g\in C} \phi(g)$. It is easy to see that for any $h\in G$, $\phi(h)A\phi(h)^{-1} = A$ due to the nature of conjugacy classes. Therefore, by \textbf{Schur's Theorem}, $A = \lambda I_{n_\phi}$ for some $\lambda \in \C$. Taking the trace of both sides of this equation, we get 
 \begin{equation}
 	\begin{aligned}
 		|C| * \chi_C^\phi = n_\phi * \lambda 
@@ -685,7 +685,7 @@ $$\sum_{C \in C_G} \frac{|C|}{|G|} \chi^{\phi}_C \overline{\chi^{\psi}_C } = \be
 																0 & else
 															\end{cases}$$
 \end{theorem}
-\noindent \begin{proof}[\cite{Tung}] Following from Theorem (1.29), we have 
+\noindent \begin{proof}\cite{Tung}  Following from Theorem (1.29), we have 
 $$\frac{n_\phi}{|G|} \sum_{g\in G} \left[\phi_g \right]_{ij} \left[\psi_g^\dag \right]_{kl} = \begin{cases}
 																						1 & \text{if } \psi = \phi,\hspace{1mm} j=k,\hspace{1mm} \text{and } i=l\\
 																						0 & else
@@ -738,7 +738,7 @@ $trace(M)$ is the sum of the diagonal entries in $M$, and since $M$ is a block-d
 	Let $G$ be a group, let $\phi$ be a representation of $G$, and let the irreducible decomposition of $\phi$ be denoted $\phi = T \left( \bigoplus_{i=1}^k \alpha_i *\psi_i\right) T^{-1}$ where $\{\psi_i\}_{i=1}^k$ is a set of irreducible representations of $G$. Then $$\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^{\psi_i}_C}$$
 \end{theorem}
 
-\noindent \begin{proof}[\cite{Tung}] First, note that using Theorem (1.36)
+\noindent \begin{proof}\cite{Tung}  First, note that using Theorem (1.36)
 \begin{equation}
 	\begin{aligned}
 		\chi^\phi_C = \chi^{ \bigoplus_{i=1}^k \alpha_i *\psi_i}_C = \sum_{i=1}^k \alpha_i \chi^{\psi_i}_C
@@ -758,7 +758,7 @@ So, using the Orthonormality Condition of Irreducible Characters, we get
 	Let $G$ be a group, let $\phi$ be a representation of $G$. $\phi$ is an irreducible representation of $G$ if and only if $\sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^\phi_C} = 1$
 \end{theorem}
 
-\noindent \begin{proof}[\cite{Tung}] $\Rightarrow$ Use Theorem (1.35) for immediate conclusion. 
+\noindent \begin{proof}\cite{Tung}  $\Rightarrow$ Use Theorem (1.35) for immediate conclusion. 
 
 \hspace{2mm}$\Leftarrow$ Let $\bigoplus_{i=1}^k \alpha_i\psi_i$ be the irreducible decomposition of $\phi$. Then utilizing this decomposition on the character operation and the orthonormality condition, we get the following equation.
 
@@ -787,7 +787,7 @@ One could verify that this map is a representation through explicitly showing th
 	For any finite group, $G$, the left regular representation ($\phi$) contains every irreducible representation of $G$, $\{\psi_i\}_{i=1}^k$, exactly $n_{\psi_i}$ times.
 \end{theorem}
 
-\noindent\begin{proof}[\cite{Tung}] Let $n=|G|$. Consider the matrices in given by the representation $\phi$. We know that $\phi(e) = I_n$, but what can we say about can we say about non-identity elements of $G$? It turns out, for any $g\in G$ such that $g\neq e$, $\phi_g$ always has a diagonal full of zeros. This must be the case, since it would be impossible for $g *g_i = g_i$  for any non-identity $g$. As a result, we see that $\chi^\phi_e = n$ and $\chi^\phi_g = 0$ $\forall g \in G$ with $g \neq e$. So, for any irreducible representation, $\psi_i$, Theorem (1.37) tells us that 
+\noindent\begin{proof}\cite{Tung}  Let $n=|G|$. Consider the matrices in given by the representation $\phi$. We know that $\phi(e) = I_n$, but what can we say about can we say about non-identity elements of $G$? It turns out, for any $g\in G$ such that $g\neq e$, $\phi_g$ always has a diagonal full of zeros. This must be the case, since it would be impossible for $g *g_i = g_i$  for any non-identity $g$. As a result, we see that $\chi^\phi_e = n$ and $\chi^\phi_g = 0$ $\forall g \in G$ with $g \neq e$. So, for any irreducible representation, $\psi_i$, Theorem (1.37) tells us that 
 \begin{equation}
 	\begin{aligned}
 		\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|} \chi^\phi_C \overline{\chi_C^{\psi_i}} = \frac{1}{|G|}|G| \overline{\chi_e^{\psi_i}} = n_{\psi_i}
@@ -799,7 +799,7 @@ One could verify that this map is a representation through explicitly showing th
 \	For any finite group, $G$, $\sum_{\phi \in \Phi} n_\phi^2 = |G|$ where $\Phi$ is the set of a distinct, irreducible representations of $G$.
 \end{corrolary}
 
-\noindent\begin{proof}[\cite{Tung}] Since the left regular representation ($\phi$) has irreducible decomposition $\phi = T\left(\bigoplus_{i=1}^k n_{\psi_i}\psi_i\right)T^{-1}$, we can use Theorem (1.36) to show that
+\noindent\begin{proof}\cite{Tung}  Since the left regular representation ($\phi$) has irreducible decomposition $\phi = T\left(\bigoplus_{i=1}^k n_{\psi_i}\psi_i\right)T^{-1}$, we can use Theorem (1.36) to show that
 \begin{equation}
 	\begin{aligned}
 		|G| = trace(\phi(e)) = trace\left(\bigoplus_{i=1}^k n_{\psi_i}*\psi_i(e)\right) = \sum_{i=1}^k n_{\psi_i}trace(\psi_i(e)) = \sum_{i=1}^k n_{\psi_i}^2 
@@ -882,7 +882,7 @@ $$\sum_{\phi \in \Phi} \frac{|C_g|}{|G|} \chi^{\phi}_{C_g} \overline{\chi^{\phi}
 															\end{cases}$$
 \end{theorem}
 
-\noindent \begin{proof}[\cite{Tung}] Utilizing Theorem (1.37), we see that for any $g, h \in G$, $$\sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{n_\phi}{|G|} \left[\phi_g\right]_{ij}\left[\phi_{h}^\dag\right]_{ji} = \begin{cases}
+\noindent \begin{proof}\cite{Tung}  Utilizing Theorem (1.37), we see that for any $g, h \in G$, $$\sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{n_\phi}{|G|} \left[\phi_g\right]_{ij}\left[\phi_{h}^\dag\right]_{ji} = \begin{cases}
 																										1 & if \hspace{1mm} g = h \\
 																										0 & else
 																									\end{cases}$$

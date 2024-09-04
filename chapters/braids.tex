@@ -111,7 +111,7 @@ $$\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$$
 where $i_1,i_2,\hdots,i_k\in\{1,2,\hdots,n-1\}$ and $\epsilon_i = \pm$
 \end{theorem}
 
-\noindent \begin{proof}[\cite{Kassel}] Let $D(\beta)$ be the braid diagram of $\beta$. Then, we can create a partition of the interval $[0,1]$ in such a way that for every subinterval indicated by the partition, only one crossing occurs. Each subinterval thus defines a braid diagram where only one crossing occurs, which is defined to be $\sigma_i^\epsilon$ for some $i\in\{1,2,\hdots,n-1\}$ and some $\epsilon = \pm$. Since products of braid diagrams are crudely defined as a stacking of braids on top of one another, we can recover the entire diagram of $D(\beta)$ by considering it as a product of the diagrams defined by the subintervals. This brings us to our desired result of 
+\noindent \begin{proof}\cite{Kassel}  Let $D(\beta)$ be the braid diagram of $\beta$. Then, we can create a partition of the interval $[0,1]$ in such a way that for every subinterval indicated by the partition, only one crossing occurs. Each subinterval thus defines a braid diagram where only one crossing occurs, which is defined to be $\sigma_i^\epsilon$ for some $i\in\{1,2,\hdots,n-1\}$ and some $\epsilon = \pm$. Since products of braid diagrams are crudely defined as a stacking of braids on top of one another, we can recover the entire diagram of $D(\beta)$ by considering it as a product of the diagrams defined by the subintervals. This brings us to our desired result of 
 
 \begin{equation}
 \begin{aligned}
@@ -124,7 +124,7 @@ where $i_1,i_2,\hdots,i_k\in\{1,2,\hdots,n-1\}$ and $\epsilon_i = \pm$
 	Any $\beta\in\mathcal{B}_n$ has a well defined inverse in $\mathcal{B}_n$.
 \end{corrolary}
 
-\noindent\begin{proof}[\cite{Kassel}] If $\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$, then $\beta = \sigma^{-\epsilon_k}_{i_k}\hdots\sigma^{-\epsilon_1}_{i_1}$ \end{proof} 
+\noindent\begin{proof}\cite{Kassel}  If $\beta = \sigma^{\epsilon_1}_{i_1}\hdots\sigma^{\epsilon_k}_{i_k}$, then $\beta = \sigma^{-\epsilon_k}_{i_k}\hdots\sigma^{-\epsilon_1}_{i_1}$ \end{proof} 
 
 \begin{theorem}
 	The following map is an isomorphism of groups:
@@ -132,7 +132,7 @@ $$\phi:\mathcal{B}_n\rightarrow B_n$$
 $$\sigma_i^+ \mapsto \sigma_i$$
 \end{theorem}
 
-\noindent\begin{proof}[\cite{Kassel}] Since $\phi$ is defined on generators, it must naturally inheret homomorphism properties. 
+\noindent\begin{proof}\cite{Kassel}  Since $\phi$ is defined on generators, it must naturally inheret homomorphism properties. 
 
 (Surjective) Since $\phi$ maps to every generator of $B_n$, the map is automatically surjective.
 
@@ -223,7 +223,7 @@ $$\overline{M}\Omega_nM^\intercal = \Omega_n$$
 where $\overline{M}=[\overline{M_{ij}}]$ where the conjugate bar maps $t$ to $\frac{1}{t}$.
 \end{theorem}
 
-\noindent\begin{proof}[\cite{Kassel}] It suffices to prove this statement for the image under generators of $B_n$. If we let $K_{m,n}$ be the matrix of dimension $m\times n$ filled with the entry $1-t$, we can consider the decomposing the matrix $\Omega_n$ into a block structure consistent with the blocks of the image of one generator. Let $i\in\{1,\hdots,n-1\}$. Then consider 
+\noindent\begin{proof}\cite{Kassel}  It suffices to prove this statement for the image under generators of $B_n$. If we let $K_{m,n}$ be the matrix of dimension $m\times n$ filled with the entry $1-t$, we can consider the decomposing the matrix $\Omega_n$ into a block structure consistent with the blocks of the image of one generator. Let $i\in\{1,\hdots,n-1\}$. Then consider 
 
 \begin{equation}
 	\begin{aligned}
@@ -372,11 +372,13 @@ With all this set up in mind we can easily construct our vector space(s) of inte
 
 For our initial exploration of these spaces, let $V = span\{\psi\}$ as perscribed above. We characterize this state ($\psi$) by our recollection that the system we are studying is a two particle system where particles are indistinguishable ($\psi:\C^2\rightarrow\C^2$). While the classification of particles being indistinguishable appears to make our problem more difficult, it will actually lead to an interesting simplification. If we consider the first input ($r_1$) to track the position of particle one and the second input ($r_2$) to track the position of particle two, then we make the following crude interpretation:
 
+\begin{small}
 \begin{equation}
 	\begin{aligned}
 		\int_B \int_A |\psi(r_1,r_2)|^2 d\mu(A)d\mu(B) \sim \text{ The Probability that particle one is in A and particle two is in B}
 	\end{aligned}
 \end{equation}
+\end{small}
 
 where $A,B\subset\C$. Given that the nature of indistinguishable particles, we cannot be able to tell whether or not two particles switch places at any given state. If we did have a way to deduce this, our particles would be abe to be distinguished from one another. Therefore, it should not make a difference if we assert that particle one is in the set $A$ and particle two in set $B$ versus particle one being in set $B$ and particle two being in set $A$. Explicitly,
 
@@ -432,14 +434,14 @@ Since we can use the interpretation that representations act as linaer operators
 
 This intuitively alignes with our understanding of the impact of anyons on wave functions. When anyons behave in such a way that only the number of transpositions in the permutation of particles impacts the resultant phase of the wave function, we say that these anyons are abelian. This homomorphism is clearly unfaithful, but is the simplest construction we can create.
 
-Since our vector space was one dimensional, our representation needed to be degree $1$. What happens if we add more vectors to our basis of $V$. Suppose that $V \coloneq \bigotimes_{i=1}^n\psi$ where $n>1$. This vector space is clearly $n$-dimensional. It turns out that we have a lot of freedom as to how we can construct a representation of the braid group.
+Since our vector space was one dimensional, our representation needed to be degree $1$. What happens if we add more vectors to our basis of $V$. Suppose that $V \coloneq span\{\psi\}$ and we consider the space $V^n\coloneq\bigotimes_{i=1}^nV$ where $n>1$. This vector space is clearly $n$-dimensional. It turns out that we have a lot of freedom as to how we can construct a representation of the braid group.
 
-\begin{theorem}[\cite{Riverside}]
-	Let $V \coloneq \bigotimes_{i=1}^m\psi$ where $m>1$ and let $R: V\otimes V \rightarrow V\otimes V $ be an invertible, linear operator. Then the following map is a representation of $B_n$
+\begin{theorem}\cite{Riverside} 
+	Let $V \coloneq span\{\psi\}$ and  $V^m\coloneq\bigotimes_{i=1}^mV$ where $m>1$ and let $R: V\otimes V \rightarrow V\otimes V $ be an invertible, linear operator. Then the following map is a representation of $B_n$
 $$\phi_R:B_n\rightarrow GL_m(\C)$$
 $$\sigma_i \mapsto M(U_i)$$
 where $M(U_i)$ is the matrix of the operator $U_i$ defined by
-$$U_i:V\rightarrow V$$
+$$U_i:V^m\rightarrow V^m$$
 $$(v_1\otimes\hdots\otimes v_i\otimes v_{i+1}\otimes\hdots\otimes v_m)\mapsto (v_1\otimes\hdots\otimes R(v_i\otimes v_{i+1})\otimes\hdots\otimes v_m)$$
 \end{theorem}
 

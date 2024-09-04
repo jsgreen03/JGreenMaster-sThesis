@@ -469,16 +469,17 @@ where (3.3) comes from applying (3.1-2) to Definition (3.3). This result tells u
 
 and therefore, any rotation in $SO(3)$ can be written as
 
-
+\begin{small}
 \begin{equation}
 	\begin{aligned}
-		R(\alpha,\beta,\gamma) \\&= \begin{bmatrix}
+		R(\alpha,\beta,\gamma) &= \begin{bmatrix}
 						\cos(\alpha)\cos(\beta)\cos(\gamma) - \sin(\alpha)\sin(\gamma)& -\cos(\alpha)\cos(\beta)\sin(\gamma) -\sin(\alpha)\cos(\gamma)&  \cos(\alpha)\sin(\beta)\\
 						\sin(\alpha)\cos(\beta)\cos(\gamma) + \cos(\alpha)\sin(\gamma)& -\sin(\alpha)\cos(\beta)\sin(\gamma) +\cos(\alpha)\cos(\gamma)  &  \sin(\alpha)\sin(\beta) \\
 						-\sin(\beta)\cos(\gamma) & \sin(\beta)\sin(\gamma) & \cos(\beta)\\
 						\end{bmatrix}
 	\end{aligned}
 \end{equation}
+\end{small}
 
 While this formulation is unpleasing, it is still useful, especially in context of writing computer algorithm.
 
@@ -528,7 +529,7 @@ Given this isomorphic relationship, we can construct a generator for $H_n$ in a 
 	 For any arbitrary direction, $n=(n_1,n_2,n_3)\in\R^3$, the generator, $J_n$, of $H_n$, can be written in the following way:
 $$J_n = n_1J_x + n_2J_y + n_3J_z$$
 \end{theorem}
-\noindent \begin{proof}[\cite{Tung}] If $n$ is determined by the prototypical angles $\phi$ and $\theta$, then we can always rotate the $z$-axis into $n$ with the rotation $R(\theta,\phi,0)$. Therefore, $n_i = [R(\theta,\phi,0)]_{i3}$.
+\noindent \begin{proof} \cite{Tung}  If $n$ is determined by the prototypical angles $\phi$ and $\theta$, then we can always rotate the $z$-axis into $n$ with the rotation $R(\theta,\phi,0)$. Therefore, $n_i = [R(\theta,\phi,0)]_{i3}$.
 
 \begin{figure}[H]
 	\centering
@@ -952,7 +953,7 @@ We note that $\phi_{\mathfrak{J}_z}$ and $\phi_{\mathfrak{J}_y}$ are a scalar mu
 	&\phi_\frac{1}{2}(R(\alpha,\beta,\gamma)) \\
 	&= e^{-i\alpha\phi_{\mathfrak{J}_z}}e^{-i\beta\phi_{\mathfrak{J}_y}}e^{-i\gamma\phi_{\mathfrak{J}_z}}	\\
 	&= (\cos(\frac{\alpha}{2})I_2 -i\sin(\frac{\alpha}{2})2*\phi_{\mathfrak{J}_z})(\cos(\frac{\beta}{2})I_2 -i\sin(\frac{\beta}{2})\phi_{\mathfrak{J}_y})(\cos(\frac{\gamma}{2})I_2 -i\sin(\frac{\gamma}{2})\phi_{\mathfrak{J}_z})\\
-	&=\begin{bmatrix}
+	&=\begin{small}\begin{bmatrix}
 			\cos(\frac{\alpha}{2}) - i (\sin(\frac{\alpha}{2}) & 0\\
 			0 & \cos(\frac{\alpha}{2}) + i (\sin(\frac{\alpha}{2})
 		\end{bmatrix}
@@ -963,7 +964,7 @@ We note that $\phi_{\mathfrak{J}_z}$ and $\phi_{\mathfrak{J}_y}$ are a scalar mu
 \begin{bmatrix}
 			\cos(\frac{\gamma}{2}) - i (\sin(\frac{\gamma}{2}) & 0\\
 			0 & \cos(\frac{\gamma}{2}) + i (\sin(\frac{\gamma}{2})
-		\end{bmatrix} \\
+		\end{bmatrix}\end{small} \\
 		&=\begin{bmatrix}
 			e^{-i\frac{\alpha}{2}}\cos(\frac{\beta}{2})e^{-i\frac{\gamma}{2}} & -e^{-i\frac{\alpha}{2}}\sin(\frac{\beta}{2})e^{-i\frac{\gamma}{2}} \\
 			e^{-i\frac{\alpha}{2}}  \sin(\frac{\beta}{2})e^{-i\frac{\gamma}{2}} & e^{-i\frac{\alpha}{2}}\cos(\frac{\beta}{2}) e^{-i\frac{\gamma}{2}}
