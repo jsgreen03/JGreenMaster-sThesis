@@ -72,7 +72,7 @@ By construction of $G$, if $g\in G$, then $g = e^{\frac{2\pi im }{n}}$ where $m,
 		                                                                                    &= \phi(e^{2\pi i\frac{x}{y}})\phi(e^{2\pi i\frac{a}{b}})
 		\end{aligned}
 	\end{equation}
-	Since, $\phi$ has been shown to be a homomorphism, we can conclude that $\phi$ is also a degree $2$ representation of $G$.\\
+	Since $\phi$ has been shown to be a homomorphism, we can conclude that $\phi$ is also a degree $2$ representation of $G$.\\
 
 	\noindent Is $\phi$ faithful or degenerate?A faithful representation would have a trivial kernel. Suppose $\phi(e^{2\pi i\frac{x}{y}}) = I_2$ ($I_n$ is the Identity Matrix of dimension $n\times n$). 
 	\begin{equation}
@@ -99,7 +99,7 @@ The degree of the representation is the dimension of $V$.
 \end{definition}
 
 \begin{remark}
-	In the case where we have a finite dimensional vector space, we can make an interesting observation. Suppose $V$ is finite dimensional and $G$ is a group. It is easy to identify both definitions of representations with one another. Let $\{e_i\}_{i=1}^n$ be a basis for $V$. Let $\phi : G \rightarrow GL(V)$ be a representation of $G$. Then $\forall g \in G$, $U_g\coloneq\phi(g)$ is a linear operator on $V$. $U_g$ has a corresponding matrix, $M(U_g)$, with coefficients defined by the image of our basis vectors of $V$.
+	In the case where we have a finite-dimensional vector space, we can make an interesting observation. Suppose $V$ is finite-dimensional and $G$ is a group. It is easy to identify both definitions of representations with one another. Let $\{e_i\}_{i=1}^n$ be a basis for $V$. Let $\phi : G \rightarrow GL(V)$ be a representation of $G$. Then $\forall g \in G$, $U_g\coloneq\phi(g)$ is a linear operator on $V$. $U_g$ has a corresponding matrix, $M(U_g)$, with coefficients defined by the image of our basis vectors of $V$.
 $$M(U_g) = \begin{array}{c c}
 			U_g(e_1) \hspace{2mm} U_g(e_2) \hspace{2mm} \hdots \hspace{2mm}  U_g(e_n) & \\
 			\begin{bmatrix}
@@ -127,7 +127,7 @@ satisfy the criteria to be considered a representation (by the first definition)
 
 	$$\psi(gh) = M(\phi(gh)) = M(\phi(g)\circ \phi(h)) = M(\phi(g))*M(\phi(h)) = \psi(g)\psi(h)$$
 
-\noindent where the homomorphism property of $\phi$ is used in succession with the relationship between the composition of operators and the multiplication of their corresponding matrices. This observation illustrates a special conenction between the two definitions of a representation. If we are given a representation defined in the either way, we can interpret the target space of the homomorphism in the context of both definitions. That is to say, every $n\times n$ matrix can be interpreted as a linear operator on an $n$-dimensional vector space, and vice-versa. The homomorphism property of one definition is a necessary condition for the homomorphism in the other definition. Hence, we can see the two definitions of representations are equivalent in the case of a finite dimensional vector space.
+\noindent where the homomorphism property of $\phi$ is used in succession with the relationship between the composition of operators and the multiplication of their corresponding matrices. This observation illustrates a special connection between the two definitions of a representation. If we are given a representation defined in either way, we can interpret the target space of the homomorphism in the context of both definitions. That is to say, every $n\times n$ matrix can be interpreted as a linear operator on an $n$-dimensional vector space, and vice-versa. The homomorphism property of one definition is a necessary condition for the homomorphism in the other definition. Hence, we can see the two definitions of representations are equivalent in the case of a finite-dimensional vector space.
 \end{remark}
 
 \begin{example}\end{example}
@@ -140,7 +140,7 @@ satisfy the criteria to be considered a representation (by the first definition)
 	where $U_{e^{i\theta}}$ is the linear operator (on $V$) that multiplies its input by $e^{i\theta}$. 
 
 
-Each operator is clearly linear. The process of confirming a map is a representation is relatively standard. However, there does not seem to be any intuitive way to come up with a new representation. The rest of this chapter will be devoted the process of comparing and characterizing every representation of a given group. We appeal to Definition 3.5 to argue that this map is a representation. Let $e^{i\theta}$, $e^{i\psi} \in G$. Then $\phi(e^{i\theta} e^{i\psi}) = U_{e^{i(\theta+\psi)}}$. For all $re^{i\gamma} \in V$, we have
+Each operator is clearly linear. The process of confirming a map is a representation is relatively standard. However, there does not seem to be any intuitive way to come up with a new representation. The rest of this chapter will be devoted to the process of comparing and characterizing every representation of a given group. We appeal to Definition 3.5 to argue that this map is a representation. Let $e^{i\theta}$, $e^{i\psi} \in G$. Then $\phi(e^{i\theta} e^{i\psi}) = U_{e^{i(\theta+\psi)}}$. For all $re^{i\gamma} \in V$, we have
 
 	\begin{equation}
 		\begin{aligned}
@@ -161,14 +161,14 @@ $$M(U_{e^{i\theta}}) = \begin{bmatrix}
 				\end{bmatrix} = e^{i\theta} $$
 This is clearly a degree one representation given by Definition 3.1.
 
-If $V$ is a vector space over $\mathbb{R}$, then it is a two-dimensional vector space. This means that the matrix of any operator defined on $V$ will have be of shape $2\times2$. Taking the basis $\{1,i\}$ of $V$, any $e^{i\theta} \in G$, and the identity $e^{i\theta} = \cos(\theta) + i\sin(\theta)$ we see that the following equalities hold:
+If $V$ is a vector space over $\mathbb{R}$, then it is a two-dimensional vector space. This means that the matrix of any operator defined on $V$ will have to be of shape $2\times2$. Taking the basis $\{1,i\}$ of $V$, any $e^{i\theta} \in G$, and the identity $e^{i\theta} = \cos(\theta) + i\sin(\theta)$ we see that the following equalities hold:
 $$(a+bi)e^{i\theta} = (a\cos(\theta)-b\sin(\theta))+i(a\sin(\theta)+b\cos(\theta))$$
 $$M(U_{e^{i\theta}}) = \begin{bmatrix}
 					\cos(\theta) & -\sin(\theta) \\
                                         \sin(\theta) & \cos(\theta)
 				\end{bmatrix}$$
 
-This representation will be revisited later in greater detail as multiplication of complex numebrs by $e^{i\theta}$ corresponds to rotation in the complex plane by the angle $\theta$ about the origin.
+This representation will be revisited in Chapter 3 in greater detail as the multiplication of complex numbers by $e^{i\theta}$ corresponds to a rotation in the complex plane by the angle $\theta$ about the origin.
 
 Unless otherwise specified, we shall almost exclusively be considering finite dimensional vector spaces and therefore will interchangeably use both definitions of representations as needed.
 
@@ -180,14 +180,14 @@ While we have shown it is relatively straightforward to argue whether a given ma
 	Two representations, $\phi$ and $\psi$, are said to be \textbf{equivalent representations} if there exists some invertible operator/matrix (depending on definition of representation), $M$, such that $$\phi = M \psi M^{-1}$$
 \end{definition}
 
-In the context of linear algebra, this conjugation by an invertible matrix can most easily be thought of as a change of basis transformation. With this in mind, we can see that representations of groups can be spilt into equivalence classes based on matrix similarity (or similarity of any matrix of the operator). In order to deduce whether or not representations are equivalent, we need to utilize matrix-similarity-preserving opertations to find common traits. A natural first choice is the trace operation on matrices.
+In the context of linear algebra, this conjugation by an invertible matrix can most easily be thought of as a change of basis transformation. With this in mind, we can see that representations of groups can be split into equivalence classes based on matrix similarity (or similarity of any matrix of the operator). In order to deduce whether or not representations are equivalent, we need to utilize matrix-similarity-preserving operations to find common traits. A natural first choice is the trace operation on matrices.
 
 \begin{definition}
 	The \textbf{character} of a representation, $\phi$, on $g \in G$, denoted $\chi^{\phi}(g)$, is defined by $$\chi^{\phi}(g)=trace(\phi(g))$$
 \end{definition}
 
 \begin{theorem}
-	If two representations are equivalent, then character of both representations are the same.
+	If two representations are equivalent, then the character of both representations are the same.
 \end{theorem}
 
 \begin{proof}Suppose $\phi$ and $\psi$ be two equivalent representations. Then $\exists M$ such that $\forall g \in G$, $\phi(g) = M\psi(g)M^{-1}$. Then $\forall g \in G$,
@@ -203,7 +203,7 @@ In the context of linear algebra, this conjugation by an invertible matrix can m
 
 Therefore, $\chi^{\phi} = \chi^{\psi}$. \end{proof}
 
-The character of a representation gives us the ability to quickly rule out equivalence of representations without getting into messy matrix calculations, especially in higher degree representations.
+The character of a representation gives us the ability to quickly rule out equivalence of representations without getting into messy matrix calculations, especially in representations with higher degrees.
 
 \begin{example}\end{example} 
 	Let $S_3$ be the symmetric group of degree 3 and $\phi$ and $\psi$ be defined below. Comparing the outputs of each map, it is clear that the maps are not identical. Are these representations equivalent? We can use the trace argument to justify why they are not. We can observe the following equalities directly: 
@@ -285,13 +285,13 @@ As a result, $\chi^{\phi} = \chi^{\psi}$, and therefore, these representations a
 	\end{center}
 
 
-As alluded to in the previous example, it seems that representations can share ``pieces" in common without being considered equivalent. In the same way we decompose linear operators (and their matrices) into a block diagonal structure for the simplicity of our study, we can decompose the linear operators (and matrices) of a representation in the same way to make strikingly similar conclusions. In this way, we can reveal a more intuitive understanding of the underlying representation and create an natural way to fully decompose any arbitrary representation into natural components. 
+As alluded to in the previous example, it seems that representations can share ``pieces" in common without being considered equivalent. In the same way we decompose linear operators (and their matrices) into a block diagonal structure for the simplicity of our study, we can decompose the linear operators (and matrices) of a representation in the same way to make strikingly similar conclusions. In this way, we can reveal a more intuitive understanding of the underlying representation and create a natural way to fully decompose any arbitrary representation into natural components. 
 
 \begin{definition}
 	Let $\phi$ be a representation of the group $G$ and $U_G \coloneq \{\phi(g)=U_g: V\rightarrow V \hspace{1mm}| \hspace{1mm} g\in G\}$. Let $W \subset V$. $W$ is said to be an \textbf{invariant subspace} with respect to $U_G$ if $\forall v \in W$ and $\forall g \in G$, $U_g(v)\in W$.
 \end{definition}
 
-In general, we say that a subspace satisfying the above condition is invariant with respect to $\phi$. Our most familiar understanding of invariant subspaces comes from our study of decomposing generic linear operators (matrices) into its corresponding eigenspaces. This process is not unfamiliar from what we will study next, but with a heavier restriction, since our new definition considers many operators at once.
+In general, we say that a subspace satisfying the above condition is invariant with respect to $\phi$. Our most familiar understanding of invariant subspaces comes from our study of decomposing generic linear operators (matrices) into their corresponding eigenspaces. This process is not unfamiliar to what we will study next, but with a heavier restriction, since our new definition considers many operators at once.
 
 \begin{definition}
 	A representation is said to be \textbf{irreducible} if there is no nontrivial, invariant subspace with respect to it. Otherwise, we say that the representation is reducible.
@@ -329,7 +329,7 @@ It becomes increasingly clear that the fixed first row and column of these matri
  
 \begin{proof} By induction on the degree of the representation $n$. \\
 
-(Base Case: $n = 1$) Suppose that $\phi$ is a degree one representation of $G$, with $U_G$ being defined as in Definition 3.14. Then $\forall U_g \in U_G$, we have seeking to show that every invariant subspace of $V$ with respect to $U_g$ is trivial. Suppose that $W \subset V$ is a subspace and let $dim(W)$ denote the dimension of $W$. Then, $dim(W) \leq dim(V) = 1$ as given by the degree of the representation. If $dim(W) = 1$, then $W=V$ and therefore, $W$ is a trivial subspace. If $dim(W) < dim(V)$, then it can only be the case that $dim(W) = 0$, and therefore, $W= \{0\}$, which is also trivial. Therefore, every possible subspace of $V$ must be trivial, and as a result, every invariant subspace must also be trivial. Hence, $\phi$ is an irreducible representation. \\
+(Base Case: $n = 1$) Suppose that $\phi$ is a degree one representation of $G$, with $U_G$ being defined as in Definition 3.14. Then $\forall U_g \in U_G$, we are seeking to show that every invariant subspace of $V$ with respect to $U_g$ is trivial. Suppose that $W \subset V$ is a subspace and let $dim(W)$ denote the dimension of $W$. Then, $dim(W) \leq dim(V) = 1$ as given by the degree of the representation. If $dim(W) = 1$, then $W=V$ and therefore, $W$ is a trivial subspace. If $dim(W) < dim(V)$, then it can only be the case that $dim(W) = 0$, and therefore, $W= \{0\}$, which is also trivial. Therefore, every possible subspace of $V$ must be trivial, and as a result, every invariant subspace must also be trivial. Hence, $\phi$ is an irreducible representation. \\
 
 (Inductive Hypothesis) Suppose that for any representation of degree $0<k\leq n$, $\phi$, we have that $\phi =T\left(\bigoplus_{i=1}^j \alpha_i*\psi_i\right)T^{-1}$ where $T$ is some invertible matrix/operator and $\{\psi_i\}_{i=1}^j$ is some set of irreducible representations of $G$. \\
 
@@ -398,7 +398,7 @@ to conclude that
 \end{equation} \end{proof}
 
 \begin{remark}
-	The main purpose of this theorem is to illustrate that any representation can be thought of as a ``linear combination" of irreducible representations of that group. Being able to readily compare the irreducible representation decomposition of any two given representations is key to understanding similarities and differences between them.
+	The main purpose of this theorem is to illustrate that any representation can be thought of as a ``linear combination" of irreducible representations of that group. Being able to readily compare the irreducible representation decomposition of any two given representations is key to understanding any similarities and differences between them.
 \end{remark}
 
 \begin{example}\end{example}
@@ -423,7 +423,7 @@ We can see the following two equalities hold:
 $$\phi = \mu_1 \oplus \mu_1 \oplus \mu_2 = 2\mu_1 \oplus \mu_2$$
 $$\psi = \mu_1 \oplus \mu_3$$
 
-Now that we have established that representations are best understood by studying the irreducible representations that compose them, we shall focus our attention to characterizing the irreducible representations. There are many theorems and useful corrolaries that we will make use of later that will be established now.
+Now that we have established that representations are best understood by studying the irreducible representations that compose them, we shall focus our attention on characterizing the irreducible representations. There are many theorems and useful corollaries that we will make use of later that will be established now.
 
 \begin{theorem}
 	If $\phi$ is an irreducible representation of a group $G$, then any representation equivalent to $\phi$ must also be irreducible.
@@ -452,7 +452,7 @@ Since there are no non-trivial $\psi_g$-invariant subspaces, $\psi$ must also be
 	 (M\phi(g))v= (\psi(g)M)v = 0
 \end{equation}
 
-This shows us that $\phi(g)v \in ker(M)$ as well. As a result, $ker(M)$ shown to be a $\phi$-invariant subspace. Since $\phi$ is irreducible, it must be the case that either $ker(M) =\{0\}$ or $ker(M)$ is the entire space.  
+This shows us that $\phi(g)v \in ker(M)$ as well. As a result, $ker(M)$ is shown to be a $\phi$-invariant subspace. Since $\phi$ is irreducible, it must be the case that either $ker(M) =\{0\}$ or $ker(M)$ is the entire space.  
 
 Similarly, if $w \in im(M)$, then we can show that $im(M)$ is a $\psi$-invariant operator with the following argument: $\forall g\in G$,
 
@@ -465,7 +465,7 @@ for some $x$ in our space. Then, $im(M)$ must be a $\psi$-invariant subspace, an
 If $ker(M)$ is the whole space or $im(M) = \{0\}$, then clearly, $M=0$. However, if this is not the case, then $ker(M) = \{0\}$ and $im(M)$ is the whole space, and we have $m=n$ giving us an invertible $M$. \end{proof}
 
 \begin{corrolary}
-	Let $\phi$ be an irreducible representation and $M$ be a matrix/operator such that $M\phi(g)=\phi(g)M \hspace{1.5mm}\forall g \in G$. Then $M$ is a mulptiple of the identity matrix/map.
+	Let $\phi$ be an irreducible representation and $M$ be a matrix/operator such that $M\phi(g)=\phi(g)M \hspace{1.5mm}\forall g \in G$. Then $M$ is a multiple of the identity matrix/map.
 \end{corrolary}
 
 \begin{proof}\cite{Mendes} Let $\lambda$ be an eigenvalue of $M$. Then $M - \lambda I$ is not invertible. Following from Schur's Theorem, we see that $\forall g \in G$
@@ -473,14 +473,14 @@ $$(M-\lambda I)\phi(g) = \phi(g) (M-\lambda I)$$
 Therefore, it must be the case that $M-\lambda I = 0$ \end{proof}
 
 \begin{corrolary}
-	If $G$ is an abelian group, then any irreducible representation of $G$ is can be viewed as a degree one representation.
+	If $G$ is an abelian group, then any irreducible representation of $G$ can be viewed as a degree one representation.
 \end{corrolary}
 
 \begin{proof}\cite{Tung} Let $\phi$ be an irreducible representation of $G$. Let $g \in G$. Then, $\forall h \in G$, $\phi(g)\phi(h) = \phi(h)\phi(g)$. Schur's Theorem tells us that $\phi(g) = \lambda_g I$ for some $\lambda_g \in \C$. Since $g$ is arbitrary, this argument forces every matrix in the representation to be a scalar multiple of the identity matrix. We can take the degree one representation to be the first entry of each matrix.  \end{proof}
 
 \section{Unitary Representations}
 
-While irreducible representations are of great importance to us, we can also deepened our understanding of a representation when our underlying vector space has an inner-product structure. In this case, we can further characterize our representations. 
+While irreducible representations are of great importance to us, we can also deepen our understanding of a representation when our underlying vector space has an inner-product structure. In this case, we can further characterize our representations. 
 
 \begin{definition}
 	Let $V$ be an inner-product space. Let $U \in GL(V)$. $U$ is said to be \textbf{unitary} if $U$ is surjective and $\forall x,y \in V$, $\langle x , y \rangle = \langle U(x) , U(y) \rangle$.
@@ -517,7 +517,7 @@ Therefore, $U_g$ is unitary $\forall g \in G$. \end{proof}
 The next portion of this section will be devoted to identifying and proving some of the key properties of irreducible and unitary representations. We will extensively use these properties in later sections.
 
 \begin{theorem}
-	Let $G$ be a finite group, let $\Phi$ be the set of distinct (inequivalent to others in set) irreducible, unitary representation of $G$. Let $\phi,\psi \in \Phi$ with degrees $n_{\phi}$ and $n_{\psi}$ respectively. Let $\phi_g \coloneq \phi(g)$ and $\psi_g \coloneq \psi(g)$. Then the following equality holds:
+	Let $G$ be a finite group and let $\Phi$ be the set of distinct (inequivalent to others within the set) irreducible, unitary representations of $G$. Let $\phi,\psi \in \Phi$ with degrees $n_{\phi}$ and $n_{\psi}$ respectively. Let $\phi_g \coloneq \phi(g)$ and $\psi_g \coloneq \psi(g)$. Then the following equality holds:
 $$\frac{n_\phi}{|G|} \sum_{g\in G} \left[\phi_g \right]_{ij} \left[\psi_g^\dag \right]_{kl} = \begin{cases}
 																						1 & \text{if } \psi = \phi,\hspace{1mm} j=k,\hspace{1mm} \text{and } i=l\\
 																						0 & else
@@ -539,7 +539,7 @@ where for any matrix $M=\left[m\right]_{ij}$, $\left[M^\dag\right]_{ij} = \overl
 
 By Schur's Theorem, $M_A$ is either the zero matrix with $\phi \neq \psi$ or $M_A$ is invertible with $\phi=\psi$. 
 
-Suppose that $M_A = 0$. Then we can recover entries in the right hand side of our equation by observing the following chain of equations:
+Suppose that $M_A = 0$. Then we can recover entries in the right-hand side of our equation by observing the following chain of equations:
 \begin{equation}
 	\begin{aligned}
 		    0 &= \left[M_A\right]_{il} \\ 
@@ -550,7 +550,7 @@ Suppose that $M_A = 0$. Then we can recover entries in the right hand side of ou
 	\end{aligned}
 \end{equation}
 
-We can see that this summand contains $n_\phi n_\psi$ terms where $[A]_{xy}$ are arbitrary entries. This means that we can choose $A$ specifically to recover relationships between matrix entries in $\phi_g$, $\psi_g$ and the left hand side of our chain of equations. That is, for a fixed $j,k$, choose $$[A]_{xy} = \begin{cases}
+We can see that this summand contains $n_\phi n_\psi$ terms where $[A]_{xy}$ are arbitrary entries. This means that we can choose $A$ specifically to recover relationships between matrix entries in $\phi_g$, $\psi_g$, and the left-hand side of our chain of equations. That is, for a fixed $j,k$, choose $$[A]_{xy} = \begin{cases}
 												1 & \text{if }x=j\text{ and } y=k \\
 												0 & \text{else}
 \end{cases}$$
@@ -563,7 +563,7 @@ To uncover that for any combination of $i,j,k,l,$
 
 Therefore, $\sum_{g\in G}\phi_{g}\psi_g^{\dag}=0$ \\
 
-Suppose that $M_A$ is invertible and $\phi=\psi$. It must be the case then that $M_A = \lambda I_{n_\phi}$ where $\lambda \in \C$ following from Schur's Theorem. Choosing $A$ to be defined as it was in the previous case, we can see that for any $i,j,k,l,$
+Suppose that $M_A$ is invertible and $\phi=\psi$. It must be the case then that $M_A = \lambda I_{n_\phi}$ where $\lambda \in \C$ follows from Schur's Theorem. Choosing $A$ to be defined as it was in the previous case, we can see that for any $i,j,k,l,$
 \begin{equation}
 	\begin{aligned}
 		\sum_{g\in G} \left[\phi_g\right]_{ij}\left[\phi^\dag_g\right]_{kl} = \begin{cases}
@@ -573,7 +573,7 @@ Suppose that $M_A$ is invertible and $\phi=\psi$. It must be the case then that 
 	\end{aligned}
 \end{equation}
 
-The value of $\lambda$ will be shown to be dependent on the relationship between $j$ and $k$. If $j\neq k$, we can sum over every possible value for $i$ and then interepret this process as the standard inner-product (in $\C^{n_\phi}$) between two columns of a unitary matrix.
+The value of $\lambda$ will be shown to be dependent on the relationship between $j$ and $k$. If $j\neq k$, we can sum over every possible value for $i$ and then interpret this process as the standard inner-product (in $\C^{n_\phi}$) between two columns of a unitary matrix.
 
 \begin{equation}
 	\begin{aligned}
@@ -626,20 +626,20 @@ This conclusion is incredibly important because it tells us that the task of fin
 
 \section{Irreducible Characters and the Regular Representation}
 
-The process of fully characterizing representations in terms of irreducible components will ultimately come to analyzing and comparing characters. Due to the nature of the trace operation, analyzing characters of representation can lead to more powerful conclusions. The main two reasons come down to the matrix-similarity-preserving property of the trace operation. Firstly, representations need not be unitary, and as a result, any conclusion about an irreducible representation will be basis-independent (in construction of matrix or operator). Secondly, we can utilize the structure of the given group to identify how the character function takes values on multiple group elements simultaneously. 
+The process of fully characterizing representations in terms of irreducible components will ultimately come to analyzing and comparing characters. Due to the nature of the trace operation, analyzing characters of representation can lead to more powerful conclusions. The main two reasons come down to the matrix-similarity-preserving property of the trace operation. Firstly, representations need not be unitary, and as a result, any conclusion about an irreducible representation will be basis-independent (in the construction of the matrices or operators). Secondly, we can utilize the structure of the given group to identify how the character function takes values on multiple group elements simultaneously. 
 
 \begin{definition}
 	Let $G$ be a group. Two elements, $g,\hspace{1mm}h \in G$ are said to be \textbf{conjugate} to one another if $\exists k \in G$ such that $g = khk^{-1}$.
 \end{definition}
 
-Conjugacy is an equivalence relation, we we can use this relation to partition our group into different subsets.
+Conjugacy is an equivalence relation, we can use this relation to partition our group into different subsets.
 
 \begin{definition}
 	Let $G$ be a group and let $g \in G$. The \textbf{conjugacy class} of $g$ is defined in the following way:
 $$C_g = \{h\in G \mid g = khk^{-1} \text{ for some } k \in G \}$$
 \end{definition}
 
-Conjugacy classes are especially relevant in the contexts of representation theory because the character operation on representation is invariant on conjugacy classes.
+Conjugacy classes are especially relevant in the context of representation theory because the character operation on representation is invariant on conjugacy classes.
 
 \begin{theorem}
 	Let $G$ be a group, $\phi$ be a representation of $G$, and $g\in G$. Then 
@@ -660,7 +660,7 @@ For future reference, we will denote $\chi^\phi_{C_g}$ to be the character of th
 \end{equation}
 \end{proof}
 
-We can use the character of representations to develop a similar set of condition as we have developed on representations themselves to give us a little more information about while relaxing the condition of unitarity.
+We can use the character of representations to develop a similar set of conditions as we have developed on representations themselves to give us a little more information about while relaxing the condition of unitarity.
 
 \begin{theorem}
 	Let $G$ be a group and let $\phi$ be a representation of $G$. Let $C$ be some conjugacy class of $G$. Then 
@@ -700,7 +700,7 @@ Fixing $i=j$, $k=l$, and summing over $i$ and $k$ respectively, we obtain the ch
 																					 \end{cases}
 	\end{aligned}
 \end{equation}
-Observing the fact that the character operation is constant on conjugacy class, we can alter this equation to take the following equivalent form:
+Observing the fact that the character operation is constant on conjugacy classes, we can alter this equation to take the following equivalent form:
 
 \begin{equation}
 	\begin{aligned}
@@ -712,7 +712,7 @@ Observing the fact that the character operation is constant on conjugacy class, 
 \end{equation}
 giving the desired conclusion.  \end{proof}
 
-Now that we have established some valuable results about irreducible characters, we can establish one of the main results. It turns out that we can compare irreducible characters to the character of a generic representation to determine the number of copies of a given irreducible character in its irreducible decomposition. In other words, we can recover the coeffeicients ($\alpha_i$) from Theorem (1.18). In order to establish this, we first need the following useful theorems.
+Now that we have established some valuable results about irreducible characters, we can establish one of the main results. It turns out that we can compare irreducible characters to the character of a generic representation to determine the number of copies of a given irreducible character in its irreducible decomposition. In other words, we can recover the coefficients ($\alpha_i$) from Theorem (1.18). In order to establish this, we first need the following useful theorems.
 
 \begin{theorem}
 	Let $M = \bigoplus_{i=1}^k A_i$ where $A_i$ is a square matrix for every $i$. Then $$trace(M) = \sum_{i=1}^k trace(A_i)$$
@@ -735,7 +735,7 @@ $trace(M)$ is the sum of the diagonal entries in $M$, and since $M$ is a block-d
 \end{proof}
 
 \begin{theorem}
-	Let $G$ be a group, let $\phi$ be a representation of $G$, and let the irreducible decomposition of $\phi$ be denoted $\phi = T \left( \bigoplus_{i=1}^k \alpha_i *\psi_i\right) T^{-1}$ where $\{\psi_i\}_{i=1}^k$ is a set of irreducible representations of $G$. Then $$\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^{\psi_i}_C}$$
+	Let $G$ be a group and let $\phi$ be a representation of $G$, and let the irreducible decomposition of $\phi$ be denoted $\phi = T \left( \bigoplus_{i=1}^k \alpha_i *\psi_i\right) T^{-1}$ where $\{\psi_i\}_{i=1}^k$ is a set of irreducible representations of $G$. Then $$\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|}\chi^\phi_C \overline{\chi^{\psi_i}_C}$$
 \end{theorem}
 
 \noindent \begin{proof}\cite{Tung}  First, note that using Theorem (1.36)
@@ -781,13 +781,13 @@ $$g\stackrel{\phi}{\mapsto} [\phi_g]_{ij} = \begin{cases}
 							\end{cases}$$
 \end{definition}
 
-One could verify that this map is a representation through explicitly showing the multiplication rule in $G$ is satisfied by the matrices in $\phi(G)$. Due to the construction of our matrices, this representation has degree $|G|$. 
+One could verify that this map is a representation by explicitly showing the multiplication rule in $G$ is satisfied by the matrices in $\phi(G)$. Due to the construction of our matrices, this representation has degree $|G|$. 
 
 \begin{theorem}
 	For any finite group, $G$, the left regular representation ($\phi$) contains every irreducible representation of $G$, $\{\psi_i\}_{i=1}^k$, exactly $n_{\psi_i}$ times.
 \end{theorem}
 
-\noindent\begin{proof}\cite{Tung}  Let $n=|G|$. Consider the matrices in given by the representation $\phi$. We know that $\phi(e) = I_n$, but what can we say about can we say about non-identity elements of $G$? It turns out, for any $g\in G$ such that $g\neq e$, $\phi_g$ always has a diagonal full of zeros. This must be the case, since it would be impossible for $g *g_i = g_i$  for any non-identity $g$. As a result, we see that $\chi^\phi_e = n$ and $\chi^\phi_g = 0$ $\forall g \in G$ with $g \neq e$. So, for any irreducible representation, $\psi_i$, Theorem (1.37) tells us that 
+\noindent\begin{proof}\cite{Tung}  Let $n=|G|$. Consider the matrices given by the representation $\phi$. We know that $\phi(e) = I_n$, but what can we say about can we say about non-identity elements of $G$? It turns out, for any $g\in G$ such that $g\neq e$, $\phi_g$ always has a diagonal full of zeros. This must be the case, since it would be impossible for $g *g_i = g_i$  for any non-identity $g$. As a result, we see that $\chi^\phi_e = n$ and $\chi^\phi_g = 0$ $\forall g \in G$ with $g \neq e$. So, for any irreducible representation, $\psi_i$, Theorem (1.37) tells us that 
 \begin{equation}
 	\begin{aligned}
 		\alpha_i = \sum_{C\in C_G} \frac{|C|}{|G|} \chi^\phi_C \overline{\chi_C^{\psi_i}} = \frac{1}{|G|}|G| \overline{\chi_e^{\psi_i}} = n_{\psi_i}
@@ -875,7 +875,7 @@ which is exactly what our completeness relation is defined to be. \end{proof}
 
 
 \begin{theorem}
-Let $G$ be a group, let $C_G$ be the set of all distinct conjugacy classes of $G$. Let $\Phi$ be the set of all inequivalent irreducible representations of $G$. Then for any $g,h \in G$, the following equation is defined to be the \textbf{completeness relation of irreducible characters of representations}.
+Let $G$ be a group and let $C_G$ be the set of all distinct conjugacy classes of $G$. Let $\Phi$ be the set of all inequivalent irreducible representations of $G$. Then for any $g,h \in G$, the following equation is defined to be the \textbf{completeness relation of irreducible characters of representations}.
 $$\sum_{\phi \in \Phi} \frac{|C_g|}{|G|} \chi^{\phi}_{C_g} \overline{\chi^{\phi}_{C_h}} = \begin{cases}
 																1 & if \hspace{1mm} C_g = C_h \\
 																0 & else
@@ -886,7 +886,7 @@ $$\sum_{\phi \in \Phi} \frac{|C_g|}{|G|} \chi^{\phi}_{C_g} \overline{\chi^{\phi}
 																										1 & if \hspace{1mm} g = h \\
 																										0 & else
 																									\end{cases}$$
-Taking this equality and summing both sides over the entire conjugacy class of $g$ and $h$ respectively, we aquire
+Taking this equality and summing both sides over the entire conjugacy class of $g$ and $h$ respectively, we acquire
 \begin{equation}
 	\begin{aligned}
 		\sum_{g \in C_g} \sum_{h\in C_h} \sum_{\phi \in \Phi} \sum_{i=1}^{n_\phi} \sum_{j=1}^{n_\phi} \frac{n_\phi}{|G|} \left[\phi_g\right]_{ij}\left[\phi_{h}^\dag\right]_{ji} = \sum_{g \in C_g} \sum_{h\in C_h} \begin{cases}

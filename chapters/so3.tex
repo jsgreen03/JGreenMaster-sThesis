@@ -1,12 +1,12 @@
 \chapter{$SO(3)$: The Rotation Group in Three Dimensions}\label{so3}
 
-Similar to $SO(2)$, the group $SO(3)$ represents all possible ways to take the physical action or rotating a vector in space. However, the space we can rotate within has changed to a three-dimensional space for this group, allowing us to have far more possibilities for our rotations. While we will make some simplifying generalizations here, this group still becomes incredibly more complicated than its two-dimensional counterpart. We will assume all rotations take place in $\R^3$. Like before, we will always assume our angle of rotation is real-valued, but we do not specify yet an orientation about which positive rotation occurs. Unless otherwise indicated, we will take $\{e_1,e_2,e_3\}$ to be an orthonormal basis of $\R^3$. This chapter follows the structure laid out in Wu-ki Tung's \textit{Group Theory in Physics}. \cite{Tung}
+Similar to $SO(2)$, the group $SO(3)$ represents all possible ways to take the physical action of rotating a vector in space. However, the space we can rotate within has changed to a three-dimensional space for this group, allowing us to have far more possibilities for our rotations. While we will make some simplifying generalizations here, this group still becomes incredibly more complicated than its two-dimensional counterpart. We will assume all rotations take place in $\R^3$. Like before, we will always assume our angle of rotation is real-valued, but we do not specify yet an orientation about which positive rotation occurs. Unless otherwise indicated, we will take $\{e_1,e_2,e_3\}$ to be an orthonormal basis of $\R^3$. This chapter follows the structure laid out in Wu-ki Tung's \textit{Group Theory in Physics}. \cite{Tung}
 
 \section{Construction and Properties}
 
 If we define $SO(3)$ to act on $\R^3$ in a similar way that $SO(2)$ acts on $\R^2$, we could not as easily uncover a formulation for every matrix. Instead, we use the characteristics of $SO(2)$ to guide our intuition for a way to understand the matrices that compose $SO(3)$. Firstly, any rotation should leave the magnitude of a vector in $\R^3$ unchanged. This leads us to conclude that the matrices must be orthogonal. Further, it will also follow that these matrices have determinant $1$, since all rotations can be reached continuously from the identity. With this information alone, we can deduce that the $SO(3)$ matrices form a group under matrix multiplication. The question of classifying these matrices is still open for us to answer. There are two main ways we can do so.
 
-In two dimensions, it is straightforward to define a convention for orientation and measurement of any rotation. However, when we get to three dimensions, we need to be more careful about how we describe these actions. Our first attempt to characterize these wil have us focus on embedding two dimensional rotations in three dimensional space. First, let us consider any $n\in\R^3$. We can treat this vector as an axis about which we rotate by taking the plane normal to it. Once we have rotated vectors about this axis, we can measure the angle of rotation by projecting these vectors onto normal plane and calculating the angle just as we did in our two dimensional derivation in Chapter 2. We still take the convention that positive angle measure corresponds to a counter-clockwise rotation about in the normal plane. The orientation of $n$ is uniquely determined by two angles, $\theta$ and $\phi$, as defined by spherical coordinates in $\R^3$. For this discussion, we do not care about $||n||$, since any this value does not impact the direction the axis points. In this way, every possible rotation in $\R^3$ is characterized by one angle of counter-clockwise rotation and the two angles that determine the orientation about which we rotate (direction that $n$ points). In other words, the rotation, which we will refer to as $R_n(\psi) = R_{\theta,\phi}(\psi)$, identifies a rotation as displayed in the picture below.
+In two dimensions, it is straightforward to define a convention for orientation and measurement of any rotation. However, when we get to three dimensions, we need to be more careful about how we describe these actions. Our first attempt to characterize these will have us focus on embedding two-dimensional rotations in three-dimensional space. First, let us consider any $n\in\R^3$. We can treat this vector as an axis about which we rotate by taking the plane normal to it. Once we have rotated vectors about this axis, we can measure the angle of rotation by projecting these vectors onto the normal plane and calculating the angle just as we did in our two-dimensional derivation in Chapter 2. We still take the convention that positive angle measurements correspond to a counter-clockwise rotation about in the normal plane. The orientation of $n$ is uniquely determined by two angles, $\theta$ and $\phi$, as defined by spherical coordinates in $\R^3$. For this discussion, we do not care about $||n||$, since this value does not impact the direction the axis points. In this way, every possible rotation in $\R^3$ is characterized by one angle of counter-clockwise rotation and the two angles that determine the orientation about which we rotate (the direction that $n$ points). In other words, the rotation, which we will refer to as $R_n(\psi) = R_{\theta,\phi}(\psi)$, identifies a rotation as displayed in the picture below.
 
 
 \begin{figure}{H}
@@ -196,11 +196,11 @@ $$R_n(\psi) = R_{-n}(2\pi - \psi)$$
 	\caption{Identifying equivalent rotations about vectors pointing in opposite directions.}
 \end{figure}
 
-This is truly a consequence of the fact that positive (counter-clockwise) rotation is relative to the direction one faces. Consider placing yourself in the center of the square at the point where $n$ and $-n$ touch. Looking both up and down will show that the angle of rotation is in the counter-clockwise direction. We can match every rotation in one direction with an opposite direction rotation by another angle using this relationship. In order to keep ourselves from double-counting, we can restrict the values of our parameters to conform to the following convention: 
+This is truly a consequence of the fact that positive (counter-clockwise) rotation is relative to the direction one faces. Consider placing yourself in the center of the square at the point where $n$ and $-n$ touch. Looking both up and down will show that the angle of rotation is in the counter-clockwise direction. We can match every rotation in one direction with an opposite-direction rotation by another angle using this relationship. In order to keep ourselves from double-counting, we can restrict the values of our parameters to conform to the following convention: 
 
 $$0\leq\psi\leq\pi, \hspace{3mm} 0\leq\theta\leq2\pi, \hspace{3mm} 0\leq\phi\leq\pi$$
 
-While we still have the $\psi=\pi$ case to worry about, this greatly limits the amount of rotations we double count, and is a satisfactoy convention. A useful way to visualize each rotation is to view it as a point in $\R^3$ as an ordered triple in spherical coordinates $(\psi,\phi,\theta)$. $\phi$ and $\theta$ are defined conventionally as they are, but $\psi$ takes the place of the value for the distance from the origin. In this way, we identify every point in the sphere of radius $\pi$ centered at the origin with a rotation in $\R^3$ \\
+While we still have the $\psi=\pi$ case to worry about, this greatly limits the amount of rotations we double-count and is a satisfactory convention. A useful way to visualize each rotation is to view it as a point in $\R^3$ as an ordered triple in spherical coordinates $(\psi,\phi,\theta)$. $\phi$ and $\theta$ are defined conventionally as they are, but $\psi$ takes the place of the value for the distance from the origin. In this way, we identify every point in the sphere of radius $\pi$ centered at the origin with a rotation in $\R^3$ \\
 
 \begin{figure}[H]
 	\centering
@@ -226,7 +226,7 @@ While we still have the $\psi=\pi$ case to worry about, this greatly limits the 
 We can use the geometry of three-dimensional space to observe a very simple but powerful fact.
 
 \begin{theorem}
-	Let $n, n'\in\R^3$ and $\psi\in[0,\pi]$. Let $R\in SO(3)$ be a rotation that takes $n$ and points it in the direction of $n'$. Then, following identity holds:
+	Let $n, n'\in\R^3$ and $\psi\in[0,\pi]$. Let $R\in SO(3)$ be a rotation that takes $n$ and points it in the direction of $n'$. Then, the following identity holds:
 $$R_{n}(\psi) = R^{-1}R_{n'}(\psi)R$$
 \end{theorem}
 
@@ -262,7 +262,7 @@ This identity can be easily verified as seen in the following sequence of images
 
 
 
-With this identifty in mind, we can make a deeper conclusion about the inherent structure of $SO(3)$.
+With this identity in mind, we can make a deeper conclusion about the inherent structure of $SO(3)$.
 
 \begin{corrolary}
 	All rotations (about any axis) by a fixed angle $\psi$ share a conjugacy class (denoted $C_\psi$).
@@ -276,7 +276,7 @@ $$R(\alpha,\beta,\gamma) \coloneq R_{z'}(\gamma)R_n(\beta)R_z(\alpha)$$
 where $n$ points in the direction defined by the intersection of the $xy$ and $x'y'$ planes (or equivalently, the $z\times z'$ direction). Note: we use the subscript $z$ and $z'$ as a shorthand to mean the $z$-axis and $z'$-axis.
 \end{definition}
 
-In this way, we view every rotation in $SO(3)$ as the composition of three rotations about mutually orthogonal axes. Conventionally, we restrict the parameters to the followign conditions: $\alpha,\gamma\in[0,2\pi)$, $\beta\in[0,\pi]$. This limits double-counting in a similar manner to the discussion above. The figure below illustrates the use of Euler angles to complete an arbitrary rotation as the composition of three determined rotations.\\
+In this way, we view every rotation in $SO(3)$ as the composition of three rotations about mutually orthogonal axes. Conventionally, we restrict the parameters to the following conditions: $\alpha,\gamma\in[0,2\pi)$, $\beta\in[0,\pi]$. This limits double-counting in a similar manner to the discussion above. The figure below illustrates the use of Euler angles to complete an arbitrary rotation as the composition of three determined rotations.\\
 
 \begin{figure}[H]
 	\centering
@@ -418,7 +418,7 @@ In this way, we view every rotation in $SO(3)$ as the composition of three rotat
 
 \end{figure} 
 
-An couple important observations can be made by observing these figures: $R_n(\beta)$ is the rotation that moves $z$ to $z'$ and $R_z(\alpha)$ is the rotation that moves $y$ to $n$. Using this fact and Theorem (3.1), we can conclude the following:
+A couple of important observations can be made by observing these figures: $R_n(\beta)$ is the rotation that moves $z$ to $z'$ and $R_z(\alpha)$ is the rotation that moves $y$ to $n$. Using this fact and Theorem (3.1), we can conclude the following:
 
 \begin{equation}
 	\begin{aligned}
@@ -435,7 +435,7 @@ An couple important observations can be made by observing these figures: $R_n(\b
 		R(\alpha,\beta,\gamma) = R_z(\alpha)R_y(\beta)R_z(\gamma)
 	\end{aligned}
 \end{equation}
-where (3.3) comes from applying (3.1-2) to Definition (3.3). This result tells us that every rotation can be categorized three angles we use to rotate about the $y$ and $z$ axis. While any orthogonal basis can serve as our fixed frame, we get the most use out of choosing the standard basis. In doing so, we focus our attention to $xy$-plane and the $xz$-planes when rotating about the $z$ and $y$ axes respectively. In these two-dimensional settings, we can construct $SO(2)$-like matrices that impact the right coordinates of vectors in $\R^3$. To this end, we see that
+where (3.3) comes from applying (3.1-2) to Definition (3.3). This result tells us that every rotation can be categorized by three angles we use to rotate about the $y$ and $z$ axes. While any orthogonal basis can serve as our fixed frame, we get the most use out of choosing the standard basis. In doing so, we focus our attention on the $xy$-plane and the $xz$-plane when rotating about the $z$ and $y$ axes respectively. In these two-dimensional settings, we can construct $SO(2)$-like matrices that impact the right coordinates of vectors in $\R^3$. To this end, we see that
 
 \begin{equation}
 	\begin{aligned}
@@ -481,9 +481,9 @@ and therefore, any rotation in $SO(3)$ can be written as
 \end{equation}
 \end{small}
 
-While this formulation is unpleasing, it is still useful, especially in context of writing computer algorithm.
+While this formulation is unpleasing, it is still useful, especially in the context of writing computer algorithms.
 
-Now that we have discussed the general form of a matrix in $SO(3)$, we can explore the concept of generators for this group. We can begin by observing that whenever we fix an axis, $n$, that we rotate about, the rotations of all angles about $n$ form a subgroup, call it $H_n$. The argument for this is as follows: Clockwise rotations about $n$ are inverses of counter-clockwise rotations about $n$ and consecutive rotations about the same axis can be done in one rotations if we first add up the angle measures. The matrices of $SO(3)$ must respect these properties or the group does not represent the physical phenomenon of rotation. This being said, we can see that fixing the axis $n$ forces all rotations to take place in the two dimensional plane normal to $n$. For this reason, we can argue that any subgroup constructed in this way must be isomorphic to $SO(2)$, taking the following map:
+Now that we have discussed the general form of a matrix in $SO(3)$, we can explore the concept of generators for this group. We can begin by observing that whenever we fix an axis, $n$, that we rotate about, the rotations of all angles about $n$ form a subgroup, denoted $H_n$. The argument for this is as follows: Clockwise rotations about $n$ are inverses of counter-clockwise rotations about $n$ and consecutive rotations about the same axis can be done in one rotation if we first add up the angle measures. The matrices of $SO(3)$ must respect these properties or the group does not represent the physical phenomenon of rotation. This being said, we can see that fixing the axis $n$ forces all rotations to take place in the two-dimensional plane normal to $n$. For this reason, we can argue that any subgroup constructed in this way must be isomorphic to $SO(2)$, taking the following map:
 
 $$\phi:H_n \rightarrow SO(2)$$
 $$R_n(\theta) \mapsto R(\theta)$$
@@ -598,7 +598,7 @@ In this sense, rotation in $\R^3$ can be written simply in terms of the angle me
 
 \section{Irreducible Representations of $SO(3)$}
 
-In order to uncover the irreducible representations of $SO(3)$, we will embark upon the same strategy that we used to find irreducible representations of $SO(2)$. Explicitly, we are looking to find invariant subspaces of our generator. However, we now have three generators to check, and the invariant subspace that we find has to coincide with every possible rotation built from the three. To add more complexity to this matter, we no longer are in an abelian group, which makes our struggle greater for a few reasons. First, finding invariant subspaces under these generators will be dependent on the order in which we apply the rotations. Secondly, irreducible representations need not be degree one anymore. We need to find an invariant subspace that exists independent of order of rotation and that works with all our generators that is spanned by possibly an infinite set of vectors.
+In order to uncover the irreducible representations of $SO(3)$, we will embark upon the same strategy that we used to find irreducible representations of $SO(2)$. Explicitly, we are looking to find invariant subspaces of our generator. However, we now have three generators to check, and the invariant subspace that we find has to coincide with every possible rotation built from the three. To add more complexity to this matter, we no longer are in an abelian group, which makes our struggle greater for a few reasons. First, finding invariant subspaces under these generators will be dependent on the order in which we apply the rotations. Secondly, irreducible representations need not be degree one anymore. We need to find an invariant subspace that exists independent of any order of rotation and that works with all our generators that are spanned by possibly an infinite set of vectors.
 
 First, let us tackle the problem of commuting. We begin with the following definition.
 
@@ -669,9 +669,9 @@ where $m$ is the label of the remaining generator in $\{J_x,J_y,J_z\}$.
 	\end{aligned}
 \end{equation} 
 
-Clearly, transposing $x$ and $y$ will make the commutator negative (applying a transposition to $x$ and $y$ turns the word into $yxz$, so this is kept track of in the sign term). The other four cases can be recovered in a symmetric way. \end{proof}
+Clearly, transposing $x$ and $y$ will make the commutator negative (applying a transposition to $x$ and $y$ turns the word into $yxz$, so this is kept track of in the sign term). The other four cases can be recovered in a similar way. \end{proof}
 
-While we can clearly see that these relationships give us a non-commutative structue, we can still glean some value from these these commutators if we use them in a different context.
+While we can clearly see that these relationships give us a non-commutative structure, we can still glean some value from these commutators if we use them in a different context.
 
 \begin{definition}
 	A \textbf{Lie Algebra} is a vector space, $\mathfrak{g}$, together with a bilinear operation, $[\dot,\dot]$ that satisfies the the following identities:
@@ -681,7 +681,7 @@ While we can clearly see that these relationships give us a non-commutative stru
 \end{itemize}
 \end{definition}
 
-If we consider the commutator operation our bilinear operation, we can construct create a Lie algebra (using standard addition and scalar multiplication of matrices). Keeping the generators $\{J_x,J_y,J_z\}$, we will denote this Lie algebra as $\mathfrak{so}(3) := \{a_1J_x + a_2J_y + a_3Jz \mid a_1,a_2,a_3\in\C\}$ We can see than any arbitrary element, $M\in \mathfrak{so}(3)$ takes the following form:
+If we consider the commutator operation our bilinear operation, we can construct a Lie algebra (using standard addition and scalar multiplication of matrices). Keeping the generators $\{J_x,J_y,J_z\}$, we will denote this Lie algebra as $\mathfrak{so}(3) := \{a_1J_x + a_2J_y + a_3Jz \mid a_1,a_2,a_3\in\C\}$ We can see that any arbitrary element, $M\in \mathfrak{so}(3)$ takes the following form:
 
 \begin{equation}
 	\begin{aligned}
@@ -693,15 +693,15 @@ If we consider the commutator operation our bilinear operation, we can construct
 	\end{aligned}
 \end{equation} 
 
-showing us that there is a one-to-one correspondence between the skew-symmetric matrices of size $3\times 3$ and matrices in $\mathfrak{so}(3)$. With this in mind, we can make the arguement that any representation of this Lie algebra ($\mathfrak{so}(3)$) will provide use with a representation of the Lie group ($SO(3)$). There is a deep reason for this connection that can be explored in the following source \cite{Hall}. The process for this is much the same as embarked upon for $SO(2)$, but since those representations were one-dimensional and revolved only around one generator, it was not necessary to introduce the complexity of Lie algebras just yet to create the representations. 
+showing us that there is a one-to-one correspondence between the skew-symmetric matrices of size $3\times 3$ and matrices in $\mathfrak{so}(3)$. With this in mind, we can make the argument that any representation of this Lie algebra ($\mathfrak{so}(3)$) will provide us with a representation of the Lie group ($SO(3)$). There is a deep reason for this connection that can be explored in the following source \cite{Hall}. The process for this is much the same as embarked upon for $SO(2)$, but since those representations were one-dimensional and revolved only around one generator, it was not necessary to introduce the complexity of Lie algebras just yet to create the representations. 
 
-As we search for the representations of $\mathfrak{so}(3)$, we still need to find commuting generators. For the moment, it seems that we did not reduce our problem whatosever, but rather added a layer of abstraction. In light of this, we can add even more abstraction to eventually shed some clarity on our circumstances.
+As we search for the representations of $\mathfrak{so}(3)$, we still need to find commuting generators. For the moment, it seems that we did not reduce our problem whatsoever, but rather added a layer of abstraction. In light of this, we can add even more abstraction to eventually shed some clarity on our circumstances.
 
 \begin{definition}
 	The \textbf{universal enveloping algebra} of a Lie algebra is the largest embedding of Lie algebra into an algebra. 
 \end{definition}
 
-The inherent utility of the universal enveloping algebra (of a Lie algebra) is that it is the most generic algebra that perserves the commutating properties of the Lie algebra. We will later discuss the necessity of appealing to this larger structure, but we will discuss what this space actuall looks like. 
+The inherent utility of the universal enveloping algebra (of a Lie algebra) is that it is the most generic algebra that preserves the commutating properties of the Lie algebra. We will later discuss the necessity of appealing to this larger structure, but we will discuss what this space actually looks like. 
 
 The construction of the universal enveloping algebra of $\mathfrak{so}(3)$ (which we will denote $A_{\mathfrak{so}(3)}$) follows this prototypical scheme: First, we construct the tensor algebra of $\mathfrak{so}(3)$. This takes the following form:
 
@@ -722,7 +722,7 @@ We then gather our universal enveloping algebra on $\mathfrak{so}(3)$ by taking 
 
 $$A_{\mathfrak{so}(3)} \coloneq T(\mathfrak{so}(3)) / I$$
 
-As of now, we have shifted out problem to looking for commutative elements in $A_{\mathfrak{so}(3)}$. What is the inherent significance of this? If we view our generators $J_x$, $J_y$, $J_z$ as elements in $A_{\mathfrak{so}(3)}$, we can see that the commutator relations are still satisfied as they are in $\mathfrak{so}(3)$. However, due to the construction, there is no way to meaningfully combine them. All that we know is that any formal combination of our generators of can potentially be simplified with our commutator relations, and no other information is given. So, we must set out to find an element in $A_{\mathfrak{so}(3)}$ that commutes with all other elements.
+As of now, we have shifted our problem to looking for commutative elements in $A_{\mathfrak{so}(3)}$. What is the inherent significance of this? If we view our generators $J_x$, $J_y$, $J_z$ as elements in $A_{\mathfrak{so}(3)}$, we can see that the commutator relations are still satisfied as they are in $\mathfrak{so}(3)$. However, due to the construction, there is no way to meaningfully combine them. All that we know is that any formal combination of our generators can potentially be simplified with our commutator relations, and no other information is given. So, we must set out to find an element in $A_{\mathfrak{so}(3)}$ that commutes with all other elements.
 
 \begin{definition}
 	A \textbf{Casimir element} of a Lie algebra, $A$, is any element in the center of the universal enveloping algebra of $A$.
@@ -850,7 +850,7 @@ Using these identities, one can see that for any eigenvector, $v_m$, correspondi
 	\end{aligned}
 \end{equation} 
 
-These identities give an explicit reason for the naming convention (the raising generator increases the eigenvalue by $1$ and the lowering generator decreases it by $1$). With this, we conclude that repeated applications of $\phi_{\mathfrak{J}_+}$ or $\phi_{\mathfrak{J}_-}$ give us new eigenvectors of $\phi_{\mathfrak{J}_z}$, corresponding to eigenvalues $m + k$ and $m-l$ where $k$ represents the number of repeated applications of $\phi_{\mathfrak{J}_+}$ and $l$ represents the number of repeated applications of $\phi_{\mathfrak{J}_-}$ respectively. We can only repeat this process a finite number of times, as we are working in a finite dimensional vector space. Let us shift our focus somewhat to consider $k$ to be the maximum number of applications of $\phi_{\mathfrak{J}_+}$ before $\phi_{\mathfrak{J}_+}^{k+1}(v_k) = 0$. Let $\lambda$ be the eigenvalue corresponding to eigenvector $\phi_{\mathfrak{J}_+}^{k}(v_{k-1})$ of the operator $\phi_{\mathfrak{J}_z}$. Then, 
+These identities give an explicit reason for the naming convention (the raising generator increases the eigenvalue by $1$ and the lowering generator decreases it by $1$). With this, we conclude that repeated applications of $\phi_{\mathfrak{J}_+}$ or $\phi_{\mathfrak{J}_-}$ give us new eigenvectors of $\phi_{\mathfrak{J}_z}$, corresponding to eigenvalues $m + k$ and $m-l$ where $k$ represents the number of repeated applications of $\phi_{\mathfrak{J}_+}$ and $l$ represents the number of repeated applications of $\phi_{\mathfrak{J}_-}$ respectively. We can only repeat this process a finite number of times, as we are working in a finite-dimensional vector space. Let us shift our focus somewhat to consider $k$ to be the maximum number of applications of $\phi_{\mathfrak{J}_+}$ before $\phi_{\mathfrak{J}_+}^{k+1}(v_k) = 0$. Let $\lambda$ be the eigenvalue corresponding to eigenvector $\phi_{\mathfrak{J}_+}^{k}(v_{k-1})$ of the operator $\phi_{\mathfrak{J}_z}$. Then, 
 
 \begin{equation}
 	\begin{aligned}
@@ -872,12 +872,12 @@ Which implies that $\lambda = -l$. Given that we arrived at eigenvalue $l$ from 
 
 
 \begin{theorem}
-	The irreducible representations of the $A_{\mathfrak{so}(3)}$ are characterized by eigenvalues that take on positive integer and positive half-integers. If $\lambda$ is one such eigenvalue, then we can construct our eigenvectors, $\{v_m\}_{m=-\lambda}^\lambda$, corresponding to $\phi_{\mathfrak{J}_z}$ with eigenvalue $m$, using the raising or lowering operators. This gives us a degree $2\lambda +1$ representation characterized by the following relationships:
+	The irreducible representations of the $A_{\mathfrak{so}(3)}$ are characterized by eigenvalues that take on positive integer and positive half-integer values. If $\lambda$ is one such eigenvalue, then we can construct our eigenvectors, $\{v_m\}_{m=-\lambda}^\lambda$, corresponding to $\phi_{\mathfrak{J}_z}$ with eigenvalue $m$, using the raising or lowering operators. This gives us a degree $2\lambda +1$ representation characterized by the following relationships:
 $$\phi_{\mathfrak{J}^2}(v_m) = \lambda(\lambda+1)v_m$$
 $$\phi_{\mathfrak{J}_z}(v_m) =  mv_m$$ 
 $$v_{m+1} =  \frac{\phi_{\mathfrak{J}_\pm}(v_m)}{\sqrt{\lambda(\lambda+1) - m(m\pm 1)}}$$
 \end{theorem}
-\noindent where the normalizing factor comes from a brief calculation similar to the matrix product calculation done in (3.32). Theorem (3.10) gives us a way to calculate an irreducible, unitary representation up to any degree. The unitary aspect comes from the fact that $\{v_m\}$ are normalized and orthogonal by their construction. When we do the calculations, we have constructed our operators (in the image of our representation) and seek to construct an orthonormal basis with respect to these operators. As we have shown, following this form will ensure that we cannot create a nontrivial-invariant subspace, due to the fact that the cyclical nature of our eigenbasis construction. Explicitly, every vector in this basis will be an eigenvector of $\phi_{\mathfrak{J^2}}$, and since this operator commutes with every other, we inheret a set of eigenvectors that will span the entire space.
+\noindent where the normalizing factor comes from a brief calculation similar to the matrix product calculation done in (3.32). Theorem (3.10) gives us a way to calculate an irreducible, unitary representation up to any degree. The unitary aspect comes from the fact that $\{v_m\}$ are normalized and orthogonal by their construction. When we do the calculations, we have constructed our operators (in the image of our representation) and seek to construct an orthonormal basis with respect to these operators. As we have shown, following this form will ensure that we cannot create a nontrivial-invariant subspace, due to the fact that the cyclical nature of our eigenbasis construction. Explicitly, every vector in this basis will be an eigenvector of $\phi_{\mathfrak{J^2}}$, and since this operator commutes with every other, we inherit a set of eigenvectors that will span the entire space.
 
 Given our hard work to establish a representation on $A_{\mathfrak{so}(3)}$, we can immediately conclude that we can construct a representation on $SO(3)$. Any rotation under the image of such an irreducible representation must behave in the following way:
 
@@ -928,7 +928,7 @@ Using the identities found in (3.24-3.28), we can calculate $\phi_{\mathfrak{J}_
 								\end{bmatrix}
 \end{aligned}
 \end{equation}
-We can use these two matrices to solve a system of equations to aquire $\phi_{\mathfrak{J}_y}$ and $\phi_{\mathfrak{J}_x}$.
+We can use these two matrices to solve a system of equations to acquire $\phi_{\mathfrak{J}_y}$ and $\phi_{\mathfrak{J}_x}$.
 \begin{equation}
 \begin{aligned}
 	\phi_{\mathfrak{J}_x} = \begin{bmatrix}
@@ -972,4 +972,4 @@ We note that $\phi_{\mathfrak{J}_z}$ and $\phi_{\mathfrak{J}_y}$ are a scalar mu
 \end{aligned}
 \end{equation}
 
-It is worth noting that this example illustrates a multi-valued representation, seeing as $\phi_\frac{1}{2}(R(0,2\pi,0)) = -I_2$. In general, all of the half integer eigenvalue representations will behave in this way.
+It is worth noting that this example illustrates a multi-valued representation, seeing as $\phi_\frac{1}{2}(R(0,2\pi,0)) = -I_2$. In general, all of the half-integer eigenvalue representations will behave in this way.

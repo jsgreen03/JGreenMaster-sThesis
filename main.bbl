@@ -2,7 +2,8 @@
 
 \bibitem{Riverside}
 J.~Baez.
-\newblock The yang-baxter equation, 1992.
+\newblock The {Y}ang-{B}axter {E}quation, 1992.
+\newblock Expository Essays.
 
 \bibitem{Rose3}
 J.~Baez and M.~Stay.
@@ -11,7 +12,7 @@ J.~Baez and M.~Stay.
 
 \bibitem{Deshmukh}
 A.~Deshmukh.
-\newblock An introduction to anyons.
+\newblock An {I}ntroduction to {A}nyons.
 
 \bibitem{Hall}
 B.~C. Hall and B.~C. Hall.
@@ -31,10 +32,11 @@ C.~Kassel and V.~Turaev.
 \bibitem{Mendes}
 A.~Mendes.
 \newblock Matrix representations of the symmetric group, March 2024.
+\newblock Course Notes.
 
 \bibitem{Trebst}
 S.~Trebst, M.~Troyer, Z.~Wang, and A.~W. Ludwig.
-\newblock A short introduction to fibonacci anyon models.
+\newblock A short introduction to {F}ibonacci anyon models.
 \newblock {\em Progress of Theoretical Physics Supplement}, 176:384--407, 2008.
 
 \bibitem{Tung}
